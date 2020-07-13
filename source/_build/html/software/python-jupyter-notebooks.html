@@ -1,0 +1,266 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="" lang="" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Jupyter Notebooks &mdash; Katana User Documentation 1.0 documentation</title>
+  
+
+  
+
+  
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Software" href="index.html"/>
+        <link rel="next" title="R and RStudio" href="r.html"/>
+        <link rel="prev" title="Virtual Environments from the inside" href="python-virtualenvs-internals.html"/>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="public" />
+    <meta name="robots" content="follow, all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add jQuery library -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+  </head>
+
+  <body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Katana User Documentation </a>
+        <div role="search">
+	  <form id ="rtd-search-form" class="wy-form"
+		action="../search.html" method="get">
+	    <input type="text" name="q" placeholder="Search docs" />
+	    <input type="hidden" name="check_keywords" value="yes" />
+	    <input type="hidden" name="area" value="default" />
+	  </form>
+	</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	
+          
+          
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#contact-the-research-technology-services-team">Contact the Research Technology Services team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-system-status-and-known-issues">Katana System Status and Known Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-terms-of-use">Katana Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using_katana/index.html">Using Katana</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/about_katana.html">About Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/accessing_katana.html">Accessing Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/running_jobs.html">Running Jobs on Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/github.html">GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../storage/index.html">Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../storage/storage_locations.html">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/kdm.html">Katana Data Mover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/data_archive.html">How to use the UNSW Data Archive</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="biosciences.html">Biosciences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.html">Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perl.html">Perl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-virtualenvs.html">Python Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-virtualenvs-internals.html">Virtual Environments from the inside</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r.html">R and RStudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sas.html">SAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stata.html">Stata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">TMUX</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_data.html">Reference Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#general-faq">General FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#scheduler-faq">Scheduler FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#storage-faq">Storage FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#expanding-katana">Expanding Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#acknowledging-katana">Acknowledging Katana</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+          
+        
+
+      </div>
+      &nbsp;
+    </nav>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      <nav class="wy-nav-top" id="barra-mobile" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Porão do Juca</a>
+      </nav>
+
+      <div class="wy-nav-content">
+	<div class="fundo-claro">
+	</div>
+	<div class="fundo-escuro">
+	</div>
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+	    
+	    <!-- <ul class="wy-breadcrumbs"> -->
+	    <!--   <li><a href="#">Docs</a> &raquo;</li> -->
+
+	    <!--   <li>Features</li> -->
+	    <!--   <li class="wy-breadcrumbs-aside"> -->
+
+	    <!-- 	<a href="_sources/index.txt" rel="nofollow"> View page source</a> -->
+
+	    <!--   </li> -->
+	    <!-- </ul> -->
+	    <!-- <hr/> -->
+	  </div>
+
+          <div role="main" class="">
+
+	    <div id="content" class="hfeed entry-container hentry">
+  <div class="section" id="jupyter-notebooks">
+<h1>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="or-the-it-s-slightly-frustrating-but-can-be-done-using-the-tools-way-of-running-juypter-on-katana">
+<h2>or, the ‘“it’s slightly frustrating, but can be done using the tools” way of running Juypter on Katana’<a class="headerlink" href="#or-the-it-s-slightly-frustrating-but-can-be-done-using-the-tools-way-of-running-juypter-on-katana" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="background">
+<h3>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
+<p>Due to the nature of the Katana system, it’s not possible to serve content to the internet from Katana. Juypter notebooks are, essentially, python engines served via http. As a result, getting a notebook working requires a little more work than usual, but should get adequate results. This documentation is minimal, because it points to two other sets of documenation that have more information. WARNING: while it’s possible to run Jupyter Notebooks on Katana, it’s not an ideal system to run Jupyter on (at the moment). As a result, you may find that you experience is degraded - it’s highly dependant on network latency. We would recommend against it and will not be able to provide usability or performance support. We can continue to provide you with Python support, and Jupyter support.</p>
+<p>We need to do a two main steps to prepare, and then each connection will require two steps to connect to your notebook.</p>
+</div>
+<div class="section" id="preparation">
+<h3>Preparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h3>
+<p>These two steps are independant of each other - there is no need to do them in order.</p>
+<ol class="arabic simple">
+<li><p>You will need to be able to connect to Katana via Remote Desktop. There are Instructions on how to do this in <a class="reference internal" href="../using_katana/accessing_katana.html#graphical-session"><span class="std std-ref">Graphical sessions</span></a>.</p></li>
+<li><p>You will need to create a Python Virtual Environment (<a class="reference internal" href="python-virtualenvs.html#python-virtual-environments"><span class="std std-ref">Python Virtual Environments</span></a>), activate it, and install Jupyter via the command <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">jupyter</span></code></p></li>
+</ol>
+</div>
+<div class="section" id="reconnection">
+<h3>Reconnection<a class="headerlink" href="#reconnection" title="Permalink to this headline">¶</a></h3>
+<p>Everytime you would like to use your Jupyter notebook, you will need to:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Remote Desktop into Katana</p></li>
+<li><p>open a terminal</p></li>
+<li><p>start an interactive session - <code class="code docutils literal notranslate"><span class="pre">qsub</span> <span class="pre">-I</span></code> - and wait for it to start</p></li>
+<li><p>in the interactive session, load any relevant modules (if applicable)</p></li>
+<li><p>activate your virtual environment</p></li>
+<li><p>grab the IP address of the node you are on: <code class="code docutils literal notranslate"><span class="pre">hostname</span> <span class="pre">-I</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">'{print</span> <span class="pre">$1}'</span></code></p></li>
+<li><p>launch Jupyter Notebook like this: <code class="code docutils literal notranslate"><span class="pre">jupyter-notebook</span> <span class="pre">--ip=$(hostname</span> <span class="pre">-I</span> <span class="pre">|</span> <span class="pre">awk</span> <span class="pre">'{print</span> <span class="pre">$1}')</span> <span class="pre">--no-browser</span></code></p></li>
+<li><p>copy one of the first two options (the <code class="code docutils literal notranslate"><span class="pre">file:///</span></code> or <code class="code docutils literal notranslate"><span class="pre">http://10.197.34.xxx:8888</span></code>) into firefox in the remote desktop session</p></li>
+</ul>
+</div></blockquote>
+<p>Caveat: if you get an error about a port being busy, launch Jupyter with this command, susbstituting XXXX with a large number:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-notebook --port<span class="o">=</span>XXXX
+</pre></div>
+</div>
+</div>
+<div class="section" id="important-final-point">
+<h3>IMPORTANT FINAL POINT<a class="headerlink" href="#important-final-point" title="Permalink to this headline">¶</a></h3>
+<p>We will forcibly kill Jupyter notebooks we find running on katana1 or katana2 (collectively known as “the head nodes”) without warning or explanation beyond this paragraph. All jupyter notebooks must be started in an <a class="reference internal" href="../using_katana/running_jobs.html#interactive-session"><span class="std std-ref">Interactive Jobs</span></a> on Katana.</p>
+</div>
+</div>
+</div>
+
+
+	    </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="r.html" class="btn btn-neutral float-right" title="R and RStudio">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="python-virtualenvs-internals.html" class="btn btn-neutral" title="Virtual Environments from the inside"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Lachlan Simpson.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/jucacrispim/sphinx_pdj_theme">theme</a> provided by <a href="http://poraodojuca.net">Porão do Juca</a>.
+
+</footer>
+	</div>
+	</div>
+	  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/underscore.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/language_data.js">
+
+    </script>
+
+  
+
+   <script type="text/javascript"
+           src="../_static/js/theme.js"></script>
+
+   <script type="text/javascript"
+           src="../_static/js/pdj.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+  </body>
+</html>

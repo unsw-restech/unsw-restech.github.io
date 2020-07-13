@@ -1,0 +1,345 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="" lang="" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Environment Modules &mdash; Katana User Documentation 1.0 documentation</title>
+  
+
+  
+
+  
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Software" href="index.html"/>
+        <link rel="next" title="Biosciences" href="biosciences.html"/>
+        <link rel="prev" title="Software" href="index.html"/>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="public" />
+    <meta name="robots" content="follow, all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add jQuery library -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+  </head>
+
+  <body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Katana User Documentation </a>
+        <div role="search">
+	  <form id ="rtd-search-form" class="wy-form"
+		action="../search.html" method="get">
+	    <input type="text" name="q" placeholder="Search docs" />
+	    <input type="hidden" name="check_keywords" value="yes" />
+	    <input type="hidden" name="area" value="default" />
+	  </form>
+	</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	
+          
+          
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#contact-the-research-technology-services-team">Contact the Research Technology Services team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-system-status-and-known-issues">Katana System Status and Known Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-terms-of-use">Katana Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using_katana/index.html">Using Katana</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/about_katana.html">About Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/accessing_katana.html">Accessing Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/running_jobs.html">Running Jobs on Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/github.html">GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../storage/index.html">Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../storage/storage_locations.html">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/kdm.html">Katana Data Mover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/data_archive.html">How to use the UNSW Data Archive</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="biosciences.html">Biosciences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.html">Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perl.html">Perl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-virtualenvs.html">Python Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-virtualenvs-internals.html">Virtual Environments from the inside</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-jupyter-notebooks.html">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r.html">R and RStudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sas.html">SAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stata.html">Stata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">TMUX</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_data.html">Reference Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#general-faq">General FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#scheduler-faq">Scheduler FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#storage-faq">Storage FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#expanding-katana">Expanding Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#acknowledging-katana">Acknowledging Katana</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+          
+        
+
+      </div>
+      &nbsp;
+    </nav>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      <nav class="wy-nav-top" id="barra-mobile" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Porão do Juca</a>
+      </nav>
+
+      <div class="wy-nav-content">
+	<div class="fundo-claro">
+	</div>
+	<div class="fundo-escuro">
+	</div>
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+	    
+	    <!-- <ul class="wy-breadcrumbs"> -->
+	    <!--   <li><a href="#">Docs</a> &raquo;</li> -->
+
+	    <!--   <li>Features</li> -->
+	    <!--   <li class="wy-breadcrumbs-aside"> -->
+
+	    <!-- 	<a href="_sources/index.txt" rel="nofollow"> View page source</a> -->
+
+	    <!--   </li> -->
+	    <!-- </ul> -->
+	    <!-- <hr/> -->
+	  </div>
+
+          <div role="main" class="">
+
+	    <div id="content" class="hfeed entry-container hentry">
+  <div class="section" id="environment-modules">
+<h1>Environment Modules<a class="headerlink" href="#environment-modules" title="Permalink to this headline">¶</a></h1>
+<p>Environment Modules offer a simple means of customising your environment to access the required versions of installed software and this section provides information on how they are used on Katana.</p>
+<p>When we use modules, we are changing our “environment”, hence the name.</p>
+<div class="section" id="how-do-i-discover-what-software-is-available">
+<h2>How do I discover what software is available?<a class="headerlink" href="#how-do-i-discover-what-software-is-available" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana ~<span class="o">]</span>$ module avail
+
+-------------------------- /share/apps/modules/intel ---------------------------
+intel/11.1.080<span class="o">(</span>default<span class="o">)</span>  intel/12.1.7.367  intel/13.0.1.117  intel/13.1.0.146
+
+--------------------------- /share/apps/modules/pgi ----------------------------
+pgi/13.7
+
+-------------------------- /share/apps/modules/matlab --------------------------
+matlab/2007b          matlab/2010b          matlab/2012a<span class="o">(</span>default<span class="o">)</span>
+matlab/2008b          matlab/2011a          matlab/2012b
+matlab/2009b          matlab/2011b          matlab/2013a
+</pre></div>
+</div>
+</div>
+<div class="section" id="what-if-the-software-that-i-want-is-not-on-the-list">
+<h2>What if the software that I want is not on the list?<a class="headerlink" href="#what-if-the-software-that-i-want-is-not-on-the-list" title="Permalink to this headline">¶</a></h2>
+<p>If you require software installed on the cluster, email the <a class="reference external" href="mailto:ITServiceCentre&#37;&#52;&#48;unsw&#46;edu&#46;au">IT Service Centre</a> detailing the software that you would like installed and that you would like to have it installed on Katana. Please include links and desired version numbers.</p>
+</div>
+<div class="section" id="how-do-i-add-a-particular-version-of-software-to-my-environment">
+<h2>How do I add a particular version of software to my environment?<a class="headerlink" href="#how-do-i-add-a-particular-version-of-software-to-my-environment" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module add matlab/2018b
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module load matlab/2018b
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-do-i-remove-a-particular-version-of-software-from-my-environment">
+<h2>How do I remove a particular version of software from my environment?<a class="headerlink" href="#how-do-i-remove-a-particular-version-of-software-from-my-environment" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module rm matlab/2018b
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module unload matlab/2018b
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-do-i-remove-all-modules-from-my-environment">
+<h2>How do I remove all modules from my environment?<a class="headerlink" href="#how-do-i-remove-all-modules-from-my-environment" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module purge
+</pre></div>
+</div>
+</div>
+<div class="section" id="which-versions-of-software-am-i-currently-using">
+<h2>Which versions of software am I currently using?<a class="headerlink" href="#which-versions-of-software-am-i-currently-using" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module list
+Currently Loaded Modulefiles:
+ <span class="m">1</span><span class="o">)</span> intel/18.0.1.163   <span class="m">2</span><span class="o">)</span> matlab/2018b
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-do-i-find-out-more-about-a-particular-piece-of-software">
+<h2>How do I find out more about a particular piece of software?<a class="headerlink" href="#how-do-i-find-out-more-about-a-particular-piece-of-software" title="Permalink to this headline">¶</a></h2>
+<p>You can find out more about a piece of software by using the module help command. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module <span class="nb">help</span> mrbayes
+
+----------- Module Specific Help <span class="k">for</span> <span class="s1">&#39;mrbayes/3.2.2&#39;</span> --------------
+
+MrBayes <span class="m">3</span>.2.2 is installed in /apps/mrbayes/3.2.2
+
+This module was complied against beagle/2.1.2 and openmpi/1.6.4 with MPI support.
+
+More information about the commands made available by this module is available
+at http://mrbayes.sourceforge.net
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-do-i-switch-between-particular-versions-of-software">
+<h2>How do I switch between particular versions of software?<a class="headerlink" href="#how-do-i-switch-between-particular-versions-of-software" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module switch matlab/2018b matlab/2017b
+</pre></div>
+</div>
+</div>
+<div class="section" id="how-can-i-find-out-what-paths-and-other-environment-variables-a-module-uses">
+<h2>How can I find out what paths and other environment variables a module uses?<a class="headerlink" href="#how-can-i-find-out-what-paths-and-other-environment-variables-a-module-uses" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module show mothur/1.42.3
+-------------------------------------------------------------------
+/apps/modules/bio/mothur/1.42.3:
+
+module-whatis     Mothur <span class="m">1</span>.42.3
+conflict     mothur
+setenv         MOTHUR_ROOT /apps/mothur/1.42.3
+prepend-path     PATH /apps/mothur/1.42.3/bin
+setenv         LAST_MODULE_TYPE bio
+setenv         LAST_MODULE_NAME mothur/1.42.3
+setenv         LAST_MODULE_VERSION <span class="m">1</span>.42.3
+-------------------------------------------------------------------
+</pre></div>
+</div>
+</div>
+<div class="section" id="why-does-the-cluster-forget-my-choice-of-modules">
+<h2>Why does the cluster forget my choice of modules?<a class="headerlink" href="#why-does-the-cluster-forget-my-choice-of-modules" title="Permalink to this headline">¶</a></h2>
+<p>Environment modules only affect the particular session in which they are loaded. Loading a module in one SSH session will not affect any other SSH session or even any jobs submitted from that session. Modules must be loaded in every session where they will be used.</p>
+</div>
+<div class="section" id="how-can-i-invoke-my-module-commands-automatically">
+<h2>How can I invoke my module commands automatically?<a class="headerlink" href="#how-can-i-invoke-my-module-commands-automatically" title="Permalink to this headline">¶</a></h2>
+<p>The best way of doing this is to add your Module commands to your job scripts. This approach is useful for preserving the required environment for each job. For example:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#PBS -l nodes=1:ppn=1</span>
+<span class="c1">#PBS -l vmem=4gb</span>
+<span class="c1">#PBS -j oe</span>
+
+module purge
+module add intel/18.0.1.163
+
+<span class="nb">cd</span> <span class="si">${</span><span class="nv">PBS_O_WORKDIR</span><span class="si">}</span>
+
+./myprog
+</pre></div>
+</div>
+<p>Perl, Python and R all have their own library/module systems - <a class="reference external" href="https://www.cpan.org/">CPAN</a>, <a class="reference external" href="https://pypi.org/">PyPI</a> and <a class="reference external" href="https://cran.r-project.org/">CRAN</a>. If a library or module you want from one of these sources isn’t installed in the module, please email us at <a class="reference external" href="mailto:ITServiceCentre&#37;&#52;&#48;unsw&#46;edu&#46;au?subject=KatanaSoftwareInstall">IT Service Desk</a></p>
+</div>
+</div>
+
+
+	    </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="biosciences.html" class="btn btn-neutral float-right" title="Biosciences">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Software"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Lachlan Simpson.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/jucacrispim/sphinx_pdj_theme">theme</a> provided by <a href="http://poraodojuca.net">Porão do Juca</a>.
+
+</footer>
+	</div>
+	</div>
+	  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/underscore.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/language_data.js">
+
+    </script>
+
+  
+
+   <script type="text/javascript"
+           src="../_static/js/theme.js"></script>
+
+   <script type="text/javascript"
+           src="../_static/js/pdj.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+  </body>
+</html>

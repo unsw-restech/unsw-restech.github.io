@@ -1,0 +1,274 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="" lang="" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Katana Data Mover &mdash; Katana User Documentation 1.0 documentation</title>
+  
+
+  
+
+  
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Storage" href="index.html"/>
+        <link rel="next" title="How to use the UNSW Data Archive" href="data_archive.html"/>
+        <link rel="prev" title="Storage Locations" href="storage_locations.html"/>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="public" />
+    <meta name="robots" content="follow, all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add jQuery library -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+  </head>
+
+  <body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Katana User Documentation </a>
+        <div role="search">
+	  <form id ="rtd-search-form" class="wy-form"
+		action="../search.html" method="get">
+	    <input type="text" name="q" placeholder="Search docs" />
+	    <input type="hidden" name="check_keywords" value="yes" />
+	    <input type="hidden" name="area" value="default" />
+	  </form>
+	</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	
+          
+          
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#contact-the-research-technology-services-team">Contact the Research Technology Services team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-system-status-and-known-issues">Katana System Status and Known Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-terms-of-use">Katana Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using_katana/index.html">Using Katana</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/about_katana.html">About Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/accessing_katana.html">Accessing Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/running_jobs.html">Running Jobs on Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/github.html">GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Storage</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="storage_locations.html">Storage Locations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Katana Data Mover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_archive.html">How to use the UNSW Data Archive</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../software/index.html">Software</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../software/environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/biosciences.html">Biosciences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/java.html">Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/operating_systems.html">Operating Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/perl.html">Perl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/python-virtualenvs.html">Python Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/python-virtualenvs-internals.html">Virtual Environments from the inside</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/python-jupyter-notebooks.html">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/r.html">R and RStudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/sas.html">SAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/stata.html">Stata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/tmux.html">TMUX</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_data.html">Reference Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#general-faq">General FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#scheduler-faq">Scheduler FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#storage-faq">Storage FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#expanding-katana">Expanding Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#acknowledging-katana">Acknowledging Katana</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+          
+        
+
+      </div>
+      &nbsp;
+    </nav>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      <nav class="wy-nav-top" id="barra-mobile" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Porão do Juca</a>
+      </nav>
+
+      <div class="wy-nav-content">
+	<div class="fundo-claro">
+	</div>
+	<div class="fundo-escuro">
+	</div>
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+	    
+	    <!-- <ul class="wy-breadcrumbs"> -->
+	    <!--   <li><a href="#">Docs</a> &raquo;</li> -->
+
+	    <!--   <li>Features</li> -->
+	    <!--   <li class="wy-breadcrumbs-aside"> -->
+
+	    <!-- 	<a href="_sources/index.txt" rel="nofollow"> View page source</a> -->
+
+	    <!--   </li> -->
+	    <!-- </ul> -->
+	    <!-- <hr/> -->
+	  </div>
+
+          <div role="main" class="">
+
+	    <div id="content" class="hfeed entry-container hentry">
+  <div class="section" id="katana-data-mover">
+<h1>Katana Data Mover<a class="headerlink" href="#katana-data-mover" title="Permalink to this headline">¶</a></h1>
+<p>Also known as <code class="code docutils literal notranslate"><span class="pre">kdm</span></code> or <code class="code docutils literal notranslate"><span class="pre">kdm.restech.unsw.edu.au</span></code></p>
+<p>If you have data that you would like to copy to or within the Katana cluster, archive or even compress and decompress you should use the Katana Data Mover - also known as the KDM server - rather than using the head node. This section contains instructions on how to use KDM server.</p>
+<p>If you are familiar with using Linux commands to copy or move files then you can do that directly by logging on to <code class="code docutils literal notranslate"><span class="pre">kdm.restech.unsw.edu.au</span></code> via <code class="code docutils literal notranslate"><span class="pre">ssh</span></code> in the same way that you would log in to Katana and then use the <code class="code docutils literal notranslate"><span class="pre">cp</span></code>, <code class="code docutils literal notranslate"><span class="pre">mv</span></code> and <code class="code docutils literal notranslate"><span class="pre">rsync</span></code> commands that you would normally use under Linux.</p>
+<p>If you are not familiar with using the Linux command line for moving or copying files then the easiest way to move files around is to use client software such as <a class="reference external" href="https://filezilla-project.org/">FileZilla</a>. Once you have connected to <code class="code docutils literal notranslate"><span class="pre">kdm.restech.unsw.edu.au</span></code> using your zID and zPass you should see a remote view which corresponds to the files sitting on Katana. You can then use the FileZilla interface to move files and folders around.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We require people to “move data” through the data mover. We have hundreds of users, most of whom have data ranging from very large to impossibly large. This is why we have the <code class="code docutils literal notranslate"><span class="pre">kdm</span></code>. If you are transferring a couple of small text files - job scripts for instance - you can copy directly to the Katana. But we would ask you to keep it to a minimum, and nothing bigger than 2-3 MB.</p>
+</div>
+<div class="section" id="copying-files-to-and-from-a-cluster">
+<h2>Copying Files To and From a Cluster<a class="headerlink" href="#copying-files-to-and-from-a-cluster" title="Permalink to this headline">¶</a></h2>
+<p>The method of transferring files to and from clusters depends on your local machine. If you are a Linux user then you should use rsync and if you are a Windows user then you should download and install <a class="reference external" href="https://winscp.net/eng/download.php">WinSCP</a> or <a class="reference external" href="https://filezilla-project.org/">FileZilla</a></p>
+<div class="section" id="filezilla">
+<span id="using-filezilla"></span><h3>Filezilla<a class="headerlink" href="#filezilla" title="Permalink to this headline">¶</a></h3>
+<p>Once you have installed Filezilla you can go into the site manager and create a new site in the site manager using the settings below.</p>
+<img alt="../_images/filezilla.png" src="../_images/filezilla.png" />
+<p>You can also use the Quick Connect bar as shown here:</p>
+<img alt="../_images/filezillaquick.png" src="../_images/filezillaquick.png" />
+</div>
+<div class="section" id="from-my-computer-to-katana-home">
+<h3>From my computer to Katana Home<a class="headerlink" href="#from-my-computer-to-katana-home" title="Permalink to this headline">¶</a></h3>
+<p>To copy the directory <code class="code docutils literal notranslate"><span class="pre">/home/1234567/my-directory</span></code> from your local computer to Katana scratch. The trailing <code class="code docutils literal notranslate"><span class="pre">:</span></code> is important!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@localhost:~$ rsync -avh /path/to/my-directory z1234567@kdm.restech.unsw.edu.au:
+</pre></div>
+</div>
+</div>
+<div class="section" id="from-my-computer-to-katana-scratch">
+<h3>From my computer to Katana Scratch<a class="headerlink" href="#from-my-computer-to-katana-scratch" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@localhost:~$ rsync -avh /path/to/my-directory z1234567@kdm.restech.unsw.edu.au:/srv/scratch/z1234567
+</pre></div>
+</div>
+</div>
+<div class="section" id="from-katana-to-my-computer">
+<h3>From Katana to my computer<a class="headerlink" href="#from-katana-to-my-computer" title="Permalink to this headline">¶</a></h3>
+<p>First, you need to make sure the data is in either your Home directory or your scratch</p>
+<p>If the data is in <code class="code docutils literal notranslate"><span class="pre">/home/z1234567/my-remote-results</span></code> and you want it in your home directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@localhost:~$ rsync -avh z1234567@kdm.restech.unsw.edu.au:my-remote-results /home/me/
+</pre></div>
+</div>
+<p>If the data is in <code class="code docutils literal notranslate"><span class="pre">/srv/scratch/my-remote-results</span></code> and you want it in your home directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@localhost:~$ rsync -avh z1234567@kdm.restech.unsw.edu.au:/srv/scratch/my-remote-results /home/me
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="../software/tmux.html#tmux"><span class="std std-ref">TMUX</span></a> is available if your data is large and the rsync might take a long time.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+	    </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="data_archive.html" class="btn btn-neutral float-right" title="How to use the UNSW Data Archive">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="storage_locations.html" class="btn btn-neutral" title="Storage Locations"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Lachlan Simpson.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/jucacrispim/sphinx_pdj_theme">theme</a> provided by <a href="http://poraodojuca.net">Porão do Juca</a>.
+
+</footer>
+	</div>
+	</div>
+	  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/underscore.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/language_data.js">
+
+    </script>
+
+  
+
+   <script type="text/javascript"
+           src="../_static/js/theme.js"></script>
+
+   <script type="text/javascript"
+           src="../_static/js/pdj.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+  </body>
+</html>

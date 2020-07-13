@@ -1,0 +1,248 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="" lang="" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>Python &mdash; Katana User Documentation 1.0 documentation</title>
+  
+
+  
+
+  
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Software" href="index.html"/>
+        <link rel="next" title="Python Virtual Environments" href="python-virtualenvs.html"/>
+        <link rel="prev" title="Perl" href="perl.html"/>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="public" />
+    <meta name="robots" content="follow, all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add jQuery library -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+  </head>
+
+  <body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Katana User Documentation </a>
+        <div role="search">
+	  <form id ="rtd-search-form" class="wy-form"
+		action="../search.html" method="get">
+	    <input type="text" name="q" placeholder="Search docs" />
+	    <input type="hidden" name="check_keywords" value="yes" />
+	    <input type="hidden" name="area" value="default" />
+	  </form>
+	</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	
+          
+          
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#contact-the-research-technology-services-team">Contact the Research Technology Services team</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-system-status-and-known-issues">Katana System Status and Known Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-terms-of-use">Katana Terms of Use</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../using_katana/index.html">Using Katana</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/about_katana.html">About Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/accessing_katana.html">Accessing Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/running_jobs.html">Running Jobs on Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/github.html">GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../storage/index.html">Storage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../storage/storage_locations.html">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/kdm.html">Katana Data Mover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/data_archive.html">How to use the UNSW Data Archive</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="biosciences.html">Biosciences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.html">Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="perl.html">Perl</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-virtualenvs.html">Python Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-virtualenvs-internals.html">Virtual Environments from the inside</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python-jupyter-notebooks.html">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="r.html">R and RStudio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sas.html">SAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="stata.html">Stata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tmux.html">TMUX</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reference_data.html">Reference Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">Frequently Asked Questions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#general-faq">General FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#scheduler-faq">Scheduler FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#storage-faq">Storage FAQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#expanding-katana">Expanding Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq.html#acknowledging-katana">Acknowledging Katana</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+          
+        
+
+      </div>
+      &nbsp;
+    </nav>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      <nav class="wy-nav-top" id="barra-mobile" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Porão do Juca</a>
+      </nav>
+
+      <div class="wy-nav-content">
+	<div class="fundo-claro">
+	</div>
+	<div class="fundo-escuro">
+	</div>
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+	    
+	    <!-- <ul class="wy-breadcrumbs"> -->
+	    <!--   <li><a href="#">Docs</a> &raquo;</li> -->
+
+	    <!--   <li>Features</li> -->
+	    <!--   <li class="wy-breadcrumbs-aside"> -->
+
+	    <!-- 	<a href="_sources/index.txt" rel="nofollow"> View page source</a> -->
+
+	    <!--   </li> -->
+	    <!-- </ul> -->
+	    <!-- <hr/> -->
+	  </div>
+
+          <div role="main" class="">
+
+	    <div id="content" class="hfeed entry-container hentry">
+  <div class="section" id="python">
+<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<p>It is common for python scripts to begin with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+</pre></div>
+</div>
+<p>If you are using a Python module, you will need to change the first line to</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+</pre></div>
+</div>
+<p>or more the likely</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+</pre></div>
+</div>
+<div class="section" id="conda-and-anaconda">
+<h2>Conda and Anaconda<a class="headerlink" href="#conda-and-anaconda" title="Permalink to this headline">¶</a></h2>
+<p>We get a lot of questions about installing Conda and Anaconda. Unfortunately neither are designed to be installed in multi-user environments.</p>
+<p>You are able to install them into your home directory and we encourage you to do so.</p>
+<p>Alternatively, many packages will give you an option for a <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> - if this is an option, we recommend you use <code class="code docutils literal notranslate"><span class="pre">python</span> <span class="pre">virtual</span> <span class="pre">environments</span></code>.</p>
+</div>
+<div class="section" id="virtual-environments">
+<h2>Virtual Environments<a class="headerlink" href="#virtual-environments" title="Permalink to this headline">¶</a></h2>
+<p>We encourage researchers to utilise the power of <a class="reference internal" href="python-virtualenvs.html#python-virtual-environments"><span class="std std-ref">Python Virtual Environments</span></a> if they are developing their own software or want to use packages that aren’t installed.</p>
+</div>
+</div>
+
+
+	    </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python-virtualenvs.html" class="btn btn-neutral float-right" title="Python Virtual Environments">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="perl.html" class="btn btn-neutral" title="Perl"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Lachlan Simpson.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/jucacrispim/sphinx_pdj_theme">theme</a> provided by <a href="http://poraodojuca.net">Porão do Juca</a>.
+
+</footer>
+	</div>
+	</div>
+	  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/underscore.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/language_data.js">
+
+    </script>
+
+  
+
+   <script type="text/javascript"
+           src="../_static/js/theme.js"></script>
+
+   <script type="text/javascript"
+           src="../_static/js/pdj.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+  </body>
+</html>
