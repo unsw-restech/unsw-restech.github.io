@@ -22,9 +22,7 @@ These two steps are independant of each other - there is no need to do them in o
 
 1. You will need to be able to connect to Katana via Remote Desktop. There are Instructions on how to do this in :ref:`graphical_session`. 
 
-2. a. Load one of the python modules.
-
-or 
+2. a. Load one of the python modules *or*
 
 2. b. You will need to create a Python Virtual Environment (:ref:`Python Virtual Environments`), activate it, and install Jupyter via the command :code:`pip install jupyter`
 
