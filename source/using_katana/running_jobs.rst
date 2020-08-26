@@ -101,6 +101,14 @@ As with interactive jobs, the :code:`-l` (lowercase L) flag can be used to speci
     [z1234567@katana ~]$ qsub -l select=1:ncpus=1:mem=4gb,walltime=12:00:00 myjob.pbs
     1238.kman.restech.unsw.edu.au
 
+If we wanted to use the GPU resources, we would write something like this - note that because of configuration of machines, you should request: `ncpus=(#ngpus*8):mem=(#ngpus*46)`
+
+.. code-block:: bash
+
+    [z1234567@katana ~]$ qsub -l select=1:ncpus=8:ngpus=1:mem=46gb,walltime=12:00:00 myjob.pbs
+    1238.kman.restech.unsw.edu.au
+
+
 A Job Script
 ============
 

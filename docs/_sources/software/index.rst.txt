@@ -24,3 +24,4 @@ Each section after that explains tips and tricks for using that software on Kata
     sas.rst
     stata.rst
     tmux.rst
+    zip.rst

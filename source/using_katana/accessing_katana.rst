@@ -42,6 +42,10 @@ From a Windows machine a SSH client such as PuTTY_ or MobaXTerm_ is required.
 Graphical sessions
 ==================
 
+.. warning::
+    
+    Please use the provided :ref:`OnDemand` option rather than the following. It's significantly easier and faster.
+
 Some software - **Ansys**, :ref:`Jupyter Notebooks`, **Matlab**, and :ref:`R and RStudio` being among the most popular - are easier with a graphical session. If you require an interactive graphical session to Katana then you can use the X2Go_ client.
 
 Start X2Go and create a session for Katana. The details that you need to enter for the session are:

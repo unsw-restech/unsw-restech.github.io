@@ -10,3 +10,4 @@ Using Katana
    accessing_katana.rst
    running_jobs.rst
    github.rst
+   ondemand.rst

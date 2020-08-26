@@ -2,7 +2,7 @@
 TMUX
 ####
 
-tmux_ is available on Katana. It can be used to manage multiple sessions, including keeping then alive despite a terminal losing connectivity or being shutdown.
+tmux_ is available on Katana. It can be used to manage multiple sessions, including keeping them alive despite a terminal losing connectivity or being shutdown.
 
 When you login to Katana using the terminal, it is a "live" session - if you close the terminal, the session will also close. If you shut your laptop or turn off the network, you will also kill the session.
 

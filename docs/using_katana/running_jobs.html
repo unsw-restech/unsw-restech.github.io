@@ -75,6 +75,7 @@
 <li class="toctree-l2"><a class="reference internal" href="accessing_katana.html">Accessing Katana</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Running Jobs on Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="github.html">GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ondemand.html">Using OnDemand</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../storage/index.html">Storage</a><ul>
@@ -98,6 +99,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../software/sas.html">SAS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/stata.html">Stata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/tmux.html">TMUX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/zip.html">Compressing Large Directories</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference_data.html">Reference Data</a></li>
@@ -214,6 +216,11 @@ qsub: job <span class="m">1234</span>.kman.restech.unsw.edu.au ready
 </div>
 <p>As with interactive jobs, the <code class="code docutils literal notranslate"><span class="pre">-l</span></code> (lowercase L) flag can be used to specify resource requirements for the job:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana ~<span class="o">]</span>$ qsub -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>4gb,walltime<span class="o">=</span><span class="m">12</span>:00:00 myjob.pbs
+<span class="m">1238</span>.kman.restech.unsw.edu.au
+</pre></div>
+</div>
+<p>If we wanted to use the GPU resources, we would write something like this - note that because of configuration of machines, you should request: <cite>ncpus=(#ngpus*8):mem=(#ngpus*46)</cite></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana ~<span class="o">]</span>$ qsub -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">8</span>:ngpus<span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>46gb,walltime<span class="o">=</span><span class="m">12</span>:00:00 myjob.pbs
 <span class="m">1238</span>.kman.restech.unsw.edu.au
 </pre></div>
 </div>
