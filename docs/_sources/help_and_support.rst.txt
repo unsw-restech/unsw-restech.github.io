@@ -20,7 +20,7 @@ Katana issues including: functional issues, software installation, reference dat
 Email the `IT Service Centre <ITServiceCentre@unsw.edu.au>`_, including the word **Katana** in the subject line.
 
 .. note::
-    This is the best and primary way to get help from UNSW Research Technology Services beyond this document.
+    This is the best and primary way to get help from UNSW Research Technology Services beyond this document. You *must* use your UNSW email address *or* your zid. Without this information, we have no idea who you might be.
 
     When writing your email, please include a clear and detailed description of the issue experienced, including error messages and node name. Something like "It doesn't work" doesn't help us help you! If at all possible, include the steps someone else needs to do to reproduce the problem, the job identifier, the date and time of your problem and on which Katana node it occurred, the script filename and the directory you were running from.
 

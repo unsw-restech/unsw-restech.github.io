@@ -30,6 +30,8 @@ Use the help command for usage
 
     module help unswdataarchive/2020-03-19
 
+To generate a token send an email to the `IT Service Centre <ITServiceCentre@unsw.edu.au>`_ asking for a Data Archive token to be generated. A service desk request for an authentication token to be generated needs to indicate a Data Archive namespace (/UNSW_RDS/Dxxx or /UNSW_RDS/Hxxx) as a scope for the token.
+
 .. warning::
     This advice has poor results. The help file is too long for most screen sizes and there's no pagination in modules version < 4. Last line should include a location that the researcher can read directly (using less)
 
@@ -45,7 +47,7 @@ To use the Data Archive you need to set up a configuration file. Here's how to c
     [z1234567@kdm ~]$ get-config-file
 
 
-Before you use the script for the first time you will need to generate a token for uploading data to the archive. To generate a token send an email to the `IT Service Centre <ITServiceCentre@unsw.edu.au>`_ asking for a Data Archive token to be generated. 
+To generate a token send an email to the `IT Service Centre <ITServiceCentre@unsw.edu.au>`_ asking for a Data Archive token to be generated. A service desk request for an authentication token to be generated needs to indicate a Data Archive namespace (/UNSW_RDS/Dxxx or /UNSW_RDS/Hxxx) as a scope for the token
 
 Then edit the configuration file :code:`config.cfg` and to change the line that looks like :code:`token=`
 

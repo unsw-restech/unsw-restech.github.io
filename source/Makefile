@@ -8,9 +8,15 @@ SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = .
 BUILDDIR      = _build
 
+todays_pdf := $(shell date +'%Y-%m-%d')-katana.pdf
+
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+prep:
+	@make latexpdf
+	@cp -a _build/latex/*pdf _static/$(todays_pdf)
 
 github:
 	@make html
