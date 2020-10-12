@@ -13,13 +13,13 @@ Each section after that explains tips and tricks for using that software on Kata
     environment_modules.rst
     biosciences.rst
     java.rst
+    jupyter-notebooks.rst   
     intel_compilers_and_libraries.rst
     operating_systems.rst
     perl.rst
     python.rst
     python-virtualenvs.rst
     python-virtualenvs-internals.rst
-    python-jupyter-notebooks.rst
     r.rst
     sas.rst
     stata.rst
