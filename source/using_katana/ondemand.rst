@@ -1,12 +1,12 @@
 .. _ondemand:
 
-##############
-Using OnDemand
-##############
+###############
+Katana OnDemand
+###############
 
 There are a number of GUI based software packages that are offered through a web interface. The requirements are a Katana account and for the user to be either on campus or connected to the `UNSW VPN`_.
 
-These can be accessed from https://ood.restech.unsw.edu.au
+These can be accessed from https://kod.restech.unsw.edu.au
 
 After logging in, you can:
 
@@ -16,5 +16,14 @@ After logging in, you can:
 
 - start a new interactive app
 
+Software Available in OnDemand
+##############################
+
+- :ref:`R and RStudio`
+- :ref:`Jupyter Notebooks`, JupyterLab and various kernels
+- Ansys
+- Matlab
+- Comsol
+- :ref:`Stata`
 
 .. _UNSW VPN: https://vpn.unsw.edu.au

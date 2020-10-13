@@ -44,7 +44,7 @@ Graphical sessions
 
 .. warning::
     
-    Please use the provided :ref:`OnDemand` option rather than the following. It's significantly easier and faster.
+    Please use the provided :ref:`OnDemand` option if possible. It's significantly easier to use and faster to set up.
 
 Some software - **Ansys**, :ref:`Jupyter Notebooks`, **Matlab**, and :ref:`R and RStudio` being among the most popular - are easier with a graphical session. If you require an interactive graphical session to Katana then you can use the X2Go_ client.
 
