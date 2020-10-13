@@ -72,7 +72,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/accessing_katana.html">Accessing Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/running_jobs.html">Running Jobs on Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/github.html">GitHub</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using_katana/ondemand.html">Using OnDemand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/ondemand.html">Katana OnDemand</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../storage/index.html">Storage</a><ul>
@@ -85,13 +85,11 @@
 <li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biosciences.html">Biosciences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java.html">Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter-notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perl.html">Perl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python-virtualenvs.html">Python Virtual Environments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python-virtualenvs-internals.html">Virtual Environments from the inside</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python-jupyter-notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="r.html">R and RStudio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sas.html">SAS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="stata.html">Stata</a></li>
@@ -177,39 +175,33 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="java.html">Java</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter-notebooks.html">Jupyter Notebooks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jupyter-notebooks.html#create-and-load-the-virtual-environment">Create and load the virtual environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter-notebooks.html#create-the-jupyter-kernel">Create the Jupyter Kernel</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l1"><a class="reference internal" href="perl.html">Perl</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="python.html#conda-and-anaconda">Conda and Anaconda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python.html#virtual-environments">Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#python-virtual-environments">Python Virtual Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="python.html#background">Background</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#setting-up-the-default-environment">Setting up the default environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#setting-up-the-virtual-environment-creation-and-activation">Setting up the virtual environment - creation and activation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#pip3-the-python-package-manager-the-package-installer-for-python">pip3 - the Python package manager (“the <em>Package Installer for Python</em>”)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#installing-software">Installing software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#exiting-the-venv-and-coming-around-again">Exiting the venv, and coming around again</a></li>
+<li class="toctree-l3"><a class="reference internal" href="python.html#special-cases">Special Cases</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="python-virtualenvs.html">Python Virtual Environments</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-virtualenvs.html#or-how-to-run-a-python-library-until-the-admins-install-it-or-what-to-do-if-they-wont-install-it">or how to run a python library until the admins install it (or what to do if they wont install it)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="python-virtualenvs.html#background">Background</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python-virtualenvs.html#setting-up-the-default-environment">Setting up the default environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python-virtualenvs.html#setting-up-the-virtual-environment-creation-and-activation">Setting up the virtual environment - creation and activation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python-virtualenvs.html#pip3-the-python-package-manager-the-package-installer-for-python">pip3 - the Python package manager (“the <em>Package Installer for Python</em>”)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python-virtualenvs.html#installing-software">Installing software</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python-virtualenvs.html#exiting-the-venv-and-coming-around-again">Exiting the venv, and coming around again</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python-virtualenvs.html#special-cases">Special Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#virtual-environments-from-the-inside">Virtual Environments from the inside</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="r.html">R and RStudio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="r.html#installing-libraries">Installing libraries</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="python-virtualenvs-internals.html">Virtual Environments from the inside</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python-jupyter-notebooks.html">Jupyter Notebooks</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python-jupyter-notebooks.html#or-the-it-s-slightly-frustrating-but-can-be-done-using-the-tools-way-of-running-juypter-on-katana">or, the ‘“it’s slightly frustrating, but can be done using the tools” way of running Juypter on Katana’</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="python-jupyter-notebooks.html#background">Background</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python-jupyter-notebooks.html#preparation">Preparation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python-jupyter-notebooks.html#reconnection">Reconnection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="python-jupyter-notebooks.html#important-final-point">IMPORTANT FINAL POINT</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="r.html">R and RStudio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sas.html">SAS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stata.html">Stata</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tmux.html">TMUX</a></li>

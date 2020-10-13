@@ -6,7 +6,7 @@
 Welcome to Katana User's documentation!
 =======================================
 
-This document is available in :download:`pdf format <_static/2020-10-06-katana.pdf>` for offline reading.
+This document is available in :download:`pdf format <_static/2020-10-13-katana.pdf>` for offline reading.
 
 .. toctree::
    :maxdepth: 2
@@ -21,10 +21,3 @@ This document is available in :download:`pdf format <_static/2020-10-06-katana.p
    reference_data
    faq
    glossary
-
-News
-====
-
-21/04/2020 - Jupyter has been installed on Katana as part of versions 3.7.3, 3.7.4 and the new 3.8.2 python modules. 
-
-
