@@ -15,7 +15,7 @@ Python Jupyter kernel. Here is an example:
 Create and load the virtual environment
 ***************************************
 
-.. _code-block: bash
+.. code-block:: bash
 
     $ module load python/3.8.3
     $ python3 -m venv --system-site-packages /home/z1234567/.venvs/jupyter-kernel
@@ -25,15 +25,15 @@ Create and load the virtual environment
 Create the Jupyter Kernel 
 **************************
 
-.. _code-block: bash
+.. code-block:: bash
     
-    python3 -m ipykernel install --prefix=$HOME/.local --name=jlab-kernel
+    (jupyter-kernel) $ python3 -m ipykernel install --prefix=$HOME/.local --name=jlab-kernel
 
-.. _warning:
+.. warning::
    
     The :code:`--name=XXXX` isn't strictly necessary, but if you don't use it, 
-    the kernel will be called "Python 3" which will cause confusion in the 
-    interface.
+    the kernel will be called "Python 3". This will not be distinguishable
+    from the Katana supplied Python 3 and could cause confusion.
 
 Now when you load a JupyterLab session, you should see your personal kernel 
 in the list of available kernels. This kernel will have access to your

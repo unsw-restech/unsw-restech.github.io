@@ -18,8 +18,6 @@ Each section after that explains tips and tricks for using that software on Kata
     operating_systems.rst
     perl.rst
     python.rst
-    python-virtualenvs.rst
-    python-virtualenvs-internals.rst
     r.rst
     sas.rst
     stata.rst
