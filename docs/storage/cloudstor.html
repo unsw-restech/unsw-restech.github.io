@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Storage Locations &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>Cloudstor &mdash; Katana User Documentation 1.0 documentation</title>
   
 
   
@@ -26,8 +26,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
         <link rel="up" title="Storage" href="index.html"/>
-        <link rel="next" title="Katana Data Mover" href="kdm.html"/>
-        <link rel="prev" title="Storage" href="index.html"/>
+        <link rel="next" title="Software" href="../software/index.html"/>
+        <link rel="prev" title="How to use the UNSW Data Archive" href="data_archive.html"/>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="cache-control" content="public" />
@@ -77,10 +77,10 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Storage</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage_locations.html">Storage Locations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_archive.html">How to use the UNSW Data Archive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cloudstor.html">Cloudstor</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Cloudstor</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../software/index.html">Software</a><ul>
@@ -149,144 +149,66 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="storage-locations">
-<h1>Storage Locations<a class="headerlink" href="#storage-locations" title="Permalink to this headline">¶</a></h1>
-<p>The storage on Katana is split into several different types, each of which serves a different purpose.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>We have just said <em>each of which serves a different purpose</em>. Despite that, there will be overlap. And personal preference. In most cases it will be obvious where to put your information. If it isn’t and you need help with your decision making, you can <a class="reference external" href="mailto:rdm&#37;&#52;&#48;unsw&#46;edu&#46;au">email</a> the <a class="reference external" href="https://research.unsw.edu.au/research-data-management-unsw">Research Data</a> team for advice. They are friendly people.</p>
+  <div class="section" id="cloudstor">
+<h1>Cloudstor<a class="headerlink" href="#cloudstor" title="Permalink to this headline">¶</a></h1>
+<p>You can access <a class="reference external" href="https://cloudstor.aarnet.edu.au/">Cloudstor</a> from <a class="reference internal" href="kdm.html#katana-data-mover"><span class="std std-ref">Katana Data Mover</span></a></p>
+<p>RClone is installed on KDM so you can upload data into Cloudstor.</p>
+<div class="section" id="configure-rclone">
+<h2>Configure RClone<a class="headerlink" href="#configure-rclone" title="Permalink to this headline">¶</a></h2>
+<p>1. First, you will need to <a class="reference external" href="https://support.aarnet.edu.au/hc/en-us/articles/236034707-How-do-I-manage-change-my-passwords-">set your Sync Password</a> in the
+<a class="reference external" href="https://cloudstor.aarnet.edu.au/plus/settings/personal">Cloudstor settings page</a>, and keep a copy locally.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This can be <strong>confusing</strong>. You need to think of the Cloudstor web
+interface and the data store as two different logins. The Sync
+password is for data transfer only and is different from the web
+login password.</p>
 </div>
-<div class="section" id="cluster-home-drive">
-<h2>Cluster Home Drive<a class="headerlink" href="#cluster-home-drive" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="location">
-<h3>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/z1234567
+<ol class="arabic simple" start="2">
+<li><p>Next, login to KDM and run:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm ~<span class="o">]</span>$ rclone config
 </pre></div>
 </div>
-</div>
-<div class="section" id="also-known-as">
-<h3>Also known as<a class="headerlink" href="#also-known-as" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$HOME</span>
+<p>You will be asked a set of questions. The short answers are:</p>
+<ol class="arabic simple">
+<li><p>new remote (‘n’)</p></li>
+<li><p>name (‘CloudStor’)</p></li>
+<li><p>storage type <strong>webdav</strong> (‘25’ in current installation)</p></li>
+<li><p>url for http connection (<a class="reference external" href="https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/">https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/</a>)</p></li>
+<li><p>Name of webdav site: <strong>OwnCloud</strong> (‘2’ in current installation)</p></li>
+<li><p>user name per your cloudstor settings page (<a class="reference external" href="mailto:first&#46;last&#37;&#52;&#48;unsw&#46;edu&#46;au">first<span>&#46;</span>last<span>&#64;</span>unsw<span>&#46;</span>edu<span>&#46;</span>au</a>, <strong>not</strong> <a class="reference external" href="mailto:zid&#37;&#52;&#48;unsw&#46;edu&#46;au">zid<span>&#64;</span>unsw<span>&#46;</span>edu<span>&#46;</span>au</a>)</p></li>
+<li><p>Password (‘Yes’)</p></li>
+<li><p>enter password (paste or type in the Sync password from step 1 above)</p></li>
+<li><p>confirm password (paste of type in the Sync password from step 1 above)</p></li>
+<li><p>bearer_token: (blank)</p></li>
+</ol>
+<p>You should then see something like this to which you should answer yes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Remote config
+--------------------
+<span class="o">[</span>CloudStor<span class="o">]</span>
+<span class="nb">type</span> <span class="o">=</span> webdav
+<span class="nv">url</span> <span class="o">=</span> https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/
+<span class="nv">vendor</span> <span class="o">=</span> owncloud
+<span class="nv">user</span> <span class="o">=</span> first.last@unsw.edu.au
+<span class="nv">pass</span> <span class="o">=</span> *** ENCRYPTED ***
+--------------------
+y<span class="o">)</span> Yes this is OK
+e<span class="o">)</span> Edit this remote
+d<span class="o">)</span> Delete this remote
+y/e/d&gt; y
 </pre></div>
 </div>
-</div>
-<div class="section" id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Backed up</p></li>
-<li><p>10Gb limit</p></li>
-<li><p>By default only user has access</p></li>
-<li><p>Able to be used everywhere on Katana</p></li>
-</ul>
-</div>
-<div class="section" id="best-used-for">
-<h3>Best used for<a class="headerlink" href="#best-used-for" title="Permalink to this headline">¶</a></h3>
-<p>Source code and programs</p>
-</div>
-</div>
-<div class="section" id="global-scratch">
-<h2>Global Scratch<a class="headerlink" href="#global-scratch" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>Location<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/srv/scratch/z1234567
+<p>Then quit and test:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm ~<span class="o">]</span>$ rclone copy --progress --transfers <span class="m">8</span> testdata CloudStor:/
 </pre></div>
 </div>
-</div>
-<div class="section" id="id2">
-<h3>Also known as<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/srv/scratch/<span class="nv">$USER</span>
+<p>If it doesn’t work, you can edit the config or make a new one.</p>
+<p>The ‘name’ field you are asked at step two of the config is what the config and
+end point will be known as. If you put in the name <code class="code docutils literal notranslate"><span class="pre">Murgatroyd</span></code> then you
+would have to access the instance like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm ~<span class="o">]</span>$ rclone copy --progress --transfers <span class="m">8</span> testdata Murgatroyd:/
 </pre></div>
-</div>
-</div>
-<div class="section" id="id3">
-<h3>Attributes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Not available to users in STUDENT groups such as ESTUDENT.</p></li>
-<li><p>Not backed up</p></li>
-<li><p>Generally 16Tb shared between multiple users</p></li>
-<li><p>By default only user has access</p></li>
-<li><p>Able to be used everywhere on Katana</p></li>
-</ul>
-</div>
-<div class="section" id="id4">
-<h3>Best used for<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>Data files</p>
-</div>
-</div>
-<div class="section" id="shared-scratch">
-<h2>Shared Scratch<a class="headerlink" href="#shared-scratch" title="Permalink to this headline">¶</a></h2>
-<p>Only available to groups of users that have requested it - primarily for teams that share data sets or results.</p>
-<div class="section" id="id5">
-<h3>Location<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/srv/scratch/name
-</pre></div>
-</div>
-</div>
-<div class="section" id="id6">
-<h3>Attributes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Not backed up</p></li>
-<li><p>Spaced based on group requirements</p></li>
-<li><p>All users in the group have access</p></li>
-<li><p>Able to be used everywhere on Katana</p></li>
-</ul>
-</div>
-<div class="section" id="id7">
-<h3>Best used for<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>Shared data files and copies of programs</p>
-</div>
-</div>
-<div class="section" id="local-scratch">
-<h2>Local Scratch<a class="headerlink" href="#local-scratch" title="Permalink to this headline">¶</a></h2>
-<p>Found on the node on which your job is running.</p>
-<div class="section" id="id8">
-<h3>Location<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<p>The location is created by the job scheduler as part of initialising the running of the job.</p>
-</div>
-<div class="section" id="id9">
-<h3>Also known as<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$TMPDIR</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id10">
-<h3>Attributes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Not backed up</p></li>
-<li><p>Only exists whilst job is running</p></li>
-<li><p>200Gb shared between node users</p></li>
-<li><p>Storage located on compute node so good for compute</p></li>
-</ul>
-</div>
-<div class="section" id="id11">
-<h3>Best used for<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-<p>Much fast completion of jobs that require large datasets to be near the CPU, calculations and temp files.</p>
-</div>
-</div>
-<div class="section" id="unsw-research-storage">
-<h2>UNSW Research Storage<a class="headerlink" href="#unsw-research-storage" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id12">
-<h3>Location<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/z1234567/sharename
-</pre></div>
-</div>
-</div>
-<div class="section" id="id13">
-<h3>Also known as<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$HOME</span>/sharename
-</pre></div>
-</div>
-</div>
-<div class="section" id="id14">
-<h3>Attributes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Backed up</p></li>
-<li><p>Only available on Katana head node</p></li>
-</ul>
-</div>
-<div class="section" id="id15">
-<h3>Best used for<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
-<p>Shared and user data files.</p>
 </div>
 </div>
 </div>
@@ -297,10 +219,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="kdm.html" class="btn btn-neutral float-right" title="Katana Data Mover">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../software/index.html" class="btn btn-neutral float-right" title="Software">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Storage"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="data_archive.html" class="btn btn-neutral" title="How to use the UNSW Data Archive"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

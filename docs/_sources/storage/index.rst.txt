@@ -9,3 +9,4 @@ Storage
     storage_locations.rst
     kdm.rst
     data_archive.rst
+    cloudstor.rst
