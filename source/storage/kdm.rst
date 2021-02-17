@@ -19,6 +19,9 @@ Copying Files To and From a Cluster
 
 The method of transferring files to and from clusters depends on your local machine. If you are a Linux user then you should use rsync and if you are a Windows user then you should download and install WinSCP_ or FileZilla_
 
+.. warning::
+    Filezilla is often marked as being a security risk. There is nothing that Research Technology Services can do about that - it's an issue for UNSW IT, Symantec, and FileZilla. If this happens to you, please try WinSCP_ - it's very good.
+
 .. _using_filezilla:
 
 Filezilla
@@ -71,5 +74,16 @@ If the data is in :code:`/srv/scratch/my-remote-results` and you want it in your
     :ref:`TMUX` is available if your data is large and the rsync might take a long time.
 
 
+*****************************************
+Mounting University Provided Space on KDM
+*****************************************
+
+The university provides a large amount of space if you need. You can find more information about `staff storage`_ on the `UNSW website`_.
+
+To make this available on KDM you can 
+
+
 .. _Filezilla: https://filezilla-project.org/
 .. _WinSCP: https://winscp.net/eng/download.php
+.. _staff storage: https://www.myit.unsw.edu.au/services/staff/storage-staff
+.. _UNSW website: https://www.myit.unsw.edu.au/services/staff/storage/fsam-staff
