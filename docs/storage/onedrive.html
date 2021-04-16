@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Storage Locations &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>One Drive &mdash; Katana User Documentation 1.0 documentation</title>
   
 
   
@@ -26,8 +26,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
         <link rel="up" title="Storage" href="index.html"/>
-        <link rel="next" title="Katana Data Mover" href="kdm.html"/>
-        <link rel="prev" title="Storage" href="index.html"/>
+        <link rel="next" title="Software" href="../software/index.html"/>
+        <link rel="prev" title="Cloudstor" href="cloudstor.html"/>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="cache-control" content="public" />
@@ -77,11 +77,11 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Storage</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage_locations.html">Storage Locations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_archive.html">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cloudstor.html">Cloudstor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="onedrive.html">One Drive</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">One Drive</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../software/index.html">Software</a><ul>
@@ -150,145 +150,144 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="storage-locations">
-<h1>Storage Locations<a class="headerlink" href="#storage-locations" title="Permalink to this headline">¶</a></h1>
-<p>The storage on Katana is split into several different types, each of which serves a different purpose.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>We have just said <em>each of which serves a different purpose</em>. Despite that, there will be overlap. And personal preference. In most cases it will be obvious where to put your information. If it isn’t and you need help with your decision making, you can <a class="reference external" href="mailto:rdm&#37;&#52;&#48;unsw&#46;edu&#46;au">email</a> the <a class="reference external" href="https://research.unsw.edu.au/research-data-management-unsw">Research Data</a> team for advice. They are friendly people.</p>
+  <div class="section" id="one-drive">
+<h1>One Drive<a class="headerlink" href="#one-drive" title="Permalink to this headline">¶</a></h1>
+<p>You can mount Microsoft’s <a class="reference external" href="https://onedrive.live.com/">OneDrive</a> on Katana.</p>
+<div class="section" id="onedrive-background">
+<h2>OneDrive Background<a class="headerlink" href="#onedrive-background" title="Permalink to this headline">¶</a></h2>
+<p>We don’t really recommend researchers mount their OneDrive because the
+technologies aren’t a perfect match and the configuration process is
+complex.</p>
+<p>But it is possible and this is our recommended process. The configuration
+section will need to be run infrequently, probably only once.</p>
+<p>The how-to-run section will need to be run each time.</p>
+<p><a class="reference external" href="https://rclone.org/onedrive/">There are caveats to using RClone with OneDrive</a> that users will need to be
+aware of and which the UNSW team cannot help with.</p>
+<p>And there is one local caveat that needs to be understood:</p>
+<p>Mounting OneDrive locally will only work on the machine on which the <cite>mount</cite>
+command is run.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In practice, this has implications. All of our other common
+drives, like /apps, /home and /srv/scratch, will automatically mount on all
+machines. OneDrive only mounts on the machine you mount it on. If you mount
+it on the login node katana1, it will not be available on katana2 or any of
+the worker nodes. You will need to mount OneDrive within your PBS script.</p>
 </div>
-<div class="section" id="cluster-home-drive">
-<h2>Cluster Home Drive<a class="headerlink" href="#cluster-home-drive" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="location">
-<h3>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/z1234567
+</div>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>1. During configuration of RClone on Katana, you will need a copy of rclone
+installed locally in order to authenticate with OneDrive.</p>
+<p>2. We can’t guarantee or test if this works for researchers in Germany or
+China. OneDrive has a different set up for Germany and China due to local laws
+about data storage.</p>
+<p>3. You will need to install rclone in your home directory on katana as the
+version in the CentOS/RHEL operating system is too old.</p>
+<p>4. You will need at least one empty directory for mounting. Restech recommends:
+- you create a directory /home/z1234567/bin to put rclone into
+- you add /home/z1234567/bin to your PATH
+- you create a directory /home/z1234567/OneDrive to mount OneDrive onto.</p>
+<ol class="arabic simple" start="5">
+<li><p>You will need to ask us for the secret key. Please don’t write it down.</p></li>
+</ol>
+</div>
+<div class="section" id="install-rclone">
+<h2>Install RClone<a class="headerlink" href="#install-rclone" title="Permalink to this headline">¶</a></h2>
+<p>1. Go to this page and copy the link to the latest version for
+<cite>Intel/AMD - 64 Bit Linux</cite>. Currently that looks like this:</p>
+<p><a class="reference external" href="https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.zip">https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.zip</a></p>
+<ol class="arabic simple" start="2">
+<li><p>On Katana, unzip</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ wget https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.zip
+<span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ unzip rclone-v1.55.0-linux-amd64.zip
+        Archive:  rclone-v1.55.0-linux-amd64.zip
+                creating: rclone-v1.55.0-linux-amd64/
+                inflating: rclone-v1.55.0-linux-amd64/rclone.1
+                inflating: rclone-v1.55.0-linux-amd64/README.txt
+                inflating: rclone-v1.55.0-linux-amd64/git-log.txt
+                inflating: rclone-v1.55.0-linux-amd64/rclone
+                inflating: rclone-v1.55.0-linux-amd64/README.html
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Install into a local directory</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ cp rclone-v1.55.0-linux-amd64/rclone ~/bin/
 </pre></div>
 </div>
 </div>
-<div class="section" id="also-known-as">
-<h3>Also known as<a class="headerlink" href="#also-known-as" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$HOME</span>
+<div class="section" id="configure-rclone-for-onedrive">
+<h2>Configure RClone for OneDrive<a class="headerlink" href="#configure-rclone-for-onedrive" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Login to Katana and run:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ rclone config
+</pre></div>
+</div>
+<p>You will be asked a set of questions. The short answers are:</p>
+<ol class="arabic simple">
+<li><p>new remote (‘n’)</p></li>
+<li><p>name (‘OneDrive’)</p></li>
+<li><p>storage type <strong>Microsoft OneDrive</strong> (‘26’ in rclone version 1.55)</p></li>
+<li><p>OAuth Client Id (“c8800f43-7805-46c2-b8b2-1c55f3859a4c”)</p></li>
+<li><p>OAuth Client Secret (This is actually a secret. You will need to ask ResTech)</p></li>
+<li><p>Choose national cloud region for OneDrive (“1. global”)</p></li>
+<li><p>Edit advanced config? (“n”)</p></li>
+<li><p>Remote config? (“n”)</p></li>
+<li><p>Paste result:</p></li>
+<li><p>Choose a number from below, or type in an existing value (“1. OneDrive Personal or Business”)</p></li>
+<li><p>Chose drive to use: (“0”)</p></li>
+<li><p>Is that okay? (“Y”)</p></li>
+</ol>
+<p>You should then see something like this to which you should answer yes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--------------------
+ <span class="o">[</span>MS OneDrive<span class="o">]</span>
+ <span class="nb">type</span> <span class="o">=</span> onedrive
+ <span class="nv">client_id</span> <span class="o">=</span> c8800f43-7805-46c2-b8b2-1c55f3859a4c
+ <span class="nv">client_secret</span> <span class="o">=</span> SECRET
+ <span class="nv">region</span> <span class="o">=</span> global
+ <span class="nv">token</span> <span class="o">=</span> <span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;eyJ0e...asdasd&quot;</span><span class="o">}</span>
+ <span class="nv">drive_type</span> <span class="o">=</span> business
+ --------------------
+ y<span class="o">)</span> Yes this is OK <span class="o">(</span>default<span class="o">)</span>
+ e<span class="o">)</span> Edit this remote
+ d<span class="o">)</span> Delete this remote
+ y/e/d&gt;
 </pre></div>
 </div>
 </div>
-<div class="section" id="attributes">
-<span id="cluster-attributes"></span><h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Backed up</p></li>
-<li><p>10Gb limit</p></li>
-<li><p>By default only user has access</p></li>
-<li><p>Able to be used everywhere on Katana</p></li>
-</ul>
+<div class="section" id="how-to-mount-onedrive">
+<h2>How to mount OneDrive<a class="headerlink" href="#how-to-mount-onedrive" title="Permalink to this headline">¶</a></h2>
+<p>Once logged in or in a pbs script:</p>
+<ol class="arabic simple">
+<li><p>Mount the drive. The basic syntax is:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rclone mount &lt;remote-name&gt;: /path/to/local/mount
+</pre></div>
 </div>
-<div class="section" id="best-used-for">
-<span id="cluster-best-used-for"></span><h3>Best used for<a class="headerlink" href="#best-used-for" title="Permalink to this headline">¶</a></h3>
-<p>Source code and programs</p>
-</div>
-</div>
-<div class="section" id="global-scratch">
-<h2>Global Scratch<a class="headerlink" href="#global-scratch" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="global-location">
-<span id="id1"></span><h3>Location<a class="headerlink" href="#global-location" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/srv/scratch/z1234567
+<p>We need to add a couple of flags to make this warning free and usable. Most
+notably <cite>–daemon</cite> and <cite>–vfs-cache-mode writes</cite>.</p>
+<p>If you have followed the Restech recommendations, your command will look like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ rclone mount OneDrive: /home/z1234567/OneDrive --daemon --vfs-cache-mode writes
 </pre></div>
 </div>
 </div>
-<div class="section" id="global-also-known-as">
-<span id="id2"></span><h3>Also known as<a class="headerlink" href="#global-also-known-as" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/srv/scratch/<span class="nv">$USER</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="global-attributes">
-<span id="id3"></span><h3>Attributes<a class="headerlink" href="#global-attributes" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Not available to users in STUDENT groups such as ESTUDENT.</p></li>
-<li><p>Not backed up</p></li>
-<li><p>Generally 16Tb shared between multiple users</p></li>
-<li><p>By default only user has access</p></li>
-<li><p>Able to be used everywhere on Katana</p></li>
-</ul>
-</div>
-<div class="section" id="global-best-used-for">
-<span id="id4"></span><h3>Best used for<a class="headerlink" href="#global-best-used-for" title="Permalink to this headline">¶</a></h3>
-<p>Data files</p>
-</div>
-</div>
-<div class="section" id="shared-scratch">
-<h2>Shared Scratch<a class="headerlink" href="#shared-scratch" title="Permalink to this headline">¶</a></h2>
-<p>Only available to groups of users that have requested it - primarily for teams that share data sets or results.</p>
-<div class="section" id="shared-location">
-<span id="id5"></span><h3>Location<a class="headerlink" href="#shared-location" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/srv/scratch/name
-</pre></div>
-</div>
-</div>
-<div class="section" id="shared-attributes">
-<span id="id6"></span><h3>Attributes<a class="headerlink" href="#shared-attributes" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Not backed up</p></li>
-<li><p>Spaced based on group requirements</p></li>
-<li><p>All users in the group have access</p></li>
-<li><p>Able to be used everywhere on Katana</p></li>
-</ul>
-</div>
-<div class="section" id="shared-best-used-for">
-<span id="id7"></span><h3>Best used for<a class="headerlink" href="#shared-best-used-for" title="Permalink to this headline">¶</a></h3>
-<p>Shared data files and copies of programs</p>
-</div>
-</div>
-<div class="section" id="local-scratch">
-<h2>Local Scratch<a class="headerlink" href="#local-scratch" title="Permalink to this headline">¶</a></h2>
-<p>Found on the node on which your job is running.</p>
-<div class="section" id="local-location">
-<span id="id8"></span><h3>Location<a class="headerlink" href="#local-location" title="Permalink to this headline">¶</a></h3>
-<p>The location is created by the job scheduler as part of initialising the running of the job.</p>
-</div>
-<div class="section" id="local-also-known-as">
-<span id="id9"></span><h3>Also known as<a class="headerlink" href="#local-also-known-as" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$TMPDIR</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="local-attributes">
-<span id="id10"></span><h3>Attributes<a class="headerlink" href="#local-attributes" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Not backed up</p></li>
-<li><p>Only exists whilst job is running</p></li>
-<li><p>200Gb shared between node users</p></li>
-<li><p>Storage located on compute node so good for compute</p></li>
-</ul>
-</div>
-<div class="section" id="local-best-used-for">
-<span id="id11"></span><h3>Best used for<a class="headerlink" href="#local-best-used-for" title="Permalink to this headline">¶</a></h3>
-<p>Much fast completion of jobs that require large datasets to be near the CPU, calculations and temp files.</p>
-</div>
-</div>
-<div class="section" id="unsw-research-storage">
-<h2>UNSW Research Storage<a class="headerlink" href="#unsw-research-storage" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id12">
-<h3>Location<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/z1234567/sharename
-</pre></div>
-</div>
-</div>
-<div class="section" id="id13">
-<h3>Also known as<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$HOME</span>/sharename
-</pre></div>
-</div>
-</div>
-<div class="section" id="id14">
-<h3>Attributes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Backed up</p></li>
-<li><p>Only available on Katana head node</p></li>
-</ul>
-</div>
-<div class="section" id="id15">
-<h3>Best used for<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
-<p>Shared and user data files.</p>
-</div>
+<div class="section" id="final-notes">
+<h2>Final Notes<a class="headerlink" href="#final-notes" title="Permalink to this headline">¶</a></h2>
+<p>ResTech really only recommends this if you have sensitive data.</p>
+<p>If your data is relatively large - anything above 1GB - we recommend you follow
+our standard procedure for large datasets:</p>
+<ol class="arabic simple">
+<li><p>copy data from source (OneDrive) closer to the cpus ($PBS_TMPDIR)</p></li>
+<li><p>&lt;do analysis&gt;</p></li>
+<li><p>write results to local drive ($PBS_TMPDIR)</p></li>
+<li><p>copy results from local drive to OneDrive</p></li>
+<li><p>delete local data and results</p></li>
+</ol>
+<p><cite>$PBS_TMPDIR</cite> is only visible to the PBS job that is running. This is as secure
+as possible.</p>
 </div>
 </div>
 
@@ -298,10 +297,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="kdm.html" class="btn btn-neutral float-right" title="Katana Data Mover">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../software/index.html" class="btn btn-neutral float-right" title="Software">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Storage"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cloudstor.html" class="btn btn-neutral" title="Cloudstor"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

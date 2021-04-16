@@ -81,6 +81,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_archive.html">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cloudstor.html">Cloudstor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onedrive.html">One Drive</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../software/index.html">Software</a><ul>
@@ -162,6 +163,10 @@
 <div class="section" id="copying-files-to-and-from-a-cluster">
 <h2>Copying Files To and From a Cluster<a class="headerlink" href="#copying-files-to-and-from-a-cluster" title="Permalink to this headline">¶</a></h2>
 <p>The method of transferring files to and from clusters depends on your local machine. If you are a Linux user then you should use rsync and if you are a Windows user then you should download and install <a class="reference external" href="https://winscp.net/eng/download.php">WinSCP</a> or <a class="reference external" href="https://filezilla-project.org/">FileZilla</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Filezilla is often marked as being a security risk. There is nothing that Research Technology Services can do about that - it’s an issue for UNSW IT, Symantec, and FileZilla. If this happens to you, please try <a class="reference external" href="https://winscp.net/eng/download.php">WinSCP</a> - it’s very good.</p>
+</div>
 <div class="section" id="filezilla">
 <span id="using-filezilla"></span><h3>Filezilla<a class="headerlink" href="#filezilla" title="Permalink to this headline">¶</a></h3>
 <p>Once you have installed Filezilla you can go into the site manager and create a new site in the site manager using the settings below.</p>
@@ -198,6 +203,11 @@
 <p><a class="reference internal" href="../software/tmux.html#tmux"><span class="std std-ref">TMUX</span></a> is available if your data is large and the rsync might take a long time.</p>
 </div>
 </div>
+</div>
+<div class="section" id="mounting-university-provided-space-on-kdm">
+<h2>Mounting University Provided Space on KDM<a class="headerlink" href="#mounting-university-provided-space-on-kdm" title="Permalink to this headline">¶</a></h2>
+<p>The university provides a large amount of space if you need. You can find more information about <a class="reference external" href="https://www.myit.unsw.edu.au/services/staff/storage-staff">staff storage</a> on the <a class="reference external" href="https://www.myit.unsw.edu.au/services/staff/storage/fsam-staff">UNSW website</a>.</p>
+<p>To make this available on KDM you can</p>
 </div>
 </div>
 
@@ -246,9 +256,6 @@
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 
