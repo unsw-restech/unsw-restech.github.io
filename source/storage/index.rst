@@ -10,3 +10,4 @@ Storage
     kdm.rst
     data_archive.rst
     cloudstor.rst
+    onedrive.rst
