@@ -26,6 +26,8 @@ Also known as
 
     $HOME
 
+.. _Cluster Attributes:
+
 Attributes
 ==========
 
@@ -33,6 +35,8 @@ Attributes
 - 10Gb limit
 - By default only user has access
 - Able to be used everywhere on Katana
+
+.. _Cluster Best used for:
 
 Best used for
 =============
@@ -43,6 +47,8 @@ Source code and programs
 Global Scratch
 **************
 
+.. _Global Location:
+
 Location
 ========
 
@@ -50,12 +56,16 @@ Location
 
     /srv/scratch/z1234567
 
+.. _Global Also known as:
+
 Also known as
 =============
 
 .. code-block:: bash
 
     /srv/scratch/$USER
+
+.. _Global Attributes:
 
 Attributes
 ==========
@@ -65,6 +75,8 @@ Attributes
 - Generally 16Tb shared between multiple users
 - By default only user has access 
 - Able to be used everywhere on Katana
+
+.. _Global Best used for:
 
 Best used for
 =============
@@ -78,12 +90,16 @@ Shared Scratch
 
 Only available to groups of users that have requested it - primarily for teams that share data sets or results.
 
+.. _Shared Location:
+
 Location
 ========
 
 .. code-block:: bash
 
     /srv/scratch/name
+
+.. _Shared Attributes:
 
 Attributes
 ==========
@@ -92,6 +108,8 @@ Attributes
 - Spaced based on group requirements
 - All users in the group have access 
 - Able to be used everywhere on Katana
+
+.. _Shared Best used for:
 
 Best used for
 =============
@@ -105,10 +123,14 @@ Local Scratch
 
 Found on the node on which your job is running. 
 
+.. _Local Location:
+
 Location
 ========
 
 The location is created by the job scheduler as part of initialising the running of the job.
+
+.. _Local Also known as:
 
 Also known as
 =============
@@ -117,6 +139,8 @@ Also known as
 
     $TMPDIR
 
+.. _Local Attributes:
+
 Attributes
 ==========
 
@@ -124,6 +148,8 @@ Attributes
 - Only exists whilst job is running
 - 200Gb shared between node users
 - Storage located on compute node so good for compute
+
+.. _Local Best used for:
 
 Best used for
 =============

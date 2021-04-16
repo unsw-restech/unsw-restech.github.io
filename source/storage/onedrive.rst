@@ -2,13 +2,11 @@
 One Drive
 #########
 
-You can mount Microsoft's OneDrive_ on :ref:`Katana`
+You can mount Microsoft's OneDrive_ on Katana.
 
-RClone is installed on KDM so you can upload data into Cloudstor. 
-
-**********
-Background
-**********
+*******************
+OneDrive Background
+*******************
 
 We don't really recommend researchers mount their OneDrive because the 
 technologies aren't a perfect match and the configuration process is
@@ -17,7 +15,7 @@ complex.
 But it is possible and this is our recommended process. The configuration 
 section will need to be run infrequently, probably only once.
 
-The how to run section will need to be run each time.
+The how-to-run section will need to be run each time.
 
 `There are caveats to using RClone with OneDrive`_ that users will need to be 
 aware of and which the UNSW team cannot help with.
@@ -29,10 +27,9 @@ command is run.
     
 .. warning:: In practice, this has implications. All of our other common 
     drives, like /apps, /home and /srv/scratch, will automatically mount on all
-     machines. OneDrive only mounts on the machine you mount it on. If you 
-    mount it on the login node katana1, it will not be available on katana2 or
-    any of the worker nodes. You will need to mount OneDrive within your PBS
-    script.
+    machines. OneDrive only mounts on the machine you mount it on. If you mount
+    it on the login node katana1, it will not be available on katana2 or any of 
+    the worker nodes. You will need to mount OneDrive within your PBS script.
 
 
 *************
@@ -86,9 +83,9 @@ https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.zip
     [z1234567@katana1 ~]$ cp rclone-v1.55.0-linux-amd64/rclone ~/bin/
 
 
-****************
-Configure RClone
-****************
+*****************************
+Configure RClone for OneDrive
+*****************************
             
 1. Login to Katana and run:
 
@@ -171,5 +168,5 @@ our standard procedure for large datasets:
 as possible. 
 
 
-
+.. _OneDrive: https://onedrive.live.com/
 .. _There are caveats to using RClone with OneDrive: https://rclone.org/onedrive/
