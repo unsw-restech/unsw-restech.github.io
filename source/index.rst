@@ -6,7 +6,7 @@
 Welcome to Katana User's documentation!
 =======================================
 
-This document is available in :download:`pdf format <_static/2021-04-16-katana.pdf>` for offline reading.
+This document is available in :download:`pdf format <_static/2021-05-07-katana.pdf>` for offline reading.
 
 .. toctree::
    :maxdepth: 2
