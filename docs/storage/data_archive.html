@@ -12,10 +12,16 @@
   
 
   
+
   
+
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
   
 
   
@@ -150,7 +156,7 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="how-to-use-the-unsw-data-archive">
+  <section id="how-to-use-the-unsw-data-archive">
 <h1>How to use the UNSW Data Archive<a class="headerlink" href="#how-to-use-the-unsw-data-archive" title="Permalink to this headline">¶</a></h1>
 <p>The UNSW Data Archive is the primary research storage facility provided by UNSW. The Data Archive gives UNSW researchers a free, safe and secure storage service to store and access research data well beyond the life of the project that collected that data.</p>
 <p>To help researchers make use of this system the Katana Data Mover has a script that you can use to copy files from Katana into a project on the Data Archive system.</p>
@@ -179,7 +185,7 @@
 <p class="admonition-title">Warning</p>
 <p>This advice has poor results. The help file is too long for most screen sizes and there’s no pagination in modules version &lt; 4. Last line should include a location that the researcher can read directly (using less)</p>
 </div>
-<div class="section" id="initial-setup">
+<section id="initial-setup">
 <h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h2>
 <p>To use the Data Archive you need to set up a configuration file. Here’s how to create the generic config in the directory you are in:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[z1234567@kdm ~]$ module add unswdataarchive/2020-03-19
@@ -192,8 +198,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">user</span><span class="o">=</span>z1234567
 </pre></div>
 </div>
-</div>
-<div class="section" id="starting-a-data-transfer">
+</section>
+<section id="starting-a-data-transfer">
 <h2>Starting a data transfer<a class="headerlink" href="#starting-a-data-transfer" title="Permalink to this headline">¶</a></h2>
 <p>To get data <strong>into</strong> the archive, we use <code class="code docutils literal notranslate"><span class="pre">upload.sh</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>upload.sh /path/to/your/local/directory /UNSW_RDS/D0000000/your/collection/name
@@ -203,8 +209,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>download.sh /UNSW_RDS/D0000000/your/collection/name /path/to/your/local/directory
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 	    </div>
@@ -243,6 +249,9 @@
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js">
+
     </script>
     <script type="text/javascript" src="../_static/jquery.js">
 

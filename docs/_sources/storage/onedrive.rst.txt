@@ -36,8 +36,7 @@ command is run.
 Prerequisites
 *************
 
-1. During configuration of RClone on Katana, you will need a copy of rclone 
-installed locally in order to authenticate with OneDrive. 
+1. `OneDrive needs your consent`_ to give rclone access to your files. 
 
 2. We can't guarantee or test if this works for researchers in Germany or 
 China. OneDrive has a different set up for Germany and China due to local laws 
@@ -82,6 +81,7 @@ https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.zip
 
     [z1234567@katana1 ~]$ cp rclone-v1.55.0-linux-amd64/rclone ~/bin/
 
+4. Give OneDrive consent to allow rclone access to your files
 
 *****************************
 Configure RClone for OneDrive
@@ -167,6 +167,6 @@ our standard procedure for large datasets:
 `$PBS_TMPDIR` is only visible to the PBS job that is running. This is as secure
 as possible. 
 
-
 .. _OneDrive: https://onedrive.live.com/
+.. _OneDrive needs your consent: https://consenthelper.it.unsw.edu.au/consent?appId=c8800f43-7805-46c2-b8b2-1c55f3859a4c
 .. _There are caveats to using RClone with OneDrive: https://rclone.org/onedrive/

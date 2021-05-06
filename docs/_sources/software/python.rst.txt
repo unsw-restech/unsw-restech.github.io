@@ -75,7 +75,9 @@ I'll be using the latest version of Python available to me. Since this is one of
     z1234567@katana2 ~]$ python3 -m venv /home/z1234567/.venvs/venv-tutorial-1
 
 
-That's it, we are done. If you want to take a look under the hood, see `what's in my virtualenv? <python-virtualenvs-internals.rst>`_
+That's it, we are done. If you want to take a look under the hood, see :ref:`Virtual Environments from the inside`
+
+.. note:: We use the command `which` to show the path of the executable. It's an example command that you do not need to replicate unless you are checking your work. 
 
 Next, we need to **activate** our venv. This makes our virtualenv our current environment. To activate, we execute :code:`source /path/to/venv/bin/activate`. Note that after activation, the prompt changes to make it clear you are now in a venv. You can see the change in which versions of :code:`python3` and :code:`pip3` are available before and after activation:
 

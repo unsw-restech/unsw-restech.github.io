@@ -12,10 +12,16 @@
   
 
   
+
   
+
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
   
 
   
@@ -150,11 +156,11 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="environment-modules">
+  <section id="environment-modules">
 <h1>Environment Modules<a class="headerlink" href="#environment-modules" title="Permalink to this headline">¶</a></h1>
 <p>Environment Modules offer a simple means of customising your environment to access the required versions of installed software and this section provides information on how they are used on Katana.</p>
 <p>When we use modules, we are changing our “environment”, hence the name.</p>
-<div class="section" id="how-do-i-discover-what-software-is-available">
+<section id="how-do-i-discover-what-software-is-available">
 <h2>How do I discover what software is available?<a class="headerlink" href="#how-do-i-discover-what-software-is-available" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana ~<span class="o">]</span>$ module avail
 
@@ -170,12 +176,12 @@ matlab/2008b          matlab/2011a          matlab/2012b
 matlab/2009b          matlab/2011b          matlab/2013a
 </pre></div>
 </div>
-</div>
-<div class="section" id="what-if-the-software-that-i-want-is-not-on-the-list">
+</section>
+<section id="what-if-the-software-that-i-want-is-not-on-the-list">
 <h2>What if the software that I want is not on the list?<a class="headerlink" href="#what-if-the-software-that-i-want-is-not-on-the-list" title="Permalink to this headline">¶</a></h2>
 <p>If you require software installed on the cluster, email the <a class="reference external" href="mailto:ITServiceCentre&#37;&#52;&#48;unsw&#46;edu&#46;au">IT Service Centre</a> detailing the software that you would like installed and that you would like to have it installed on Katana. Please include links and desired version numbers.</p>
-</div>
-<div class="section" id="how-do-i-add-a-particular-version-of-software-to-my-environment">
+</section>
+<section id="how-do-i-add-a-particular-version-of-software-to-my-environment">
 <h2>How do I add a particular version of software to my environment?<a class="headerlink" href="#how-do-i-add-a-particular-version-of-software-to-my-environment" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module add matlab/2018b
 </pre></div>
@@ -184,8 +190,8 @@ matlab/2009b          matlab/2011b          matlab/2013a
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module load matlab/2018b
 </pre></div>
 </div>
-</div>
-<div class="section" id="how-do-i-remove-a-particular-version-of-software-from-my-environment">
+</section>
+<section id="how-do-i-remove-a-particular-version-of-software-from-my-environment">
 <h2>How do I remove a particular version of software from my environment?<a class="headerlink" href="#how-do-i-remove-a-particular-version-of-software-from-my-environment" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module rm matlab/2018b
 </pre></div>
@@ -194,22 +200,22 @@ matlab/2009b          matlab/2011b          matlab/2013a
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module unload matlab/2018b
 </pre></div>
 </div>
-</div>
-<div class="section" id="how-do-i-remove-all-modules-from-my-environment">
+</section>
+<section id="how-do-i-remove-all-modules-from-my-environment">
 <h2>How do I remove all modules from my environment?<a class="headerlink" href="#how-do-i-remove-all-modules-from-my-environment" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module purge
 </pre></div>
 </div>
-</div>
-<div class="section" id="which-versions-of-software-am-i-currently-using">
+</section>
+<section id="which-versions-of-software-am-i-currently-using">
 <h2>Which versions of software am I currently using?<a class="headerlink" href="#which-versions-of-software-am-i-currently-using" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module list
 Currently Loaded Modulefiles:
  <span class="m">1</span><span class="o">)</span> intel/18.0.1.163   <span class="m">2</span><span class="o">)</span> matlab/2018b
 </pre></div>
 </div>
-</div>
-<div class="section" id="how-do-i-find-out-more-about-a-particular-piece-of-software">
+</section>
+<section id="how-do-i-find-out-more-about-a-particular-piece-of-software">
 <h2>How do I find out more about a particular piece of software?<a class="headerlink" href="#how-do-i-find-out-more-about-a-particular-piece-of-software" title="Permalink to this headline">¶</a></h2>
 <p>You can find out more about a piece of software by using the module help command. For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module <span class="nb">help</span> mrbayes
@@ -224,14 +230,14 @@ More information about the commands made available by this module is available
 at http://mrbayes.sourceforge.net
 </pre></div>
 </div>
-</div>
-<div class="section" id="how-do-i-switch-between-particular-versions-of-software">
+</section>
+<section id="how-do-i-switch-between-particular-versions-of-software">
 <h2>How do I switch between particular versions of software?<a class="headerlink" href="#how-do-i-switch-between-particular-versions-of-software" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module switch matlab/2018b matlab/2017b
 </pre></div>
 </div>
-</div>
-<div class="section" id="how-can-i-find-out-what-paths-and-other-environment-variables-a-module-uses">
+</section>
+<section id="how-can-i-find-out-what-paths-and-other-environment-variables-a-module-uses">
 <h2>How can I find out what paths and other environment variables a module uses?<a class="headerlink" href="#how-can-i-find-out-what-paths-and-other-environment-variables-a-module-uses" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module show mothur/1.42.3
 -------------------------------------------------------------------
@@ -247,12 +253,12 @@ setenv         LAST_MODULE_VERSION <span class="m">1</span>.42.3
 -------------------------------------------------------------------
 </pre></div>
 </div>
-</div>
-<div class="section" id="why-does-the-cluster-forget-my-choice-of-modules">
+</section>
+<section id="why-does-the-cluster-forget-my-choice-of-modules">
 <h2>Why does the cluster forget my choice of modules?<a class="headerlink" href="#why-does-the-cluster-forget-my-choice-of-modules" title="Permalink to this headline">¶</a></h2>
 <p>Environment modules only affect the particular session in which they are loaded. Loading a module in one SSH session will not affect any other SSH session or even any jobs submitted from that session. Modules must be loaded in every session where they will be used.</p>
-</div>
-<div class="section" id="how-can-i-invoke-my-module-commands-automatically">
+</section>
+<section id="how-can-i-invoke-my-module-commands-automatically">
 <h2>How can I invoke my module commands automatically?<a class="headerlink" href="#how-can-i-invoke-my-module-commands-automatically" title="Permalink to this headline">¶</a></h2>
 <p>The best way of doing this is to add your Module commands to your job scripts. This approach is useful for preserving the required environment for each job. For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -270,8 +276,8 @@ module add intel/18.0.1.163
 </pre></div>
 </div>
 <p>Perl, Python and R all have their own library/module systems - <a class="reference external" href="https://www.cpan.org/">CPAN</a>, <a class="reference external" href="https://pypi.org/">PyPI</a> and <a class="reference external" href="https://cran.r-project.org/">CRAN</a>. If a library or module you want from one of these sources isn’t installed in the module, please email us at <a class="reference external" href="mailto:ITServiceCentre&#37;&#52;&#48;unsw&#46;edu&#46;au?subject=KatanaSoftwareInstall">IT Service Desk</a></p>
-</div>
-</div>
+</section>
+</section>
 
 
 	    </div>
@@ -310,6 +316,9 @@ module add intel/18.0.1.163
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js">
+
     </script>
     <script type="text/javascript" src="../_static/jquery.js">
 

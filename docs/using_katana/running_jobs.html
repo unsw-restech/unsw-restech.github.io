@@ -12,10 +12,16 @@
   
 
   
+
   
+
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
   
 
   
@@ -150,9 +156,9 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="running-jobs-on-katana">
+  <section id="running-jobs-on-katana">
 <span id="running-jobs"></span><h1>Running Jobs on Katana<a class="headerlink" href="#running-jobs-on-katana" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="brief-overview">
+<section id="brief-overview">
 <h2>Brief Overview<a class="headerlink" href="#brief-overview" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../glossary.html#term-Login-Node"><span class="xref std std-term">Login Node</span></a> of a cluster is a shared resource for all users and is used for preparing, submitting and managing jobs. Never run any computationally intensive processes on the login nodes. Jobs are submitted from the login node, which delivers them to the <a class="reference internal" href="../glossary.html#term-Head-Node"><span class="xref std std-term">Head Node</span></a> for job and resource management. Once the resources have been allocated and are available, the job will run on one or more of the compute nodes as requested.</p>
 <p>Different clusters use different tools to manage resources and schedule jobs - <a class="reference external" href="https://www.pbspro.org/">OpenPBS</a> and <a class="reference external" href="https://slurm.schedmd.com/">SLURM</a> are two popular systems. Katana, like NCI’s Gadi, uses <a class="reference external" href="https://www.pbspro.org/">OpenPBS</a> for this purpose.</p>
@@ -174,8 +180,8 @@
 <li><p>Jobs of up to 100 hours can run on nodes belonging to your group and the general nodes</p></li>
 <li><p>Jobs of up to 200 hours can only run on nodes belonging to your group</p></li>
 </ul>
-</div>
-<div class="section" id="interactive-jobs">
+</section>
+<section id="interactive-jobs">
 <span id="interactive-session"></span><span id="interactive-job"></span><h2>Interactive Jobs<a class="headerlink" href="#interactive-jobs" title="Permalink to this headline">¶</a></h2>
 <p>An interactive job or interactive session is a session on a compute node with the required physical resources for the period of time requested. To request an interactive job, add the -I flag (capital i) to <code class="code docutils literal notranslate"><span class="pre">qsub</span></code>. Default sessions will have 1 CPU core, 1GB and 1 hour</p>
 <p>For example, the following two commands. The first provides a default session, the second provides a session with two CPU core and 8GB memory for three hours. You can tell when an interactive job has started when you see the name of the server change from <code class="code docutils literal notranslate"><span class="pre">katana1</span></code> or <code class="code docutils literal notranslate"><span class="pre">katana2</span></code> to the name of the server your job is running on. In these cases it’s <code class="code docutils literal notranslate"><span class="pre">k181</span></code> and <code class="code docutils literal notranslate"><span class="pre">k201</span></code> respectively.</p>
@@ -193,11 +199,11 @@ qsub: job <span class="m">1234</span>.kman.restech.unsw.edu.au ready
 </div>
 <p>Jobs are constrained by the resources that are requested. In the previous example the first job - running on <code class="code docutils literal notranslate"><span class="pre">k181</span></code> - would be terminated after 1 hour or if a command within the session consumed more than 8GB memory. The job (and therefore the session) can also be terminated by the user with <code class="code docutils literal notranslate"><span class="pre">CTRL-D</span></code> or the <code class="code docutils literal notranslate"><span class="pre">logout</span></code> command.</p>
 <p>Interactive jobs can be particularly useful while developing and testing code for a future batch job, or performing an interactive analysis that requires significant compute resources. Never attempt such tasks on the login node – submit an interactive job instead.</p>
-</div>
-<div class="section" id="batch-jobs">
+</section>
+<section id="batch-jobs">
 <span id="id1"></span><h2>Batch Jobs<a class="headerlink" href="#batch-jobs" title="Permalink to this headline">¶</a></h2>
 <p>A batch job is a script that runs autonomously on a compute node. The script must contain the necessary sequence of commands to complete a task independently of any input from the user. This section contains information about how to create and submit a batch job on Katana.</p>
-<div class="section" id="getting-started">
+<section id="getting-started">
 <h3>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h3>
 <p>The following script simply executes a pre-compiled program (“myprogram”) in the user’s home directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -222,8 +228,8 @@ qsub: job <span class="m">1234</span>.kman.restech.unsw.edu.au ready
 <span class="m">1238</span>.kman.restech.unsw.edu.au
 </pre></div>
 </div>
-</div>
-<div class="section" id="a-job-script">
+</section>
+<section id="a-job-script">
 <h3>A Job Script<a class="headerlink" href="#a-job-script" title="Permalink to this headline">¶</a></h3>
 <p>Job scripts offer a much more convenient method for invoking any of the options that can be passed to <code class="code docutils literal notranslate"><span class="pre">qsub</span></code> on the command-line. In a shell script, a line starting with # is a comment and will be ignored by the shell interpreter. However, in a job script, a line starting with #PBS can be used to pass options to the <code class="code docutils literal notranslate"><span class="pre">qsub</span></code> command.</p>
 <p>Here is an overview of the different parts of a job script which we will examine further below. In the following sections we will add some code, explain what it does, then show some new code, and iterate up to something quite powerful.</p>
@@ -286,9 +292,9 @@ cp -r <span class="nv">$TMPDIR</span>/my_output /home/z1234567
 ./myprogram
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="array-jobs">
+</section>
+</section>
+<section id="array-jobs">
 <span id="id2"></span><h2>Array Jobs<a class="headerlink" href="#array-jobs" title="Permalink to this headline">¶</a></h2>
 <p>One common use of computational clusters is to do the same thing multiple times - sometimes with slightly different input, sometimes to get averages from randomness within the process. This is made easier with array jobs.</p>
 <p>An array job is a single job script that spawns many almost identical sub-jobs. The only difference between the sub-jobs is an environment variable <code class="code docutils literal notranslate"><span class="pre">$PBS_ARRAY_INDEX</span></code> whose value uniquely identifies an individual sub-job. A regular job becomes an array job when it uses the <code class="code docutils literal notranslate"><span class="pre">#PBS</span> <span class="pre">-J</span></code> flag.</p>
@@ -310,8 +316,8 @@ cp -r <span class="nv">$TMPDIR</span>/my_output /home/z1234567
 </pre></div>
 </div>
 <p>There are some more examples of array jobs including how to group your computations in an array job on the <a class="reference external" href="https://github.com/unsw-edu-au/Restech-HPC/tree/master/hpc-examples">UNSW Github HPC examples</a> page.</p>
-</div>
-<div class="section" id="splitting-large-batch-jobs">
+</section>
+<section id="splitting-large-batch-jobs">
 <h2>Splitting large Batch Jobs<a class="headerlink" href="#splitting-large-batch-jobs" title="Permalink to this headline">¶</a></h2>
 <p>If your batch job can be split into multiple steps you may want to split one big job up into a number of smaller jobs. There are a number of reasons to spend the time to implement this.</p>
 <ol class="arabic simple">
@@ -320,8 +326,8 @@ cp -r <span class="nv">$TMPDIR</span>/my_output /home/z1234567
 <li><p>Katana has prioritisations based on how many resources any one user uses. If you ask for 200GB of memory, this will be accounted for when working out your next job’s priority.</p></li>
 <li><p>There’s no other way to say this, but because there are more resources for 12 hour jobs, seven or eight 12 hour jobs will often finish well before a single 100 hour job even starts.</p></li>
 </ol>
-</div>
-<div class="section" id="get-information-about-the-state-of-the-scheduler">
+</section>
+<section id="get-information-about-the-state-of-the-scheduler">
 <span id="state-of-pbs"></span><h2>Get information about the state of the scheduler<a class="headerlink" href="#get-information-about-the-state-of-the-scheduler" title="Permalink to this headline">¶</a></h2>
 <p>When deciding which jobs to run, the scheduler takes the following details into account:</p>
 <ul class="simple">
@@ -380,14 +386,14 @@ k254
      <span class="nv">last_used_time</span> <span class="o">=</span> Thu Apr <span class="m">30</span> <span class="m">07</span>:08:25 <span class="m">2020</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="managing-jobs-on-katana">
+</section>
+<section id="managing-jobs-on-katana">
 <span id="managing-jobs"></span><h2>Managing Jobs on Katana<a class="headerlink" href="#managing-jobs-on-katana" title="Permalink to this headline">¶</a></h2>
 <p>Once you have jobs running, you will want visibility of the system so that you can manage them - delete jobs, change jobs, check that jobs are still running.</p>
 <p>There are a couple of easy to use commands that help with this process.</p>
-<div class="section" id="qstat">
+<section id="qstat">
 <h3>qstat<a class="headerlink" href="#qstat" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="show-all-jobs-on-the-system">
+<section id="show-all-jobs-on-the-system">
 <span id="more-info-from-pbs"></span><h4>Show all jobs on the system<a class="headerlink" href="#show-all-jobs-on-the-system" title="Permalink to this headline">¶</a></h4>
 <p><code class="code docutils literal notranslate"><span class="pre">qstat</span></code> gives very long output. Consider piping to <code class="code docutils literal notranslate"><span class="pre">less</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ qstat <span class="p">|</span> less
@@ -403,8 +409,8 @@ Job id            Name             User              Time Use S Queue
 ...
 </pre></div>
 </div>
-</div>
-<div class="section" id="list-just-my-jobs">
+</section>
+<section id="list-just-my-jobs">
 <h4>List just my jobs<a class="headerlink" href="#list-just-my-jobs" title="Permalink to this headline">¶</a></h4>
 <p>You can use either your <strong>ZID</strong> or the <a class="reference internal" href="../glossary.html#term-Environment-Variable"><span class="xref std std-term">Environment Variable</span></a> <code class="code docutils literal notranslate"><span class="pre">$USER</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z2134567@katana2 src<span class="o">]</span>$ qstat -u <span class="nv">$USER</span>
@@ -428,8 +434,8 @@ Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
     --
 </pre></div>
 </div>
-</div>
-<div class="section" id="list-information-about-a-particular-job">
+</section>
+<section id="list-information-about-a-particular-job">
 <h4>List information about a particular job<a class="headerlink" href="#list-information-about-a-particular-job" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ qstat -f <span class="m">315236</span>
 Job Id: <span class="m">315236</span>.kman.restech.unsw.edu.au
@@ -473,16 +479,16 @@ Job Id: <span class="m">315236</span>.kman.restech.unsw.edu.au
     <span class="nv">project</span> <span class="o">=</span> _pbs_project_default
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="qdel">
+</section>
+</section>
+<section id="qdel">
 <h3>qdel<a class="headerlink" href="#qdel" title="Permalink to this headline">¶</a></h3>
 <p>Remove a job from the queue or kill it if it’s started. To remove an array job, you must include the square braces and they will need to be escaped. In that situation you use <code class="code docutils literal notranslate"><span class="pre">qdel</span> <span class="pre">12345\[\]</span></code>. Uses the <code class="code docutils literal notranslate"><span class="pre">$JOBID</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ qdel <span class="m">315252</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="qalter">
+</section>
+<section id="qalter">
 <h3>qalter<a class="headerlink" href="#qalter" title="Permalink to this headline">¶</a></h3>
 <p>Once a job has been submitted, it can be altered. However, once a job begins execution, the only values that can be modified are <code class="code docutils literal notranslate"><span class="pre">cputime</span></code>, <code class="code docutils literal notranslate"><span class="pre">walltime</span></code>, and <code class="code docutils literal notranslate"><span class="pre">run_count</span></code>. These can only be reduced.</p>
 <p>Users can only lower resource requests on queued jobs. If you need to increase resources, contact a systems administrator. In this example you will see the resources change - but not the <code class="code docutils literal notranslate"><span class="pre">Submit_arguments</span></code></p>
@@ -507,11 +513,11 @@ Job Id: <span class="m">315259</span>.kman.restech.unsw.edu.au
     <span class="nv">project</span> <span class="o">=</span> _pbs_project_default
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="tips-for-using-pbs-and-katana-effectively">
+</section>
+</section>
+<section id="tips-for-using-pbs-and-katana-effectively">
 <span id="scheduler-tips"></span><h2>Tips for using PBS and Katana effectively<a class="headerlink" href="#tips-for-using-pbs-and-katana-effectively" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="keep-your-jobs-under-12-hours-if-possible">
+<section id="keep-your-jobs-under-12-hours-if-possible">
 <h3>Keep your jobs under 12 hours if possible<a class="headerlink" href="#keep-your-jobs-under-12-hours-if-possible" title="Permalink to this headline">¶</a></h3>
 <p>If you request more than 12 hours of <code class="code docutils literal notranslate"><span class="pre">WALLTIME</span></code> then you can only use the nodes bought by your school or research group. Keeping your job’s run time request under 12 hours means that it can run on any node in the cluster.</p>
 <div class="admonition important">
@@ -521,15 +527,15 @@ Job Id: <span class="m">315259</span>.kman.restech.unsw.edu.au
 <p>In fact, if there is spare capacity on Katana, which there is most of the time, six 10 hours jobs will finish before a single 20 hour job will.
 Requesting more resources for your job decreases the places that the job can run</p>
 <p>The most obvious example is going over the 12 hour limit which limits the number of compute nodes that your job can run on but it is worth . For example specifying the CPU in your job script restricts you to the nodes with that CPU. A job that requests 20Gb will run on a 128Gb node with a 100Gb job already running but a 30Gb job will not be able to.</p>
-</div>
-<div class="section" id="running-your-jobs-interactively-makes-it-hard-to-manage-multiple-concurrent-jobs">
+</section>
+<section id="running-your-jobs-interactively-makes-it-hard-to-manage-multiple-concurrent-jobs">
 <h3>Running your jobs interactively makes it hard to manage multiple concurrent jobs<a class="headerlink" href="#running-your-jobs-interactively-makes-it-hard-to-manage-multiple-concurrent-jobs" title="Permalink to this headline">¶</a></h3>
 <p>If you are currently only running jobs interactively then you should move to batch jobs which allow you to submit more jobs which then start, run and finish automatically.
 If you have multiple batch jobs that are almost identical then you should consider using array jobs</p>
 <p>If your batch jobs are the same except for a change in file name or another variable then you should have a look at using array jobs.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
 	    </div>
@@ -568,6 +574,9 @@ If you have multiple batch jobs that are almost identical then you should consid
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js">
+
     </script>
     <script type="text/javascript" src="../_static/jquery.js">
 

@@ -12,10 +12,16 @@
   
 
   
+
   
+
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
   
 
   
@@ -150,7 +156,7 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="python">
+  <section id="python">
 <h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
 <p>It is common for python scripts to begin with</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
@@ -164,22 +170,22 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 </pre></div>
 </div>
-<div class="section" id="conda-and-anaconda">
+<section id="conda-and-anaconda">
 <h2>Conda and Anaconda<a class="headerlink" href="#conda-and-anaconda" title="Permalink to this headline">¶</a></h2>
 <p>We get a lot of questions about installing Conda and Anaconda. Unfortunately neither are designed to be installed in multi-user environments.</p>
 <p>You are able to install them into your home directory and we encourage you to do so.</p>
 <p>Alternatively, many packages will give you an option for a <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> - if this is an option, we recommend you use <code class="code docutils literal notranslate"><span class="pre">python</span> <span class="pre">virtual</span> <span class="pre">environments</span></code>.</p>
-</div>
-<div class="section" id="python-virtual-environments">
+</section>
+<section id="python-virtual-environments">
 <h2>Python Virtual Environments<a class="headerlink" href="#python-virtual-environments" title="Permalink to this headline">¶</a></h2>
 <p>We encourage researchers to utilise the power of <a class="reference internal" href="#python-virtual-environments"><span class="std std-ref">Python Virtual Environments</span></a> if they are developing their own software or want to use packages that aren’t installed.</p>
-<div class="section" id="background">
+<section id="background">
 <h3>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
 <p>Sometimes you will need to use a particular version of Python, or you will need to use a set of Python libraries that aren’t available in the provided installation.</p>
 <p>In these cases, we can use what’s known as a <em>virtual environment</em> or <em>venv</em>. A venv gives us a static version of Python in our home directory in which we can install any packages we like.</p>
 <p>In this walk through we will see how to set up a venv and explain what’s happening under the hood. Then we will show how you can use one in your development process. As a note, in this walk through we will refer to packages and libraries as “packages”. When we use these terms, we are referring to a collection of files, written in Python, usually with some versions and potentially some requirements of their own.</p>
-</div>
-<div class="section" id="setting-up-the-default-environment">
+</section>
+<section id="setting-up-the-default-environment">
 <h3>Setting up the default environment<a class="headerlink" href="#setting-up-the-default-environment" title="Permalink to this headline">¶</a></h3>
 <p>According to the <a class="reference external" href="https://docs.python.org/3/library/venv.html">Python documentation</a>, we will run something like this <code class="code docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">/path/to/new/virtual/environment</span></code>. This is not a directory that we need to see or need to spend time in actively, so it’s ok to make it hidden. This is an important distinction - the <em>venv</em> should not be where you are doing your development. It’s meant to be flexible - as soon as you fill it with development code, it’s no longer flexible. Also, you want your development code backed up or in a repository - it is unnecessary bloat to add the Python software to that backup or repository.</p>
 <p>We will make a directory in which we can keep many venvs. What I found was that once I started using venvs, it didn’t make any sense to do Python development without them.</p>
@@ -187,8 +193,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ mkdir /home/z1234567/.venvs/
 </pre></div>
 </div>
-</div>
-<div class="section" id="setting-up-the-virtual-environment-creation-and-activation">
+</section>
+<section id="setting-up-the-virtual-environment-creation-and-activation">
 <h3>Setting up the virtual environment - creation and activation<a class="headerlink" href="#setting-up-the-virtual-environment-creation-and-activation" title="Permalink to this headline">¶</a></h3>
 <p>I’ll be using the latest version of Python available to me. Since this is one of the modules that we offer, I can use it with the understanding that it will be there indefinitely.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ module load python/3.7.4
@@ -197,7 +203,11 @@
 z1234567@katana2 ~<span class="o">]</span>$ python3 -m venv /home/z1234567/.venvs/venv-tutorial-1
 </pre></div>
 </div>
-<p>That’s it, we are done. If you want to take a look under the hood, see <a class="reference external" href="python-virtualenvs-internals.rst">what’s in my virtualenv?</a></p>
+<p>That’s it, we are done. If you want to take a look under the hood, see <a class="reference internal" href="#virtual-environments-from-the-inside"><span class="std std-ref">Virtual Environments from the inside</span></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We use the command <cite>which</cite> to show the path of the executable. It’s an example command that you do not need to replicate unless you are checking your work.</p>
+</div>
 <p>Next, we need to <strong>activate</strong> our venv. This makes our virtualenv our current environment. To activate, we execute <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">/path/to/venv/bin/activate</span></code>. Note that after activation, the prompt changes to make it clear you are now in a venv. You can see the change in which versions of <code class="code docutils literal notranslate"><span class="pre">python3</span></code> and <code class="code docutils literal notranslate"><span class="pre">pip3</span></code> are available before and after activation:</p>
 <p>Before we activate our environment</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ which python3<span class="p">;</span> which pip3
@@ -215,8 +225,8 @@ z1234567@katana2 ~<span class="o">]</span>$ python3 -m venv /home/z1234567/.venv
 ~/.venvs/venv-tutorial-1/bin/pip3
 </pre></div>
 </div>
-</div>
-<div class="section" id="pip3-the-python-package-manager-the-package-installer-for-python">
+</section>
+<section id="pip3-the-python-package-manager-the-package-installer-for-python">
 <h3>pip3 - the Python package manager (“the <em>Package Installer for Python</em>”)<a class="headerlink" href="#pip3-the-python-package-manager-the-package-installer-for-python" title="Permalink to this headline">¶</a></h3>
 <p>Using <a class="reference external" href="https://pypi.org/project/pip/">pip3</a> we can see whats installed and install new packages. You will often see packages give installation advice for pip (Conda is another popular system).</p>
 <p>Now that we are using the venv, we can list what’s in the venv, and then install a new package:</p>
@@ -256,8 +266,8 @@ pip        <span class="m">20</span>.0.2
 setuptools <span class="m">46</span>.1.1
 </pre></div>
 </div>
-</div>
-<div class="section" id="installing-software">
+</section>
+<section id="installing-software">
 <h3>Installing software<a class="headerlink" href="#installing-software" title="Permalink to this headline">¶</a></h3>
 <p>And then package installation is as easy as using <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">...</span></code>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv-tutorial-1<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ pip install numpy
@@ -274,8 +284,8 @@ pip        <span class="m">20</span>.0.2
 setuptools <span class="m">46</span>.1.1
 </pre></div>
 </div>
-</div>
-<div class="section" id="exiting-the-venv-and-coming-around-again">
+</section>
+<section id="exiting-the-venv-and-coming-around-again">
 <h3>Exiting the venv, and coming around again<a class="headerlink" href="#exiting-the-venv-and-coming-around-again" title="Permalink to this headline">¶</a></h3>
 <p>To leave a venv, you use the <code class="code docutils literal notranslate"><span class="pre">deactivate</span></code> command like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv-tutorial-1<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ deactivate
@@ -336,8 +346,8 @@ setuptools <span class="m">46</span>.1.1
 </pre></div>
 </div>
 <p>That’s a quick introduction to how you can install Python packages locally.</p>
-</div>
-<div class="section" id="special-cases">
+</section>
+<section id="special-cases">
 <h3>Special Cases<a class="headerlink" href="#special-cases" title="Permalink to this headline">¶</a></h3>
 <p>Say for instance you want to use software X in a Jupyter Notebook. X is already</p>
 <p>installed on Katana.</p>
@@ -357,9 +367,9 @@ setuptools <span class="m">46</span>.1.1
 </pre></div>
 </div>
 <p>This will throw errors because there are a collection of packages missing in relation to the latest Jupyter. They shouldn’t affect your ability to run <a class="reference internal" href="jupyter-notebooks.html#jupyter-notebooks"><span class="std std-ref">Jupyter Notebooks</span></a> with tensorflow.</p>
-</div>
-</div>
-<div class="section" id="virtual-environments-from-the-inside">
+</section>
+</section>
+<section id="virtual-environments-from-the-inside">
 <h2>Virtual Environments from the inside<a class="headerlink" href="#virtual-environments-from-the-inside" title="Permalink to this headline">¶</a></h2>
 <p>We’ve built a venv in our <code class="code docutils literal notranslate"><span class="pre">~/.venvs</span></code> directory. Let’s take a look inside. This presumes you have used the command</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ python3 -m venv /home/z1234567/.venvs/venv-tutorial-1
@@ -412,8 +422,8 @@ drwx------. <span class="m">6</span> z1234567 unsw <span class="m">4096</span> M
 drwx------. <span class="m">2</span> z1234567 unsw <span class="m">4096</span> Mar <span class="m">23</span> <span class="m">11</span>:45 setuptools-40.8.0.dist-info
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 	    </div>
@@ -452,6 +462,9 @@ drwx------. <span class="m">2</span> z1234567 unsw <span class="m">4096</span> M
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js">
+
     </script>
     <script type="text/javascript" src="../_static/jquery.js">
 

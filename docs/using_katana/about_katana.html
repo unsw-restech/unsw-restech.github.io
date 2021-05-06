@@ -12,10 +12,16 @@
   
 
   
+
   
+
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
   
 
   
@@ -150,11 +156,11 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="about-katana">
+  <section id="about-katana">
 <span id="id1"></span><h1>About Katana<a class="headerlink" href="#about-katana" title="Permalink to this headline">¶</a></h1>
 <p>Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources. With over 4000 CPU cores spread over a large number of compute nodes each with up to 1Tb of memory, Katana provides a flexible compute environment where users can run jobs that wouldn’t be possible or practical on a desktop or laptop.</p>
 <p>Katana is powerful on it’s own, but can be seen as a training or development base before migrating up to systems like as Australia’s peak HPC system <a class="reference external" href="https://nci.org.au/our-systems/hpc-systems">Gadi</a>, located at <a class="reference external" href="https://nci.org.au/">NCI</a>. Research Technology Services also provide training, advice and support for new users or those uncertain if High Performance Computing is the right fit for their research needs.</p>
-<div class="section" id="system-configuration">
+<section id="system-configuration">
 <span id="id2"></span><h2>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>RPM based Linux OSes. RedHat on the management plane, CentOS on the nodes</p></li>
@@ -162,15 +168,15 @@
 <li><p>Large global scratch at <code class="code docutils literal notranslate"><span class="pre">/srv/scratch</span></code>, local scratch at <code class="code docutils literal notranslate"><span class="pre">$TMPDIR</span></code></p></li>
 <li><p>12, 48, 100, 200 hour <a class="reference internal" href="../glossary.html#term-Walltime"><span class="xref std std-term">Walltime</span></a> queues with prioritisation</p></li>
 </ul>
-</div>
-<div class="section" id="compute">
+</section>
+<section id="compute">
 <span id="compute-resources"></span><h2>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Hetergenous hardware: Dell, Lenovo, Huawei.</p></li>
 <li><p>roughly 170 nodes</p></li>
 </ul>
-</div>
-<div class="section" id="gpu-compute">
+</section>
+<section id="gpu-compute">
 <span id="gpu-resources"></span><h2>GPU Compute<a class="headerlink" href="#gpu-compute" title="Permalink to this headline">¶</a></h2>
 <p>The most popular use of these nodes is for Tensorflow.</p>
 <ul class="simple">
@@ -178,8 +184,8 @@
 <li><p>three are dedicated for the department that owns them</p></li>
 <li><p>one is general use for all researchers</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
 
 	    </div>
@@ -218,6 +224,9 @@
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js">
+
     </script>
     <script type="text/javascript" src="../_static/jquery.js">
 

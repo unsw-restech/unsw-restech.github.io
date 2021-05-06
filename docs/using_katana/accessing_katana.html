@@ -12,10 +12,16 @@
   
 
   
+
   
+
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
   
 
   
@@ -150,32 +156,32 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="accessing-katana">
+  <section id="accessing-katana">
 <h1>Accessing Katana<a class="headerlink" href="#accessing-katana" title="Permalink to this headline">¶</a></h1>
 <p>Anyone at UNSW can apply for a general account on Katana. This level is designed for those that think Katana would suit their research needs or will typically use less than 10,000 CPU hours a quarter. This level still gets access to the same level of support including software installation, help getting started or running their jobs. The only difference is the number of compute jobs that can be run at any time and how long they can run for - general users can only use a 12 hour <a class="reference internal" href="../glossary.html#term-Walltime"><span class="xref std std-term">Walltime</span></a>.</p>
 <p>If your needs require more CPU hours or consulation, some Faculties, Schools and Research Groups have invested in Katana and have a higher level of access. Users in this situation should speak to their supervisor.</p>
-<div class="section" id="requesting-an-account">
+<section id="requesting-an-account">
 <span id="id1"></span><h2>Requesting an Account<a class="headerlink" href="#requesting-an-account" title="Permalink to this headline">¶</a></h2>
 <p>To apply for an account you can send an email to the <a class="reference external" href="mailto:ITServiceCentre&#37;&#52;&#48;unsw&#46;edu&#46;au">UNSW IT Service Centre</a> giving your zID, your role within UNSW and the name of your supervisor or head of your research group.</p>
-</div>
-<div class="section" id="connecting-to-katana">
+</section>
+<section id="connecting-to-katana">
 <span id="id2"></span><h2>Connecting to Katana<a class="headerlink" href="#connecting-to-katana" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When you are connecting to Katana via <code class="code docutils literal notranslate"><span class="pre">katana.restech.unsw.edu.au</span></code> you are connecting to one of two login nodes <code class="code docutils literal notranslate"><span class="pre">katana1.restech.unsw.edu.au</span></code> or <code class="code docutils literal notranslate"><span class="pre">katana2.restech.unsw.edu.au</span></code>. If you have a long running <a class="reference internal" href="../software/tmux.html#tmux"><span class="std std-ref">TMUX</span></a> open, you will need to login to the node on which it was started.</p>
 </div>
-<div class="section" id="linux-and-mac">
+<section id="linux-and-mac">
 <h3>Linux and Mac<a class="headerlink" href="#linux-and-mac" title="Permalink to this headline">¶</a></h3>
 <p>From a Linux or Mac OS machine you can connect via ssh in a terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>laptop:~$ ssh z1234567@katana.restech.unsw.edu.au
 </pre></div>
 </div>
-</div>
-<div class="section" id="windows">
+</section>
+<section id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>From a Windows machine a SSH client such as <a class="reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a> or <a class="reference external" href="https://mobaxterm.mobatek.net/">MobaXTerm</a> is required.</p>
-</div>
-<div class="section" id="graphical-sessions">
+</section>
+<section id="graphical-sessions">
 <span id="graphical-session"></span><h3>Graphical sessions<a class="headerlink" href="#graphical-sessions" title="Permalink to this headline">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -203,9 +209,9 @@ Session type: Mate
 <img alt="../_images/interactive_session_graphical.png" src="../_images/interactive_session_graphical.png" />
 <p>Once that’s started, you can load the modules and run the command line name of the software you want. That is how you run Graphical Interfaces or GUIs using Katana’s grunt.</p>
 <img alt="../_images/rstudio_graphical_session.png" src="../_images/rstudio_graphical_session.png" />
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
 	    </div>
@@ -244,6 +250,9 @@ Session type: Mate
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js">
+
     </script>
     <script type="text/javascript" src="../_static/jquery.js">
 

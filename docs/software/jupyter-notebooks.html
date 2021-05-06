@@ -12,10 +12,16 @@
   
 
   
+
   
+
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
   
 
   
@@ -150,7 +156,7 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="jupyter-notebooks">
+  <section id="jupyter-notebooks">
 <h1>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
 <p>Jupyter Notebooks and JupyterLab are best run in <a class="reference internal" href="../using_katana/ondemand.html#katana-ondemand"><span class="std std-ref">Katana OnDemand</span></a>.</p>
 <p>Katana OnDemand comes with some built in environment and kernels that are
@@ -158,15 +164,15 @@ available for use out of the box.</p>
 <p>If you need to use the Jupyter Notebook or Jupyter Lab with your own
 <a class="reference internal" href="python.html#python-virtual-environments"><span class="std std-ref">Python Virtual Environments</span></a> you will need to create your own
 Python Jupyter kernel. Here is an example:</p>
-<div class="section" id="create-and-load-the-virtual-environment">
+<section id="create-and-load-the-virtual-environment">
 <h2>Create and load the virtual environment<a class="headerlink" href="#create-and-load-the-virtual-environment" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load python/3.8.3
 $ python3 -m venv --system-site-packages /home/z1234567/.venvs/jupyter-kernel
 $ <span class="nb">source</span> /home/z1234567/.venvs/jupyter-kernel/bin/activate
 </pre></div>
 </div>
-</div>
-<div class="section" id="create-the-jupyter-kernel">
+</section>
+<section id="create-the-jupyter-kernel">
 <h2>Create the Jupyter Kernel<a class="headerlink" href="#create-the-jupyter-kernel" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>jupyter-kernel<span class="o">)</span> $ python3 -m ipykernel install --prefix<span class="o">=</span><span class="nv">$HOME</span>/.local --name<span class="o">=</span>jlab-kernel
 </pre></div>
@@ -180,8 +186,8 @@ from the Katana supplied Python 3 and could cause confusion.</p>
 <p>Now when you load a JupyterLab session, you should see your personal kernel
 in the list of available kernels. This kernel will have access to your
 virtual environment.</p>
-</div>
-</div>
+</section>
+</section>
 
 
 	    </div>
@@ -220,6 +226,9 @@ virtual environment.</p>
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js">
+
     </script>
     <script type="text/javascript" src="../_static/jquery.js">
 

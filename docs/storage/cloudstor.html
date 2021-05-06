@@ -12,10 +12,16 @@
   
 
   
+
   
+
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
   
 
   
@@ -150,11 +156,11 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="cloudstor">
+  <section id="cloudstor">
 <h1>Cloudstor<a class="headerlink" href="#cloudstor" title="Permalink to this headline">¶</a></h1>
 <p>You can access <a class="reference external" href="https://cloudstor.aarnet.edu.au/">Cloudstor</a> from <a class="reference internal" href="kdm.html#katana-data-mover"><span class="std std-ref">Katana Data Mover</span></a></p>
 <p>RClone is installed on KDM so you can upload data into Cloudstor.</p>
-<div class="section" id="configure-rclone">
+<section id="configure-rclone">
 <h2>Configure RClone<a class="headerlink" href="#configure-rclone" title="Permalink to this headline">¶</a></h2>
 <p>1. First, you will need to <a class="reference external" href="https://support.aarnet.edu.au/hc/en-us/articles/236034707-How-do-I-manage-change-my-passwords-">set your Sync Password</a> in the
 <a class="reference external" href="https://cloudstor.aarnet.edu.au/plus/settings/personal">Cloudstor settings page</a>, and keep a copy locally.</p>
@@ -211,8 +217,8 @@ would have to access the instance like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm ~<span class="o">]</span>$ rclone copy --progress --transfers <span class="m">8</span> testdata Murgatroyd:/
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 	    </div>
@@ -251,6 +257,9 @@ would have to access the instance like this:</p>
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js">
+
     </script>
     <script type="text/javascript" src="../_static/jquery.js">
 

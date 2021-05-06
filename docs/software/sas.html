@@ -12,10 +12,16 @@
   
 
   
+
   
+
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
+  
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
   
 
   
@@ -150,14 +156,14 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="sas">
+  <section id="sas">
 <h1>SAS<a class="headerlink" href="#sas" title="Permalink to this headline">¶</a></h1>
 <p>The 64-bit version of SAS is available as a module.</p>
 <p>By default SAS will store temporary files in <code class="code docutils literal notranslate"><span class="pre">/tmp</span></code> which can easily fill up leaving the node offline. In order to avoid this we have set the default to <code class="code docutils literal notranslate"><span class="pre">$TMPDIR</span></code> to save temporary files in <code class="code docutils literal notranslate"><span class="pre">/var/tmp</span></code> on the Katana head node and local scratch on compute nodes. If you wish to save temporary files to a different location you can do that by using the <code class="code docutils literal notranslate"><span class="pre">-work</span></code> flag with your SAS command or adding this line to your <code class="code docutils literal notranslate"><span class="pre">sasv9.cfg</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-work /my/directory
 </pre></div>
 </div>
-</div>
+</section>
 
 
 	    </div>
@@ -196,6 +202,9 @@
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
+    </script>
+    <script type="text/javascript" src="../_static/documentation_options.js">
+
     </script>
     <script type="text/javascript" src="../_static/jquery.js">
 
