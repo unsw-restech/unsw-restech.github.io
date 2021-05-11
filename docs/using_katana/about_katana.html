@@ -180,10 +180,27 @@
 <span id="gpu-resources"></span><h2>GPU Compute<a class="headerlink" href="#gpu-compute" title="Permalink to this headline">¶</a></h2>
 <p>The most popular use of these nodes is for Tensorflow.</p>
 <ul class="simple">
-<li><p>four GPU capable nodes, Tesla V100-SXM2, 32GB</p></li>
+<li><p>six GPU capable nodes, Tesla V100-SXM2, 32GB</p></li>
 <li><p>three are dedicated for the department that owns them</p></li>
-<li><p>one is general use for all researchers</p></li>
+<li><p>three are general use for all researchers</p></li>
 </ul>
+<p>You cannot use Tensorflow on the login nodes because they don’t have GPUs. You will need to get access to a GPU node to do this.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Unfortunately, and hopefully unsurprisingly, GPU nodes are in incredibly high demand.
+There is no - NO - situation where we understand, accept or care, that your project is
+more special than anyone else’s project. You will need to wait like everyone else - or buy
+a GPU node for your group on which you will get priority</p>
+</div>
+<p>To access a GPU node interactively, you can use a command like</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana ~<span class="o">]</span>$ qsub -I -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">8</span>:ngpus<span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>46gb,walltime<span class="o">=</span><span class="m">2</span>:00:00
+</pre></div>
+</div>
+<p>Note the 2 hour limit - that is the <em>fastest</em> way to get onto the GPU nodes. There’s no way to tell you that
+your session has started, so you will need to monitor your command.</p>
+<p>We <strong>know</strong> that this isn’t ideal and we <strong>wish</strong> there was an easier solution - we love making your lives
+easier. It’s literally our jobs. But in this case, we don’t have the resources available to make this faster,
+smoother or easier.</p>
 </section>
 </section>
 

@@ -36,9 +36,32 @@ GPU Compute
 
 The most popular use of these nodes is for Tensorflow.
 
-- four GPU capable nodes, Tesla V100-SXM2, 32GB
+- six GPU capable nodes, Tesla V100-SXM2, 32GB
 - three are dedicated for the department that owns them
-- one is general use for all researchers
+- three are general use for all researchers
+
+You cannot use Tensorflow on the login nodes because they don't have GPUs. You will need to get access to a GPU node to do this. 
+
+.. warning::
+
+    Unfortunately, and hopefully unsurprisingly, GPU nodes are in incredibly high demand. 
+    There is no - NO - situation where we understand, accept or care, that your project is 
+    more special than anyone else's project. You will need to wait like everyone else - or buy
+    a GPU node for your group on which you will get priority
+
+To access a GPU node interactively, you can use a command like
+
+.. code-block:: bash
+
+    [z1234567@katana ~]$ qsub -I -l select=1:ncpus=8:ngpus=1:mem=46gb,walltime=2:00:00
+
+Note the 2 hour limit - that is the *fastest* way to get onto the GPU nodes. There's no way to tell you that 
+your session has started, so you will need to monitor your command.
+
+We **know** that this isn't ideal and we **wish** there was an easier solution - we love making your lives
+easier. It's literally our jobs. But in this case, we don't have the resources available to make this faster,
+smoother or easier.  
+    
 
 .. _Gadi: https://nci.org.au/our-systems/hpc-systems
 .. _NCI: https://nci.org.au/
