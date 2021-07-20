@@ -2,7 +2,7 @@
 Stata
 #####
 
-Stata is availt as a module. 
+Stata is available as a module. 
 
 When using Stata in a pbs batch script, the syntax is
 

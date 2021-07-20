@@ -67,7 +67,7 @@ As many as your account and queue will allow you. But there are trade-offs - if 
 
 If you are regularly wanting to run large parallel jobs (16+ cores per job) on Katana you should consider speaking to :ref:`help_and_support` so that they are aware of your jobs. They may be able to provide you additional assistance on resource usage for parallel jobs. 
 
-Why does my SSH connection periodically dsconnect?
+Why does my SSH connection periodically disconnect?
 ==================================================
 
 With all networks there is a limit to how long a connection between two computers will stay open if no data is travelling between them. Look to set your ServerAliveInterval or Keep Alive interval to 60 in your secure shell software (putty, ssh). 
@@ -100,7 +100,7 @@ Yes, but it's extremely unlikely. We used to say no, but that's not strictly tru
 Will a job script from another cluster work on cluster X?
 =========================================================
 
-It depends on a number of factors including the sceduling software. Some aspects are fairly common across different clusters (e.g. walltime) others are not. You should look at the cluster specific information to see what queuing system is being used on that cluster and what commands you will need to change. You wont find a cluster that doesn't have knowledgable support that can help you migrate.
+It depends on a number of factors including the sceduling software. Some aspects are fairly common across different clusters (e.g. walltime) others are not. You should look at the cluster specific information to see what queuing system is being used on that cluster and what commands you will need to change. You won't find a cluster that doesn't have knowledgable support that can help you migrate.
 
 How can I see exactly what resources (I/O, CPU, memory and scratch) my job is currently using?
 ==============================================================================================
@@ -165,7 +165,7 @@ Submitting an array job with 100 sub-jobs is equivalent to submitting 100 indivi
 
 The '%' option in the array request offers the ability to self impose a limit on the number of concurrently running sub-jobs. Also, if you need to impose an order on when the jobs are run then the 'depend' attribute can help.
 
-In a pbs file does the MEM requested refer to each node or the total memory on all nodes being used (if I am using more than 1 node?
+In a pbs file does the MEM requested refer to each node or the total memory on all nodes being used (if I am using more than 1 node?)
 =====================================================================================================================================
 
 MEM refers to the amount of memory per node.

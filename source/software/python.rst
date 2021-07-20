@@ -14,7 +14,7 @@ If you are using a Python module, you will need to change the first line to
 
     #!/usr/bin/env python
 
-or more the likely
+or more likely
 
 .. code-block:: bash
 
@@ -254,9 +254,7 @@ That's a quick introduction to how you can install Python packages locally.
 Special Cases
 =============
 
-Say for instance you want to use software X in a Jupyter Notebook. X is already
-
-installed on Katana.
+Say for instance you want to use software X in a Jupyter Notebook. X is already installed on Katana.
 
 In that case, your workflow would be:
 

@@ -35,7 +35,7 @@ From a Linux or Mac OS machine you can connect via ssh in a terminal:
 Windows
 =======
 
-From a Windows machine a SSH client such as PuTTY_ or MobaXTerm_ is required. 
+From a Windows machine an SSH client such as PuTTY_ or MobaXTerm_ is required. 
 
 .. _graphical_session:
 
