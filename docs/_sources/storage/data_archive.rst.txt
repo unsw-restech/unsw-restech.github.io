@@ -30,11 +30,6 @@ Use the help command for usage
 
     module help unswdataarchive/2020-03-19
 
-To generate a token send an email to the `IT Service Centre <ITServiceCentre@unsw.edu.au>`_ asking for a Data Archive token to be generated. A service desk request for an authentication token to be generated needs to indicate a Data Archive namespace (/UNSW_RDS/Dxxx or /UNSW_RDS/Hxxx) as a scope for the token. Your Data Archive namespace is recorded in the Data Archive welcome email.
-
-.. warning::
-    This advice has poor results. The help file is too long for most screen sizes and there's no pagination in modules version < 4. Last line should include a location that the researcher can read directly (using less)
-
 *************
 Initial Setup
 *************
@@ -46,10 +41,12 @@ To use the Data Archive you need to set up a configuration file. Here's how to c
     [z1234567@kdm ~]$ module add unswdataarchive/2020-03-19
     [z1234567@kdm ~]$ get-config-file
 
+To generate a token send an email to the `IT Service Centre <ITServiceCentre@unsw.edu.au>`_ asking for a Data Archive token to be generated. A service desk request for an authentication token to be generated needs to indicate a Data Archive namespace (/UNSW_RDS/Dxxx or /UNSW_RDS/Hxxx) as a scope for the token. Your Data Archive namespace is recorded in the Data Archive welcome email.
 
-To generate a token send an email to the `IT Service Centre <ITServiceCentre@unsw.edu.au>`_ asking for a Data Archive token to be generated. A service desk request for an authentication token to be generated needs to indicate a Data Archive namespace (/UNSW_RDS/Dxxx or /UNSW_RDS/Hxxx) as a scope for the token
+.. warning::
+    This advice has poor results. The help file is too long for most screen sizes and there's no pagination in modules version < 4. Last line should include a location that the researcher can read directly (using less)
 
-Then edit the configuration file :code:`config.cfg` and to change the line that looks like :code:`token=`
+ Then edit the configuration file :code:`config.cfg` and change the line that looks like :code:`token=`
 
 If you haven't generated a token you can also upload content using your zID and zPass by adding the following line to the file :code:`config.cfg` and you will be asked for your zPass when you start the upload.
 

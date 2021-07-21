@@ -19,10 +19,6 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
-  
 
   
 
@@ -84,6 +80,7 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Storage</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#storage-summary">Storage  Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_archive.html">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cloudstor.html">Cloudstor</a></li>
@@ -156,147 +153,212 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <section id="storage-locations">
+  <div class="section" id="storage-locations">
 <h1>Storage Locations<a class="headerlink" href="#storage-locations" title="Permalink to this headline">¶</a></h1>
 <p>The storage on Katana is split into several different types, each of which serves a different purpose.</p>
 <div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>We have just said <em>each of which serves a different purpose</em>. Despite that, there will be overlap. And personal preference. In most cases it will be obvious where to put your information. If it isn’t and you need help with your decision making, you can <a class="reference external" href="mailto:rdm&#37;&#52;&#48;unsw&#46;edu&#46;au">email</a> the <a class="reference external" href="https://research.unsw.edu.au/research-data-management-unsw">Research Data</a> team for advice. They are friendly people.</p>
+<p class="first admonition-title">Important</p>
+<p class="last">We have just said <em>each of which serves a different purpose</em>. Despite that, there will be overlap. And personal preference. In most cases it will be obvious where to put your information. If it isn’t and you need help with your decision making, you can <a class="reference external" href="mailto:rdm&#37;&#52;&#48;unsw&#46;edu&#46;au">email</a> the <a class="reference external" href="https://research.unsw.edu.au/research-data-management-unsw">Research Data</a> team for advice. They are friendly people.</p>
 </div>
-<section id="cluster-home-drive">
+</div>
+<div class="section" id="storage-summary">
+<h1>Storage  Summary<a class="headerlink" href="#storage-summary" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="11%" />
+<col width="14%" />
+<col width="13%" />
+<col width="28%" />
+<col width="6%" />
+<col width="16%" />
+<col width="12%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Storage type</th>
+<th class="head">Location</th>
+<th class="head">Alias</th>
+<th class="head">Purpose</th>
+<th class="head">Backed up?</th>
+<th class="head">Size limit</th>
+<th class="head">Who has acess</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Home drive</td>
+<td>/home/z1234567</td>
+<td>$HOME</td>
+<td>Source code and programs</td>
+<td>Y</td>
+<td>10Gb</td>
+<td>Only the user</td>
+</tr>
+<tr class="row-odd"><td>Global scratch</td>
+<td>/srv/scratch/z1234567</td>
+<td>/srv/scratch/$USER</td>
+<td>Data files</td>
+<td>N</td>
+<td>16Tb  between all user</td>
+<td>Only the user</td>
+</tr>
+<tr class="row-even"><td>Shared  scratch</td>
+<td>/srv/scratch/group_name</td>
+<td>/srv/scratch/group_name</td>
+<td>Data files and programs shared by a team</td>
+<td>N</td>
+<td>Upon group requirements</td>
+<td>All users in the group</td>
+</tr>
+<tr class="row-odd"><td>Local  scratch</td>
+<td>Intialised upon job running</td>
+<td>$TMPDIR</td>
+<td>Faster job completion with large datasets and temp files</td>
+<td>N</td>
+<td>200Gb shared between node users</td>
+<td>Temporary for each job</td>
+</tr>
+<tr class="row-even"><td>UNSW Research Storage</td>
+<td>/home/z1234567/sharename</td>
+<td>$HOME/sharename</td>
+<td>Storage of shared user and data files</td>
+<td>Y</td>
+<td colspan="2">According to Data Management Plan</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="cluster-home-drive">
 <h2>Cluster Home Drive<a class="headerlink" href="#cluster-home-drive" title="Permalink to this headline">¶</a></h2>
-<section id="location">
+<div class="section" id="location">
 <h3>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/z1234567
 </pre></div>
 </div>
-</section>
-<section id="also-known-as">
+</div>
+<div class="section" id="also-known-as">
 <h3>Also known as<a class="headerlink" href="#also-known-as" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$HOME</span>
 </pre></div>
 </div>
-</section>
-<section id="attributes">
+</div>
+<div class="section" id="attributes">
 <span id="cluster-attributes"></span><h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Backed up</p></li>
-<li><p>10Gb limit</p></li>
-<li><p>By default only user has access</p></li>
-<li><p>Able to be used everywhere on Katana</p></li>
+<li>Backed up</li>
+<li>10Gb limit</li>
+<li>By default only user has access</li>
+<li>Able to be used everywhere on Katana</li>
 </ul>
-</section>
-<section id="best-used-for">
+</div>
+<div class="section" id="best-used-for">
 <span id="cluster-best-used-for"></span><h3>Best used for<a class="headerlink" href="#best-used-for" title="Permalink to this headline">¶</a></h3>
 <p>Source code and programs</p>
-</section>
-</section>
-<section id="global-scratch">
+</div>
+</div>
+<div class="section" id="global-scratch">
 <h2>Global Scratch<a class="headerlink" href="#global-scratch" title="Permalink to this headline">¶</a></h2>
-<section id="global-location">
+<div class="section" id="global-location">
 <span id="id1"></span><h3>Location<a class="headerlink" href="#global-location" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/srv/scratch/z1234567
 </pre></div>
 </div>
-</section>
-<section id="global-also-known-as">
+</div>
+<div class="section" id="global-also-known-as">
 <span id="id2"></span><h3>Also known as<a class="headerlink" href="#global-also-known-as" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/srv/scratch/<span class="nv">$USER</span>
 </pre></div>
 </div>
-</section>
-<section id="global-attributes">
+</div>
+<div class="section" id="global-attributes">
 <span id="id3"></span><h3>Attributes<a class="headerlink" href="#global-attributes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Not available to users in STUDENT groups such as ESTUDENT.</p></li>
-<li><p>Not backed up</p></li>
-<li><p>Generally 16Tb shared between multiple users</p></li>
-<li><p>By default only user has access</p></li>
-<li><p>Able to be used everywhere on Katana</p></li>
+<li>Not available to users in STUDENT groups such as ESTUDENT.</li>
+<li>Not backed up</li>
+<li>Generally 16Tb shared between multiple users</li>
+<li>By default only user has access</li>
+<li>Able to be used everywhere on Katana</li>
 </ul>
-</section>
-<section id="global-best-used-for">
+</div>
+<div class="section" id="global-best-used-for">
 <span id="id4"></span><h3>Best used for<a class="headerlink" href="#global-best-used-for" title="Permalink to this headline">¶</a></h3>
 <p>Data files</p>
-</section>
-</section>
-<section id="shared-scratch">
+</div>
+</div>
+<div class="section" id="shared-scratch">
 <h2>Shared Scratch<a class="headerlink" href="#shared-scratch" title="Permalink to this headline">¶</a></h2>
 <p>Only available to groups of users that have requested it - primarily for teams that share data sets or results.</p>
-<section id="shared-location">
+<div class="section" id="shared-location">
 <span id="id5"></span><h3>Location<a class="headerlink" href="#shared-location" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/srv/scratch/name
 </pre></div>
 </div>
-</section>
-<section id="shared-attributes">
+</div>
+<div class="section" id="shared-attributes">
 <span id="id6"></span><h3>Attributes<a class="headerlink" href="#shared-attributes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Not backed up</p></li>
-<li><p>Spaced based on group requirements</p></li>
-<li><p>All users in the group have access</p></li>
-<li><p>Able to be used everywhere on Katana</p></li>
+<li>Not backed up</li>
+<li>Space based on group requirements</li>
+<li>All users in the group have access</li>
+<li>Able to be used everywhere on Katana</li>
 </ul>
-</section>
-<section id="shared-best-used-for">
+</div>
+<div class="section" id="shared-best-used-for">
 <span id="id7"></span><h3>Best used for<a class="headerlink" href="#shared-best-used-for" title="Permalink to this headline">¶</a></h3>
 <p>Shared data files and copies of programs</p>
-</section>
-</section>
-<section id="local-scratch">
+</div>
+</div>
+<div class="section" id="local-scratch">
 <h2>Local Scratch<a class="headerlink" href="#local-scratch" title="Permalink to this headline">¶</a></h2>
 <p>Found on the node on which your job is running.</p>
-<section id="local-location">
+<div class="section" id="local-location">
 <span id="id8"></span><h3>Location<a class="headerlink" href="#local-location" title="Permalink to this headline">¶</a></h3>
 <p>The location is created by the job scheduler as part of initialising the running of the job.</p>
-</section>
-<section id="local-also-known-as">
+</div>
+<div class="section" id="local-also-known-as">
 <span id="id9"></span><h3>Also known as<a class="headerlink" href="#local-also-known-as" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$TMPDIR</span>
 </pre></div>
 </div>
-</section>
-<section id="local-attributes">
+</div>
+<div class="section" id="local-attributes">
 <span id="id10"></span><h3>Attributes<a class="headerlink" href="#local-attributes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Not backed up</p></li>
-<li><p>Only exists whilst job is running</p></li>
-<li><p>200Gb shared between node users</p></li>
-<li><p>Storage located on compute node so good for compute</p></li>
+<li>Not backed up</li>
+<li>Only exists whilst job is running</li>
+<li>200Gb shared between node users</li>
+<li>Storage located on compute node so good for compute</li>
 </ul>
-</section>
-<section id="local-best-used-for">
+</div>
+<div class="section" id="local-best-used-for">
 <span id="id11"></span><h3>Best used for<a class="headerlink" href="#local-best-used-for" title="Permalink to this headline">¶</a></h3>
-<p>Much fast completion of jobs that require large datasets to be near the CPU, calculations and temp files.</p>
-</section>
-</section>
-<section id="unsw-research-storage">
+<p>Much faster completion of jobs that require large datasets to be near the CPU, calculations and temp files.</p>
+</div>
+</div>
+<div class="section" id="unsw-research-storage">
 <h2>UNSW Research Storage<a class="headerlink" href="#unsw-research-storage" title="Permalink to this headline">¶</a></h2>
-<section id="id12">
+<div class="section" id="id12">
 <h3>Location<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/home/z1234567/sharename
 </pre></div>
 </div>
-</section>
-<section id="id13">
+</div>
+<div class="section" id="id13">
 <h3>Also known as<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">$HOME</span>/sharename
 </pre></div>
 </div>
-</section>
-<section id="id14">
+</div>
+<div class="section" id="id14">
 <h3>Attributes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Backed up</p></li>
-<li><p>Only available on Katana head node</p></li>
+<li>Backed up</li>
+<li>Only available on Katana head node</li>
 </ul>
-</section>
-<section id="id15">
+</div>
+<div class="section" id="id15">
 <h3>Best used for<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <p>Shared and user data files.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
 	    </div>
@@ -336,9 +398,6 @@
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/documentation_options.js">
-
-    </script>
     <script type="text/javascript" src="../_static/jquery.js">
 
     </script>
@@ -346,6 +405,9 @@
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 

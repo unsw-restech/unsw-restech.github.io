@@ -19,10 +19,6 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
-  
 
   
 
@@ -84,6 +80,7 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Storage</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="storage_locations.html">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage_locations.html#storage-summary">Storage  Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cloudstor.html">Cloudstor</a></li>
@@ -156,20 +153,20 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <section id="how-to-use-the-unsw-data-archive">
+  <div class="section" id="how-to-use-the-unsw-data-archive">
 <h1>How to use the UNSW Data Archive<a class="headerlink" href="#how-to-use-the-unsw-data-archive" title="Permalink to this headline">¶</a></h1>
 <p>The UNSW Data Archive is the primary research storage facility provided by UNSW. The Data Archive gives UNSW researchers a free, safe and secure storage service to store and access research data well beyond the life of the project that collected that data.</p>
 <p>To help researchers make use of this system the Katana Data Mover has a script that you can use to copy files from Katana into a project on the Data Archive system.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>To use this script you must have access to the UNSW Data Archive which requires setting up a <a class="reference external" href="https://research.unsw.edu.au/research-data-management-unsw">Research Data Management Plan</a>.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">To use this script you must have access to the UNSW Data Archive which requires setting up a <a class="reference external" href="https://research.unsw.edu.au/research-data-management-unsw">Research Data Management Plan</a>.</p>
 </div>
 <p>The best documentation on how to use the <a class="reference external" href="http://www.dataarchive.unsw.edu.au/">Data Archive</a> is found on their website:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>using the <a class="reference external" href="http://www.dataarchive.unsw.edu.au/help/web-application-guide">web application</a></p></li>
-<li><p>using <a class="reference external" href="http://www.dataarchive.unsw.edu.au/help/sftp-client-guide">SFTP</a></p></li>
-<li><p>using the <a class="reference external" href="http://www.dataarchive.unsw.edu.au/help/command-line-script-guide">Command Line</a></p></li>
+<li>using the <a class="reference external" href="http://www.dataarchive.unsw.edu.au/help/web-application-guide">web application</a></li>
+<li>using <a class="reference external" href="http://www.dataarchive.unsw.edu.au/help/sftp-client-guide">SFTP</a></li>
+<li>using the <a class="reference external" href="http://www.dataarchive.unsw.edu.au/help/command-line-script-guide">Command Line</a></li>
 </ul>
 </div></blockquote>
 <p>To see what versions of the Data Archive script are available log on to <code class="code docutils literal notranslate"><span class="pre">kdm.science.unsw.edu.au</span></code> and type</p>
@@ -180,26 +177,26 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module <span class="nb">help</span> unswdataarchive/2020-03-19
 </pre></div>
 </div>
-<p>To generate a token send an email to the <a class="reference external" href="mailto:ITServiceCentre&#37;&#52;&#48;unsw&#46;edu&#46;au">IT Service Centre</a> asking for a Data Archive token to be generated. A service desk request for an authentication token to be generated needs to indicate a Data Archive namespace (/UNSW_RDS/Dxxx or /UNSW_RDS/Hxxx) as a scope for the token. Your Data Archive namespace is recorded in the Data Archive welcome email.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This advice has poor results. The help file is too long for most screen sizes and there’s no pagination in modules version &lt; 4. Last line should include a location that the researcher can read directly (using less)</p>
-</div>
-<section id="initial-setup">
+<div class="section" id="initial-setup">
 <h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h2>
 <p>To use the Data Archive you need to set up a configuration file. Here’s how to create the generic config in the directory you are in:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[z1234567@kdm ~]$ module add unswdataarchive/2020-03-19
 [z1234567@kdm ~]$ get-config-file
 </pre></div>
 </div>
-<p>To generate a token send an email to the <a class="reference external" href="mailto:ITServiceCentre&#37;&#52;&#48;unsw&#46;edu&#46;au">IT Service Centre</a> asking for a Data Archive token to be generated. A service desk request for an authentication token to be generated needs to indicate a Data Archive namespace (/UNSW_RDS/Dxxx or /UNSW_RDS/Hxxx) as a scope for the token</p>
-<p>Then edit the configuration file <code class="code docutils literal notranslate"><span class="pre">config.cfg</span></code> and to change the line that looks like <code class="code docutils literal notranslate"><span class="pre">token=</span></code></p>
+<p>To generate a token send an email to the <a class="reference external" href="mailto:ITServiceCentre&#37;&#52;&#48;unsw&#46;edu&#46;au">IT Service Centre</a> asking for a Data Archive token to be generated. A service desk request for an authentication token to be generated needs to indicate a Data Archive namespace (/UNSW_RDS/Dxxx or /UNSW_RDS/Hxxx) as a scope for the token. Your Data Archive namespace is recorded in the Data Archive welcome email.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<blockquote>
+<div>This advice has poor results. The help file is too long for most screen sizes and there’s no pagination in modules version &lt; 4. Last line should include a location that the researcher can read directly (using less)</div></blockquote>
+<p class="last">Then edit the configuration file <code class="code docutils literal notranslate"><span class="pre">config.cfg</span></code> and change the line that looks like <code class="code docutils literal notranslate"><span class="pre">token=</span></code></p>
+</div>
 <p>If you haven’t generated a token you can also upload content using your zID and zPass by adding the following line to the file <code class="code docutils literal notranslate"><span class="pre">config.cfg</span></code> and you will be asked for your zPass when you start the upload.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">user</span><span class="o">=</span>z1234567
 </pre></div>
 </div>
-</section>
-<section id="starting-a-data-transfer">
+</div>
+<div class="section" id="starting-a-data-transfer">
 <h2>Starting a data transfer<a class="headerlink" href="#starting-a-data-transfer" title="Permalink to this headline">¶</a></h2>
 <p>To get data <strong>into</strong> the archive, we use <code class="code docutils literal notranslate"><span class="pre">upload.sh</span></code></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>upload.sh /path/to/your/local/directory /UNSW_RDS/D0000000/your/collection/name
@@ -209,8 +206,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>download.sh /UNSW_RDS/D0000000/your/collection/name /path/to/your/local/directory
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
 	    </div>
@@ -250,9 +247,6 @@
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/documentation_options.js">
-
-    </script>
     <script type="text/javascript" src="../_static/jquery.js">
 
     </script>
@@ -260,6 +254,9 @@
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 

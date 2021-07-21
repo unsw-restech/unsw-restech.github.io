@@ -19,10 +19,6 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
-  
 
   
 
@@ -84,6 +80,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../storage/index.html">Storage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../storage/storage_locations.html">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/storage_locations.html#storage-summary">Storage  Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/data_archive.html">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/cloudstor.html">Cloudstor</a></li>
@@ -156,7 +153,7 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <section id="jupyter-notebooks">
+  <div class="section" id="jupyter-notebooks">
 <h1>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
 <p>Jupyter Notebooks and JupyterLab are best run in <a class="reference internal" href="../using_katana/ondemand.html#katana-ondemand"><span class="std std-ref">Katana OnDemand</span></a>.</p>
 <p>Katana OnDemand comes with some built in environment and kernels that are
@@ -164,30 +161,30 @@ available for use out of the box.</p>
 <p>If you need to use the Jupyter Notebook or Jupyter Lab with your own
 <a class="reference internal" href="python.html#python-virtual-environments"><span class="std std-ref">Python Virtual Environments</span></a> you will need to create your own
 Python Jupyter kernel. Here is an example:</p>
-<section id="create-and-load-the-virtual-environment">
+<div class="section" id="create-and-load-the-virtual-environment">
 <h2>Create and load the virtual environment<a class="headerlink" href="#create-and-load-the-virtual-environment" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load python/3.8.3
 $ python3 -m venv --system-site-packages /home/z1234567/.venvs/jupyter-kernel
 $ <span class="nb">source</span> /home/z1234567/.venvs/jupyter-kernel/bin/activate
 </pre></div>
 </div>
-</section>
-<section id="create-the-jupyter-kernel">
+</div>
+<div class="section" id="create-the-jupyter-kernel">
 <h2>Create the Jupyter Kernel<a class="headerlink" href="#create-the-jupyter-kernel" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>jupyter-kernel<span class="o">)</span> $ python3 -m ipykernel install --prefix<span class="o">=</span><span class="nv">$HOME</span>/.local --name<span class="o">=</span>jlab-kernel
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The <code class="code docutils literal notranslate"><span class="pre">--name=XXXX</span></code> isn’t strictly necessary, but if you don’t use it,
+<p class="first admonition-title">Warning</p>
+<p class="last">The <code class="code docutils literal notranslate"><span class="pre">--name=XXXX</span></code> isn’t strictly necessary, but if you don’t use it,
 the kernel will be called “Python 3”. This will not be distinguishable
 from the Katana supplied Python 3 and could cause confusion.</p>
 </div>
 <p>Now when you load a JupyterLab session, you should see your personal kernel
 in the list of available kernels. This kernel will have access to your
 virtual environment.</p>
-</section>
-</section>
+</div>
+</div>
 
 
 	    </div>
@@ -227,9 +224,6 @@ virtual environment.</p>
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/documentation_options.js">
-
-    </script>
     <script type="text/javascript" src="../_static/jquery.js">
 
     </script>
@@ -237,6 +231,9 @@ virtual environment.</p>
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 

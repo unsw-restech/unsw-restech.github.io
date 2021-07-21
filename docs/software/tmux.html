@@ -19,10 +19,6 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
-  
 
   
 
@@ -84,6 +80,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../storage/index.html">Storage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../storage/storage_locations.html">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/storage_locations.html#storage-summary">Storage  Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/data_archive.html">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/cloudstor.html">Cloudstor</a></li>
@@ -156,7 +153,7 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <section id="tmux">
+  <div class="section" id="tmux">
 <h1>TMUX<a class="headerlink" href="#tmux" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/tmux/tmux/wiki">tmux</a> is available on Katana. It can be used to manage multiple sessions, including keeping them alive despite a terminal losing connectivity or being shutdown.</p>
 <p>When you login to Katana using the terminal, it is a “live” session - if you close the terminal, the session will also close. If you shut your laptop or turn off the network, you will also kill the session.</p>
@@ -166,7 +163,7 @@
 <p>Anything you start in this session will keep running even if you are disconnected from that session regardless of the reason. Except when the server itself is rebooted. That - and I hope this is obvious - will kill all sessions.</p>
 <p>If you do get detached, you can re-attach by logging into the same server and using the command <code class="code docutils literal notranslate"><span class="pre">tmux</span> <span class="pre">a</span></code></p>
 <p>tmux is similar to another program called <code class="code docutils literal notranslate"><span class="pre">screen</span></code> which is also available.</p>
-</section>
+</div>
 
 
 	    </div>
@@ -206,9 +203,6 @@
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/documentation_options.js">
-
-    </script>
     <script type="text/javascript" src="../_static/jquery.js">
 
     </script>
@@ -216,6 +210,9 @@
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 

@@ -7,3 +7,5 @@ I have reverted to using plain pip, but note that chardet, idna and docutils mig
 have upper version limits below their current versions.
 
 I am currently running a regular venv and updating via `pip-check -uH`
+
+To build, got into /source, and use the MakeFile. 'make html' will allow a local preview, and 'make github' updates publically displated .html pages in /docs   

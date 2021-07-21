@@ -19,10 +19,6 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
-  
 
   
 
@@ -84,6 +80,7 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Storage</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="storage_locations.html">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage_locations.html#storage-summary">Storage  Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_archive.html">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cloudstor.html">Cloudstor</a></li>
@@ -156,10 +153,10 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <section id="one-drive">
+  <div class="section" id="one-drive">
 <h1>One Drive<a class="headerlink" href="#one-drive" title="Permalink to this headline">¶</a></h1>
 <p>You can mount Microsoft’s <a class="reference external" href="https://onedrive.live.com/">OneDrive</a> on Katana.</p>
-<section id="onedrive-background">
+<div class="section" id="onedrive-background">
 <h2>OneDrive Background<a class="headerlink" href="#onedrive-background" title="Permalink to this headline">¶</a></h2>
 <p>We don’t really recommend researchers mount their OneDrive because the
 technologies aren’t a perfect match and the configuration process is
@@ -173,18 +170,18 @@ aware of and which the UNSW team cannot help with.</p>
 <p>Mounting OneDrive locally will only work on the machine on which the <cite>mount</cite>
 command is run.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>In practice, this has implications. All of our other common
+<p class="first admonition-title">Warning</p>
+<p class="last">In practice, this has implications. All of our other common
 drives, like /apps, /home and /srv/scratch, will automatically mount on all
 machines. OneDrive only mounts on the machine you mount it on. If you mount
 it on the login node katana1, it will not be available on katana2 or any of
 the worker nodes. You will need to mount OneDrive within your PBS script.</p>
 </div>
-</section>
-<section id="prerequisites">
+</div>
+<div class="section" id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://consenthelper.it.unsw.edu.au/consent?appId=c8800f43-7805-46c2-b8b2-1c55f3859a4c">OneDrive needs your consent</a> to give rclone access to your files.</p></li>
+<li><a class="reference external" href="https://consenthelper.it.unsw.edu.au/consent?appId=c8800f43-7805-46c2-b8b2-1c55f3859a4c">OneDrive needs your consent</a> to give rclone access to your files.</li>
 </ol>
 <p>2. We can’t guarantee or test if this works for researchers in Germany or
 China. OneDrive has a different set up for Germany and China due to local laws
@@ -196,16 +193,16 @@ version in the CentOS/RHEL operating system is too old.</p>
 - you add /home/z1234567/bin to your PATH
 - you create a directory /home/z1234567/OneDrive to mount OneDrive onto.</p>
 <ol class="arabic simple" start="5">
-<li><p>You will need to ask us for the secret key. Please don’t write it down.</p></li>
+<li>You will need to ask us for the secret key. Please don’t write it down.</li>
 </ol>
-</section>
-<section id="install-rclone">
+</div>
+<div class="section" id="install-rclone">
 <h2>Install RClone<a class="headerlink" href="#install-rclone" title="Permalink to this headline">¶</a></h2>
 <p>1. Go to this page and copy the link to the latest version for
 <cite>Intel/AMD - 64 Bit Linux</cite>. Currently that looks like this:</p>
 <p><a class="reference external" href="https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.zip">https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.zip</a></p>
 <ol class="arabic simple" start="2">
-<li><p>On Katana, unzip</p></li>
+<li>On Katana, unzip</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ wget https://downloads.rclone.org/v1.55.0/rclone-v1.55.0-linux-amd64.zip
 <span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ unzip rclone-v1.55.0-linux-amd64.zip
@@ -219,37 +216,37 @@ version in the CentOS/RHEL operating system is too old.</p>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Install into a local directory</p></li>
+<li>Install into a local directory</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ cp rclone-v1.55.0-linux-amd64/rclone ~/bin/
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Give OneDrive consent to allow rclone access to your files</p></li>
+<li>Give OneDrive consent to allow rclone access to your files</li>
 </ol>
-</section>
-<section id="configure-rclone-for-onedrive">
+</div>
+<div class="section" id="configure-rclone-for-onedrive">
 <h2>Configure RClone for OneDrive<a class="headerlink" href="#configure-rclone-for-onedrive" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Login to Katana and run:</p></li>
+<li>Login to Katana and run:</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ rclone config
 </pre></div>
 </div>
 <p>You will be asked a set of questions. The short answers are:</p>
 <ol class="arabic simple">
-<li><p>new remote (‘n’)</p></li>
-<li><p>name (‘OneDrive’)</p></li>
-<li><p>storage type <strong>Microsoft OneDrive</strong> (‘26’ in rclone version 1.55)</p></li>
-<li><p>OAuth Client Id (“c8800f43-7805-46c2-b8b2-1c55f3859a4c”)</p></li>
-<li><p>OAuth Client Secret (This is actually a secret. You will need to ask ResTech)</p></li>
-<li><p>Choose national cloud region for OneDrive (“1. global”)</p></li>
-<li><p>Edit advanced config? (“n”)</p></li>
-<li><p>Remote config? (“n”)</p></li>
-<li><p>Paste result:</p></li>
-<li><p>Choose a number from below, or type in an existing value (“1. OneDrive Personal or Business”)</p></li>
-<li><p>Chose drive to use: (“0”)</p></li>
-<li><p>Is that okay? (“Y”)</p></li>
+<li>new remote (‘n’)</li>
+<li>name (‘OneDrive’)</li>
+<li>storage type <strong>Microsoft OneDrive</strong> (‘26’ in rclone version 1.55)</li>
+<li>OAuth Client Id (“c8800f43-7805-46c2-b8b2-1c55f3859a4c”)</li>
+<li>OAuth Client Secret (This is actually a secret. You will need to ask ResTech)</li>
+<li>Choose national cloud region for OneDrive (“1. global”)</li>
+<li>Edit advanced config? (“n”)</li>
+<li>Remote config? (“n”)</li>
+<li>Paste result:</li>
+<li>Choose a number from below, or type in an existing value (“1. OneDrive Personal or Business”)</li>
+<li>Chose drive to use: (“0”)</li>
+<li>Is that okay? (“Y”)</li>
 </ol>
 <p>You should then see something like this to which you should answer yes:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--------------------
@@ -267,12 +264,12 @@ version in the CentOS/RHEL operating system is too old.</p>
  y/e/d&gt;
 </pre></div>
 </div>
-</section>
-<section id="how-to-mount-onedrive">
+</div>
+<div class="section" id="how-to-mount-onedrive">
 <h2>How to mount OneDrive<a class="headerlink" href="#how-to-mount-onedrive" title="Permalink to this headline">¶</a></h2>
 <p>Once logged in or in a pbs script:</p>
 <ol class="arabic simple">
-<li><p>Mount the drive. The basic syntax is:</p></li>
+<li>Mount the drive. The basic syntax is:</li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rclone mount &lt;remote-name&gt;: /path/to/local/mount
 </pre></div>
@@ -283,23 +280,23 @@ notably <cite>–daemon</cite> and <cite>–vfs-cache-mode writes</cite>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ rclone mount OneDrive: /home/z1234567/OneDrive --daemon --vfs-cache-mode writes
 </pre></div>
 </div>
-</section>
-<section id="final-notes">
+</div>
+<div class="section" id="final-notes">
 <h2>Final Notes<a class="headerlink" href="#final-notes" title="Permalink to this headline">¶</a></h2>
 <p>ResTech really only recommends this if you have sensitive data.</p>
 <p>If your data is relatively large - anything above 1GB - we recommend you follow
 our standard procedure for large datasets:</p>
 <ol class="arabic simple">
-<li><p>copy data from source (OneDrive) closer to the cpus ($PBS_TMPDIR)</p></li>
-<li><p>&lt;do analysis&gt;</p></li>
-<li><p>write results to local drive ($PBS_TMPDIR)</p></li>
-<li><p>copy results from local drive to OneDrive</p></li>
-<li><p>delete local data and results</p></li>
+<li>copy data from source (OneDrive) closer to the cpus ($PBS_TMPDIR)</li>
+<li>&lt;do analysis&gt;</li>
+<li>write results to local drive ($PBS_TMPDIR)</li>
+<li>copy results from local drive to OneDrive</li>
+<li>delete local data and results</li>
 </ol>
 <p><cite>$PBS_TMPDIR</cite> is only visible to the PBS job that is running. This is as secure
 as possible.</p>
-</section>
-</section>
+</div>
+</div>
 
 
 	    </div>
@@ -339,9 +336,6 @@ as possible.</p>
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/documentation_options.js">
-
-    </script>
     <script type="text/javascript" src="../_static/jquery.js">
 
     </script>
@@ -349,6 +343,9 @@ as possible.</p>
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 

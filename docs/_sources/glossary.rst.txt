@@ -37,7 +37,7 @@ Glossary
         Global scratch is a large data store for data that isn't backed up. It differs from local scratch in that it is available from every node including the :term:`Head Node`. If you have data files or working directories this is where you should put them.
 
     Head Node
-        The head node of the :term:`Cluster` is the computer that manages job and resource management. This is where the :term:`Job Scheduler` and :term:`Resource Manager` run. It is kept separate from the :term:`Login Node` so that production doesn't stop if someone accidentally breaks the :term:`Login Node`.
+        The head node of the :term:`Cluster` is the computer that manages job and resource management. This is where the :term:`Job Scheduler` and :term:`Resource Manager` are run. It is kept separate from the :term:`Login Node` so that production doesn't stop if someone accidentally breaks the :term:`Login Node`.
 
     Held Jobs
         Held jobs are jobs that cannot currently run. They are put into that state by either the server or the system administrator. Jobs stay held until released by a systems administrator, at which point they become :term:`Queued Jobs`. These can be seen by running :code:`qstat` and looking for an H in the second last column. See :ref:`more_info_from_pbs`
@@ -61,16 +61,16 @@ Glossary
         The module command is a means of providing access to different versions of software without risking version conflicts across multiple users.
 
     Management Plane
-        The Management Plane is the set of servers that sit above or adjacent to the :term:`Compute Nodes`. These servers are used to manage the system, manage the storage, or manage the network. User's have access to the :term:`Login Node` and :term:`Data Transfer Node`. Other servers include the :term:`Head Node`. 
+        The Management Plane is the set of servers that sit above or adjacent to the :term:`Compute Nodes`. These servers are used to manage the system, manage the storage, or manage the network. Users have access to the :term:`Login Node` and :term:`Data Transfer Node`. Other servers include the :term:`Head Node`. 
 
     MPI
         Message Passing Infrastructure (MPI) is a technology for running a :term:`Batch Job` on more than one :term:`Compute Nodes`. Designed for situations where parts of the job can run on independent nodes with the results being transferred to other nodes for the next part of the job to be run.
 
     Network Drive 
-        A network drive is a drive that is independant from the cluster. 
+        A network drive is a drive that is independent from the cluster. 
 
     Queue
-        All submitted jobs are put into a queue. Each queue has a collection of resources available to it. As those resources become available, new jobs will be assigned to those resources. Job prioritisation is done by the scheduler and depends on a number of factors including length of wait time and total resource use by user over the previous month.
+        All submitted jobs are put into a queue. Each queue has a collection of resources available to it. As those resources become available, new jobs will be assigned to those resources. Job prioritisation is done by the scheduler and depends on a number of factors including length of wait time and total resource use by the user over the previous month.
 
     Queued Jobs 
         Queued jobs are eligible to run but are waiting for a :term:`Compute Nodes` that matches their requirements to become available. Which idle job will be assigned to a compute node next depends on the :term:`Job Scheduler`. These can be seen by running :code:`qstat` and looking for a Q in the second last column. See :ref:`more_info_from_pbs`
@@ -82,4 +82,4 @@ Glossary
         Scratch space is a non backed up storage area where users can store transient data. It should not be used for job code as it is not backed up.
 
     Walltime
-        In HPC, walltime is the amount of time that you will be allocated when your job runs. If your jobs runs longer than the walltime, it will be killed by the :term:`Job Scheduler`. It is used by the scheduler for helping allocate resources onto servers. On **Katana** it is also used to determine which :term:`Queue` your job will end up in. The shorter the walltime, the more opportunity your job has to run which in turn means that it will start sooner. In short - it's harder to find 100 hours of space than it is to find 12 hours of space.
+        In HPC, walltime is the amount of time that you will be allocated when your job runs. If your jobs runs longer than the walltime, it will be killed by the :term:`Job Scheduler`. It is used by the scheduler for helping allocate resources onto servers. On **Katana** it is also used to determine which :term:`Queue` your job will end up in. The shorter the walltime, the more opportunity your job has to run which in turn means that it will start sooner. In short - it's harder to find 100 hours of aviable time than it is to find 12 hours.

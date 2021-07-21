@@ -156,7 +156,7 @@ The output that would normally go to screen and error messages of a batch job wi
     #PBS -j oe
     #PBS -o /home/z1234567/results/Output_Report
 
-When a job starts, it needs to know where to save it's output and do it's work. This is called the *current working directory*. By default the job scheduler will make your *current working directory* your home directory (:code:`/home/z1234567`). This isn't likely or ideal and is important that each job sets its current working directory appropriately. There are a couple of ways to do this, the easiest is to set the *current working directory* to the directory you are in when you execute :code:`qsub` by using
+When a job starts, it needs to know where to save its output and do its work. This is called the *current working directory*. By default the job scheduler will make your *current working directory* your home directory (:code:`/home/z1234567`). This isn't likely or ideal and is important that each job sets its current working directory appropriately. There are a couple of ways to do this, the easiest is to set the *current working directory* to the directory you are in when you execute :code:`qsub` by using
 
 .. code-block:: bash
 
@@ -235,7 +235,7 @@ If your batch job can be split into multiple steps you may want to split one big
 1. If your large job runs for over 200 hours, it won't finish on Katana.
 2. If your job has multiple steps which use different amounts of resources at each step. If you have a pipeline that takes 50 hours to run and needs 200GB of memory for an hour, but only 50GB the rest of the time, then the memory is sitting idle. 
 3. Katana has prioritisations based on how many resources any one user uses. If you ask for 200GB of memory, this will be accounted for when working out your next job's priority.
-4. There's no other way to say this, but because there are more resources for 12 hour jobs, seven or eight 12 hour jobs will often finish well before a single 100 hour job even starts. 
+4. Because there are many more resources for 12 hour jobs, seven or eight 12 hour jobs will often finish well before a single 100 hour job even starts. 
 
 
 .. _state_of_pbs:
@@ -269,7 +269,7 @@ You can get an overview of the compute nodes and a list of all the jobs running 
     k010  normal-physics          free           0/32     0/ 187gb      
 
 
-To get information about a particular node, you can use :code:`pbsnodes` but on it's own it is a firehose. Using it with a particular node name is more effective:
+To get information about a particular node, you can use :code:`pbsnodes` but on its own it is a firehose. Using it with a particular node name is more effective:
 
 .. code-block:: bash
 
@@ -475,7 +475,7 @@ If you request more than 12 hours of :code:`WALLTIME` then you can only use the 
 In fact, if there is spare capacity on Katana, which there is most of the time, six 10 hours jobs will finish before a single 20 hour job will.
 Requesting more resources for your job decreases the places that the job can run
 
-The most obvious example is going over the 12 hour limit which limits the number of compute nodes that your job can run on but it is worth . For example specifying the CPU in your job script restricts you to the nodes with that CPU. A job that requests 20Gb will run on a 128Gb node with a 100Gb job already running but a 30Gb job will not be able to.
+The most obvious example is going over the 12 hour limit which limits the number of compute nodes that your job can run on. For example specifying the CPU in your job script restricts you to the nodes with that CPU. A job that requests 20Gb will run on a 128Gb node with a 100Gb job already running but a 30Gb job will not be able to.
 
 Running your jobs interactively makes it hard to manage multiple concurrent jobs
 ================================================================================

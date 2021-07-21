@@ -6,7 +6,7 @@ About Katana
 
 Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources. With over 4000 CPU cores spread over a large number of compute nodes each with up to 1Tb of memory, Katana provides a flexible compute environment where users can run jobs that wouldn't be possible or practical on a desktop or laptop. 
 
-Katana is powerful on it's own, but can be seen as a training or development base before migrating up to systems like as Australia's peak HPC system Gadi_, located at NCI_. Research Technology Services also provide training, advice and support for new users or those uncertain if High Performance Computing is the right fit for their research needs.
+Katana is powerful on it's own, but can be seen as a training or development base before migrating up to systems like Australia's peak HPC system Gadi_, located at NCI_. Research Technology Services also provide training, advice and support for new users or those uncertain if High Performance Computing is the right fit for their research needs.
 
 .. _system_configuration:
 
@@ -25,7 +25,7 @@ System Configuration
 Compute
 *******
 
-- Hetergenous hardware: Dell, Lenovo, Huawei.
+- Heterogenous hardware: Dell, Lenovo, Huawei.
 - roughly 170 nodes
 
 .. _gpu_resources:
@@ -44,7 +44,7 @@ You cannot use Tensorflow on the login nodes because they don't have GPUs. You w
 
 .. warning::
 
-    Unfortunately, and hopefully unsurprisingly, GPU nodes are in incredibly high demand. 
+    Unfortunately, GPU nodes are in incredibly high demand. 
     There is no - NO - situation where we understand, accept or care, that your project is 
     more special than anyone else's project. You will need to wait like everyone else - or buy
     a GPU node for your group on which you will get priority

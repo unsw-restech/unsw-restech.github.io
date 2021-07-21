@@ -19,10 +19,6 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
-  
 
   
 
@@ -84,6 +80,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../storage/index.html">Storage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../storage/storage_locations.html">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/storage_locations.html#storage-summary">Storage  Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/data_archive.html">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/cloudstor.html">Cloudstor</a></li>
@@ -156,14 +153,14 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <section id="sas">
+  <div class="section" id="sas">
 <h1>SAS<a class="headerlink" href="#sas" title="Permalink to this headline">¶</a></h1>
 <p>The 64-bit version of SAS is available as a module.</p>
-<p>By default SAS will store temporary files in <code class="code docutils literal notranslate"><span class="pre">/tmp</span></code> which can easily fill up leaving the node offline. In order to avoid this we have set the default to <code class="code docutils literal notranslate"><span class="pre">$TMPDIR</span></code> to save temporary files in <code class="code docutils literal notranslate"><span class="pre">/var/tmp</span></code> on the Katana head node and local scratch on compute nodes. If you wish to save temporary files to a different location you can do that by using the <code class="code docutils literal notranslate"><span class="pre">-work</span></code> flag with your SAS command or adding this line to your <code class="code docutils literal notranslate"><span class="pre">sasv9.cfg</span></code> file:</p>
+<p>By default SAS will store temporary files in <code class="code docutils literal notranslate"><span class="pre">/tmp</span></code> which can easily fill up, leaving the node offline. In order to avoid this we have set the default to <code class="code docutils literal notranslate"><span class="pre">$TMPDIR</span></code> to save temporary files in <code class="code docutils literal notranslate"><span class="pre">/var/tmp</span></code> on the Katana head node and local scratch on compute nodes. If you wish to save temporary files to a different location you can do that by using the <code class="code docutils literal notranslate"><span class="pre">-work</span></code> flag with your SAS command or adding this line to your <code class="code docutils literal notranslate"><span class="pre">sasv9.cfg</span></code> file:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>-work /my/directory
 </pre></div>
 </div>
-</section>
+</div>
 
 
 	    </div>
@@ -203,9 +200,6 @@
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/documentation_options.js">
-
-    </script>
     <script type="text/javascript" src="../_static/jquery.js">
 
     </script>
@@ -213,6 +207,9 @@
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 

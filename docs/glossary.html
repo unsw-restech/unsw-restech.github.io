@@ -19,10 +19,6 @@
     <link rel="stylesheet" href="_static/css/pdj.css" type="text/css" />
 
   
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="_static/css/pdj.css" type="text/css" />
-  
 
   
 
@@ -82,6 +78,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="storage/index.html">Storage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="storage/storage_locations.html">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="storage/storage_locations.html#storage-summary">Storage  Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="storage/kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="storage/data_archive.html">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="storage/cloudstor.html">Cloudstor</a></li>
@@ -154,63 +151,63 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <section id="glossary">
+  <div class="section" id="glossary">
 <h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
-<dl class="glossary simple">
-<dt id="term-Active-Job">Active Job<a class="headerlink" href="#term-Active-Job" title="Permalink to this term">¶</a></dt><dd><p>Active jobs are jobs that have been assigned to a compute node and are currently running. These can be seen by running <code class="code docutils literal notranslate"><span class="pre">qstat</span></code> and looking for an A in the second last column. See <a class="reference internal" href="using_katana/running_jobs.html#more-info-from-pbs"><span class="std std-ref">Show all jobs on the system</span></a></p>
-</dd>
-<dt id="term-Array-Job">Array Job<a class="headerlink" href="#term-Array-Job" title="Permalink to this term">¶</a></dt><dd><p>If you want to run the same job multiple times with slight differences (filenames, data source, etc), then you can create an array job which will submit multiple jobs for you from the one job script.</p>
-</dd>
-<dt id="term-Batch-Job">Batch Job<a class="headerlink" href="#term-Batch-Job" title="Permalink to this term">¶</a></dt><dd><p>A batch job is a job on a cluster that runs without any further input once it has been submitted. Almost all jobs on the cluster are batch jobs. All jobs are either batch jobs or <a class="reference internal" href="#term-Interactive-Job"><span class="xref std std-term">Interactive Job</span></a>.</p>
-</dd>
-<dt id="term-Blade">Blade<a class="headerlink" href="#term-Blade" title="Permalink to this term">¶</a></dt><dd><p>Some of the compute nodes Katana are called blade servers which allow a higher density of servers in the same space. Each blade consists of multiple CPUs with 6 or more cores.</p>
-</dd>
-<dt id="term-Cluster">Cluster<a class="headerlink" href="#term-Cluster" title="Permalink to this term">¶</a></dt><dd><p>A computer cluster is a set of connected computers that work together so that, in many respects, they can be viewed as a single system. Using a cluster is referred to as High Performance Computing or HPC. Most will have a <a class="reference internal" href="#term-Management-Plane"><span class="xref std std-term">Management Plane</span></a> and several <a class="reference internal" href="#term-Compute-Nodes"><span class="xref std std-term">Compute Nodes</span></a>.</p>
-</dd>
-<dt id="term-Compute-Nodes">Compute Nodes<a class="headerlink" href="#term-Compute-Nodes" title="Permalink to this term">¶</a></dt><dd><p>The compute nodes are where the compute jobs run. Users submit jobs from the <a class="reference internal" href="#term-Login-Node"><span class="xref std std-term">Login Node</span></a> and the <a class="reference internal" href="#term-Job-Scheduler"><span class="xref std std-term">Job Scheduler</span></a> on the <a class="reference internal" href="#term-Head-Node"><span class="xref std std-term">Head Node</span></a> will assign the job to one or more compute nodes.</p>
-</dd>
-<dt id="term-CPU-Core">CPU Core<a class="headerlink" href="#term-CPU-Core" title="Permalink to this term">¶</a></dt><dd><p>Each node in the cluster has one or more CPUs each of which has 6 or more cores. Each core is able to run one job at a time so a node with 12 cores could have 12 jobs running in parallel.</p>
-</dd>
-<dt id="term-Data-Transfer-Node">Data Transfer Node<a class="headerlink" href="#term-Data-Transfer-Node" title="Permalink to this term">¶</a></dt><dd><p>The Data Transfer Node, also known as the <a class="reference internal" href="storage/kdm.html#katana-data-mover"><span class="std std-ref">Katana Data Mover</span></a> (KDM), is a server that is used for transferring files to, from, and within the cluster. Due to the nature of moving data around, it uses a significant amount of memory and network bandwidth. This server is used to take that load off the <a class="reference internal" href="#term-Login-Node"><span class="xref std std-term">Login Node</span></a>.</p>
-</dd>
-<dt id="term-Environment-Variable">Environment Variable<a class="headerlink" href="#term-Environment-Variable" title="Permalink to this term">¶</a></dt><dd><p>Environment variables are variables that are set in Linux to tell applications where to find programs and set program options. They will start with a $ symbol. For example, all users can reference <code class="code docutils literal notranslate"><span class="pre">$TMPDIR</span></code> in their <a class="reference internal" href="#term-Job-Script"><span class="xref std std-term">Job Script</span></a> in order to use <a class="reference internal" href="#term-Local-Scratch"><span class="xref std std-term">Local Scratch</span></a></p>
-</dd>
-<dt id="term-Global-Scratch">Global Scratch<a class="headerlink" href="#term-Global-Scratch" title="Permalink to this term">¶</a></dt><dd><p>Global scratch is a large data store for data that isn’t backed up. It differs from local scratch in that it is available from every node including the <a class="reference internal" href="#term-Head-Node"><span class="xref std std-term">Head Node</span></a>. If you have data files or working directories this is where you should put them.</p>
-</dd>
-<dt id="term-Head-Node">Head Node<a class="headerlink" href="#term-Head-Node" title="Permalink to this term">¶</a></dt><dd><p>The head node of the <a class="reference internal" href="#term-Cluster"><span class="xref std std-term">Cluster</span></a> is the computer that manages job and resource management. This is where the <a class="reference internal" href="#term-Job-Scheduler"><span class="xref std std-term">Job Scheduler</span></a> and <a class="reference internal" href="#term-Resource-Manager"><span class="xref std std-term">Resource Manager</span></a> run. It is kept separate from the <a class="reference internal" href="#term-Login-Node"><span class="xref std std-term">Login Node</span></a> so that production doesn’t stop if someone accidentally breaks the <a class="reference internal" href="#term-Login-Node"><span class="xref std std-term">Login Node</span></a>.</p>
-</dd>
-<dt id="term-Held-Jobs">Held Jobs<a class="headerlink" href="#term-Held-Jobs" title="Permalink to this term">¶</a></dt><dd><p>Held jobs are jobs that cannot currently run. They are put into that state by either the server or the system administrator. Jobs stay held until released by a systems administrator, at which point they become <a class="reference internal" href="#term-Queued-Jobs"><span class="xref std std-term">Queued Jobs</span></a>. These can be seen by running <code class="code docutils literal notranslate"><span class="pre">qstat</span></code> and looking for an H in the second last column. See <a class="reference internal" href="using_katana/running_jobs.html#more-info-from-pbs"><span class="std std-ref">Show all jobs on the system</span></a></p>
-</dd>
-<dt id="term-Interactive-Job">Interactive Job<a class="headerlink" href="#term-Interactive-Job" title="Permalink to this term">¶</a></dt><dd><p>An interactive job is a way of testing your program and data on a cluster without negatively impacting the <a class="reference internal" href="#term-Login-Node"><span class="xref std std-term">Login Node</span></a>. Once a request has been submitted and accepted for an interactive job, the user will no longer be on the relatively small login nodes, and will have access to the resources requested on the <a class="reference internal" href="#term-Compute-Nodes"><span class="xref std std-term">Compute Nodes</span></a>. In other words, your terminal session will move from a small (virtual) computer you share with many people to a large computer you share with very few people. All jobs are either a <a class="reference internal" href="#term-Batch-Job"><span class="xref std std-term">Batch Job</span></a> or an interactive job. Instructions on using <a class="reference internal" href="using_katana/running_jobs.html#interactive-job"><span class="std std-ref">Interactive Jobs</span></a></p>
-</dd>
-<dt id="term-Job-Scheduler">Job Scheduler<a class="headerlink" href="#term-Job-Scheduler" title="Permalink to this term">¶</a></dt><dd><p>The job scheduler monitors the jobs currenty running on the cluster and assigns <a class="reference internal" href="#term-Queued-Jobs"><span class="xref std std-term">Queued Jobs</span></a> to <a class="reference internal" href="#term-Compute-Nodes"><span class="xref std std-term">Compute Nodes</span></a> based on recent cluster useage, job resource requirements and nodes available to the research group of the submitter. In summary the job scheduler determines when and where a job should run. The job scheduler that we use is called PBSPro.</p>
-</dd>
-<dt id="term-Job-Script">Job Script<a class="headerlink" href="#term-Job-Script" title="Permalink to this term">¶</a></dt><dd><p>A job script is a file containing all of the information needed to run a <a class="reference internal" href="#term-Batch-Job"><span class="xref std std-term">Batch Job</span></a> including the resource requirements and the actual commands to run the job.</p>
-</dd>
-<dt id="term-Local-Scratch">Local Scratch<a class="headerlink" href="#term-Local-Scratch" title="Permalink to this term">¶</a></dt><dd><p>Local scratch refers to the storage available internally on each compute node. Of all the different scratch directories this storage has the best performance however you will need to move your data into local scratch as part of your job script. You can use local scratch with the <a class="reference internal" href="#term-Environment-Variable"><span class="xref std std-term">Environment Variable</span></a> <code class="code docutils literal notranslate"><span class="pre">$TMPDIR</span></code></p>
-</dd>
-<dt id="term-Login-Node">Login Node<a class="headerlink" href="#term-Login-Node" title="Permalink to this term">¶</a></dt><dd><p>The login nodes of the cluster is the computer that you log in to when you connect to the cluster. This node is used to compile software and submit jobs.</p>
-</dd>
-<dt id="term-Module">Module<a class="headerlink" href="#term-Module" title="Permalink to this term">¶</a></dt><dd><p>The module command is a means of providing access to different versions of software without risking version conflicts across multiple users.</p>
-</dd>
-<dt id="term-Management-Plane">Management Plane<a class="headerlink" href="#term-Management-Plane" title="Permalink to this term">¶</a></dt><dd><p>The Management Plane is the set of servers that sit above or adjacent to the <a class="reference internal" href="#term-Compute-Nodes"><span class="xref std std-term">Compute Nodes</span></a>. These servers are used to manage the system, manage the storage, or manage the network. User’s have access to the <a class="reference internal" href="#term-Login-Node"><span class="xref std std-term">Login Node</span></a> and <a class="reference internal" href="#term-Data-Transfer-Node"><span class="xref std std-term">Data Transfer Node</span></a>. Other servers include the <a class="reference internal" href="#term-Head-Node"><span class="xref std std-term">Head Node</span></a>.</p>
-</dd>
-<dt id="term-MPI">MPI<a class="headerlink" href="#term-MPI" title="Permalink to this term">¶</a></dt><dd><p>Message Passing Infrastructure (MPI) is a technology for running a <a class="reference internal" href="#term-Batch-Job"><span class="xref std std-term">Batch Job</span></a> on more than one <a class="reference internal" href="#term-Compute-Nodes"><span class="xref std std-term">Compute Nodes</span></a>. Designed for situations where parts of the job can run on independent nodes with the results being transferred to other nodes for the next part of the job to be run.</p>
-</dd>
-<dt id="term-Network-Drive">Network Drive<a class="headerlink" href="#term-Network-Drive" title="Permalink to this term">¶</a></dt><dd><p>A network drive is a drive that is independant from the cluster.</p>
-</dd>
-<dt id="term-Queue">Queue<a class="headerlink" href="#term-Queue" title="Permalink to this term">¶</a></dt><dd><p>All submitted jobs are put into a queue. Each queue has a collection of resources available to it. As those resources become available, new jobs will be assigned to those resources. Job prioritisation is done by the scheduler and depends on a number of factors including length of wait time and total resource use by user over the previous month.</p>
-</dd>
-<dt id="term-Queued-Jobs">Queued Jobs<a class="headerlink" href="#term-Queued-Jobs" title="Permalink to this term">¶</a></dt><dd><p>Queued jobs are eligible to run but are waiting for a <a class="reference internal" href="#term-Compute-Nodes"><span class="xref std std-term">Compute Nodes</span></a> that matches their requirements to become available. Which idle job will be assigned to a compute node next depends on the <a class="reference internal" href="#term-Job-Scheduler"><span class="xref std std-term">Job Scheduler</span></a>. These can be seen by running <code class="code docutils literal notranslate"><span class="pre">qstat</span></code> and looking for a Q in the second last column. See <a class="reference internal" href="using_katana/running_jobs.html#more-info-from-pbs"><span class="std std-ref">Show all jobs on the system</span></a></p>
-</dd>
-<dt id="term-Resource-Manager">Resource Manager<a class="headerlink" href="#term-Resource-Manager" title="Permalink to this term">¶</a></dt><dd><p>A resource manager works with the <a class="reference internal" href="#term-Job-Scheduler"><span class="xref std std-term">Job Scheduler</span></a> to manage running jobs on a cluster. Amongst other tasks it receives and parses job submissions, starts jobs on <a class="reference internal" href="#term-Compute-Nodes"><span class="xref std std-term">Compute Nodes</span></a>, monitors jobs, kills jobs, and manages how many <a class="reference internal" href="#term-CPU-Core"><span class="xref std std-term">CPU Core</span></a> are available on each <a class="reference internal" href="#term-Compute-Nodes"><span class="xref std std-term">Compute Nodes</span></a></p>
-</dd>
-<dt id="term-Scratch-Space">Scratch Space<a class="headerlink" href="#term-Scratch-Space" title="Permalink to this term">¶</a></dt><dd><p>Scratch space is a non backed up storage area where users can store transient data. It should not be used for job code as it is not backed up.</p>
-</dd>
-<dt id="term-Walltime">Walltime<a class="headerlink" href="#term-Walltime" title="Permalink to this term">¶</a></dt><dd><p>In HPC, walltime is the amount of time that you will be allocated when your job runs. If your jobs runs longer than the walltime, it will be killed by the <a class="reference internal" href="#term-Job-Scheduler"><span class="xref std std-term">Job Scheduler</span></a>. It is used by the scheduler for helping allocate resources onto servers. On <strong>Katana</strong> it is also used to determine which <a class="reference internal" href="#term-Queue"><span class="xref std std-term">Queue</span></a> your job will end up in. The shorter the walltime, the more opportunity your job has to run which in turn means that it will start sooner. In short - it’s harder to find 100 hours of space than it is to find 12 hours of space.</p>
-</dd>
+<dl class="glossary docutils">
+<dt id="term-active-job">Active Job</dt>
+<dd>Active jobs are jobs that have been assigned to a compute node and are currently running. These can be seen by running <code class="code docutils literal notranslate"><span class="pre">qstat</span></code> and looking for an A in the second last column. See <a class="reference internal" href="using_katana/running_jobs.html#more-info-from-pbs"><span class="std std-ref">Show all jobs on the system</span></a></dd>
+<dt id="term-array-job">Array Job</dt>
+<dd>If you want to run the same job multiple times with slight differences (filenames, data source, etc), then you can create an array job which will submit multiple jobs for you from the one job script.</dd>
+<dt id="term-batch-job">Batch Job</dt>
+<dd>A batch job is a job on a cluster that runs without any further input once it has been submitted. Almost all jobs on the cluster are batch jobs. All jobs are either batch jobs or <a class="reference internal" href="#term-interactive-job"><span class="xref std std-term">Interactive Job</span></a>.</dd>
+<dt id="term-blade">Blade</dt>
+<dd>Some of the compute nodes Katana are called blade servers which allow a higher density of servers in the same space. Each blade consists of multiple CPUs with 6 or more cores.</dd>
+<dt id="term-cluster">Cluster</dt>
+<dd>A computer cluster is a set of connected computers that work together so that, in many respects, they can be viewed as a single system. Using a cluster is referred to as High Performance Computing or HPC. Most will have a <a class="reference internal" href="#term-management-plane"><span class="xref std std-term">Management Plane</span></a> and several <a class="reference internal" href="#term-compute-nodes"><span class="xref std std-term">Compute Nodes</span></a>.</dd>
+<dt id="term-compute-nodes">Compute Nodes</dt>
+<dd>The compute nodes are where the compute jobs run. Users submit jobs from the <a class="reference internal" href="#term-login-node"><span class="xref std std-term">Login Node</span></a> and the <a class="reference internal" href="#term-job-scheduler"><span class="xref std std-term">Job Scheduler</span></a> on the <a class="reference internal" href="#term-head-node"><span class="xref std std-term">Head Node</span></a> will assign the job to one or more compute nodes.</dd>
+<dt id="term-cpu-core">CPU Core</dt>
+<dd>Each node in the cluster has one or more CPUs each of which has 6 or more cores. Each core is able to run one job at a time so a node with 12 cores could have 12 jobs running in parallel.</dd>
+<dt id="term-data-transfer-node">Data Transfer Node</dt>
+<dd>The Data Transfer Node, also known as the <a class="reference internal" href="storage/kdm.html#katana-data-mover"><span class="std std-ref">Katana Data Mover</span></a> (KDM), is a server that is used for transferring files to, from, and within the cluster. Due to the nature of moving data around, it uses a significant amount of memory and network bandwidth. This server is used to take that load off the <a class="reference internal" href="#term-login-node"><span class="xref std std-term">Login Node</span></a>.</dd>
+<dt id="term-environment-variable">Environment Variable</dt>
+<dd>Environment variables are variables that are set in Linux to tell applications where to find programs and set program options. They will start with a $ symbol. For example, all users can reference <code class="code docutils literal notranslate"><span class="pre">$TMPDIR</span></code> in their <a class="reference internal" href="#term-job-script"><span class="xref std std-term">Job Script</span></a> in order to use <a class="reference internal" href="#term-local-scratch"><span class="xref std std-term">Local Scratch</span></a></dd>
+<dt id="term-global-scratch">Global Scratch</dt>
+<dd>Global scratch is a large data store for data that isn’t backed up. It differs from local scratch in that it is available from every node including the <a class="reference internal" href="#term-head-node"><span class="xref std std-term">Head Node</span></a>. If you have data files or working directories this is where you should put them.</dd>
+<dt id="term-head-node">Head Node</dt>
+<dd>The head node of the <a class="reference internal" href="#term-cluster"><span class="xref std std-term">Cluster</span></a> is the computer that manages job and resource management. This is where the <a class="reference internal" href="#term-job-scheduler"><span class="xref std std-term">Job Scheduler</span></a> and <a class="reference internal" href="#term-resource-manager"><span class="xref std std-term">Resource Manager</span></a> are run. It is kept separate from the <a class="reference internal" href="#term-login-node"><span class="xref std std-term">Login Node</span></a> so that production doesn’t stop if someone accidentally breaks the <a class="reference internal" href="#term-login-node"><span class="xref std std-term">Login Node</span></a>.</dd>
+<dt id="term-held-jobs">Held Jobs</dt>
+<dd>Held jobs are jobs that cannot currently run. They are put into that state by either the server or the system administrator. Jobs stay held until released by a systems administrator, at which point they become <a class="reference internal" href="#term-queued-jobs"><span class="xref std std-term">Queued Jobs</span></a>. These can be seen by running <code class="code docutils literal notranslate"><span class="pre">qstat</span></code> and looking for an H in the second last column. See <a class="reference internal" href="using_katana/running_jobs.html#more-info-from-pbs"><span class="std std-ref">Show all jobs on the system</span></a></dd>
+<dt id="term-interactive-job">Interactive Job</dt>
+<dd>An interactive job is a way of testing your program and data on a cluster without negatively impacting the <a class="reference internal" href="#term-login-node"><span class="xref std std-term">Login Node</span></a>. Once a request has been submitted and accepted for an interactive job, the user will no longer be on the relatively small login nodes, and will have access to the resources requested on the <a class="reference internal" href="#term-compute-nodes"><span class="xref std std-term">Compute Nodes</span></a>. In other words, your terminal session will move from a small (virtual) computer you share with many people to a large computer you share with very few people. All jobs are either a <a class="reference internal" href="#term-batch-job"><span class="xref std std-term">Batch Job</span></a> or an interactive job. Instructions on using <a class="reference internal" href="using_katana/running_jobs.html#interactive-job"><span class="std std-ref">Interactive Jobs</span></a></dd>
+<dt id="term-job-scheduler">Job Scheduler</dt>
+<dd>The job scheduler monitors the jobs currenty running on the cluster and assigns <a class="reference internal" href="#term-queued-jobs"><span class="xref std std-term">Queued Jobs</span></a> to <a class="reference internal" href="#term-compute-nodes"><span class="xref std std-term">Compute Nodes</span></a> based on recent cluster useage, job resource requirements and nodes available to the research group of the submitter. In summary the job scheduler determines when and where a job should run. The job scheduler that we use is called PBSPro.</dd>
+<dt id="term-job-script">Job Script</dt>
+<dd>A job script is a file containing all of the information needed to run a <a class="reference internal" href="#term-batch-job"><span class="xref std std-term">Batch Job</span></a> including the resource requirements and the actual commands to run the job.</dd>
+<dt id="term-local-scratch">Local Scratch</dt>
+<dd>Local scratch refers to the storage available internally on each compute node. Of all the different scratch directories this storage has the best performance however you will need to move your data into local scratch as part of your job script. You can use local scratch with the <a class="reference internal" href="#term-environment-variable"><span class="xref std std-term">Environment Variable</span></a> <code class="code docutils literal notranslate"><span class="pre">$TMPDIR</span></code></dd>
+<dt id="term-login-node">Login Node</dt>
+<dd>The login nodes of the cluster is the computer that you log in to when you connect to the cluster. This node is used to compile software and submit jobs.</dd>
+<dt id="term-module">Module</dt>
+<dd>The module command is a means of providing access to different versions of software without risking version conflicts across multiple users.</dd>
+<dt id="term-management-plane">Management Plane</dt>
+<dd>The Management Plane is the set of servers that sit above or adjacent to the <a class="reference internal" href="#term-compute-nodes"><span class="xref std std-term">Compute Nodes</span></a>. These servers are used to manage the system, manage the storage, or manage the network. Users have access to the <a class="reference internal" href="#term-login-node"><span class="xref std std-term">Login Node</span></a> and <a class="reference internal" href="#term-data-transfer-node"><span class="xref std std-term">Data Transfer Node</span></a>. Other servers include the <a class="reference internal" href="#term-head-node"><span class="xref std std-term">Head Node</span></a>.</dd>
+<dt id="term-mpi">MPI</dt>
+<dd>Message Passing Infrastructure (MPI) is a technology for running a <a class="reference internal" href="#term-batch-job"><span class="xref std std-term">Batch Job</span></a> on more than one <a class="reference internal" href="#term-compute-nodes"><span class="xref std std-term">Compute Nodes</span></a>. Designed for situations where parts of the job can run on independent nodes with the results being transferred to other nodes for the next part of the job to be run.</dd>
+<dt id="term-network-drive">Network Drive</dt>
+<dd>A network drive is a drive that is independent from the cluster.</dd>
+<dt id="term-queue">Queue</dt>
+<dd>All submitted jobs are put into a queue. Each queue has a collection of resources available to it. As those resources become available, new jobs will be assigned to those resources. Job prioritisation is done by the scheduler and depends on a number of factors including length of wait time and total resource use by the user over the previous month.</dd>
+<dt id="term-queued-jobs">Queued Jobs</dt>
+<dd>Queued jobs are eligible to run but are waiting for a <a class="reference internal" href="#term-compute-nodes"><span class="xref std std-term">Compute Nodes</span></a> that matches their requirements to become available. Which idle job will be assigned to a compute node next depends on the <a class="reference internal" href="#term-job-scheduler"><span class="xref std std-term">Job Scheduler</span></a>. These can be seen by running <code class="code docutils literal notranslate"><span class="pre">qstat</span></code> and looking for a Q in the second last column. See <a class="reference internal" href="using_katana/running_jobs.html#more-info-from-pbs"><span class="std std-ref">Show all jobs on the system</span></a></dd>
+<dt id="term-resource-manager">Resource Manager</dt>
+<dd>A resource manager works with the <a class="reference internal" href="#term-job-scheduler"><span class="xref std std-term">Job Scheduler</span></a> to manage running jobs on a cluster. Amongst other tasks it receives and parses job submissions, starts jobs on <a class="reference internal" href="#term-compute-nodes"><span class="xref std std-term">Compute Nodes</span></a>, monitors jobs, kills jobs, and manages how many <a class="reference internal" href="#term-cpu-core"><span class="xref std std-term">CPU Core</span></a> are available on each <a class="reference internal" href="#term-compute-nodes"><span class="xref std std-term">Compute Nodes</span></a></dd>
+<dt id="term-scratch-space">Scratch Space</dt>
+<dd>Scratch space is a non backed up storage area where users can store transient data. It should not be used for job code as it is not backed up.</dd>
+<dt id="term-walltime">Walltime</dt>
+<dd>In HPC, walltime is the amount of time that you will be allocated when your job runs. If your jobs runs longer than the walltime, it will be killed by the <a class="reference internal" href="#term-job-scheduler"><span class="xref std std-term">Job Scheduler</span></a>. It is used by the scheduler for helping allocate resources onto servers. On <strong>Katana</strong> it is also used to determine which <a class="reference internal" href="#term-queue"><span class="xref std std-term">Queue</span></a> your job will end up in. The shorter the walltime, the more opportunity your job has to run which in turn means that it will start sooner. In short - it’s harder to find 100 hours of aviable time than it is to find 12 hours.</dd>
 </dl>
-</section>
+</div>
 
 
 	    </div>
@@ -248,9 +245,6 @@
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="_static/documentation_options.js">
-
-    </script>
     <script type="text/javascript" src="_static/jquery.js">
 
     </script>
@@ -258,6 +252,9 @@
 
     </script>
     <script type="text/javascript" src="_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="_static/language_data.js">
 
     </script>
 

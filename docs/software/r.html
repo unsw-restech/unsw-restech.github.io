@@ -19,10 +19,6 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  
-    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
-  
 
   
 
@@ -84,6 +80,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../storage/index.html">Storage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../storage/storage_locations.html">Storage Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/storage_locations.html#storage-summary">Storage  Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/data_archive.html">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/cloudstor.html">Cloudstor</a></li>
@@ -156,7 +153,7 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <section id="r-and-rstudio">
+  <div class="section" id="r-and-rstudio">
 <span id="r"></span><h1>R and RStudio<a class="headerlink" href="#r-and-rstudio" title="Permalink to this headline">¶</a></h1>
 <p>R is installed as a module. Each version has a number of libraries installed
 within it.</p>
@@ -164,21 +161,21 @@ within it.</p>
 <a class="reference external" href="mailto:ITServiceCentre&#37;&#52;&#48;unsw&#46;edu&#46;au">IT Service Centre</a> with “Katana R Module
 installation” in the subject line.</p>
 <p>If you would like to use <strong>RStudio</strong>, we recommend you use the <a class="reference internal" href="../using_katana/ondemand.html#katana-ondemand"><span class="std std-ref">Katana OnDemand</span></a> service.</p>
-<section id="installing-libraries">
+<div class="section" id="installing-libraries">
 <h2>Installing libraries<a class="headerlink" href="#installing-libraries" title="Permalink to this headline">¶</a></h2>
 <p>If you want to install a library from <a class="reference external" href="https://cran.r-project.org/web/packages/index.html">CRAN</a>, github or your own R library for
 testing or non-general usage, you can use the regular method and the library
 will be installed locally:</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">library</span><span class="p">(</span><span class="s">&#39;devtools&#39;</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="nf">getwd</span><span class="p">()</span>
-<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="s">&quot;/home/z1234567&quot;</span>
+<span class="n">[1]</span> <span class="s">&quot;/home/z1234567&quot;</span>
 <span class="o">&gt;</span> <span class="nf">install</span><span class="p">(</span><span class="s">&#39;src/mypackage/&#39;</span><span class="p">)</span>
 <span class="kc">...</span>
 <span class="o">*</span> <span class="nf">DONE </span><span class="p">(</span><span class="n">mypackage</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
 	    </div>
@@ -218,9 +215,6 @@ will be installed locally:</p>
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/documentation_options.js">
-
-    </script>
     <script type="text/javascript" src="../_static/jquery.js">
 
     </script>
@@ -228,6 +222,9 @@ will be installed locally:</p>
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 
