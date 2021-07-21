@@ -20,20 +20,16 @@ How to sign up to the UNSW GitHub organisation
 **********************************************
 
 1. Open https://myapps.microsoft.com
-
 2. Look to see if GitHub.com is in the list. If not then:
 
- a. Click on "+ Add app" at the top of the page
-
- b. Click on "GitHub.com" and press "Add"
-
- c. Wait until it appears in your list. This could take up to 40 minutes and you may need to refresh your browser.
+   a. Click on "+ Add app" at the top of the page
+   b. Click on "GitHub.com" and press "Add"
+   c. Wait until it appears in your list. This could take up to 40 minutes and you may need to refresh your browser.
 
 3. Click on "GitHub.com" icon
 
- a. You will see "Single sign-on to UNSW Sydney", press the green "continue" button to validate your UNSW identity with GitHub.
-
- b. At this point GitHub requires you to maintain a local account and password as well as verifying your UNSW identity.  You can create a new GitHub identity, or sign in with an existing identity.  In either case, because you've navigated from myapps and validated your UNSW identity, you will be connected to the UNSW GitHub organisation.
+   a. You will see "Single sign-on to UNSW Sydney", press the green "continue" button to validate your UNSW identity with GitHub.
+   b. At this point GitHub requires you to maintain a local account and password as well as verifying your UNSW identity.  You can create a new GitHub identity, or sign in with an existing identity.  In either case, because you've navigated from myapps and validated your UNSW identity, you will be connected to the UNSW GitHub organisation.
 
 
 .. _Restech-HPC - Example job scripts for Katana and NCI: https://github.com/unsw-edu-au/Restech-HPC/tree/master/hpc-examples
