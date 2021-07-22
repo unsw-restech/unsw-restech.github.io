@@ -8,13 +8,18 @@ Running Jobs on Katana
 Brief Overview
 **************
 
-The :term:`Login Node` of a cluster is a shared resource for all users and is used for preparing, submitting and managing jobs. Never run any computationally intensive processes on the login nodes. Jobs are submitted from the login node, which delivers them to the :term:`Head Node` for job and resource management. Once the resources have been allocated and are available, the job will run on one or more of the compute nodes as requested. 
+The :term:`Login Node` of a cluster is a shared resource for all users and is used for preparing, submitting and managing jobs. 
+
+.. Note::
+   Never run any computationally intensive processes on the login nodes. 
+   
+Jobs are submitted from the login node, which delivers them to the :term:`Head Node` for job and resource management. Once the resources have been allocated and are available, the job will run on one or more of the compute nodes as requested. 
 
 Different clusters use different tools to manage resources and schedule jobs - OpenPBS_ and SLURM_ are two popular systems. Katana, like NCI's Gadi, uses OpenPBS_ for this purpose.
 
 Jobs are submitted using the :code:`qsub` command. There are two types of job that :code:`qsub` will accept: an :term:`Interactive Job` and a :term:`Batch Job`. Regardless of type, the resource manager will put your job in a :term:`Queue`.
 
-An **interactive job** provides a shell session on a :term:`Compute Nodes`. You interact directly with the compute node running the software you need explicitly. Interactive jobs are useful for experimentation, debugging, and planning for **batch jobs**. For jobs with calculations than run more than a few hours, **batch jobs** are preferred.  
+An **interactive job** provides a shell session on a :term:`Compute Nodes`. You interact directly with the compute node running the software you need explicitly. Interactive jobs are useful for experimentation, debugging, and planning for **batch jobs**. For any calculation that runs more than a few hours, **batch jobs** are preferred.  
 
 In contrast, a :term:`Batch Job` is a scripted job that - after submission via :code:`qsub` - runs from start to finish without any user intervention. The vast majority of jobs on the cluster are batch jobs. This type of job is appropriate for production runs that will consume several hours or days. 
 
@@ -25,30 +30,29 @@ To submit a :term:`Batch Job` you will need to create a job script which specifi
 
 The main resources available for use are Memory (RAM), :term:`CPU Core` (number of CPUs) and :term:`Walltime` (how long you want the CPUs for). These need to be considered carefully when writing your job script, since the decisions you make will impact which queue your jobs ends up on.
 
-As you request more memory, the number of available queues goes down. The memory limits, in GB, at which the number of queues decreases are 124, 180, 248, 370, 750 and 1000.
-
-Similarly, when considering the number of CPU cores, the available resources reduce at 16, 20, 24, 28, 32, 44 and 64 CPU cores.
-
-Walltime provides the biggest constraint on your submitted jobs. The points at which resource availability is reduced are 12, 48, 100 and 200 hours
-
-Jobs have the following restrictions:
-
--  Jobs of up to 12 hours can run anywhere on the cluster
--  Jobs of up to 100 hours can run on nodes belonging to your group and the general nodes
--  Jobs of up to 200 hours can only run on nodes belonging to your group
-
-.. _interactive_job:
-.. _interactive_session:
+As you request more memory, CPU cores, or walltime, the number of available queues goes down. The limits are which the number of queues decrease are summarised in the table below
 
 
 *************************
 Job queue limits summary 
 ************************
 
++----------------+--------------------------+-----------------+----------------+---------------------------+-----+------+
+|    Resource    | Queue reduction cut-offs |                 |                |                           |     |      |
++================+==========================+=================+================+===========================+=====+======+
+| Memory (GB)    |            124           |       180       |       248      |            370            | 750 | 1000 |
++----------------+--------------------------+-----------------+----------------+---------------------------+-----+------+
+| CPU Cores      |            16            |        20       |       24       |             28            |  32 |  44  |
++----------------+--------------------------+-----------------+----------------+---------------------------+-----+------+
+| Walltime (hrs) |        Any cluster       | Research group and general nodes | Research group nodes only |     |      |
+|                +--------------------------+-----------------+----------------+---------------------------+-----+------+
+|                |            12            |        48       |       100      |            200            |     |      |
++----------------+--------------------------+-----------------+----------------+---------------------------+-----+------+
 
+.. Note:: The walltime request is the biggest constraint on which queues are available. Try to combine or divide batch jobs to fit within that 12 hour limit for fastest starting times. 
 
-
-
+.. _interactive_job:
+.. _interactive_session:
 
 
 ****************
