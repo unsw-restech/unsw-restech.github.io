@@ -28,8 +28,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
         <link rel="up" title="Using Katana" href="index.html"/>
-        <link rel="next" title="Accessing Katana" href="accessing_katana.html"/>
-        <link rel="prev" title="Using Katana" href="index.html"/>
+        <link rel="next" title="Running Jobs on Katana" href="running_jobs.html"/>
+        <link rel="prev" title="Accessing Katana" href="accessing_katana.html"/>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="cache-control" content="public" />
@@ -71,8 +71,8 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Using Katana</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">About Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accessing_katana.html">Accessing Katana</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">About Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="running_jobs.html">Running Jobs on Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="github.html">GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ondemand.html">Katana OnDemand</a></li>
@@ -155,7 +155,7 @@
   <div class="section" id="about-katana">
 <span id="id1"></span><h1>About Katana<a class="headerlink" href="#about-katana" title="Permalink to this headline">¶</a></h1>
 <p>Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources. With over 4000 CPU cores spread over a large number of compute nodes each with up to 1Tb of memory, Katana provides a flexible compute environment where users can run jobs that wouldn’t be possible or practical on a desktop or laptop.</p>
-<p>Katana is powerful on it’s own, but can be seen as a training or development base before migrating up to systems like Australia’s peak HPC system <a class="reference external" href="https://nci.org.au/our-systems/hpc-systems">Gadi</a>, located at <a class="reference external" href="https://nci.org.au/">NCI</a>. Research Technology Services also provide training, advice and support for new users or those uncertain if High Performance Computing is the right fit for their research needs.</p>
+<p>Katana is powerful on its own, but can be seen as a training or development base before migrating up to systems like Australia’s peak HPC system <a class="reference external" href="https://nci.org.au/our-systems/hpc-systems">Gadi</a>, located at <a class="reference external" href="https://nci.org.au/">NCI</a>. Research Technology Services also provide training, advice and support for new users or those uncertain if High Performance Computing is the right fit for their research needs.</p>
 <div class="section" id="system-configuration">
 <span id="id2"></span><h2>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -169,34 +169,31 @@
 <span id="compute-resources"></span><h2>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Heterogenous hardware: Dell, Lenovo, Huawei.</li>
-<li>roughly 170 nodes</li>
+<li>Roughly 170 nodes</li>
 </ul>
 </div>
 <div class="section" id="gpu-compute">
 <span id="gpu-resources"></span><h2>GPU Compute<a class="headerlink" href="#gpu-compute" title="Permalink to this headline">¶</a></h2>
 <p>The most popular use of these nodes is for Tensorflow.</p>
 <ul class="simple">
-<li>six GPU capable nodes, Tesla V100-SXM2, 32GB</li>
-<li>three are dedicated for the department that owns them</li>
-<li>three are general use for all researchers</li>
+<li>Six GPU capable nodes, Tesla V100-SXM2, 32GB</li>
+<li>Three are dedicated for the department that owns them</li>
+<li>Three are general use for all researchers</li>
 </ul>
 <p>You cannot use Tensorflow on the login nodes because they don’t have GPUs. You will need to get access to a GPU node to do this.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Unfortunately, GPU nodes are in incredibly high demand.
-There is no - NO - situation where we understand, accept or care, that your project is
-more special than anyone else’s project. You will need to wait like everyone else - or buy
+We cannot provide special accomodation for any project.
+You will need to wait in the common queue - or buy
 a GPU node for your group on which you will get priority</p>
 </div>
 <p>To access a GPU node interactively, you can use a command like</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana ~<span class="o">]</span>$ qsub -I -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">8</span>:ngpus<span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>46gb,walltime<span class="o">=</span><span class="m">2</span>:00:00
 </pre></div>
 </div>
-<p>Note the 2 hour limit - that is the <em>fastest</em> way to get onto the GPU nodes. There’s no way to tell you that
+<p>Note the 2 hour limit - that is the <em>fastest</em> way to get onto the GPU nodes. Unfortuntaley, there’s no way to tell you that
 your session has started, so you will need to monitor your command.</p>
-<p>We <strong>know</strong> that this isn’t ideal and we <strong>wish</strong> there was an easier solution - we love making your lives
-easier. It’s literally our jobs. But in this case, we don’t have the resources available to make this faster,
-smoother or easier.</p>
 </div>
 </div>
 
@@ -206,10 +203,10 @@ smoother or easier.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="accessing_katana.html" class="btn btn-neutral float-right" title="Accessing Katana">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="running_jobs.html" class="btn btn-neutral float-right" title="Running Jobs on Katana">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Using Katana"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="accessing_katana.html" class="btn btn-neutral" title="Accessing Katana"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

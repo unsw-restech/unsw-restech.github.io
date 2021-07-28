@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Jupyter Notebooks &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>Matlab &mdash; Katana User Documentation 1.0 documentation</title>
   
 
   
@@ -28,8 +28,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
         <link rel="up" title="Software" href="index.html"/>
-        <link rel="next" title="Intel Compilers and Software Libraries" href="intel_compilers_and_libraries.html"/>
-        <link rel="prev" title="Java" href="java.html"/>
+        <link rel="next" title="Operating Systems" href="operating_systems.html"/>
+        <link rel="prev" title="Jupyter Notebooks" href="jupyter-notebooks.html"/>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="cache-control" content="public" />
@@ -88,10 +88,13 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.html">Ansys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biosciences.html">Biosciences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="java.html">Java</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comsol.html">Comsol</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="java.html">Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter-notebooks.html">Jupyter Notebooks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Matlab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perl.html">Perl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
@@ -152,37 +155,8 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="jupyter-notebooks">
-<h1>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
-<p>Jupyter Notebooks and JupyterLab are best run in <a class="reference internal" href="../using_katana/ondemand.html#katana-ondemand"><span class="std std-ref">Katana OnDemand</span></a>.</p>
-<p>Katana OnDemand comes with some built in environment and kernels that are
-available for use out of the box.</p>
-<p>If you need to use the Jupyter Notebook or Jupyter Lab with your own
-<a class="reference internal" href="python.html#python-virtual-environments"><span class="std std-ref">Python Virtual Environments</span></a> you will need to create your own
-Python Jupyter kernel. Here is an example:</p>
-<div class="section" id="create-and-load-the-virtual-environment">
-<h2>Create and load the virtual environment<a class="headerlink" href="#create-and-load-the-virtual-environment" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load python/3.8.3
-$ python3 -m venv --system-site-packages /home/z1234567/.venvs/jupyter-kernel
-$ <span class="nb">source</span> /home/z1234567/.venvs/jupyter-kernel/bin/activate
-</pre></div>
-</div>
-</div>
-<div class="section" id="create-the-jupyter-kernel">
-<h2>Create the Jupyter Kernel<a class="headerlink" href="#create-the-jupyter-kernel" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>jupyter-kernel<span class="o">)</span> $ python3 -m ipykernel install --prefix<span class="o">=</span><span class="nv">$HOME</span>/.local --name<span class="o">=</span>jlab-kernel
-</pre></div>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The <code class="code docutils literal notranslate"><span class="pre">--name=XXXX</span></code> isn’t strictly necessary, but if you don’t use it,
-the kernel will be called “Python 3”. This will not be distinguishable
-from the Katana supplied Python 3 and could cause confusion.</p>
-</div>
-<p>Now when you load a JupyterLab session, you should see your personal kernel
-in the list of available kernels. This kernel will have access to your
-virtual environment.</p>
-</div>
+  <div class="section" id="matlab">
+<h1>Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h1>
 </div>
 
 
@@ -191,10 +165,10 @@ virtual environment.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="intel_compilers_and_libraries.html" class="btn btn-neutral float-right" title="Intel Compilers and Software Libraries">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="operating_systems.html" class="btn btn-neutral float-right" title="Operating Systems">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="java.html" class="btn btn-neutral" title="Java"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="jupyter-notebooks.html" class="btn btn-neutral" title="Jupyter Notebooks"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

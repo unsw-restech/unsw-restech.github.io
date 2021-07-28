@@ -146,7 +146,7 @@ The job will be killed by the scheduler. You will get a message to that effect i
 What happens if my job is still running when it reaches the end of the time that I have requested?
 ==================================================================================================
 
-When your job hits it's :term:`Walltime` it is automatically terminated by the scheduler.
+When your job hits its :term:`Walltime` it is automatically terminated by the scheduler.
 
 200 hours is not long enough! What can I do?
 ============================================

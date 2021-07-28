@@ -11,3 +11,4 @@ Using Katana
    running_jobs.rst
    github.rst
    ondemand.rst
+   pathways_to_hpc.rst

@@ -11,10 +11,13 @@ Each section after that explains tips and tricks for using that software on Kata
 .. toctree::
 
     environment_modules.rst
+    ansys.rst
     biosciences.rst
+    comsol.rst
+    intel_compilers_and_libraries.rst
     java.rst
     jupyter-notebooks.rst   
-    intel_compilers_and_libraries.rst
+    matlab.rst
     operating_systems.rst
     perl.rst
     python.rst

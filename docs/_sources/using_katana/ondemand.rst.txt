@@ -1,5 +1,7 @@
 .. _ondemand:
 
+.. TO DO: Rework docs in view of KOD2
+
 ###############
 Katana OnDemand
 ###############
@@ -21,9 +23,9 @@ Software Available in OnDemand
 
 - :ref:`R and RStudio`
 - :ref:`Jupyter Notebooks`, JupyterLab and various kernels
-- Ansys
-- Matlab
-- Comsol
+- :ref:`Ansys`
+- :ref:`Matlab`
+- :ref:`Comsol`
 - :ref:`Stata`
 
 .. _UNSW VPN: https://vpn.unsw.edu.au
