@@ -17,16 +17,27 @@ If you would like to use **RStudio**, we recommend you use the :ref:`Katana OnDe
 Installing libraries
 ********************
 
+Please try installing R libraries yourself before contacting the service desk. 
+
 If you want to install a library from CRAN_, github or your own R library for 
 testing or non-general usage, you can use the regular method and the library 
 will be installed locally:
+
+Create directory inside your home directory for the source code, and clone the library (if using Git):
+
+.. code-block:: bash
+   mkdir ~/src
+   cd ~/src
+   git clone https://github.com/user/mypackage 
+
+Start R or RStudio and install 
 
 .. code-block:: r
     
     > library('devtools')
     > getwd()
-    [1] "/home/z1234567"
-    > install('src/mypackage/')
+    [1] "/home/z1234567/src"
+    > install('mypackage')
     ...
     * DONE (mypackage)
 
