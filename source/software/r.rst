@@ -25,7 +25,8 @@ will be installed locally:
 
 Create directory inside your home directory for the source code, and clone the library (if using Git):
 
-.. code-block:: bash
+.. code-block:: console
+   
    mkdir ~/src
    cd ~/src
    git clone https://github.com/user/mypackage 

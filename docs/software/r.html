@@ -76,6 +76,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/running_jobs.html">Running Jobs on Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/github.html">GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/ondemand.html">Katana OnDemand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/pathways_to_hpc.html">Pathways to HPC</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../storage/index.html">Storage</a><ul>
@@ -88,10 +89,13 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.html">Ansys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biosciences.html">Biosciences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comsol.html">Comsol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java.html">Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jupyter-notebooks.html">Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html">Matlab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perl.html">Perl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
@@ -162,13 +166,21 @@ installation” in the subject line.</p>
 <p>If you would like to use <strong>RStudio</strong>, we recommend you use the <a class="reference internal" href="../using_katana/ondemand.html#katana-ondemand"><span class="std std-ref">Katana OnDemand</span></a> service.</p>
 <div class="section" id="installing-libraries">
 <h2>Installing libraries<a class="headerlink" href="#installing-libraries" title="Permalink to this headline">¶</a></h2>
+<p>Please try installing R libraries yourself before contacting the service desk.</p>
 <p>If you want to install a library from <a class="reference external" href="https://cran.r-project.org/web/packages/index.html">CRAN</a>, github or your own R library for
 testing or non-general usage, you can use the regular method and the library
 will be installed locally:</p>
+<p>Create directory inside your home directory for the source code, and clone the library (if using Git):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir ~/src</span>
+<span class="go">cd ~/src</span>
+<span class="go">git clone https://github.com/user/mypackage</span>
+</pre></div>
+</div>
+<p>Start R or RStudio and install</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nf">library</span><span class="p">(</span><span class="s">&#39;devtools&#39;</span><span class="p">)</span>
 <span class="o">&gt;</span> <span class="nf">getwd</span><span class="p">()</span>
-<span class="n">[1]</span> <span class="s">&quot;/home/z1234567&quot;</span>
-<span class="o">&gt;</span> <span class="nf">install</span><span class="p">(</span><span class="s">&#39;src/mypackage/&#39;</span><span class="p">)</span>
+<span class="n">[1]</span> <span class="s">&quot;/home/z1234567/src&quot;</span>
+<span class="o">&gt;</span> <span class="nf">install</span><span class="p">(</span><span class="s">&#39;mypackage&#39;</span><span class="p">)</span>
 <span class="kc">...</span>
 <span class="o">*</span> <span class="nf">DONE </span><span class="p">(</span><span class="n">mypackage</span><span class="p">)</span>
 </pre></div>
