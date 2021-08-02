@@ -61,7 +61,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -76,6 +76,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/running_jobs.html">Running Jobs on Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/github.html">GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/ondemand.html">Katana OnDemand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/pathways_to_hpc.html">Pathways to HPC</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../storage/index.html">Storage</a><ul>
@@ -157,6 +158,17 @@
 	    <div id="content" class="hfeed entry-container hentry">
   <div class="section" id="matlab">
 <h1>Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h1>
+<p><strong>*
+Running interactively
+*</strong></p>
+<p>Matlab is best run interactively on <a class="reference internal" href="../using_katana/ondemand.html#katana-ondemand"><span class="std std-ref">Katana OnDemand</span></a>.</p>
+<p><strong>*
+Batch Job
+*</strong></p>
+<p>You can run matab within a batch job script, with the -nodisplay option</p>
+<div class="code console highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matlab</span> <span class="o">-</span><span class="n">nodisplay</span> <span class="o">-</span><span class="n">r</span>  <span class="n">mfile</span> <span class="o">&gt;</span> <span class="n">job</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
 </div>
 
 

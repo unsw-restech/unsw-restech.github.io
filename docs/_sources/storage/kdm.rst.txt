@@ -2,6 +2,8 @@
 Katana Data Mover
 #################
 
+.. TO DO: Add some examples so they don't miss a colon in the input file, e.g. SR3274247
+
 Also known as :code:`kdm` or :code:`kdm.restech.unsw.edu.au`
 
 If you have data that you would like to copy to or within the Katana cluster, archive or even compress and decompress you should use the Katana Data Mover - also known as the KDM server - rather than using the head node. This section contains instructions on how to use KDM server.
