@@ -14,6 +14,7 @@ Each section after that explains tips and tricks for using that software on Kata
     ansys.rst
     biosciences.rst
     comsol.rst
+    installing_software.rst
     intel_compilers_and_libraries.rst
     java.rst
     jupyter-notebooks.rst   
