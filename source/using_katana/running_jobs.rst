@@ -19,7 +19,10 @@ Different clusters use different tools to manage resources and schedule jobs - O
 
 Jobs are submitted using the :code:`qsub` command. There are two types of job that :code:`qsub` will accept: an :term:`Interactive Job` and a :term:`Batch Job`. Regardless of type, the resource manager will put your job in a :term:`Queue`.
 
-An **interactive job** provides a shell session on a :term:`Compute Nodes`. You interact directly with the compute node running the software you need explicitly. Interactive jobs are useful for experimentation, debugging, and planning for **batch jobs**. For any calculation that runs more than a few hours, **batch jobs** are preferred.  
+An **interactive job** provides a shell session on a :term:`Compute Nodes`. You interact directly with the compute node running the software you need explicitly. Interactive jobs are useful for experimentation, debugging, and planning for **batch jobs**.
+
+.. note::
+   For calculations that run longer than a few hours, **batch jobs** are preferred.   
 
 In contrast, a :term:`Batch Job` is a scripted job that - after submission via :code:`qsub` - runs from start to finish without any user intervention. The vast majority of jobs on the cluster are batch jobs. This type of job is appropriate for production runs that will consume several hours or days. 
 

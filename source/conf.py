@@ -24,8 +24,11 @@ master_doc = 'index'
 # -- Project information -----------------------------------------------------
 
 project = 'Katana User Documentation'
-#copyright = '2020, Lachlan Simpson'
+copyright = '2020, Lachlan Simpson'
+html_show_copyright = False 
 author = 'Lachlan Simpson'
+
+
 
 # The full version, including alpha/beta/rc tags
 release = '1.0'
