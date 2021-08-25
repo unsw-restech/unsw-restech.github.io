@@ -20,7 +20,7 @@ Katana issues including: functional issues, software installation, reference dat
 Email the `IT Service Centre <ITServiceCentre@unsw.edu.au>`_, including the word **Katana** in the subject line.
 
 .. note::
-    This is the best and primary way to get help from UNSW Research Technology Services beyond this document. You *must* use your UNSW email address *or* your zid. Without this information, we have no idea who you might be.
+    This is the best and primary way to get help from UNSW Research Technology Services beyond this document. You *must* use your UNSW email address *or* your zID. Without this information, we have no idea who you might be.
 
     When writing your email, please include a clear and detailed description of the issue experienced, including error messages and node name. Something like "It doesn't work" doesn't help us help you! If at all possible, include the steps someone else needs to do to reproduce the problem, the job identifier, the date and time of your problem and on which Katana node it occurred, the script filename and the directory you were running from.
 
@@ -34,7 +34,7 @@ Email the `IT Service Centre <ITServiceCentre@unsw.edu.au>`_, including the word
         Error: Child process with pid '116643' got the signal 'SIGSEGV' (segmentation violation)
         gjob exits with status 1”
         
-        My job ran on k052 with jobid 300000, my zid is z2134567
+        My job ran on k052 with jobid 300000, my zID is z2134567
     
 
 For face to face support: `Hacky Hour <https://research.unsw.edu.au/hacky-hour>`__ Thursdays, 3pm.

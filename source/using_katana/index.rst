@@ -6,8 +6,8 @@ Using Katana
 
 .. toctree::
 
-   about_katana.rst
    accessing_katana.rst
+   about_katana.rst
    running_jobs.rst
    github.rst
    ondemand.rst

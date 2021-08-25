@@ -31,7 +31,7 @@ You will be asked a set of questions. The short answers are:
 3. storage type **webdav** ('25' in current installation)
 4. url for http connection (https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/)
 5. Name of webdav site: **OwnCloud** ('2' in current installation)
-6. user name per your cloudstor settings page (first.last@unsw.edu.au, **not** zid@unsw.edu.au)
+6. user name per your cloudstor settings page (first.last@unsw.edu.au, **not** zID@unsw.edu.au)
 7. Password ('Yes')
 8. enter password (paste or type in the Sync password from step 1 above)
 9. confirm password (paste of type in the Sync password from step 1 above)

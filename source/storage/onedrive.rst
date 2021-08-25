@@ -46,6 +46,7 @@ about data storage.
 version in the CentOS/RHEL operating system is too old.
 
 4. You will need at least one empty directory for mounting. Restech recommends:
+
 - you create a directory /home/z1234567/bin to put rclone into
 - you add /home/z1234567/bin to your PATH
 - you create a directory /home/z1234567/OneDrive to mount OneDrive onto.
