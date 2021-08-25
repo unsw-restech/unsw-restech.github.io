@@ -61,7 +61,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -88,13 +88,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../software/index.html">Software</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../software/environment_modules.html">Environment Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../software/ansys.html">Ansys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/biosciences.html">Biosciences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../software/comsol.html">Comsol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/installing_software.html">Installing software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/java.html">Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/jupyter-notebooks.html">Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../software/matlab.html">Matlab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/perl.html">Perl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/python.html">Python</a></li>
@@ -159,70 +157,70 @@
 <h1>Storage Locations<a class="headerlink" href="#storage-locations" title="Permalink to this headline">¶</a></h1>
 <p>The storage on Katana is split into several different types, each of which serves a different purpose.</p>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">We have just said <em>each of which serves a different purpose</em>. Despite that, there will be overlap. And personal preference. In most cases it will be obvious where to put your information. If it isn’t and you need help with your decision making, you can <a class="reference external" href="mailto:rdm&#37;&#52;&#48;unsw&#46;edu&#46;au">email</a> the <a class="reference external" href="https://research.unsw.edu.au/research-data-management-unsw">Research Data</a> team for advice. They are friendly people.</p>
+<p class="admonition-title">Important</p>
+<p>We have just said <em>each of which serves a different purpose</em>. Despite that, there will be overlap. And personal preference. In most cases it will be obvious where to put your information. If it isn’t and you need help with your decision making, you can <a class="reference external" href="mailto:rdm&#37;&#52;&#48;unsw&#46;edu&#46;au">email</a> the <a class="reference external" href="https://research.unsw.edu.au/research-data-management-unsw">Research Data</a> team for advice. They are friendly people.</p>
 </div>
 <div class="section" id="storage-summary">
 <h2>Storage  Summary<a class="headerlink" href="#storage-summary" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
+<table class="docutils align-default">
 <colgroup>
-<col width="11%" />
-<col width="14%" />
-<col width="13%" />
-<col width="28%" />
-<col width="6%" />
-<col width="16%" />
-<col width="12%" />
+<col style="width: 11%" />
+<col style="width: 14%" />
+<col style="width: 13%" />
+<col style="width: 28%" />
+<col style="width: 6%" />
+<col style="width: 16%" />
+<col style="width: 12%" />
 </colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Storage type</th>
-<th class="head">Location</th>
-<th class="head">Alias</th>
-<th class="head">Purpose</th>
-<th class="head">Backed up?</th>
-<th class="head">Size limit</th>
-<th class="head">Who has acess</th>
+<thead>
+<tr class="row-odd"><th class="head"><p>Storage type</p></th>
+<th class="head"><p>Location</p></th>
+<th class="head"><p>Alias</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Backed up?</p></th>
+<th class="head"><p>Size limit</p></th>
+<th class="head"><p>Who has acess</p></th>
 </tr>
 </thead>
-<tbody valign="top">
-<tr class="row-even"><td>Home drive</td>
-<td>/home/z1234567</td>
-<td>$HOME</td>
-<td>Source code and programs</td>
-<td>Y</td>
-<td>10Gb</td>
-<td>Only the user</td>
+<tbody>
+<tr class="row-even"><td><p>Home drive</p></td>
+<td><p>/home/z1234567</p></td>
+<td><p>$HOME</p></td>
+<td><p>Source code and programs</p></td>
+<td><p>Y</p></td>
+<td><p>10Gb</p></td>
+<td><p>Only the user</p></td>
 </tr>
-<tr class="row-odd"><td>Global scratch</td>
-<td>/srv/scratch/z1234567</td>
-<td>/srv/scratch/$USER</td>
-<td>Data files</td>
-<td>N</td>
-<td>16Tb  between all user</td>
-<td>Only the user</td>
+<tr class="row-odd"><td><p>Global scratch</p></td>
+<td><p>/srv/scratch/z1234567</p></td>
+<td><p>/srv/scratch/$USER</p></td>
+<td><p>Data files</p></td>
+<td><p>N</p></td>
+<td><p>16Tb  between all user</p></td>
+<td><p>Only the user</p></td>
 </tr>
-<tr class="row-even"><td>Shared  scratch</td>
-<td>/srv/scratch/group_name</td>
-<td>/srv/scratch/group_name</td>
-<td>Data files and programs shared by a team</td>
-<td>N</td>
-<td>Upon group requirements</td>
-<td>All users in the group</td>
+<tr class="row-even"><td><p>Shared  scratch</p></td>
+<td><p>/srv/scratch/group_name</p></td>
+<td><p>/srv/scratch/group_name</p></td>
+<td><p>Data files and programs shared by a team</p></td>
+<td><p>N</p></td>
+<td><p>Upon group requirements</p></td>
+<td><p>All users in the group</p></td>
 </tr>
-<tr class="row-odd"><td>Local  scratch</td>
-<td>Intialised upon job running</td>
-<td>$TMPDIR</td>
-<td>Faster job completion with large datasets and temp files</td>
-<td>N</td>
-<td>200Gb shared between node users</td>
-<td>Temporary for each job</td>
+<tr class="row-odd"><td><p>Local  scratch</p></td>
+<td><p>Intialised upon job running</p></td>
+<td><p>$TMPDIR</p></td>
+<td><p>Faster job completion with large datasets and temp files</p></td>
+<td><p>N</p></td>
+<td><p>200Gb shared between node users</p></td>
+<td><p>Temporary for each job</p></td>
 </tr>
-<tr class="row-even"><td>UNSW Research Storage</td>
-<td>/home/z1234567/sharename</td>
-<td>$HOME/sharename</td>
-<td>Storage of shared user and data files</td>
-<td>Y</td>
-<td colspan="2">According to Data Management Plan</td>
+<tr class="row-even"><td><p>UNSW Research Storage</p></td>
+<td><p>/home/z1234567/sharename</p></td>
+<td><p>$HOME/sharename</p></td>
+<td><p>Storage of shared user and data files</p></td>
+<td><p>Y</p></td>
+<td colspan="2"><p>According to Data Management Plan</p></td>
 </tr>
 </tbody>
 </table>
@@ -273,9 +271,6 @@
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 

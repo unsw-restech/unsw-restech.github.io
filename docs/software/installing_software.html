@@ -27,6 +27,9 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Software" href="index.html"/>
+        <link rel="next" title="Intel Compilers and Software Libraries" href="intel_compilers_and_libraries.html"/>
+        <link rel="prev" title="Biosciences" href="biosciences.html"/>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="cache-control" content="public" />
@@ -59,7 +62,7 @@
           
           
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#contact-the-research-technology-services-team">Contact the Research Technology Services team</a></li>
@@ -73,7 +76,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/running_jobs.html">Running Jobs on Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/github.html">GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/ondemand.html">Katana OnDemand</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../using_katana/pathways_to_hpc.html">Pathways to HPC</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../storage/index.html">Storage</a><ul>
@@ -84,15 +86,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../storage/onedrive.html">One Drive</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Software</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ansys.html">Ansys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biosciences.html">Biosciences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="comsol.html">Comsol</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installing software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java.html">Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jupyter-notebooks.html">Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matlab.html">Matlab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perl.html">Perl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
@@ -156,53 +156,105 @@
   <div class="section" id="installing-software">
 <h1>Installing software<a class="headerlink" href="#installing-software" title="Permalink to this headline">¶</a></h1>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Before installing software yourself, check if it has already been installed in a system-wide module or by one of your research colleagues.</p>
+<p class="admonition-title">Note</p>
+<p>Before installing software yourself, check if it has already been installed in a system-wide module or by one of your research colleagues.</p>
+</div>
+<p>Some common software packages are already available as part of katana’s the operating system. They are listed by:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum list installed
+</pre></div>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Do not try to run system commands such as: sudo, su, apt-get install, yumm install</p>
+<p class="admonition-title">Warning</p>
+<p>Do not try to run system commands as a user. These include: apt-get install, yum install, su, or sudo.</p>
 </div>
-<div class="section" id="compiling-from-source">
-<h2>Compiling from source<a class="headerlink" href="#compiling-from-source" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">It is best to install your software in your home directory, since it is backed up every night.</p>
-</div>
-<div class="section" id="compilers">
-<h3>Compilers<a class="headerlink" href="#compilers" title="Permalink to this headline">¶</a></h3>
-<p>Try to use the system compilers <cite>gcc</cite> and <cite>ld</cite>. However, many codes require specific compilers and versions. We do</p>
-<p>Compile during and interactive session. Use qsub -I.</p>
-</div>
-<div class="section" id="readme-and-install-files">
-<h3>README and INSTALL files<a class="headerlink" href="#readme-and-install-files" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="configuring-installation-files">
-<h3>Configuring installation files<a class="headerlink" href="#configuring-installation-files" title="Permalink to this headline">¶</a></h3>
-<p>Commonly, a configuration script is available. This allows you to set where the software is installed by using the –prefix flag. Again, it is best to install software in your home directory</p>
-</div>
+<p>As detailed in <a class="reference internal" href="environment_modules.html#environment-modules"><span class="std std-ref">Environment Modules</span></a>, software already installed by HPC staff is listed with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module avail
+</pre></div>
 </div>
 <div class="section" id="installing-a-binary-package">
 <h2>Installing a binary package<a class="headerlink" href="#installing-a-binary-package" title="Permalink to this headline">¶</a></h2>
-<p>Using wget…</p>
+<p>While installing from source is preferred for effeciency reasons, sometimes
+only precompiled binaries. When downloading binaries, make sure you select the
+correct architecure and operating system for katana.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Centos 7, 64-bit, Intel x86_6 / AMD64</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://website.org/binary/application
+</pre></div>
+</div>
+<p>Change file permissions to make the application readable and executable</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod u+rx ./application
+</pre></div>
+</div>
+</div>
+<div class="section" id="compiling-from-source">
+<h2>Compiling from source<a class="headerlink" href="#compiling-from-source" title="Permalink to this headline">¶</a></h2>
+<p>Compiling from source is preferred for efficiency reasons, but is a more involved process than binary installation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is best to install your software in your home directory, since it is backed up every night.</p>
+</div>
+<div class="section" id="github-cloning">
+<h3>Github cloning<a class="headerlink" href="#github-cloning" title="Permalink to this headline">¶</a></h3>
+<p>Source code is commonly stored on GitHub for easy version control. Git is available by default on katana. Remember: UNSW has its own <a class="reference internal" href="../using_katana/github.html#github"><span class="std std-ref">GitHub</span></a> organisation.</p>
+<p>Copy the web address revealed by the green ‘Code’ button on the repository. Creating a local copy of the repository is then as simple as:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/project/project.git
+</pre></div>
+</div>
+<p>The created folder will contain the source code and some documentation files.</p>
+</div>
+<div class="section" id="readme-and-install-files">
+<h3>README and INSTALL files<a class="headerlink" href="#readme-and-install-files" title="Permalink to this headline">¶</a></h3>
+<p>The README file contains general information for the software, and often a brief installation guide. INSTALL will contain more detailed installation instructions, including configuration for certain archictures.</p>
+<p>Please read the README and INSTALL files in full before attempting compilation.</p>
+</div>
+<div class="section" id="compilers">
+<h3>Compilers<a class="headerlink" href="#compilers" title="Permalink to this headline">¶</a></h3>
+<p>Try to use the system compilers <cite>gcc</cite> and <cite>ld</cite>. However, many codes require specific compilers and versions. Katana has many compilers available as modules including the <a class="reference internal" href="intel_compilers_and_libraries.html#intel-compilers-and-software-libraries"><span class="std std-ref">Intel Compilers and Software Libraries</span></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please install software using an interactive session, qsub -I, not directly on the login node.</p>
+</div>
+</div>
+<div class="section" id="configuring-installation-files">
+<h3>Configuring installation files<a class="headerlink" href="#configuring-installation-files" title="Permalink to this headline">¶</a></h3>
+<p>Commonly, a configuration script is available. This allows you to set where the software is installed by using the –prefix flag. Again, it is best to install software within your home directory</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/apps/<span class="o">{</span>PACKAGE<span class="o">}</span>/<span class="o">{</span>VERSION<span class="o">}</span>  make <span class="o">&amp;&amp;</span> make install
+</pre></div>
+</div>
+<p>The software can then be installed according to the rules in the MakeFile. This
+is typically invoked with</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make <span class="o">&amp;&amp;</span> make install
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="creating-module-files">
 <h2>Creating module files<a class="headerlink" href="#creating-module-files" title="Permalink to this headline">¶</a></h2>
-<p>Sample files</p>
+<p>Much like katana’s <cite>Environment Modules</cite>, you can also have multiple versions
+of the application available through your own modules.</p>
+<p>The template for environment modules is in:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/apps/modules/templates/module_file
+</pre></div>
+</div>
 <p>The template module file makes some assumptions and examples, which may not be applicable to your software.</p>
-<p>Key sections will likely need to modify are:
-* set      basepath          $env(HOME)/apps/{SOFTWARE_NAME}
-* set      version           {VERSION_NUMBER}</p>
-<ul class="simple">
-<li>set      url</li>
-<li>set      installed</li>
-<li>set      compiled_with</li>
-<li>set      mpiversion</li>
-<li>prereq     {PREREQUISITE_SOFTWARE)</li>
-</ul>
+<p>Key sections will likely need to modify are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>* set      basepath          $env(HOME)/apps/{SOFTWARE_NAME}
+* set      version           {VERSION_NUMBER}
+
+* set      url
+* set      installed
+
+* set      compiled_with
+* set      mpiversion
+
+* prereq     {PREREQUISITE_SOFTWARE)
+</pre></div>
+</div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Insert “module use –append $HOME/apps/Modules” into your ~/.bashrc to your own modules. Enabled with module use upon login.</p>
+<p class="admonition-title">Note</p>
+<p>Insert “module use –append $HOME/apps/Modules” into your ~/.bashrc to enable using your own modules upon login.</p>
 </div>
 <p>You should be able to module load your own software module as your own.</p>
 </div>
@@ -210,8 +262,8 @@
 <h2>R and Python Packages<a class="headerlink" href="#r-and-python-packages" title="Permalink to this headline">¶</a></h2>
 <p>Many R and Python packages are installed on katana. We have specific documentation to install your own packages in <a class="reference internal" href="r.html#installing-libraries"><span class="std std-ref">R</span></a> and <a class="reference internal" href="python.html#pip3-the-python-package-manager-the-package-installer-for-python"><span class="std std-ref">Python</span></a></p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you do need assistance with software install after trying yourself, then send an email to <a class="reference external" href="mailto:itservicecentre&#37;&#52;&#48;unsw&#46;edu&#46;au">itservicecentre<span>&#64;</span>unsw<span>&#46;</span>edu<span>&#46;</span>au</a> with Katana in the subject line.</p>
+<p class="admonition-title">Note</p>
+<p>If you do need assistance with software install after trying yourself, then send an email to <a class="reference external" href="mailto:itservicecentre&#37;&#52;&#48;unsw&#46;edu&#46;au">itservicecentre<span>&#64;</span>unsw<span>&#46;</span>edu<span>&#46;</span>au</a> with Katana in the subject line.</p>
 </div>
 </div>
 </div>
@@ -220,12 +272,20 @@
 	    </div>
             <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="intel_compilers_and_libraries.html" class="btn btn-neutral float-right" title="Intel Compilers and Software Libraries">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="biosciences.html" class="btn btn-neutral" title="Biosciences"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright .
     </p>
   </div>
 
@@ -252,9 +312,6 @@
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 

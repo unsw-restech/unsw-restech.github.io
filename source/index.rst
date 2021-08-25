@@ -6,7 +6,7 @@
 Welcome to Katana User's documentation!
 =======================================
 
-This document is available in :download:`pdf format <_static/2021-07-21-katana.pdf>` for offline reading.
+This document is available in :download:`pdf format <_static/2021-08-25-katana.pdf>` for offline reading.
 
 
 .. TO DO: make ToC formatting nicer

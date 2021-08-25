@@ -61,7 +61,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -89,9 +89,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../software/index.html">Software</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../software/environment_modules.html">Environment Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/biosciences.html">Biosciences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/installing_software.html">Installing software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/java.html">Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/jupyter-notebooks.html">Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../software/intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/perl.html">Perl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/python.html">Python</a></li>
@@ -161,30 +162,30 @@
 <p>1. First, you will need to <a class="reference external" href="https://support.aarnet.edu.au/hc/en-us/articles/236034707-How-do-I-manage-change-my-passwords-">set your Sync Password</a> in the
 <a class="reference external" href="https://cloudstor.aarnet.edu.au/plus/settings/personal">Cloudstor settings page</a>, and keep a copy locally.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">This can be <strong>confusing</strong>. You need to think of the Cloudstor web
+<p class="admonition-title">Warning</p>
+<p>This can be <strong>confusing</strong>. You need to think of the Cloudstor web
 interface and the data store as two different logins. The Sync
 password is for data transfer only and is different from the web
 login password.</p>
 </div>
 <ol class="arabic simple" start="2">
-<li>Next, login to KDM and run:</li>
+<li><p>Next, login to KDM and run:</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm ~<span class="o">]</span>$ rclone config
 </pre></div>
 </div>
 <p>You will be asked a set of questions. The short answers are:</p>
 <ol class="arabic simple">
-<li>new remote (‘n’)</li>
-<li>name (‘CloudStor’)</li>
-<li>storage type <strong>webdav</strong> (‘25’ in current installation)</li>
-<li>url for http connection (<a class="reference external" href="https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/">https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/</a>)</li>
-<li>Name of webdav site: <strong>OwnCloud</strong> (‘2’ in current installation)</li>
-<li>user name per your cloudstor settings page (<a class="reference external" href="mailto:first&#46;last&#37;&#52;&#48;unsw&#46;edu&#46;au">first<span>&#46;</span>last<span>&#64;</span>unsw<span>&#46;</span>edu<span>&#46;</span>au</a>, <strong>not</strong> <a class="reference external" href="mailto:zID&#37;&#52;&#48;unsw&#46;edu&#46;au">zID<span>&#64;</span>unsw<span>&#46;</span>edu<span>&#46;</span>au</a>)</li>
-<li>Password (‘Yes’)</li>
-<li>enter password (paste or type in the Sync password from step 1 above)</li>
-<li>confirm password (paste of type in the Sync password from step 1 above)</li>
-<li>bearer_token: (blank)</li>
+<li><p>new remote (‘n’)</p></li>
+<li><p>name (‘CloudStor’)</p></li>
+<li><p>storage type <strong>webdav</strong> (‘25’ in current installation)</p></li>
+<li><p>url for http connection (<a class="reference external" href="https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/">https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/</a>)</p></li>
+<li><p>Name of webdav site: <strong>OwnCloud</strong> (‘2’ in current installation)</p></li>
+<li><p>user name per your cloudstor settings page (<a class="reference external" href="mailto:first&#46;last&#37;&#52;&#48;unsw&#46;edu&#46;au">first<span>&#46;</span>last<span>&#64;</span>unsw<span>&#46;</span>edu<span>&#46;</span>au</a>, <strong>not</strong> <a class="reference external" href="mailto:zID&#37;&#52;&#48;unsw&#46;edu&#46;au">zID<span>&#64;</span>unsw<span>&#46;</span>edu<span>&#46;</span>au</a>)</p></li>
+<li><p>Password (‘Yes’)</p></li>
+<li><p>enter password (paste or type in the Sync password from step 1 above)</p></li>
+<li><p>confirm password (paste of type in the Sync password from step 1 above)</p></li>
+<li><p>bearer_token: (blank)</p></li>
 </ol>
 <p>You should then see something like this to which you should answer yes:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Remote config
@@ -260,9 +261,6 @@ would have to access the instance like this:</p>
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 

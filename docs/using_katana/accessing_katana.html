@@ -28,8 +28,8 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
         <link rel="up" title="Using Katana" href="index.html"/>
-        <link rel="next" title="About Katana" href="about_katana.html"/>
-        <link rel="prev" title="Using Katana" href="index.html"/>
+        <link rel="next" title="Running Jobs on Katana" href="running_jobs.html"/>
+        <link rel="prev" title="About Katana" href="about_katana.html"/>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="cache-control" content="public" />
@@ -71,8 +71,8 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Using Katana</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Accessing Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="about_katana.html">About Katana</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Accessing Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="running_jobs.html">Running Jobs on Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="github.html">GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ondemand.html">Katana OnDemand</a></li>
@@ -154,7 +154,7 @@
 	    <div id="content" class="hfeed entry-container hentry">
   <div class="section" id="accessing-katana">
 <h1>Accessing Katana<a class="headerlink" href="#accessing-katana" title="Permalink to this headline">¶</a></h1>
-<p>Anyone at UNSW can apply for a general account on Katana. This level is designed for those that think Katana would suit their research needs or will typically use less than 10,000 CPU hours a quarter. This level still gets access to the same level of support including software installation, help getting started or running their jobs. The only difference is the number of compute jobs that can be run at any time and how long they can run for - general users can only use a 12 hour <a class="reference internal" href="../glossary.html#term-walltime"><span class="xref std std-term">Walltime</span></a>.</p>
+<p>Anyone at UNSW can apply for a general account on Katana. This level is designed for those that think Katana would suit their research needs or will typically use less than 10,000 CPU hours a quarter. This level still gets access to the same level of support including software installation, help getting started or running their jobs. The only difference is the number of compute jobs that can be run at any time and how long they can run for - general users can only use a 12 hour <a class="reference internal" href="../glossary.html#term-Walltime"><span class="xref std std-term">Walltime</span></a>.</p>
 <p>If your needs require more CPU hours or consulation, some Faculties, Schools and Research Groups have invested in Katana and have a higher level of access. Users in this situation should speak to their supervisor.</p>
 <div class="section" id="requesting-an-account">
 <span id="id1"></span><h2>Requesting an Account<a class="headerlink" href="#requesting-an-account" title="Permalink to this headline">¶</a></h2>
@@ -163,8 +163,8 @@
 <div class="section" id="connecting-to-katana">
 <span id="id2"></span><h2>Connecting to Katana<a class="headerlink" href="#connecting-to-katana" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">When you are connecting to Katana via <code class="code docutils literal notranslate"><span class="pre">katana.restech.unsw.edu.au</span></code> you are connecting to one of two login nodes <code class="code docutils literal notranslate"><span class="pre">katana1.restech.unsw.edu.au</span></code> or <code class="code docutils literal notranslate"><span class="pre">katana2.restech.unsw.edu.au</span></code>. If you have a long running <a class="reference internal" href="../software/tmux.html#tmux"><span class="std std-ref">TMUX</span></a> open, you will need to login to the node on which it was started.</p>
+<p class="admonition-title">Note</p>
+<p>When you are connecting to Katana via <code class="code docutils literal notranslate"><span class="pre">katana.restech.unsw.edu.au</span></code> you are connecting to one of two login nodes <code class="code docutils literal notranslate"><span class="pre">katana1.restech.unsw.edu.au</span></code> or <code class="code docutils literal notranslate"><span class="pre">katana2.restech.unsw.edu.au</span></code>. If you have a long running <a class="reference internal" href="../software/tmux.html#tmux"><span class="std std-ref">TMUX</span></a> open, you will need to login to the node on which it was started.</p>
 </div>
 <div class="section" id="linux-and-mac">
 <h3>Linux and Mac<a class="headerlink" href="#linux-and-mac" title="Permalink to this headline">¶</a></h3>
@@ -180,8 +180,8 @@
 <div class="section" id="graphical-sessions">
 <span id="graphical-session"></span><h3>Graphical sessions<a class="headerlink" href="#graphical-sessions" title="Permalink to this headline">¶</a></h3>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Please use the provided <a class="reference internal" href="ondemand.html#ondemand"><span class="std std-ref">Katana OnDemand</span></a> option if possible. It’s significantly easier to use and faster to set up.</p>
+<p class="admonition-title">Warning</p>
+<p>Please use the provided <a class="reference internal" href="ondemand.html#ondemand"><span class="std std-ref">Katana OnDemand</span></a> option if possible. It’s significantly easier to use and faster to set up.</p>
 </div>
 <p>Some software - <strong>Ansys</strong>, <a class="reference internal" href="../software/jupyter-notebooks.html#jupyter-notebooks"><span class="std std-ref">Jupyter Notebooks</span></a>, <strong>Matlab</strong>, and <a class="reference internal" href="../software/r.html#r-and-rstudio"><span class="std std-ref">R and RStudio</span></a> being among the most popular - are easier with a graphical session. If you require an interactive graphical session to Katana then you can use the <a class="reference external" href="http://wiki.x2go.org/doku.php">X2Go</a> client.</p>
 <p>Start X2Go and create a session for Katana. The details that you need to enter for the session are:</p>
@@ -193,8 +193,8 @@ Session type: Mate
 </div>
 <img alt="../_images/x2go.png" src="../_images/x2go.png" />
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">The usability of a graphical connection to Katana is highly dependent on network latency and performance.</p>
+<p class="admonition-title">Warning</p>
+<p>The usability of a graphical connection to Katana is highly dependent on network latency and performance.</p>
 </div>
 <p>Once you have logged into a Katana desktop, you should start a terminal</p>
 <img alt="../_images/terminal_graphical_session.png" src="../_images/terminal_graphical_session.png" />
@@ -215,10 +215,10 @@ Session type: Mate
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="about_katana.html" class="btn btn-neutral float-right" title="About Katana">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="running_jobs.html" class="btn btn-neutral float-right" title="Running Jobs on Katana">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Using Katana"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="about_katana.html" class="btn btn-neutral" title="About Katana"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -253,9 +253,6 @@ Session type: Mate
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 

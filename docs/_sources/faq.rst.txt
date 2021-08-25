@@ -68,7 +68,7 @@ As many as your account and queue will allow you. But there are trade-offs - if 
 If you are regularly wanting to run large parallel jobs (16+ cores per job) on Katana you should consider speaking to :ref:`help_and_support` so that they are aware of your jobs. They may be able to provide you additional assistance on resource usage for parallel jobs. 
 
 Why does my SSH connection periodically disconnect?
-==================================================
+===================================================
 
 With all networks there is a limit to how long a connection between two computers will stay open if no data is travelling between them. Look to set your ServerAliveInterval or Keep Alive interval to 60 in your secure shell software (putty, ssh). 
 
@@ -242,6 +242,8 @@ If you use Katana for calculations that result in a publication then you should 
 
     This research includes computations using the computational cluster Katana supported by Research Technology Services at UNSW Sydney.
 
+Katana now also has a DOI that can be used for citation in papers: https://dx.oi.org/10.26190/669x-a286. 
+    
 If you are using nodes that have been purchased using an external funding source you should also acknowledge the source of those funds.
 
 For information about `acknowledging ARC funding <https://www.arc.gov.au/acknowledging-arc>`_

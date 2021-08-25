@@ -61,7 +61,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -89,9 +89,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../software/index.html">Software</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../software/environment_modules.html">Environment Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/biosciences.html">Biosciences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/installing_software.html">Installing software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/java.html">Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/jupyter-notebooks.html">Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../software/intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/perl.html">Perl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/python.html">Python</a></li>
@@ -159,31 +160,31 @@
 <div class="section" id="system-configuration">
 <span id="id2"></span><h2>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>RPM based Linux OSes. RedHat on the management plane, CentOS on the nodes</li>
-<li><a class="reference external" href="https://www.pbspro.org/">PBSPro</a> version 19.1.3</li>
-<li>Large global scratch at <code class="code docutils literal notranslate"><span class="pre">/srv/scratch</span></code>, local scratch at <code class="code docutils literal notranslate"><span class="pre">$TMPDIR</span></code></li>
-<li>12, 48, 100, 200 hour <a class="reference internal" href="../glossary.html#term-walltime"><span class="xref std std-term">Walltime</span></a> queues with prioritisation</li>
+<li><p>RPM based Linux OSes. RedHat on the management plane, CentOS on the nodes</p></li>
+<li><p><a class="reference external" href="https://www.pbspro.org/">PBSPro</a> version 19.1.3</p></li>
+<li><p>Large global scratch at <code class="code docutils literal notranslate"><span class="pre">/srv/scratch</span></code>, local scratch at <code class="code docutils literal notranslate"><span class="pre">$TMPDIR</span></code></p></li>
+<li><p>12, 48, 100, 200 hour <a class="reference internal" href="../glossary.html#term-Walltime"><span class="xref std std-term">Walltime</span></a> queues with prioritisation</p></li>
 </ul>
 </div>
 <div class="section" id="compute">
 <span id="compute-resources"></span><h2>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Heterogenous hardware: Dell, Lenovo, Huawei.</li>
-<li>Roughly 170 nodes</li>
+<li><p>Heterogenous hardware: Dell, Lenovo, Huawei.</p></li>
+<li><p>Roughly 170 nodes</p></li>
 </ul>
 </div>
 <div class="section" id="gpu-compute">
 <span id="gpu-resources"></span><h2>GPU Compute<a class="headerlink" href="#gpu-compute" title="Permalink to this headline">¶</a></h2>
 <p>The most popular use of these nodes is for Tensorflow.</p>
 <ul class="simple">
-<li>Six GPU capable nodes, Tesla V100-SXM2, 32GB</li>
-<li>Three are dedicated for the department that owns them</li>
-<li>Three are general use for all researchers</li>
+<li><p>Six GPU capable nodes, Tesla V100-SXM2, 32GB</p></li>
+<li><p>Three are dedicated for the department that owns them</p></li>
+<li><p>Three are general use for all researchers</p></li>
 </ul>
 <p>You cannot use Tensorflow on the login nodes because they don’t have GPUs. You will need to get access to a GPU node to do this.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Unfortunately, GPU nodes are in incredibly high demand.
+<p class="admonition-title">Warning</p>
+<p>Unfortunately, GPU nodes are in incredibly high demand.
 We cannot provide special accomodation for any project.
 You will need to wait in the common queue - or buy
 a GPU node for your group on which you will get priority</p>
@@ -241,9 +242,6 @@ your session has started, so you will need to monitor your command.</p>
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/language_data.js">
 
     </script>
 

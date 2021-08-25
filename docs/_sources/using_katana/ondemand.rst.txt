@@ -23,9 +23,9 @@ Software Available in OnDemand
 
 - :ref:`R and RStudio`
 - :ref:`Jupyter Notebooks`, JupyterLab and various kernels
-- :ref:`Ansys`
 - :ref:`Matlab`
-- :ref:`Comsol`
 - :ref:`Stata`
+.. - :ref:`Comsol`
+.. - :ref:`Ansys`
 
 .. _UNSW VPN: https://vpn.unsw.edu.au

@@ -60,7 +60,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -88,9 +88,10 @@
 <li class="toctree-l1"><a class="reference internal" href="software/index.html">Software</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="software/environment_modules.html">Environment Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="software/biosciences.html">Biosciences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/installing_software.html">Installing software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="software/intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="software/java.html">Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="software/jupyter-notebooks.html">Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="software/intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="software/operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="software/perl.html">Perl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="software/python.html">Python</a></li>
@@ -172,7 +173,7 @@
 <span id="katana-compute-faq"></span><h2>Scheduler FAQ<a class="headerlink" href="#scheduler-faq" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="does-katana-run-a-32-bit-or-a-64-bit-operating-system">
 <h3>Does Katana run a 32 bit or a 64 bit operating system?<a class="headerlink" href="#does-katana-run-a-32-bit-or-a-64-bit-operating-system" title="Permalink to this headline">¶</a></h3>
-<p>Katana <a class="reference internal" href="glossary.html#term-compute-nodes"><span class="xref std std-term">Compute Nodes</span></a> run a 64 bit version of the CentOS distribution of Linux. Currently version 7.8. The <a class="reference internal" href="glossary.html#term-head-node"><span class="xref std std-term">Head Node</span></a> runs RedHat 7.8.</p>
+<p>Katana <a class="reference internal" href="glossary.html#term-Compute-Nodes"><span class="xref std std-term">Compute Nodes</span></a> run a 64 bit version of the CentOS distribution of Linux. Currently version 7.8. The <a class="reference internal" href="glossary.html#term-Head-Node"><span class="xref std std-term">Head Node</span></a> runs RedHat 7.8.</p>
 </div>
 <div class="section" id="how-much-memory-is-available-per-core-and-or-per-node">
 <h3>How much memory is available per core and/or per node?<a class="headerlink" href="#how-much-memory-is-available-per-core-and-or-per-node" title="Permalink to this headline">¶</a></h3>
@@ -180,7 +181,7 @@
 </div>
 <div class="section" id="how-much-memory-can-i-use-on-the-login-node-for-compiling-software">
 <h3>How much memory can I use on the login node for compiling software?<a class="headerlink" href="#how-much-memory-can-i-use-on-the-login-node-for-compiling-software" title="Permalink to this headline">¶</a></h3>
-<p>The login nodes have a total of 24GB of memory each. Each individual user is limited to 4GB and should only be used to compile software. If you need more, do it in an <a class="reference internal" href="glossary.html#term-interactive-job"><span class="xref std std-term">Interactive Job</span></a>.</p>
+<p>The login nodes have a total of 24GB of memory each. Each individual user is limited to 4GB and should only be used to compile software. If you need more, do it in an <a class="reference internal" href="glossary.html#term-Interactive-Job"><span class="xref std std-term">Interactive Job</span></a>.</p>
 </div>
 <div class="section" id="why-isn-t-my-job-making-it-onto-a-node-even-though-it-says-that-some-nodes-are-free">
 <h3>Why isn’t my job making it onto a node even though it says that some nodes are free?<a class="headerlink" href="#why-isn-t-my-job-making-it-onto-a-node-even-though-it-says-that-some-nodes-are-free" title="Permalink to this headline">¶</a></h3>
@@ -250,9 +251,9 @@
 <h3>You mentioned waiting time as a factor, what else affects the job priority?<a class="headerlink" href="#you-mentioned-waiting-time-as-a-factor-what-else-affects-the-job-priority" title="Permalink to this headline">¶</a></h3>
 <p>The following three factors combine to generate the job priority.</p>
 <ul class="simple">
-<li>How many resources (cpu and memory) have you and your group consumed in the last 14 days? Your personal consumption is weighted more highly than your group’s consumption. Heavy recent usage contributes a negative priority. Light recent usage contributes a positive priority.</li>
-<li>How many resources does the job require? Always a positive contribution to priority, but increases linearly with the amount of cpu and memory requested, i.e. we like big jobs.</li>
-<li>How long has the job been waiting in the queue? Always a positive contribution to priority, but increases linearly with the amount of time your job has been waiting in the queue. Note that throttling policies will prevent some jobs from being considered for scheduling, in which case their clock does not start ticking until that throttling constraint is lifted.</li>
+<li><p>How many resources (cpu and memory) have you and your group consumed in the last 14 days? Your personal consumption is weighted more highly than your group’s consumption. Heavy recent usage contributes a negative priority. Light recent usage contributes a positive priority.</p></li>
+<li><p>How many resources does the job require? Always a positive contribution to priority, but increases linearly with the amount of cpu and memory requested, i.e. we like big jobs.</p></li>
+<li><p>How long has the job been waiting in the queue? Always a positive contribution to priority, but increases linearly with the amount of time your job has been waiting in the queue. Note that throttling policies will prevent some jobs from being considered for scheduling, in which case their clock does not start ticking until that throttling constraint is lifted.</p></li>
 </ul>
 </div>
 <div class="section" id="what-happens-if-my-job-uses-more-memory-than-i-requested">
@@ -261,14 +262,14 @@
 </div>
 <div class="section" id="what-happens-if-my-job-is-still-running-when-it-reaches-the-end-of-the-time-that-i-have-requested">
 <h3>What happens if my job is still running when it reaches the end of the time that I have requested?<a class="headerlink" href="#what-happens-if-my-job-is-still-running-when-it-reaches-the-end-of-the-time-that-i-have-requested" title="Permalink to this headline">¶</a></h3>
-<p>When your job hits its <a class="reference internal" href="glossary.html#term-walltime"><span class="xref std std-term">Walltime</span></a> it is automatically terminated by the scheduler.</p>
+<p>When your job hits its <a class="reference internal" href="glossary.html#term-Walltime"><span class="xref std std-term">Walltime</span></a> it is automatically terminated by the scheduler.</p>
 </div>
 <div class="section" id="hours-is-not-long-enough-what-can-i-do">
 <h3>200 hours is not long enough! What can I do?<a class="headerlink" href="#hours-is-not-long-enough-what-can-i-do" title="Permalink to this headline">¶</a></h3>
 <p>If you find that your jobs take longer than the maximum WALL time then there are several different options to change your code so that it fits inside the parameters.</p>
 <ul class="simple">
-<li>Can your job be split into several independent jobs?</li>
-<li>Can you export the results to a file which can then be used as input for the next time the job is run?</li>
+<li><p>Can your job be split into several independent jobs?</p></li>
+<li><p>Can you export the results to a file which can then be used as input for the next time the job is run?</p></li>
 </ul>
 <p>You may want to also look to see if there is anything that you can do to make your code run better like making better use of local scratch if your code is I/O intensive.</p>
 </div>
@@ -335,6 +336,7 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">This</span> <span class="n">research</span> <span class="n">includes</span> <span class="n">computations</span> <span class="n">using</span> <span class="n">the</span> <span class="n">computational</span> <span class="n">cluster</span> <span class="n">Katana</span> <span class="n">supported</span> <span class="n">by</span> <span class="n">Research</span> <span class="n">Technology</span> <span class="n">Services</span> <span class="n">at</span> <span class="n">UNSW</span> <span class="n">Sydney</span><span class="o">.</span>
 </pre></div>
 </div>
+<p>Katana now also has a DOI that can be used for citation in papers: <a class="reference external" href="https://dx.oi.org/10.26190/669x-a286">https://dx.oi.org/10.26190/669x-a286</a>.</p>
 <p>If you are using nodes that have been purchased using an external funding source you should also acknowledge the source of those funds.</p>
 <p>For information about <a class="reference external" href="https://www.arc.gov.au/acknowledging-arc">acknowledging ARC funding</a></p>
 <p>Your School or Research Group may also have policies for compute nodes that they have purchased.</p>
@@ -389,9 +391,6 @@
 
     </script>
     <script type="text/javascript" src="_static/doctools.js">
-
-    </script>
-    <script type="text/javascript" src="_static/language_data.js">
 
     </script>
 
