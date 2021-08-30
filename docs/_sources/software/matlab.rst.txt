@@ -2,21 +2,17 @@
 Matlab
 ######
 
-***
+
 Running interactively
-***
+=====================
 
 Interactive sessions of Matlab are best run on :ref:`Katana OnDemand`. 
 
 
-.. KOD
-
-***
 Batch Jobs
-***
+==========
 
-
-You can run matab within `Batch Jobs`. The example below shows the flags used to start matlab without a graphical interface. The matlab script (scriptfile.m) needs to be in the same directory as qsub was run to submit the batch job. 
+You can run matab within a batch job. The example below shows the flags used to start matlab without a graphical interface. The matlab script (scriptfile.m) needs to be in the same directory as qsub was run to submit the batch job. 
 
 .. code:: console
 
