@@ -37,7 +37,7 @@ Windows
 
 From a Windows machine an SSH client such as PuTTY_ or MobaXTerm_ is required. 
 
-If you are comfortable using PowerShell, OpenSSH is availabel on recent Windows versions and can be `installed on Windows 10 <https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse>`__. 
+If you are comfortable using PowerShell, OpenSSH is available on recent Windows versions. If not persent, it can be `installed on Windows 10 <https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse>`__. 
 
 Windows subsystem for Linux (WSL)
 ----------------------------------
