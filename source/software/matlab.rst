@@ -6,7 +6,7 @@ Matlab
 Running interactively
 =====================
 
-Interactive sessions of Matlab are best run on :ref:`Katana OnDemand`. 
+Interactive sessions of matlab are best run on :ref:`Katana OnDemand`. 
 
 
 Batch Jobs

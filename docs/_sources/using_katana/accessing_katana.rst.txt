@@ -37,6 +37,21 @@ Windows
 
 From a Windows machine an SSH client such as PuTTY_ or MobaXTerm_ is required. 
 
+If you are comfortable using PowerShell, `OpenSSH can be installed in Windows 10 <https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse>`__. 
+
+Windows subsystem for Linux (WSL)
+----------------------------------
+
+You can run a Linux environmet directly on Windows using `Windows Subsystem for Linux <https://docs.microsoft.com/en-us/windows/wsl/about>`__ (WSL).
+
+There are two ways to install WSL on your system:
+
+1. Devices in the UNSW Windows standard operating environment (SOE) can install `InTune <https://www.microsoft.com/en-au/p/company-portal/9wzdncrfj3pz?activetab=pivot:overviewtab>`__ and from there install one of the `Linux distrubtions <https://www.makeuseof.com/linux-distros-for-windows-subsystem-for-linux/>`__ through the 'Apps' page.
+2. Manually enable `WSL in PowerShell <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`__ and then install a Linux distribution through the Microsoft Store. 
+
+Using WSL will not only let you connect to katana with SSH, but also provides many GNU/Linux tools that are useful when working with HPC and research data.
+
+
 .. _graphical_session:
 
 Graphical sessions
