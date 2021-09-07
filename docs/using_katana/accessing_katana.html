@@ -178,16 +178,27 @@
 <div class="section" id="windows">
 <h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
 <p>From a Windows machine an SSH client such as <a class="reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a> or <a class="reference external" href="https://mobaxterm.mobatek.net/">MobaXTerm</a> is required.</p>
-<p>If you are comfortable using PowerShell, <a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">OpenSSH can be installed in Windows 10</a>.</p>
+<p>If you are comfortable using PowerShell, OpenSSH is availabel on recent Windows versions and can be <a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">installed on Windows 10</a>.</p>
 <div class="section" id="windows-subsystem-for-linux-wsl">
 <h4>Windows subsystem for Linux (WSL)<a class="headerlink" href="#windows-subsystem-for-linux-wsl" title="Permalink to this headline">¶</a></h4>
 <p>You can run a Linux environmet directly on Windows using <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/about">Windows Subsystem for Linux</a> (WSL).</p>
 <p>There are two ways to install WSL on your system:</p>
 <ol class="arabic simple">
-<li><p>Devices in the UNSW Windows standard operating environment (SOE) can install <a class="reference external" href="https://www.microsoft.com/en-au/p/company-portal/9wzdncrfj3pz?activetab=pivot:overviewtab">InTune</a> and from there install one of the <a class="reference external" href="https://www.makeuseof.com/linux-distros-for-windows-subsystem-for-linux/">Linux distrubtions</a> through the ‘Apps’ page.</p></li>
+<li><p>On UNSW Windows standard operating environment (SOE) machines you can open the <a class="reference external" href="https://www.microsoft.com/en-au/p/company-portal/9wzdncrfj3pz?activetab=pivot:overviewtab">Company Portal</a> App and from there install one of the <a class="reference external" href="https://www.makeuseof.com/linux-distros-for-windows-subsystem-for-linux/">Linux distrubtions</a> through the ‘Apps’, the same as you would other applications.</p></li>
 <li><p>Manually enable <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL in PowerShell</a> and then install a Linux distribution through the Microsoft Store.</p></li>
 </ol>
 <p>Using WSL will not only let you connect to katana with SSH, but also provides many GNU/Linux tools that are useful when working with HPC and research data.</p>
+</div>
+</div>
+<div class="section" id="ssh-keepalive">
+<h3>SSH KeepAlive<a class="headerlink" href="#ssh-keepalive" title="Permalink to this headline">¶</a></h3>
+<p>To stop your connection disconnecting after some idle time, you can send null packets to keep your session alive. You want to change the frequency of these packets from 0 (none) to a small time interval, say 60 seconds. The configuration differs depending on the SSH client used.</p>
+<p>On PuTTy: Category -&gt; Connection -&gt; “Seconds between keepalives”</p>
+<p>On MobaXterm: Settings -&gt; Configuration -&gt; SSH -&gt; SSH keepalive</p>
+<p>On Linux and WSL you send keepalive packets for all servers by editing ~/.ssh/config and adding the lines</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Host *
+   ServerAliveInterval <span class="m">60</span>
+</pre></div>
 </div>
 </div>
 <div class="section" id="graphical-sessions">

@@ -37,7 +37,7 @@ Windows
 
 From a Windows machine an SSH client such as PuTTY_ or MobaXTerm_ is required. 
 
-If you are comfortable using PowerShell, `OpenSSH can be installed in Windows 10 <https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse>`__. 
+If you are comfortable using PowerShell, OpenSSH is availabel on recent Windows versions and can be `installed on Windows 10 <https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse>`__. 
 
 Windows subsystem for Linux (WSL)
 ----------------------------------
@@ -46,11 +46,27 @@ You can run a Linux environmet directly on Windows using `Windows Subsystem for 
 
 There are two ways to install WSL on your system:
 
-1. Devices in the UNSW Windows standard operating environment (SOE) can install `InTune <https://www.microsoft.com/en-au/p/company-portal/9wzdncrfj3pz?activetab=pivot:overviewtab>`__ and from there install one of the `Linux distrubtions <https://www.makeuseof.com/linux-distros-for-windows-subsystem-for-linux/>`__ through the 'Apps' page.
+1. On UNSW Windows standard operating environment (SOE) machines you can open the `Company Portal <https://www.microsoft.com/en-au/p/company-portal/9wzdncrfj3pz?activetab=pivot:overviewtab>`__ App and from there install one of the `Linux distrubtions <https://www.makeuseof.com/linux-distros-for-windows-subsystem-for-linux/>`__ through the 'Apps', the same as you would other applications.
 2. Manually enable `WSL in PowerShell <https://docs.microsoft.com/en-us/windows/wsl/install-win10>`__ and then install a Linux distribution through the Microsoft Store. 
 
 Using WSL will not only let you connect to katana with SSH, but also provides many GNU/Linux tools that are useful when working with HPC and research data.
 
+
+SSH KeepAlive
+==============
+
+To stop your connection disconnecting after some idle time, you can send null packets to keep your session alive. You want to change the frequency of these packets from 0 (none) to a small time interval, say 60 seconds. The configuration differs depending on the SSH client used.
+
+On PuTTy: Category -> Connection -> "Seconds between keepalives"
+
+On MobaXterm: Settings -> Configuration -> SSH -> SSH keepalive 
+
+On Linux and WSL you send keepalive packets for all servers by editing ~/.ssh/config and adding the lines 
+
+.. code-block:: bash
+
+   Host *
+      ServerAliveInterval 60
 
 .. _graphical_session:
 
