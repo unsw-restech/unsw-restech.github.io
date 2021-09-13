@@ -42,7 +42,7 @@ Job queue limits summary
 
 
 
-Typical job queue limit cut-offs are shown below. **The walltime is what determines whether a job can be run on any node, or only on  more restricted set of nodes.**
+Typical job queue limit cut-offs are shown below. **The walltime is what determines whether a job can be run on any node, or only on a more restricted set of nodes.**
 
 +----------------+--------------------------+-----------------+----------------+---------------------------+-----+------+
 |    Resource    | Queue limit cut-offs                                                                                 |
@@ -53,12 +53,12 @@ Typical job queue limit cut-offs are shown below. **The walltime is what determi
 +----------------+--------------------------+-----------------+----------------+---------------------------+-----+------+
 | Walltime (hrs) |            12            |        48       |       100      |            200                         |      
 |                +--------------------------+-----------------+----------------+----------------------------------------+
-|                |        Any node          | Faculty owned or general nodes   | Faculty owned  nodes only              |
+|                |        Any node          | School-owned or general-use nodes| School-owned  nodes only               |
 +----------------+--------------------------+-----------------+----------------+----------------------------------------+
 
 .. Note:: Try to combine or divide batch jobs to fit within that 12 hour limit for fastest starting times. 
  
-The resources available on a specific compute node can be shown with the :ref:`qstat` command, detailed in a laster section.  
+The resources available on a specific compute node can be shown with the :ref:`qstat` command.  
 
 .. _interactive_job:
 .. _interactive_session:
@@ -152,6 +152,11 @@ For the previous example, the job script could be rewritten as:
     cd $HOME
      
     ./myprogram
+
+.. warning:: 
+
+   | Be careful not to use resource request formats that are old, or intended for a different cluster.
+   | E.g. *nodes=X:ppn=Y* is an old resource request format, not meant katana's current setup. 
 
 This structure is the most common that you will use. The top line must be :code:`#!/bin/bash` - we are running bash scripts, and this is required.
 The following section - the lines starting with :code:`#PBS` - are where we will be configuring how the job will be run - here we are asking for resources.
