@@ -40,8 +40,12 @@ As you request more memory, CPU cores, or walltime, the number of available queu
 Job queue limits summary 
 ************************
 
+
+
+Typical job queue limit cut-offs are shown below. **The walltime is what determines whether a job can be run on any node, or only on  more restricted set of nodes.**
+
 +----------------+--------------------------+-----------------+----------------+---------------------------+-----+------+
-|    Resource    | Queue reduction cut-offs |                 |                |                           |     |      |
+|    Resource    | Queue limit cut-offs                                                                                 |
 +================+==========================+=================+================+===========================+=====+======+
 | Memory (GB)    |            124           |       180       |       248      |            370            | 750 | 1000 |
 +----------------+--------------------------+-----------------+----------------+---------------------------+-----+------+
@@ -49,10 +53,12 @@ Job queue limits summary
 +----------------+--------------------------+-----------------+----------------+---------------------------+-----+------+
 | Walltime (hrs) |            12            |        48       |       100      |            200                         |      
 |                +--------------------------+-----------------+----------------+----------------------------------------+
-|                |        Any cluster       | Research group and general nodes | Research group nodes only              |
+|                |        Any node          | Faculty owned or general nodes   | Faculty owned  nodes only              |
 +----------------+--------------------------+-----------------+----------------+----------------------------------------+
+
+.. Note:: Try to combine or divide batch jobs to fit within that 12 hour limit for fastest starting times. 
  
-.. Note:: The walltime request is the biggest constraint on which queues are available. Try to combine or divide batch jobs to fit within that 12 hour limit for fastest starting times. 
+The resources available on a specific compute node can be shown with the :ref:`qstat` command, detailed in a laster section.  
 
 .. _interactive_job:
 .. _interactive_session:
