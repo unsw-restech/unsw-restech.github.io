@@ -9,7 +9,7 @@ Scheduled Maintenance
 =====================
 
 .. attention::
-    There is no maintenance scheduled for the moment. 
+   Katana is undergoing scheduled downtime due to a power outage. It will be back online Monday 20th Sept. 
 
 .. _contact_us:
 
