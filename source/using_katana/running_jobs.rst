@@ -42,7 +42,7 @@ Job queue limits summary
 
 
 
-Typical job queue limit cut-offs are shown below. **The walltime is what determines whether a job can be run on any node, or only on a more restricted set of nodes.**
+Typical job queue limit cut-offs are shown below. **The walltime is what determines whether a job can be run on any node, or only on a restricted set of nodes.**
 
 +----------------+--------------------------+-----------------+----------------+---------------------------+-----+------+
 |    Resource    | Queue limit cut-offs                                                                                 |
