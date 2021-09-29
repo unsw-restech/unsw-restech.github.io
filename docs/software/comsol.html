@@ -163,7 +163,14 @@
 <p class="admonition-title">Note</p>
 <p>You will need to belong to a group that owns a COMSOL licence (mech, spree, quantum, biomodel)</p>
 </div>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mkdir -p ${TMPDIR}/comsol</span>
+<div class="section" id="comsol-batch-jobs">
+<h2>Comsol Batch Jobs<a class="headerlink" href="#comsol-batch-jobs" title="Permalink to this headline">¶</a></h2>
+<p>COMSO is available to download on <a class="reference external" href="https://www.myaccess.unsw.edu.au/applications/ansys-workbench">myAccess</a> for undergraduate and postgraduate students in Chemical and Biomedical Engineering. This will allow you to generate module files locally, and transfer them to Katana to process in a batch job.</p>
+<p>An example comsol batch job file is available <cite>on our GitHub &lt;https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/comsol/comsol.pbs&gt;_</cite> and an uncommented version is reproduced below.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/bin/bash
+<span class="gp">#</span>&lt;RESOURCE REQUESTS&gt;
+
+<span class="go">mkdir -p ${TMPDIR}/comsol</span>
 
 <span class="go">export MY_COMSOL_DIR=/srv/scratch/$USER/comsoldir</span>
 
@@ -177,6 +184,7 @@
 <span class="go">-outputfile ${MY_COMSOL_DIR}/MyModelOut.mph \</span>
 <span class="go">-batchlog ${MY_COMSOL_DIR}/MyModel.log</span>
 </pre></div>
+</div>
 </div>
 </div>
 

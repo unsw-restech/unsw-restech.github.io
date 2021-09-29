@@ -9,11 +9,19 @@ Comsol is best run interactively on :ref:`Katana OnDemand`.
    You will need to belong to a group that owns a COMSOL licence (mech, spree, quantum, biomodel) 
 
 
-.. TO DO
+*****************
+Comsol Batch Jobs
+*****************
 
+COMSO is available to download on `myAccess <https://www.myaccess.unsw.edu.au/applications/ansys-workbench>`_ for undergraduate and postgraduate students in Chemical and Biomedical Engineering. This will allow you to generate module files locally, and transfer them to Katana to process in a batch job.
+
+An example comsol batch job file is available `on our GitHub <https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/comsol/comsol.pbs>_` and an uncommented version is reproduced below. 
 
 .. code-block:: console
-        
+
+        #!/bin/bash
+        #<RESOURCE REQUESTS>
+
         mkdir -p ${TMPDIR}/comsol
 
         export MY_COMSOL_DIR=/srv/scratch/$USER/comsoldir
