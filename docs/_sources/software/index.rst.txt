@@ -6,12 +6,14 @@ Software
 
 This section starts with Environment Modules to help you get started using the software we have installed on Katana.
 
-Each section after that explains tips and tricks for using that software on Katana and a link to an example batch script in our Github examples.
+Each section after that explains tips and tricks for using that software on Katana. Example batch scripts for various software can be found in our `Github examples <https://github.com/unsw-edu-au/Restech-HPC/tree/master/hpc-examples>`_.
 
 .. toctree::
 
-    environment_modules.rst
+    ansys.rst
     biosciences.rst
+    comsol.rst
+    environment_modules.rst
     installing_software.rst
     intel_compilers_and_libraries.rst
     java.rst

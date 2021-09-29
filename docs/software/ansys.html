@@ -27,6 +27,9 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+        <link rel="up" title="Software" href="index.html"/>
+        <link rel="next" title="Biosciences" href="biosciences.html"/>
+        <link rel="prev" title="Software" href="index.html"/>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="cache-control" content="public" />
@@ -59,7 +62,7 @@
           
           
               <p class="caption"><span class="caption-text">Table of Contents</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#contact-the-research-technology-services-team">Contact the Research Technology Services team</a></li>
@@ -83,9 +86,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../storage/onedrive.html">One Drive</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Software</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Ansys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biosciences.html">Biosciences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comsol.html">Comsol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installing_software.html">Installing software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java.html">Java</a></li>
@@ -153,34 +158,60 @@
 	    <div id="content" class="hfeed entry-container hentry">
   <div class="section" id="ansys">
 <h1>Ansys<a class="headerlink" href="#ansys" title="Permalink to this headline">¶</a></h1>
-<p>Both Ansys Workbench and Ansys Electronic Desktop are available  on <a class="reference internal" href="../using_katana/ondemand.html#katana-ondemand"><span class="std std-ref">Katana OnDemand</span></a>.</p>
-<p>You can run an interactive job, starting Ansys with ‘runwb2’, but this is not recommended!</p>
+<p>Both Ansys Workbench and Ansys Electronic Desktop are available on <a class="reference internal" href="../using_katana/ondemand.html#katana-ondemand"><span class="std std-ref">Katana OnDemand</span></a>.</p>
+<p>This is the most user-friendly approach to running Ansys jobs on Katana.</p>
 <div class="section" id="ansys-batch-jobs">
 <h2>Ansys Batch Jobs<a class="headerlink" href="#ansys-batch-jobs" title="Permalink to this headline">¶</a></h2>
-<p>Ansys workbench is available on <cite>myAccess &lt;https://www.myacess.unsw.edu.au/applications/ansys-workbench&gt;_</cite> for undergraduate and postgraduate students in the Faculty of Engineering.</p>
-<p>Ansys CFX</p>
+<p>Ansys workbench is available on <a class="reference external" href="https://www.myaccess.unsw.edu.au/applications/ansys-workbench">myAccess</a> for undergraduate and postgraduate students in the Faculty of Engineering.</p>
+<p>If you install Ansys on your local machine, you can generate your model files locally and transfer them tto katana to run in a batch job.</p>
+<div class="section" id="ansys-cfx">
+<h3>Ansys CFX<a class="headerlink" href="#ansys-cfx" title="Permalink to this headline">¶</a></h3>
+<p>For Ansys CFX the .cfx and .def files need to be transferred to Katana.</p>
+<p>A brief batch script example is given below. A step-by-step guide is availabe <a class="reference external" href="https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-cfx.md">on our GitHub</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#&lt;RESOURCE REQUESTS&gt;</span>
+
+<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+
+module load intelmpi/2019.6.166
+module load ansys/2021r1
+
+cfx5solve -batch -def &lt;filename&gt;.def -part <span class="nv">$NCPUS</span> -start-method <span class="s2">&quot;Intel MPI Local Parallel&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ansys-fluent">
+<h3>Ansys Fluent<a class="headerlink" href="#ansys-fluent" title="Permalink to this headline">¶</a></h3>
+<p>Similarly, Ansys Fluent input can be generated locally and transferred to Katana to run in a batch job.</p>
+<p>Again, a brief batch script is below, and a step-by-step guide is available <a class="reference external" href="https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-fluent.md">on our Github</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#&lt;RESOURCE REQUESTS&gt;</span>
 
 <span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
 
 module load ansys/2021r1
+module load intelmpi/2019.6.166
 
-cfx5solve -batch -def &lt;filename&gt;.def -part
--start-method
+fluent 3d -g -t <span class="nv">$NCPUS</span> -i fluent.in &gt; output.out
 </pre></div>
 </div>
-<p>Ansys Fluent</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fluent 3d -g -t <span class="m">8</span> -i fluent.in &gt; output.out
-</pre></div>
+<p>If you wish to use Ansys on NCI’s Gadi, UNSW has a institutional licence that requies you join the relevant software group as detailed in <cite>NCI’s documentation &lt;opus.nci.org.au/display/Help/Ansys+Fluent&gt;_</cite>.</p>
 </div>
-<p>If you wish to use Ansys on NCI’s Gadi, UNSW has a institutional licence that requies you join the relevant software group as detailed in <cite>NCI’s documentation &lt;opus.nci.org.au/display/Help/Ansys+Fluent&gt;_</cite></p>
 </div>
 </div>
 
 
 	    </div>
             <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="biosciences.html" class="btn btn-neutral float-right" title="Biosciences">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Software"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
