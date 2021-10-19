@@ -32,6 +32,10 @@ You are able to install them into your home directory and we encourage you to do
 
 Alternatively, many packages will give you an option for a :code:`pip install` - if this is an option, we recommend you use :code:`python virtual environments`.
 
+.. note::
+        
+        If you are using Conda for GPU-enabled software, make sure it is installed on a GPU node during an interactive session.
+
 
 ***************************
 Python Virtual Environments

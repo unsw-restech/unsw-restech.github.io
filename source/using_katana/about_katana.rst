@@ -59,7 +59,9 @@ Note the 2 hour limit - that is the *fastest* way to get onto the GPU nodes. Unf
 your session has started, so you will need to monitor your command.
 
 .. We **know** that this isn't ideal and we **wish** there was an easier solution - we love making your lives easier. It's literally our jobs. But in this case, we don't have the resources available to make this faster, smoother or easier.  
-    
+.. note:: 
+
+   GPU-enabled software should be installed on a GPU node within an interactive session, in case the software is probing for GPU hardware or libraries.
 
 .. _Gadi: https://nci.org.au/our-systems/hpc-systems
 .. _NCI: https://nci.org.au/

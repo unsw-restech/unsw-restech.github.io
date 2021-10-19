@@ -38,7 +38,7 @@ As you request more memory, CPU cores, or walltime, the number of available queu
 
 *************************
 Job queue limits summary 
-************************
+*************************
 
 
 
