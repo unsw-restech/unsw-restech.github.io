@@ -87,12 +87,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../software/index.html">Software</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../software/environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/ansys.html">Ansys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/biosciences.html">Biosciences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/comsol.html">Comsol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/environment_modules.html">Environment Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/installing_software.html">Installing software</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/java.html">Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/jupyter-notebooks.html">Jupyter Notebooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../software/matlab.html">Matlab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/perl.html">Perl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../software/python.html">Python</a></li>
@@ -158,24 +161,17 @@
 <p>You can mount Microsoft’s <a class="reference external" href="https://onedrive.live.com/">OneDrive</a> on Katana.</p>
 <div class="section" id="onedrive-background">
 <h2>OneDrive Background<a class="headerlink" href="#onedrive-background" title="Permalink to this headline">¶</a></h2>
-<p>We don’t really recommend researchers mount their OneDrive because the
-technologies aren’t a perfect match and the configuration process is
-complex.</p>
-<p>But it is possible and this is our recommended process. The configuration
-section will need to be run infrequently, probably only once.</p>
+<p>We don’t recommend researchers mount their OneDrive because the configuration process is not ideal. However, it is possible with the following method.</p>
+<p>The configuration section will need to be run infrequently, probably only once.</p>
 <p>The how-to-run section will need to be run each time.</p>
 <p><a class="reference external" href="https://rclone.org/onedrive/">There are caveats to using RClone with OneDrive</a> that users will need to be
 aware of and which the UNSW team cannot help with.</p>
 <p>And there is one local caveat that needs to be understood:</p>
 <p>Mounting OneDrive locally will only work on the machine on which the <cite>mount</cite>
-command is run.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>In practice, this has implications. All of our other common
-drives, like /apps, /home and /srv/scratch, will automatically mount on all
-machines. OneDrive only mounts on the machine you mount it on. If you mount
-it on the login node katana1, it will not be available on katana2 or any of
-the worker nodes. You will need to mount OneDrive within your PBS script.</p>
+command is run. Pl</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please mount OneDrive on Katana Data Mover, not the login nodes.</p>
 </div>
 </div>
 <div class="section" id="prerequisites">

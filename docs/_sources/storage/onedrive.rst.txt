@@ -8,12 +8,9 @@ You can mount Microsoft's OneDrive_ on Katana.
 OneDrive Background
 *******************
 
-We don't really recommend researchers mount their OneDrive because the 
-technologies aren't a perfect match and the configuration process is
-complex.
+We don't recommend researchers mount their OneDrive because the configuration process is not ideal. However, it is possible with the following method.
 
-But it is possible and this is our recommended process. The configuration 
-section will need to be run infrequently, probably only once.
+The configuration section will need to be run infrequently, probably only once.
 
 The how-to-run section will need to be run each time.
 
@@ -23,9 +20,12 @@ aware of and which the UNSW team cannot help with.
 And there is one local caveat that needs to be understood:
 
 Mounting OneDrive locally will only work on the machine on which the `mount`
-command is run.
+command is run. Pl
     
-.. warning:: In practice, this has implications. All of our other common 
+.. note:: Please mount OneDrive on Katana Data Mover, not the login nodes. 
+        
+        
+.. .. warning:: In practice, this has implications. All of our other common 
     drives, like /apps, /home and /srv/scratch, will automatically mount on all
     machines. OneDrive only mounts on the machine you mount it on. If you mount
     it on the login node katana1, it will not be available on katana2 or any of 
