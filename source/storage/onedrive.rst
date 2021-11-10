@@ -22,7 +22,7 @@ aware of and which the UNSW team cannot help with.
 And there is one local caveat that needs to be understood:
 
 Mounting OneDrive locally will only work on the machine on which the `mount`
-command is run. Pl
+command is run.
     
 .. note:: Please mount OneDrive on Katana Data Mover, not the login nodes. 
         
