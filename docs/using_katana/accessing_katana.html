@@ -66,7 +66,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#contact-the-research-technology-services-team">Contact the Research Technology Services team</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-system-status-and-known-issues">Katana System Status and Known Issues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-terms-of-use">Katana Terms of Use</a></li>
 </ul>
 </li>
@@ -223,7 +222,7 @@ Session type: Mate
 <p>The usability of a graphical connection to Katana is highly dependent on network latency and performance.</p>
 </div>
 <p>Once you have logged into a Katana desktop, you should start a terminal</p>
-<img alt="../_images/terminal_graphical_session.png" src="../_images/terminal_graphical_session.png" />
+<img alt="../_images/terminal_graphical_session_new.png" src="../_images/terminal_graphical_session_new.png" />
 <p>Then run an interactive session. Here you can see a command similar to what you would run for an interactive session with 8 CPUs and 16 GB for one hour. You will probably need more time. You can tell your interactive session has started when you see the name of the machine change - in this image I am on k247.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub -I -X -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">8</span>:mem<span class="o">=</span>16gb,walltime<span class="o">=</span><span class="m">1</span>:00:00
 </pre></div>

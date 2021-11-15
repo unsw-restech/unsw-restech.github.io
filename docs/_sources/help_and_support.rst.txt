@@ -43,10 +43,10 @@ For questions about `research data at UNSW <https://research.unsw.edu.au/researc
 email the `Research Data Team <rdm@unsw.edu.au>`__
 
 
-Katana System Status and Known Issues
-=====================================
+.. Katana System Status and Known Issues
+.. =====================================
 
-No known issues at the moment.
+.. No known issues at the moment.
 
 Katana Terms of Use
 ===================
