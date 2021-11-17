@@ -66,7 +66,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#contact-the-research-technology-services-team">Contact the Research Technology Services team</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-system-status-and-known-issues">Katana System Status and Known Issues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-terms-of-use">Katana Terms of Use</a></li>
 </ul>
 </li>
@@ -83,7 +82,7 @@
 <li class="toctree-l2"><a class="reference internal" href="kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_archive.html">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cloudstor.html">Cloudstor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="onedrive.html">One Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="onedrive.html">OneDrive</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../software/index.html">Software</a><ul>
@@ -165,6 +164,68 @@
 </div>
 <div class="section" id="storage-summary">
 <h2>Storage  Summary<a class="headerlink" href="#storage-summary" title="Permalink to this headline">¶</a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 14%" />
+<col style="width: 13%" />
+<col style="width: 28%" />
+<col style="width: 6%" />
+<col style="width: 16%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Storage type</p></th>
+<th class="head"><p>Location</p></th>
+<th class="head"><p>Alias</p></th>
+<th class="head"><p>Purpose</p></th>
+<th class="head"><p>Backed up?</p></th>
+<th class="head"><p>Size limit</p></th>
+<th class="head"><p>Who has acess</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Home drive</p></td>
+<td><p>/home/z1234567</p></td>
+<td><p>$HOME</p></td>
+<td><p>Source code and programs</p></td>
+<td><p>Y</p></td>
+<td><p>10Gb</p></td>
+<td><p>Only the user</p></td>
+</tr>
+<tr class="row-odd"><td><p>User scratch</p></td>
+<td><p>/srv/scratch/z1234567</p></td>
+<td><p>/srv/scratch/$USER</p></td>
+<td><p>Data files</p></td>
+<td><p>N</p></td>
+<td><p>128 GB</p></td>
+<td><p>Only the user</p></td>
+</tr>
+<tr class="row-even"><td><p>Shared  scratch</p></td>
+<td><p>/srv/scratch/group_name</p></td>
+<td><p>/srv/scratch/group_name</p></td>
+<td><p>Data files and programs shared by a team</p></td>
+<td><p>N</p></td>
+<td><p>Upon group requirements</p></td>
+<td><p>All users in the group</p></td>
+</tr>
+<tr class="row-odd"><td><p>Local  scratch</p></td>
+<td><p>Intialised upon job running</p></td>
+<td><p>$TMPDIR</p></td>
+<td><p>Faster job completion with large datasets and temp files</p></td>
+<td><p>N</p></td>
+<td><p>200Gb shared between node users</p></td>
+<td><p>Temporary for each job</p></td>
+</tr>
+<tr class="row-even"><td><p>UNSW Research Storage</p></td>
+<td><p>/home/z1234567/sharename</p></td>
+<td><p>$HOME/sharename</p></td>
+<td><p>Storage of shared user and data files</p></td>
+<td><p>Y</p></td>
+<td colspan="2"><p>According to Data Management Plan</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 
