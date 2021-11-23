@@ -120,7 +120,7 @@ then you can see a list of your running jobs and where they are running. You can
 How do I request the installation or upgrade of a piece of software ?
 =====================================================================
 
-If you wish to have a new piece of software installed or software that is already installed upgraded please send an email to the `IT Service Centre <ITServiceCentre@unsw.edu.au>`_ from your UNSW email account with details of what software change you require and the cluster that you would like it changed on.
+If you wish to have a new piece of software installed or software that is already installed upgraded please send an email to the `IT Service Centre <ITServiceCentre@unsw.edu.au>`_ from your UNSW email account with details of what software change you require.
 
 Why is my job stuck in the queue whilst other jobs run?
 =======================================================
