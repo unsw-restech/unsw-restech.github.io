@@ -12,7 +12,7 @@ Version control is most useful for keeping track of programming code and documen
 -  `UNSW-Data-Archive - Scripts for uploading to and downloading from the UNSW Data Archive`_
 -  `UNSW-eNotebook-LabArchives - UNSW eNotebook (LabArchives) widgets`_
 
-We encourage researchers to use the `Citation File Format_` when writing code.
+We encourage researchers to use the `Citation File Format`_ when writing code.
 
 
 **********************************************
