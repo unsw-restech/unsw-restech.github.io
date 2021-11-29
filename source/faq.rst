@@ -242,7 +242,7 @@ If you use Katana for calculations that result in a publication then you should 
 
     This research includes computations using the computational cluster Katana supported by Research Technology Services at UNSW Sydney.
 
-Katana now also has a DOI that can be used for citation in papers: https://dx.oi.org/10.26190/669x-a286. 
+Katana now also has a DOI that can be used for citation in papers: https://doi.org/10.26190/669x-a286
     
 If you are using nodes that have been purchased using an external funding source you should also acknowledge the source of those funds.
 
