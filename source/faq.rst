@@ -246,7 +246,7 @@ Katana now also has a DOI that can be used for citation in papers: https://doi.o
     
 If you are using nodes that have been purchased using an external funding source you should also acknowledge the source of those funds.
 
-For information about `acknowledging ARC funding <https://www.arc.gov.au/acknowledging-arc>`_
+For information refer to `acknowledging ARC funding <https://www.arc.gov.au/acknowledging-arc>`_
 
 Your School or Research Group may also have policies for compute nodes that they have purchased.
 
