@@ -9,7 +9,7 @@ Scheduled Maintenance
 =====================
 
 .. attention::
-    There is no maintenance scheduled for the moment.
+    Katana is currently undergoing scheduled downtime from Nov 30 - Dec 1. 
 
 .. _contact_us:
 
