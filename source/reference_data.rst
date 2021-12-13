@@ -19,6 +19,7 @@ As these are reference data, they don't change often and we can update them as n
     "blastv5","Version 5 of NCBI nr, nt, refseq_genomic and refseq datasets. ","Updated on release 6 times a year.","www.ncbi.nlm.nih.gov/refseq"
     "diamond","Diamond reference databases for versions 0.8.38, 0.9.10, 0.9.22 and 0.9.24. Database format periodically changes.","Updated when NCBI nr databases are updated.","ab.inf.uni-tuebingen.de/software/diamond"
     "gtdbtk","","Version specific database installed when software is installed.",""
+    "gtex","Genotype-Tissue Expression project, comprehensive resource to study tissue-specific gene expression and regulation","Please contact the Oates lab (e.oates@unsw.edu.au) for access to a large set of GTEx datathat is not publicly available.","https://gtexportal.org/home/"
     "hapcol","Reference datasets that come with software installation.","Installed when software is installed.","hapcol.algolab.eu"
     "hg19","Human reference genome hg19 (GRCh37).","Fixed reference. Never updated.","www.ncbi.nlm.nih.gov/grc"
     "interproscan","Reference datasets for InterProScan versions 5.20-59.0 and 5.35-74.0","Version specific database installed when software is installed.","www.ebi.ac.uk/interpro"
@@ -27,4 +28,5 @@ As these are reference data, they don't change often and we can update them as n
     "matam","Reference databases for all MATAM versions.","Version specific database installed when software is installed.","github.com/bonsai-team/matam"
     "megan","Reference databases for all MEGAN versions.","Version specific database installed when software is installed.","ab.inf.uni-tuebingen.de/software/megan6"
     "repeatmasker","Reference datasets for RepeatMasker version 4.0.7","Version specific database installed when software is installed.","www.repeatmasker.org"
+    "sra","Sequence Read Archive, repository of high throughput sequencing data"," ","https://www.ncbi.nlm.nih.gov/sra"
     "trinotate","Reference databases for all versions of Kaiju. Same databases for all versions.","Databases installed when software is installed.","trinotate.github.io"
