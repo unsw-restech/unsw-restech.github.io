@@ -21,7 +21,7 @@ pdfrw==0.4
 Pillow==9.0.0
 pip-autoremove==0.9.1
 pip-check==2.6
-pipenv==2020.11.15
+pipenv==2022.1.8
 pprintpp==0.4.0
 Pygments==2.8.1
 pyparsing==2.4.7
