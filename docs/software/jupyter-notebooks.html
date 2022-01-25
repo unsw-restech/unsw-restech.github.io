@@ -157,14 +157,33 @@
 	    <div id="content" class="hfeed entry-container hentry">
   <div class="section" id="jupyter-notebooks">
 <h1>Jupyter Notebooks<a class="headerlink" href="#jupyter-notebooks" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#python-virtual-environments" id="id2">Python virtual environments</a></p>
+<ul>
+<li><p><a class="reference internal" href="#create-and-load-the-virtual-environment" id="id3">Create and load the virtual environment</a></p></li>
+<li><p><a class="reference internal" href="#create-the-jupyter-kernel" id="id4">Create the Jupyter Kernel</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#conda-environments" id="id5">Conda environments</a></p>
+<ul>
+<li><p><a class="reference internal" href="#create-and-activate-the-environment" id="id6">Create and activate the environment</a></p></li>
+<li><p><a class="reference internal" href="#id1" id="id7">Create the Jupyter Kernel</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
 <p>Jupyter Notebooks and JupyterLab are best run in <a class="reference internal" href="../using_katana/ondemand.html#katana-ondemand"><span class="std std-ref">Katana OnDemand</span></a>.</p>
 <p>Katana OnDemand comes with some built in environment and kernels that are
 available for use out of the box.</p>
+<div class="section" id="python-virtual-environments">
+<h2><a class="toc-backref" href="#id2">Python virtual environments</a><a class="headerlink" href="#python-virtual-environments" title="Permalink to this headline">¶</a></h2>
 <p>If you need to use the Jupyter Notebook or Jupyter Lab with your own
-<a class="reference internal" href="python.html#python-virtual-environments"><span class="std std-ref">Python Virtual Environments</span></a> you will need to create your own
+<a class="reference internal" href="#python-virtual-environments"><span class="std std-ref">Python virtual environments</span></a> you will need to create your own
 Python Jupyter kernel. Here is an example:</p>
 <div class="section" id="create-and-load-the-virtual-environment">
-<h2>Create and load the virtual environment<a class="headerlink" href="#create-and-load-the-virtual-environment" title="Permalink to this headline">¶</a></h2>
+<h3><a class="toc-backref" href="#id3">Create and load the virtual environment</a><a class="headerlink" href="#create-and-load-the-virtual-environment" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ module load python/3.8.3
 $ python3 -m venv --system-site-packages /home/z1234567/.venvs/jupyter-kernel
 $ <span class="nb">source</span> /home/z1234567/.venvs/jupyter-kernel/bin/activate
@@ -172,24 +191,16 @@ $ <span class="nb">source</span> /home/z1234567/.venvs/jupyter-kernel/bin/activa
 </div>
 </div>
 <div class="section" id="create-the-jupyter-kernel">
-<h2>Create the Jupyter Kernel<a class="headerlink" href="#create-the-jupyter-kernel" title="Permalink to this headline">¶</a></h2>
+<h3><a class="toc-backref" href="#id4">Create the Jupyter Kernel</a><a class="headerlink" href="#create-the-jupyter-kernel" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="using-the-helper-script">
-<h3>Using the helper script<a class="headerlink" href="#using-the-helper-script" title="Permalink to this headline">¶</a></h3>
+<h4>Using the helper script<a class="headerlink" href="#using-the-helper-script" title="Permalink to this headline">¶</a></h4>
 <p>This script can automatically setup Jupyter kernels for use in Katana OnDemand.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>jupyter-kernel<span class="o">)</span> $ install_jupyter_kernels
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">jupyter</span></code> needs to be installed in addition to the kernel.</p>
-<p>For example, in a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment to use the R kernel <code class="docutils literal notranslate"><span class="pre">r-irkernel</span></code>, you must also install the <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> package before running the helper script.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>my_conda_env<span class="o">)</span> $ conda install jupyter
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="installing-the-kernel-manually">
-<h3>Installing the kernel manually<a class="headerlink" href="#installing-the-kernel-manually" title="Permalink to this headline">¶</a></h3>
+<h4>Installing the kernel manually<a class="headerlink" href="#installing-the-kernel-manually" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>jupyter-kernel<span class="o">)</span> $ python3 -m ipykernel install --prefix<span class="o">=</span><span class="nv">$HOME</span>/.local --name<span class="o">=</span>jlab-kernel
 </pre></div>
 </div>
@@ -202,6 +213,35 @@ from the Katana supplied Python 3 and could cause confusion.</p>
 <p>Now when you load a JupyterLab session, you should see your personal kernel
 in the list of available kernels. This kernel will have access to your
 virtual environment.</p>
+</div>
+</div>
+</div>
+<div class="section" id="conda-environments">
+<h2><a class="toc-backref" href="#id5">Conda environments</a><a class="headerlink" href="#conda-environments" title="Permalink to this headline">¶</a></h2>
+<p>If you need to use the Jupyter Notebook or Jupyter Lab with your own
+Conda environment you will need to create your own Python or R Jupyter kernel.
+Here is an example:</p>
+<div class="section" id="create-and-activate-the-environment">
+<h3><a class="toc-backref" href="#id6">Create and activate the environment</a><a class="headerlink" href="#create-and-activate-the-environment" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ conda create -n my_conda_env -c conda-forge ipykernel
+$ conda activate my_conda_env
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3><a class="toc-backref" href="#id7">Create the Jupyter Kernel</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>You can alternatively install the kernel manually: <a class="reference internal" href="#installing-the-kernel-manually">Installing the kernel manually</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>my_conda_env<span class="o">)</span> $ install_jupyter_kernels
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Kernels other than <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code>, need <code class="docutils literal notranslate"><span class="pre">jupyter_core</span></code> to be installed in addition to the kernel.</p>
+<p>For example, to use the R kernel <code class="docutils literal notranslate"><span class="pre">r-irkernel</span></code>, you must also install the <code class="docutils literal notranslate"><span class="pre">jupyter_core</span></code> package before running the helper script.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>my_conda_env<span class="o">)</span> $ conda install jupyter_core
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>

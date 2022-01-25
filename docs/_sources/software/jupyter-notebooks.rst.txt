@@ -2,10 +2,18 @@
 Jupyter Notebooks
 #################
 
+.. contents:: Table of Contents
+    :depth: 2
+    :local:
+
 Jupyter Notebooks and JupyterLab are best run in :ref:`Katana OnDemand`. 
 
 Katana OnDemand comes with some built in environment and kernels that are 
 available for use out of the box.
+
+===========================
+Python virtual environments
+===========================
 
 If you need to use the Jupyter Notebook or Jupyter Lab with your own 
 :ref:`Python Virtual Environments` you will need to create your own
@@ -35,16 +43,6 @@ This script can automatically setup Jupyter kernels for use in Katana OnDemand.
 
     (jupyter-kernel) $ install_jupyter_kernels
 
-.. note::
-
-    ``jupyter`` needs to be installed in addition to the kernel.
-
-    For example, in a ``conda`` environment to use the R kernel ``r-irkernel``, you must also install the ``jupyter`` package before running the helper script.
-
-    .. code-block:: bash
-
-        (my_conda_env) $ conda install jupyter
-
 
 ++++++++++++++++++++++++++++++
 Installing the kernel manually
@@ -64,3 +62,40 @@ Now when you load a JupyterLab session, you should see your personal kernel
 in the list of available kernels. This kernel will have access to your
 virtual environment.
 
+==================
+Conda environments
+==================
+
+If you need to use the Jupyter Notebook or Jupyter Lab with your own
+Conda environment you will need to create your own Python or R Jupyter kernel.
+Here is an example:
+
+***********************************
+Create and activate the environment
+***********************************
+
+.. code-block:: bash
+
+    $ conda create -n my_conda_env -c conda-forge ipykernel
+    $ conda activate my_conda_env
+
+
+**************************
+Create the Jupyter Kernel 
+**************************
+
+You can alternatively install the kernel manually: `Installing the kernel manually`_
+
+.. code-block:: bash
+
+    (my_conda_env) $ install_jupyter_kernels
+
+.. note::
+
+    Kernels other than ``ipykernel``, need ``jupyter_core`` to be installed in addition to the kernel.
+
+    For example, to use the R kernel ``r-irkernel``, you must also install the ``jupyter_core`` package before running the helper script.
+
+    .. code-block:: bash
+
+        (my_conda_env) $ conda install jupyter_core
