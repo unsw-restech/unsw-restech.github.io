@@ -25,6 +25,31 @@ Create and load the virtual environment
 Create the Jupyter Kernel 
 **************************
 
++++++++++++++++++++++++
+Using the helper script
++++++++++++++++++++++++
+
+This script can automatically setup Jupyter kernels for use in Katana OnDemand.
+
+.. code-block:: bash
+
+    (jupyter-kernel) $ install_jupyter_kernels
+
+.. note::
+
+    ``jupyter`` needs to be installed in addition to the kernel.
+
+    For example, in a ``conda`` environment to use the R kernel ``r-irkernel``, you must also install the ``jupyter`` package before running the helper script.
+
+    .. code-block:: bash
+
+        (my_conda_env) $ conda install jupyter
+
+
+++++++++++++++++++++++++++++++
+Installing the kernel manually
+++++++++++++++++++++++++++++++
+
 .. code-block:: bash
     
     (jupyter-kernel) $ python3 -m ipykernel install --prefix=$HOME/.local --name=jlab-kernel

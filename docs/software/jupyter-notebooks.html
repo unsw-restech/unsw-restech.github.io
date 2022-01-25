@@ -28,7 +28,7 @@
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
         <link rel="up" title="Software" href="index.html"/>
-        <link rel="next" title="Intel Compilers and Software Libraries" href="intel_compilers_and_libraries.html"/>
+        <link rel="next" title="Matlab" href="matlab.html"/>
         <link rel="prev" title="Java" href="java.html"/>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -61,18 +61,17 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#contact-the-research-technology-services-team">Contact the Research Technology Services team</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-system-status-and-known-issues">Katana System Status and Known Issues</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#katana-terms-of-use">Katana Terms of Use</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../using_katana/index.html">Using Katana</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../using_katana/about_katana.html">About Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/accessing_katana.html">Accessing Katana</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../using_katana/about_katana.html">About Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/running_jobs.html">Running Jobs on Katana</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/github.html">GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../using_katana/ondemand.html">Katana OnDemand</a></li>
@@ -83,15 +82,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../storage/kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/data_archive.html">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/cloudstor.html">Cloudstor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../storage/onedrive.html">One Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/onedrive.html">OneDrive</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Software</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ansys.html">Ansys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biosciences.html">Biosciences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comsol.html">Comsol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment_modules.html">Environment Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installing_software.html">Installing software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java.html">Java</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Jupyter Notebooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intel_compilers_and_libraries.html">Intel Compilers and Software Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="matlab.html">Matlab</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operating_systems.html">Operating Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="perl.html">Perl</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
@@ -170,6 +173,23 @@ $ <span class="nb">source</span> /home/z1234567/.venvs/jupyter-kernel/bin/activa
 </div>
 <div class="section" id="create-the-jupyter-kernel">
 <h2>Create the Jupyter Kernel<a class="headerlink" href="#create-the-jupyter-kernel" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="using-the-helper-script">
+<h3>Using the helper script<a class="headerlink" href="#using-the-helper-script" title="Permalink to this headline">¶</a></h3>
+<p>This script can automatically setup Jupyter kernels for use in Katana OnDemand.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>jupyter-kernel<span class="o">)</span> $ install_jupyter_kernels
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">jupyter</span></code> needs to be installed in addition to the kernel.</p>
+<p>For example, in a <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment to use the R kernel <code class="docutils literal notranslate"><span class="pre">r-irkernel</span></code>, you must also install the <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> package before running the helper script.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>my_conda_env<span class="o">)</span> $ conda install jupyter
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installing-the-kernel-manually">
+<h3>Installing the kernel manually<a class="headerlink" href="#installing-the-kernel-manually" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>jupyter-kernel<span class="o">)</span> $ python3 -m ipykernel install --prefix<span class="o">=</span><span class="nv">$HOME</span>/.local --name<span class="o">=</span>jlab-kernel
 </pre></div>
 </div>
@@ -184,6 +204,7 @@ in the list of available kernels. This kernel will have access to your
 virtual environment.</p>
 </div>
 </div>
+</div>
 
 
 	    </div>
@@ -191,7 +212,7 @@ virtual environment.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="intel_compilers_and_libraries.html" class="btn btn-neutral float-right" title="Intel Compilers and Software Libraries">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="matlab.html" class="btn btn-neutral float-right" title="Matlab">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="java.html" class="btn btn-neutral" title="Java"><span class="fa fa-arrow-circle-left"></span> Previous</a>
