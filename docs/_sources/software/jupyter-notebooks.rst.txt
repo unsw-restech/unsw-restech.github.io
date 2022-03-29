@@ -92,10 +92,10 @@ You can alternatively install the kernel manually: `Installing the kernel manual
 
 .. note::
 
-    Kernels other than ``ipykernel``, need ``jupyter_core`` to be installed in addition to the kernel.
+    Kernels other than ``ipykernel``, need ``jupyter`` to be installed in addition to the kernel.
 
-    For example, to use the R kernel ``r-irkernel``, you must also install the ``jupyter_core`` package before running the helper script.
+    For example, to use the R kernel ``r-irkernel``, you must also install the ``jupyter`` package before running the helper script.
 
     .. code-block:: bash
 
-        (my_conda_env) $ conda install jupyter_core
+        (my_conda_env) $ conda install jupyter
