@@ -26,8 +26,8 @@ command is run.
 .. .. warning:: In practice, this has implications. All of our other common 
     drives, like /apps, /home and /srv/scratch, will automatically mount on all
     machines. OneDrive only mounts on the machine you mount it on. If you mount
-    it on the login node katana1, it will not be available on katana2 or any of 
-    the worker nodes. You will need to mount OneDrive within your PBS script.
+    it on the login node kdm, it will not be available on katana2 or any of 
+    the worker nodes.
 
 The configuration section will probably only once, whereas the "how to mount" section will need to be run each time.
 
@@ -47,11 +47,11 @@ about data storage.
 Configure RClone for OneDrive
 *****************************
             
-1. Login to Katana and run:
+1. Login to KDM and run:
 
 .. code-block:: bash
     
-        [z1234567@katana1 ~]$ rclone config
+        [z1234567@kdm ~]$ rclone config
 
 You will be asked a set of questions. The short answers are:
 
@@ -92,7 +92,7 @@ You should then see something like this to which you should answer yes:
 How to mount OneDrive
 *********************
 
-Once logged in or in a pbs script:
+Once logged in:
 
 1. Mount the drive. The basic syntax is:
 
@@ -107,31 +107,12 @@ If you have followed the ResTech recommendations, your command will look like:
 
 .. code-block:: bash
 
-    [z1234567@katana1 ~]$ rclone mount OneDrive: /home/z1234567/OneDrive --daemon --vfs-cache-mode writes
+    [z1234567@kdm ~]$ rclone mount OneDrive: /home/z1234567/OneDrive --daemon --vfs-cache-mode writes
 
 
 .. notification:: 
 
    Your OneDrive file contents should now be available at /home/z1234567/OneDrive (or chosen mount point). 
-
-
-***********
-Final Notes
-***********
-
-ResTech really only recommends this if you have sensitive data.
-
-If your data is relatively large - anything above 1GB - we recommend you follow
-our standard procedure for large datasets:
-
-1. Copy data from source (OneDrive) to scratch space closer to the cpus ($PBS_TMPDIR)
-2. <do analysis>
-3. Write results to local drive ($PBS_TMPDIR)
-4. Copy results from local drive to OneDrive
-5. Delete local data and results
-
-`$PBS_TMPDIR` is only visible to the PBS job that is running. This is as secure
-as possible. 
 
 .. _OneDrive: https://onedrive.live.com/
 .. _OneDrive needs your consent: https://consenthelper.it.unsw.edu.au/consent?appId=c8800f43-7805-46c2-b8b2-1c55f3859a4c

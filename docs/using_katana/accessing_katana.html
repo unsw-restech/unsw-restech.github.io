@@ -82,7 +82,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../storage/kdm.html">Katana Data Mover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/data_archive.html">How to use the UNSW Data Archive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../storage/cloudstor.html">Cloudstor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../storage/onedrive.html">One Drive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../storage/onedrive.html">OneDrive</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../software/index.html">Software</a><ul>
@@ -222,7 +222,7 @@ Session type: Mate
 <p>The usability of a graphical connection to Katana is highly dependent on network latency and performance.</p>
 </div>
 <p>Once you have logged into a Katana desktop, you should start a terminal</p>
-<img alt="../_images/terminal_graphical_session_new.png" src="../_images/terminal_graphical_session_new.png" />
+<img alt="_static/terminal_graphical_session_new.png" src="_static/terminal_graphical_session_new.png" />
 <p>Then run an interactive session. Here you can see a command similar to what you would run for an interactive session with 8 CPUs and 16 GB for one hour. You will probably need more time. You can tell your interactive session has started when you see the name of the machine change - in this image I am on k247.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub -I -X -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">8</span>:mem<span class="o">=</span>16gb,walltime<span class="o">=</span><span class="m">1</span>:00:00
 </pre></div>

@@ -186,9 +186,9 @@ about data storage.</p>
 <div class="section" id="configure-rclone-for-onedrive">
 <h2>Configure RClone for OneDrive<a class="headerlink" href="#configure-rclone-for-onedrive" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Login to Katana and run:</p></li>
+<li><p>Login to KDM and run:</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ rclone config
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm ~<span class="o">]</span>$ rclone config
 </pre></div>
 </div>
 <p>You will be asked a set of questions. The short answers are:</p>
@@ -226,7 +226,7 @@ about data storage.</p>
 </div>
 <div class="section" id="how-to-mount-onedrive">
 <h2>How to mount OneDrive<a class="headerlink" href="#how-to-mount-onedrive" title="Permalink to this headline">¶</a></h2>
-<p>Once logged in or in a pbs script:</p>
+<p>Once logged in:</p>
 <ol class="arabic simple">
 <li><p>Mount the drive. The basic syntax is:</p></li>
 </ol>
@@ -236,24 +236,9 @@ about data storage.</p>
 <p>We need to add a couple of flags to make this warning free and usable. Most
 notably <cite>–daemon</cite> and <cite>–vfs-cache-mode writes</cite>.</p>
 <p>If you have followed the ResTech recommendations, your command will look like:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ rclone mount OneDrive: /home/z1234567/OneDrive --daemon --vfs-cache-mode writes
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm ~<span class="o">]</span>$ rclone mount OneDrive: /home/z1234567/OneDrive --daemon --vfs-cache-mode writes
 </pre></div>
 </div>
-</div>
-<div class="section" id="final-notes">
-<h2>Final Notes<a class="headerlink" href="#final-notes" title="Permalink to this headline">¶</a></h2>
-<p>ResTech really only recommends this if you have sensitive data.</p>
-<p>If your data is relatively large - anything above 1GB - we recommend you follow
-our standard procedure for large datasets:</p>
-<ol class="arabic simple">
-<li><p>Copy data from source (OneDrive) to scratch space closer to the cpus ($PBS_TMPDIR)</p></li>
-<li><p>&lt;do analysis&gt;</p></li>
-<li><p>Write results to local drive ($PBS_TMPDIR)</p></li>
-<li><p>Copy results from local drive to OneDrive</p></li>
-<li><p>Delete local data and results</p></li>
-</ol>
-<p><cite>$PBS_TMPDIR</cite> is only visible to the PBS job that is running. This is as secure
-as possible.</p>
 </div>
 </div>
 
