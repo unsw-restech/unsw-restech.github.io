@@ -4,7 +4,7 @@
 About Katana
 ############
 
-Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources. With over 4000 CPU cores spread over a large number of compute nodes each with up to 1Tb of memory, Katana provides a flexible compute environment where users can run jobs that wouldn't be possible or practical on a desktop or laptop. 
+Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources for groups working with non-sensitive data. It contains over 6,000 CPU cores, 8 GPU compute nodes (V100 and A100), and 6Pb of disk storage. Katana provides a flexible compute environment where users can run jobs that wouldn't be possible or practical on their desktop or laptop. For full details of the compute nodes including a full list see the compute node information section below.
 
 Katana is powerful on its own, but can be seen as a training or development base before migrating up to systems like Australia's peak HPC system Gadi_, located at NCI_. Research Technology Services also provide training, advice and support for new users or those uncertain if High Performance Computing is the right fit for their research needs.
 
@@ -36,8 +36,11 @@ GPU Compute
 
 The most popular use of these nodes is for Tensorflow.
 
-- Six GPU capable nodes, Tesla V100-SXM2, 32GB
-- Three are dedicated for the department that owns them
+- Eight GPU capable nodes
+
+  - Tesla V100-SXM2, 32GB
+  - Nvidia A100, 40GB
+- Five are dedicated for the department that owns them
 - Three are general use for all researchers
 
 You cannot use Tensorflow on the login nodes because they don't have GPUs. You will need to get access to a GPU node to do this. 

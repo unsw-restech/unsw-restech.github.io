@@ -157,7 +157,7 @@
 	    <div id="content" class="hfeed entry-container hentry">
   <div class="section" id="about-katana">
 <span id="id1"></span><h1>About Katana<a class="headerlink" href="#about-katana" title="Permalink to this headline">¶</a></h1>
-<p>Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources. With over 4000 CPU cores spread over a large number of compute nodes each with up to 1Tb of memory, Katana provides a flexible compute environment where users can run jobs that wouldn’t be possible or practical on a desktop or laptop.</p>
+<p>Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources for groups working with non-sensitive data. It contains over 6,000 CPU cores, 8 GPU compute nodes (V100 and A100), and 6Pb of disk storage. Katana provides a flexible compute environment where users can run jobs that wouldn’t be possible or practical on their desktop or laptop. For full details of the compute nodes including a full list see the compute node information section below.</p>
 <p>Katana is powerful on its own, but can be seen as a training or development base before migrating up to systems like Australia’s peak HPC system <a class="reference external" href="https://nci.org.au/our-systems/hpc-systems">Gadi</a>, located at <a class="reference external" href="https://nci.org.au/">NCI</a>. Research Technology Services also provide training, advice and support for new users or those uncertain if High Performance Computing is the right fit for their research needs.</p>
 <div class="section" id="system-configuration">
 <span id="id2"></span><h2>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">¶</a></h2>
@@ -179,8 +179,13 @@
 <span id="gpu-resources"></span><h2>GPU Compute<a class="headerlink" href="#gpu-compute" title="Permalink to this headline">¶</a></h2>
 <p>The most popular use of these nodes is for Tensorflow.</p>
 <ul class="simple">
-<li><p>Six GPU capable nodes, Tesla V100-SXM2, 32GB</p></li>
-<li><p>Three are dedicated for the department that owns them</p></li>
+<li><p>Eight GPU capable nodes</p>
+<ul>
+<li><p>Tesla V100-SXM2, 32GB</p></li>
+<li><p>Nvidia A100, 40GB</p></li>
+</ul>
+</li>
+<li><p>Five are dedicated for the department that owns them</p></li>
 <li><p>Three are general use for all researchers</p></li>
 </ul>
 <p>You cannot use Tensorflow on the login nodes because they don’t have GPUs. You will need to get access to a GPU node to do this.</p>
