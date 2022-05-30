@@ -1,6 +1,6 @@
 This repository of User Documentation is built with Sphinx and hosted on github. You can read the [docs here](https://unsw-restech.github.io/)
 
-To build, go into /source, and use the MakeFile. 'make html' will allow a local preview, 'make prep' to generate the pdf, and 'make github' generates publically displated .html pages in /docs. 
+To build, go into /source, and use the MakeFile. 'make html' will allow a local preview, 'make prep' to generate the pdf, and 'make github' generates publicly displayed .html pages in /docs. 
 
 Pushing back to remote master will automatically generate the github.io page. 
 

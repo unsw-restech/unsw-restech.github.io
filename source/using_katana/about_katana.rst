@@ -45,7 +45,7 @@ You cannot use Tensorflow on the login nodes because they don't have GPUs. You w
 .. warning::
 
     Unfortunately, GPU nodes are in incredibly high demand. 
-    We cannot provide special accomodation for any project. 
+    We cannot provide special accommodation for any project. 
     You will need to wait in the common queue - or buy
     a GPU node for your group on which you will get priority
 
@@ -55,7 +55,7 @@ To access a GPU node interactively, you can use a command like
 
     [z1234567@katana ~]$ qsub -I -l select=1:ncpus=8:ngpus=1:mem=46gb,walltime=2:00:00
 
-Note the 2 hour limit - that is the *fastest* way to get onto the GPU nodes. Unfortuntaley, there's no way to tell you that 
+Note the 2 hour limit - that is the *fastest* way to get onto the GPU nodes. Unfortunately, there's no way to tell you that 
 your session has started, so you will need to monitor your command.
 
 .. We **know** that this isn't ideal and we **wish** there was an easier solution - we love making your lives easier. It's literally our jobs. But in this case, we don't have the resources available to make this faster, smoother or easier.  
