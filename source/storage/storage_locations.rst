@@ -6,6 +6,8 @@ The storage on Katana is split into several different types, each of which serve
 
 .. important::
     We have just said *each of which serves a different purpose*. Despite that, there will be overlap. And personal preference. In most cases it will be obvious where to put your information. If it isn't and you need help with your decision making, you can `email <rdm@unsw.edu.au>`_ the `Research Data <https://research.unsw.edu.au/research-data-management-unsw>`_ team for advice. They are friendly people.
+    
+    If you specifically wish to increase Katana storage allocations, please email the `IT Service Centre <itservicecentre@unsw.edu.au>`__ - note that such increases are not automatic.
 
 *****************
 Storage  Summary
