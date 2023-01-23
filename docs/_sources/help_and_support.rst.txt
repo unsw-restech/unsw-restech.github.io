@@ -37,11 +37,10 @@ Email the `IT Service Centre <ITServiceCentre@unsw.edu.au>`_, including the word
         My job ran on k052 with jobid 300000, my zID is z2134567
     
 
-For face to face support: `Hacky Hour <https://research.unsw.edu.au/hacky-hour>`__ Thursdays, 3pm.
+For face to face support: `Drop-In Hour <https://research.unsw.edu.au/restech-drop-hour-formerly-hacky-hour>`__ Wednesdays, 1pm.
 
 For questions about `research data at UNSW <https://research.unsw.edu.au/research-data-management-unsw>`_ on storage, movement or Data Management Plans, please
-email the `Research Data Team <rdm@unsw.edu.au>`__
-
+email the `Research Data Team <rdm@unsw.edu.au>`__. If you specifically wish to increase Katana storage allocations, please email the `IT Service Centre <itservicecentre@unsw.edu.au>`__ - note that such increases are not automatic.
 
 .. Katana System Status and Known Issues
 .. =====================================
