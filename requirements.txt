@@ -1,0 +1,4 @@
+mkdocs-material
+mkdocs-redirects
+mkdocs-glightbox
+mkdocs-markdownextradata-plugin

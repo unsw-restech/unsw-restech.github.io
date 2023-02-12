@@ -1,0 +1,187 @@
+/* Slightly modified themes */
+/* See official source for full theme variables */
+[data-md-color-scheme="default"] { 
+  --md-footer-bg-color: #1a1b23;
+  --md-default-fg-header: black;
+  --md-default-bg-header: white;
+  --md-default-fg-abstract: #ffe600;
+  --md-default-bg-abstract: #000000;
+  --md-primary-logo-image: url("../assets/logo.png");
+  --md-default-fg-sidepane: #eeeeee;
+  --md-default-fg-middle: #f6f6f6;
+  --md-default-abstract: url('../assets/abstract_unsw_3.svg');
+}
+[data-md-color-scheme="slate"] { 
+  --md-footer-bg-color: #1a1b23;
+  --md-default-bg-header: var(--md-footer-bg-color);
+  --md-default-fg-header: white;
+  --md-default-fg-abstract: #000000;
+  --md-default-bg-abstract: #ffe600;
+  --md-default-fg-sidepane: #111111;
+  --md-default-fg-middle: #1d1d1d;
+  --md-primary-logo-image: url("../assets/logo_dark.png");
+  --md-default-abstract: url('../assets/abstract_unsw_3_dark.svg');
+}
+
+:root {
+  --md-primary-bg-image: url("../assets/abstract_unsw_3.svg");
+  --md-expand-margin: 30px;
+}
+
+/* Setting the header to use an inverse palette */
+/* Changing the primary color has too many side-effects */
+/* Note for small screens the search scheme changes, so leave it alone */
+.md-header {
+  background-color: var(--md-default-bg-header);
+  color: var(--md-default-fg-header);
+}
+@media screen and (min-width: 60em) {
+  .md-search__form, .md-search__icon.md-icon, .md-search__input::placeholder {
+    background-color: var(--md-default-fg-header) !important;
+    color: var(--md-default-bg-header) !important;
+  }
+}
+
+/* Narrower heading text */
+.md-nav--primary .md-nav__title[for=__drawer],
+.md-header__topic:first-child {
+  font-weight: 100;
+}
+
+/* Force light colored version of nav and subsuquently force dark versions of titles/logos when nav is active */
+.md-nav__title {
+  background-color: #ffe600 !important;
+}
+@media screen and (max-width: 76.1875em) {
+  #md_logo {
+    content: url("../assets/logo.png") !important;
+  }
+}
+.md-nav__title[for^=__nav_] {
+  color: black !important;
+}
+@media screen and (max-width: 76.1875em) {
+  .md-nav__title[for=__drawer] {
+    color: black !important;
+  }
+}
+@media screen and (max-width: 59.9375em) {
+  .md-nav__title[for=__toc] {
+    color: black !important;
+  }
+}
+
+/* Set both main logo and drawer logo */
+#md_logo {
+  content: var(--md-primary-logo-image);
+}
+
+/* Make the sidebar background visible */
+.md-sidebar {
+  height: 100vh;
+  background-color: var(--md-default-fg-sidepane);
+  opacity: 0.97;
+}
+
+@media screen and (min-width: 59.9375em) {
+  /* Force colors to match sidebar background */
+  .md-nav--secondary > .md-nav__title {
+    box-shadow: 0 0 0.4rem 0.4rem var(--md-default-fg-sidepane) !important;
+    background: var(--md-default-fg-sidepane) !important;
+  }
+}
+
+@media screen and (min-width: 76.1875em) {
+  /* Force colors to match when drawer mode inactive */
+  .md-nav--primary > .md-nav__title {
+    box-shadow: 0 0 0.4rem 0.4rem var(--md-default-fg-sidepane) !important;
+    background: var(--md-default-fg-sidepane) !important;
+  }
+}
+
+@media screen and (max-width: 76.1875em) {
+  /* Fix opacity from when drawer mode active */
+  .md-sidebar--primary {
+    opacity: 1 !important;
+  }
+}
+
+/*Make the middle section background visible*/
+.md-content {
+  background-color: var(--md-default-fg-middle);
+}
+
+/* Display a single set of abstract triangles using background-image for scroll performance */
+.md-main::before {
+  background-image: var(--md-default-abstract);
+  background-size: 100%;
+  z-index: -2;
+  content: '';
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+
+/* Alternative method: display the two sets of abstract triangles using masks for fast switching */
+/* Performance issue on firefox */
+/*
+.md-main::before {
+  background-color: var(--md-default-fg-abstract);
+  -webkit-mask-image: url('../assets/primary.svg#primary');
+  mask-image: url('../assets/primary.svg#primary');
+  z-index: -1;
+}
+.md-main::after {
+  background-color: var(--md-default-bg-abstract);
+  -webkit-mask-image: url('../assets/secondary.svg#secondary');
+  mask-image: url('../assets/secondary.svg#secondary');
+  z-index: -1;
+}
+.md-main::after, .md-main::before {
+  content: '';
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}*/
+/* transition: background-color 0.5s linear; Not really supported yet*/
+
+/* Make documentation headers bold to match original style */
+.md-typeset h1,
+.md-typeset h2 {
+  font-weight: bold;
+}
+
+/* Modification to make better use of the page space */
+/* See https://github.com/squidfunk/mkdocs-material/issues/619#issuecomment-348610715 */
+/* linked solution breaks when mkdocs-glightbox is used */
+@media only screen and (min-width: 76.25em) {
+  .md-main__inner {
+    max-width: 2000px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* Generic table compressing styles */
+table {
+  table-layout: fixed !important;
+}
+th, td {
+  padding: 0.5em 0.5em !important;
+  min-width: unset !important;
+  text-align: center !important;
+}
+
+/* Permenant header shadow */
+.md-header {
+  box-shadow: 0 0 .2rem rgba(0,0,0,.1),0 .2rem .4rem rgba(0,0,0,.2);
+  transition: transform .25s cubic-bezier(.1,.7,.1,1),box-shadow .25s;
+}

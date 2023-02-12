@@ -1,0 +1,21 @@
+\{\{< term "([^"]+)" >\}\}
+[$1](glossary.md#$1)
+
+`([^`!]+)`
+`#!bash $1`
+
+.. image:: ../_static/(.*)
+![Image title](../assets/$1)
+
+# Regex for links at the end
+.. _([^:]+): (.*)
+[$1]($2)\n
+
+# Suggestion to put advanced running jobs on separate page e.g. array and possibly batch
+# Since these are essentially different types of users
+# This also reduces extremely long pages
+
+
+# Make links open in new tab
+(?<!!)(\[[^\]]+\]\([^\)]+\))
+$1{target=_blank}

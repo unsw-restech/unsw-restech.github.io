@@ -1,0 +1,88 @@
+site_name: Katana User Documentation
+theme:
+    name: material
+    custom_dir: overrides
+    palette:
+        # Palette toggle for light mode
+        - scheme: default
+          primary: blue
+          accent: blue
+          toggle:
+              icon: material/brightness-7
+              name: Switch to dark mode
+        # Palette toggle for dark mode
+        - scheme: slate
+          primary: yellow
+          accent: yellow
+          toggle:
+              icon: material/brightness-4
+              name: Switch to light mode
+    features:
+        - navigation.footer
+        - navigation.instant
+        #- navigation.expand
+        - navigation.top
+        - announce.dismiss
+extra_css:
+    - stylesheets/extra.css
+extra:
+    generator: false
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+        alternate_style: true 
+  - attr_list
+  - toc:
+        permalink: "¶"
+repo_url: https://github.com/unsw-restech/unsw-restech.github.io
+repo_name: unsw-restech/katana-docs
+nav:
+    - 'index.md'
+    - 'Using Katana':
+        - 'using_katana/accessing_katana.md'
+        - 'using_katana/about_katana.md'
+        - 'using_katana/running_jobs.md'
+        - 'using_katana/github.md'
+        - 'using_katana/ondemand.md'
+    - 'Storage':
+        - 'storage/storage_locations.md'
+        - 'storage/kdm.md'
+        - 'storage/data_archive.md'
+        - 'storage/cloudstor.md'
+        - 'storage/onedrive.md'
+    - 'Software':
+        - 'software/environment_modules.md'
+        - 'software/installing_software.md'
+        - 'software/ansys.md'
+        - 'software/biosciences.md'
+        - 'software/comsol.md'
+        - 'software/intel_compilers_and_libraries.md'
+        - 'software/java.md'
+        - 'software/jupyter-notebooks.md'
+        - 'software/matlab.md'
+        - 'software/operating_systems.md'
+        - 'software/perl.md'
+        - 'software/python.md'
+        - 'software/r.md'
+        - 'software/sas.md'
+        - 'software/stata.md'
+        - 'software/tmux.md'
+        - 'software/zip.md'
+    - 'reference_data.md'
+    - 'faq.md'
+    - 'glossary.md'
+
+plugins:
+    - search
+    - glightbox
+    - markdownextradata: {}
+
+extra:
+    base_url: "https://localhost"
+    generator: false
