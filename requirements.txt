@@ -18,7 +18,7 @@ MarkupSafe==1.1.1
 packaging==20.9
 parse==1.19.0
 pdfrw==0.4
-Pillow==9.0.0
+Pillow==9.3.0
 pip-autoremove==0.9.1
 pip-check==2.6
 pipenv==2022.1.8
