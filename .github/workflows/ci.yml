@@ -3,13 +3,13 @@ name: Publish docs via GitHub Pages
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   build:
     name: Deploy docs
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout master
+      - name: Checkout main
         uses: actions/checkout@v2
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@3b00d34428fa0856a76d6cd4a13f0016067542cb
