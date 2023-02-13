@@ -9,9 +9,7 @@ title: FAQ
 Katana's host key has been changed, so reconnecting will trigger a long "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!" message.
 To fix this, you will need to purge the old known host entries from each of your client devices.
 
-For more information, see [here](https://www.rit.edu/researchcomputing/instructions/Clearing-the-known_hosts-SSH-File).
-
-!!! info
+!!! info 
     === "Command line (Windows/Linux/Mac)"
         1. Run the "remove with" suggestion from your warning, or fix all at once using:
         ``` sh
@@ -26,6 +24,8 @@ For more information, see [here](https://www.rit.edu/researchcomputing/instructi
         1. Search and open regedit.exe
         2. Navigate to HKEY_CURRENT_USER/SOFTWARE/SimonTatham/PuTTy/SshHostKeys
         3. Right click on any katana/kdm keys and click delete
+Adapted from [^1].
+[^1]: https://www.rit.edu/researchcomputing/instructions/Clearing-the-known_hosts-SSH-File
 
 #### Where is the best place to store my code?
 The best place to store source code is to use version control and store it in a repository.  This means that you will be able to keep every version of your code and revert to an earlier version if you require. [UNSW has a central github account](https://research.unsw.edu.au/github), but we encourage you to create your own.
