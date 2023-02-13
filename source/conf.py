@@ -69,7 +69,7 @@ html_static_path = ['_static']
 
 # -- Options for PDF/Latex output -------------------------------------------
 
-latex_engine = 'xelatex'
+latex_engine = 'lualatex'
 
 # Rinohtype output conf
 rinoh_documents = [('index',            # top-level file (index.rst)
