@@ -97,7 +97,7 @@ Start X2Go and create a session for Katana. The details that you need to enter f
 
 Once you have logged into a Katana desktop, you should start a terminal 
 
-.. image:: ../_static/terminal_graphical_session_new.png
+.. image:: ../_static/terminal_graphical_session.png
 
 Then run an interactive session. Here you can see a command similar to what you would run for an interactive session with 8 CPUs and 16 GB for one hour. You will probably need more time. You can tell your interactive session has started when you see the name of the machine change - in this image I am on k247.
 
