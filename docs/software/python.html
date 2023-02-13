@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Python &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>Python &mdash; Katana User Documentation 1.1 documentation</title>
   
 
   
@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+  
 
   
 
@@ -26,7 +30,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+    <link rel="top" title="Katana User Documentation 1.1 documentation" href="../index.html"/>
         <link rel="up" title="Software" href="index.html"/>
         <link rel="next" title="R and RStudio" href="r.html"/>
         <link rel="prev" title="Perl" href="perl.html"/>
@@ -61,7 +65,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -155,8 +159,8 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="python">
-<h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+  <section id="python">
+<h1>Python<a class="headerlink" href="#python" title="Permalink to this heading">¶</a></h1>
 <p>It is common for python scripts to begin with</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
 </pre></div>
@@ -169,8 +173,8 @@
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 </pre></div>
 </div>
-<div class="section" id="conda-and-anaconda">
-<h2>Conda and Anaconda<a class="headerlink" href="#conda-and-anaconda" title="Permalink to this headline">¶</a></h2>
+<section id="conda-and-anaconda">
+<h2>Conda and Anaconda<a class="headerlink" href="#conda-and-anaconda" title="Permalink to this heading">¶</a></h2>
 <p>We get a lot of questions about installing Conda and Anaconda. Unfortunately neither are designed to be installed in multi-user environments.</p>
 <p>You are able to install them into your home directory and we encourage you to do so.</p>
 <p>Alternatively, many packages will give you an option for a <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> - if this is an option, we recommend you use <code class="code docutils literal notranslate"><span class="pre">python</span> <span class="pre">virtual</span> <span class="pre">environments</span></code>.</p>
@@ -178,32 +182,32 @@
 <p class="admonition-title">Note</p>
 <p>If you are using Conda for GPU-enabled software, make sure it is installed on a GPU node during an interactive session.</p>
 </div>
-</div>
-<div class="section" id="python-virtual-environments">
-<h2>Python Virtual Environments<a class="headerlink" href="#python-virtual-environments" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="python-virtual-environments">
+<h2>Python Virtual Environments<a class="headerlink" href="#python-virtual-environments" title="Permalink to this heading">¶</a></h2>
 <p>We encourage researchers to utilise the power of <a class="reference internal" href="#python-virtual-environments"><span class="std std-ref">Python Virtual Environments</span></a> if they are developing their own software or want to use packages that aren’t installed.</p>
-<div class="section" id="background">
-<h3>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h3>
+<section id="background">
+<h3>Background<a class="headerlink" href="#background" title="Permalink to this heading">¶</a></h3>
 <p>Sometimes you will need to use a particular version of Python, or you will need to use a set of Python libraries that aren’t available in the provided installation.</p>
 <p>In these cases, we can use what’s known as a <em>virtual environment</em> or <em>venv</em>. A venv gives us a static version of Python in our home directory in which we can install any packages we like.</p>
 <p>In this walk through we will see how to set up a venv and explain what’s happening under the hood. Then we will show how you can use one in your development process. As a note, in this walk through we will refer to packages and libraries as “packages”. When we use these terms, we are referring to a collection of files, written in Python, usually with some versions and potentially some requirements of their own.</p>
-</div>
-<div class="section" id="setting-up-the-default-environment">
-<h3>Setting up the default environment<a class="headerlink" href="#setting-up-the-default-environment" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="setting-up-the-default-environment">
+<h3>Setting up the default environment<a class="headerlink" href="#setting-up-the-default-environment" title="Permalink to this heading">¶</a></h3>
 <p>According to the <a class="reference external" href="https://docs.python.org/3/library/venv.html">Python documentation</a>, we will run something like this <code class="code docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">/path/to/new/virtual/environment</span></code>. This is not a directory that we need to see or need to spend time in actively, so it’s ok to make it hidden. This is an important distinction - the <em>venv</em> should not be where you are doing your development. It’s meant to be flexible - as soon as you fill it with development code, it’s no longer flexible. Also, you want your development code backed up or in a repository - it is unnecessary bloat to add the Python software to that backup or repository.</p>
 <p>We will make a directory in which we can keep many venvs. What I found was that once I started using venvs, it didn’t make any sense to do Python development without them.</p>
 <p>In Linux we can make a directory or file invisible by naming it with a leading dot:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ mkdir /home/z1234567/.venvs/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>mkdir<span class="w"> </span>/home/z1234567/.venvs/
 </pre></div>
 </div>
-</div>
-<div class="section" id="setting-up-the-virtual-environment-creation-and-activation">
-<h3>Setting up the virtual environment - creation and activation<a class="headerlink" href="#setting-up-the-virtual-environment-creation-and-activation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="setting-up-the-virtual-environment-creation-and-activation">
+<h3>Setting up the virtual environment - creation and activation<a class="headerlink" href="#setting-up-the-virtual-environment-creation-and-activation" title="Permalink to this heading">¶</a></h3>
 <p>I’ll be using the latest version of Python available to me. Since this is one of the modules that we offer, I can use it with the understanding that it will be there indefinitely.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ module load python/3.7.4
-<span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ which python3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>python/3.7.4
+<span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>python3
 /apps/python/3.7.4/bin/python3
-z1234567@katana2 ~<span class="o">]</span>$ python3 -m venv /home/z1234567/.venvs/venv-tutorial-1
+z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>/home/z1234567/.venvs/venv-tutorial-1
 </pre></div>
 </div>
 <p>That’s it, we are done. If you want to take a look under the hood, see <a class="reference internal" href="#virtual-environments-from-the-inside"><span class="std std-ref">Virtual Environments from the inside</span></a></p>
@@ -213,145 +217,145 @@ z1234567@katana2 ~<span class="o">]</span>$ python3 -m venv /home/z1234567/.venv
 </div>
 <p>Next, we need to <strong>activate</strong> our venv. This makes our virtualenv our current environment. To activate, we execute <code class="code docutils literal notranslate"><span class="pre">source</span> <span class="pre">/path/to/venv/bin/activate</span></code>. Note that after activation, the prompt changes to make it clear you are now in a venv. You can see the change in which versions of <code class="code docutils literal notranslate"><span class="pre">python3</span></code> and <code class="code docutils literal notranslate"><span class="pre">pip3</span></code> are available before and after activation:</p>
 <p>Before we activate our environment</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ which python3<span class="p">;</span> which pip3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>python3<span class="p">;</span><span class="w"> </span>which<span class="w"> </span>pip3
 /apps/python/3.7.4/bin/python3
 /apps/python/3.7.4/bin/pip3
 </pre></div>
 </div>
 <p>Activation</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ <span class="nb">source</span> ~/.venvs/venv-tutorial-1/bin/activate
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.venvs/venv-tutorial-1/bin/activate
 </pre></div>
 </div>
 <p>After activation, our python binaries are not the defaults, but the versions in our <em>venv</em></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv-tutorial-1<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ which python3<span class="p">;</span> which pip3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv-tutorial-1<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>which<span class="w"> </span>python3<span class="p">;</span><span class="w"> </span>which<span class="w"> </span>pip3
 ~/.venvs/venv-tutorial-1/bin/python3
 ~/.venvs/venv-tutorial-1/bin/pip3
 </pre></div>
 </div>
-</div>
-<div class="section" id="pip3-the-python-package-manager-the-package-installer-for-python">
-<h3>pip3 - the Python package manager (“the <em>Package Installer for Python</em>”)<a class="headerlink" href="#pip3-the-python-package-manager-the-package-installer-for-python" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pip3-the-python-package-manager-the-package-installer-for-python">
+<h3>pip3 - the Python package manager (“the <em>Package Installer for Python</em>”)<a class="headerlink" href="#pip3-the-python-package-manager-the-package-installer-for-python" title="Permalink to this heading">¶</a></h3>
 <p>Using <a class="reference external" href="https://pypi.org/project/pip/">pip3</a> we can see whats installed and install new packages. You will often see packages give installation advice for pip (Conda is another popular system).</p>
 <p>Now that we are using the venv, we can list what’s in the venv, and then install a new package:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv-tutorial-1<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ pip3 list
-Package    Version
----------- -------
-pip        <span class="m">19</span>.0.3
-setuptools <span class="m">40</span>.8.0
-You are using pip version <span class="m">19</span>.0.3, however version <span class="m">20</span>.0.2 is available.
-You should consider upgrading via the <span class="s1">&#39;pip install --upgrade pip&#39;</span> command.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv-tutorial-1<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>pip3<span class="w"> </span>list
+Package<span class="w">    </span>Version
+----------<span class="w"> </span>-------
+pip<span class="w">        </span><span class="m">19</span>.0.3
+setuptools<span class="w"> </span><span class="m">40</span>.8.0
+You<span class="w"> </span>are<span class="w"> </span>using<span class="w"> </span>pip<span class="w"> </span>version<span class="w"> </span><span class="m">19</span>.0.3,<span class="w"> </span>however<span class="w"> </span>version<span class="w"> </span><span class="m">20</span>.0.2<span class="w"> </span>is<span class="w"> </span>available.
+You<span class="w"> </span>should<span class="w"> </span>consider<span class="w"> </span>upgrading<span class="w"> </span>via<span class="w"> </span>the<span class="w"> </span><span class="s1">&#39;pip install --upgrade pip&#39;</span><span class="w"> </span>command.
 </pre></div>
 </div>
 <p>At this point - before any work is done, and while using your venv - it’s a great time to perform that update.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv-tutorial-1<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ pip install --upgrade pip
-Collecting pip
-  Downloading https://files.pythonhosted.org/packages/54/0c/d01aa759fdc501a58f431eb594a17495f15b88da142ce14b5845662c13f3/pip-20.0.2-py2.py3-none-any.whl <span class="o">(</span><span class="m">1</span>.4MB<span class="o">)</span>
-    <span class="m">100</span>% <span class="p">|</span>████████████████████████████████<span class="p">|</span> <span class="m">1</span>.4MB <span class="m">1</span>.5MB/s
-Installing collected packages: pip
-  Found existing installation: pip <span class="m">19</span>.0.3
-    Uninstalling pip<span class="se">\-</span><span class="m">19</span>.0.3:
-    Successfully uninstalled pip<span class="se">\-</span><span class="m">19</span>.0.3
-Successfully installed pip-20.0.2
-<span class="o">(</span>venv-tutorial-1<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ pip install --upgrade setuptools
-Collecting setuptools
-  Downloading setuptools-46.1.1-py3-none-any.whl <span class="o">(</span><span class="m">582</span> kB<span class="o">)</span>
-     <span class="p">|</span>████████████████████████████████<span class="p">|</span> <span class="m">582</span> kB <span class="m">13</span>.5 MB/s
-Installing collected packages: setuptools
-  Attempting uninstall: setuptools
-    Found existing installation: setuptools <span class="m">40</span>.8.0
-            Uninstalling setuptools<span class="se">\-</span><span class="m">40</span>.8.0:
-          Successfully uninstalled setuptools<span class="se">\-</span><span class="m">40</span>.8.0
-Successfully installed setuptools-46.1.1
-<span class="o">(</span>venv-tutorial-1<span class="o">)</span> <span class="o">[</span>z1234567@katana2 w~<span class="o">]</span>$ pip3 list
-Package    Version
----------- -------
-pip        <span class="m">20</span>.0.2
-setuptools <span class="m">46</span>.1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv-tutorial-1<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+Collecting<span class="w"> </span>pip
+<span class="w">  </span>Downloading<span class="w"> </span>https://files.pythonhosted.org/packages/54/0c/d01aa759fdc501a58f431eb594a17495f15b88da142ce14b5845662c13f3/pip-20.0.2-py2.py3-none-any.whl<span class="w"> </span><span class="o">(</span><span class="m">1</span>.4MB<span class="o">)</span>
+<span class="w">    </span><span class="m">100</span>%<span class="w"> </span><span class="p">|</span>████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">1</span>.4MB<span class="w"> </span><span class="m">1</span>.5MB/s
+Installing<span class="w"> </span>collected<span class="w"> </span>packages:<span class="w"> </span>pip
+<span class="w">  </span>Found<span class="w"> </span>existing<span class="w"> </span>installation:<span class="w"> </span>pip<span class="w"> </span><span class="m">19</span>.0.3
+<span class="w">    </span>Uninstalling<span class="w"> </span>pip<span class="se">\-</span><span class="m">19</span>.0.3:
+<span class="w">    </span>Successfully<span class="w"> </span>uninstalled<span class="w"> </span>pip<span class="se">\-</span><span class="m">19</span>.0.3
+Successfully<span class="w"> </span>installed<span class="w"> </span>pip-20.0.2
+<span class="o">(</span>venv-tutorial-1<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>setuptools
+Collecting<span class="w"> </span>setuptools
+<span class="w">  </span>Downloading<span class="w"> </span>setuptools-46.1.1-py3-none-any.whl<span class="w"> </span><span class="o">(</span><span class="m">582</span><span class="w"> </span>kB<span class="o">)</span>
+<span class="w">     </span><span class="p">|</span>████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">582</span><span class="w"> </span>kB<span class="w"> </span><span class="m">13</span>.5<span class="w"> </span>MB/s
+Installing<span class="w"> </span>collected<span class="w"> </span>packages:<span class="w"> </span>setuptools
+<span class="w">  </span>Attempting<span class="w"> </span>uninstall:<span class="w"> </span>setuptools
+<span class="w">    </span>Found<span class="w"> </span>existing<span class="w"> </span>installation:<span class="w"> </span>setuptools<span class="w"> </span><span class="m">40</span>.8.0
+<span class="w">            </span>Uninstalling<span class="w"> </span>setuptools<span class="se">\-</span><span class="m">40</span>.8.0:
+<span class="w">          </span>Successfully<span class="w"> </span>uninstalled<span class="w"> </span>setuptools<span class="se">\-</span><span class="m">40</span>.8.0
+Successfully<span class="w"> </span>installed<span class="w"> </span>setuptools-46.1.1
+<span class="o">(</span>venv-tutorial-1<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>w~<span class="o">]</span>$<span class="w"> </span>pip3<span class="w"> </span>list
+Package<span class="w">    </span>Version
+----------<span class="w"> </span>-------
+pip<span class="w">        </span><span class="m">20</span>.0.2
+setuptools<span class="w"> </span><span class="m">46</span>.1.1
 </pre></div>
 </div>
-</div>
-<div class="section" id="installing-software">
-<h3>Installing software<a class="headerlink" href="#installing-software" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="installing-software">
+<h3>Installing software<a class="headerlink" href="#installing-software" title="Permalink to this heading">¶</a></h3>
 <p>And then package installation is as easy as using <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">...</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv-tutorial-1<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ pip install numpy
-Collecting numpy
-  Downloading numpy-1.18.2-cp37-cp37m-manylinux1*x86*64.whl <span class="o">(</span><span class="m">20</span>.2 MB<span class="o">)</span>
-     <span class="p">|</span>████████████████████████████████<span class="p">|</span> <span class="m">20</span>.2 MB <span class="m">38</span> kB/s
-Installing collected packages: numpy
-Successfully installed numpy-1.18.2
-<span class="o">(</span>venv-tutorial-1<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ pip list
-Package    Version
----------- -------
-numpy      <span class="m">1</span>.18.2
-pip        <span class="m">20</span>.0.2
-setuptools <span class="m">46</span>.1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv-tutorial-1<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>numpy
+Collecting<span class="w"> </span>numpy
+<span class="w">  </span>Downloading<span class="w"> </span>numpy-1.18.2-cp37-cp37m-manylinux1*x86*64.whl<span class="w"> </span><span class="o">(</span><span class="m">20</span>.2<span class="w"> </span>MB<span class="o">)</span>
+<span class="w">     </span><span class="p">|</span>████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">20</span>.2<span class="w"> </span>MB<span class="w"> </span><span class="m">38</span><span class="w"> </span>kB/s
+Installing<span class="w"> </span>collected<span class="w"> </span>packages:<span class="w"> </span>numpy
+Successfully<span class="w"> </span>installed<span class="w"> </span>numpy-1.18.2
+<span class="o">(</span>venv-tutorial-1<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>pip<span class="w"> </span>list
+Package<span class="w">    </span>Version
+----------<span class="w"> </span>-------
+numpy<span class="w">      </span><span class="m">1</span>.18.2
+pip<span class="w">        </span><span class="m">20</span>.0.2
+setuptools<span class="w"> </span><span class="m">46</span>.1.1
 </pre></div>
 </div>
-</div>
-<div class="section" id="exiting-the-venv-and-coming-around-again">
-<h3>Exiting the venv, and coming around again<a class="headerlink" href="#exiting-the-venv-and-coming-around-again" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="exiting-the-venv-and-coming-around-again">
+<h3>Exiting the venv, and coming around again<a class="headerlink" href="#exiting-the-venv-and-coming-around-again" title="Permalink to this heading">¶</a></h3>
 <p>To leave a venv, you use the <code class="code docutils literal notranslate"><span class="pre">deactivate</span></code> command like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv-tutorial-1<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ deactivate
-<span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv-tutorial-1<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>deactivate
+<span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$
 </pre></div>
 </div>
 <p>Notice how the prompt returned to the way it was? Let’s create a new venv:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ python3 -m venv /home/z1234567/.venvs/scipy-example
-<span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ ls -l ~/.venvs/
-total <span class="m">0</span>
-drwx------. <span class="m">5</span> z1234567 unsw <span class="m">69</span> Mar <span class="m">23</span> <span class="m">15</span>:07 scipy-example
-drwx------. <span class="m">5</span> z1234567 unsw <span class="m">69</span> Mar <span class="m">23</span> <span class="m">11</span>:45 venv-tutorial-1
-<span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ <span class="nb">source</span> ~/.venvs/scipy-example/bin/activate
-<span class="o">(</span>scipy-example<span class="o">)</span> <span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$
-<span class="o">(</span>scipy-example<span class="o">)</span> <span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ pip list
-Package    Version
----------- -------
-pip        <span class="m">19</span>.0.3
-setuptools <span class="m">40</span>.8.0
-You are using pip version <span class="m">19</span>.0.3, however version <span class="m">20</span>.0.2 is available.
-You should consider upgrading via the <span class="s1">&#39;pip install --upgrade pip&#39;</span> command.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>/home/z1234567/.venvs/scipy-example
+<span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>~/.venvs/
+total<span class="w"> </span><span class="m">0</span>
+drwx------.<span class="w"> </span><span class="m">5</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w"> </span><span class="m">69</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">15</span>:07<span class="w"> </span>scipy-example
+drwx------.<span class="w"> </span><span class="m">5</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w"> </span><span class="m">69</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>venv-tutorial-1
+<span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.venvs/scipy-example/bin/activate
+<span class="o">(</span>scipy-example<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$
+<span class="o">(</span>scipy-example<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>pip<span class="w"> </span>list
+Package<span class="w">    </span>Version
+----------<span class="w"> </span>-------
+pip<span class="w">        </span><span class="m">19</span>.0.3
+setuptools<span class="w"> </span><span class="m">40</span>.8.0
+You<span class="w"> </span>are<span class="w"> </span>using<span class="w"> </span>pip<span class="w"> </span>version<span class="w"> </span><span class="m">19</span>.0.3,<span class="w"> </span>however<span class="w"> </span>version<span class="w"> </span><span class="m">20</span>.0.2<span class="w"> </span>is<span class="w"> </span>available.
+You<span class="w"> </span>should<span class="w"> </span>consider<span class="w"> </span>upgrading<span class="w"> </span>via<span class="w"> </span>the<span class="w"> </span><span class="s1">&#39;pip install --upgrade pip&#39;</span><span class="w"> </span>command.
 </pre></div>
 </div>
 <p>When we install SciPy, it automatically knows to install NumPy, a dependency:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>scipy-example<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ pip install scipy
-Collecting scipy
-  Downloading scipy-1.4.1-cp37-cp37m-manylinux1*x86*64.whl <span class="o">(</span><span class="m">26</span>.1 MB<span class="o">)</span>
-     <span class="p">|</span>████████████████████████████████<span class="p">|</span> <span class="m">26</span>.1 MB <span class="m">95</span> kB/s
-Collecting numpy&gt;<span class="o">=</span><span class="m">1</span>.13.3
-  Using cached numpy-1.18.2-cp37-cp37m-manylinux1*x86*64.whl <span class="o">(</span><span class="m">20</span>.2 MB<span class="o">)</span>
-Installing collected packages: numpy, scipy
-Successfully installed numpy-1.18.2 scipy-1.4.1
-<span class="o">(</span>scipy-example<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ pip list
-Package    Version
----------- -------
-numpy      <span class="m">1</span>.18.2
-pip        <span class="m">20</span>.0.2
-scipy      <span class="m">1</span>.4.1
-setuptools <span class="m">46</span>.1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>scipy-example<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>scipy
+Collecting<span class="w"> </span>scipy
+<span class="w">  </span>Downloading<span class="w"> </span>scipy-1.4.1-cp37-cp37m-manylinux1*x86*64.whl<span class="w"> </span><span class="o">(</span><span class="m">26</span>.1<span class="w"> </span>MB<span class="o">)</span>
+<span class="w">     </span><span class="p">|</span>████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">26</span>.1<span class="w"> </span>MB<span class="w"> </span><span class="m">95</span><span class="w"> </span>kB/s
+Collecting<span class="w"> </span>numpy&gt;<span class="o">=</span><span class="m">1</span>.13.3
+<span class="w">  </span>Using<span class="w"> </span>cached<span class="w"> </span>numpy-1.18.2-cp37-cp37m-manylinux1*x86*64.whl<span class="w"> </span><span class="o">(</span><span class="m">20</span>.2<span class="w"> </span>MB<span class="o">)</span>
+Installing<span class="w"> </span>collected<span class="w"> </span>packages:<span class="w"> </span>numpy,<span class="w"> </span>scipy
+Successfully<span class="w"> </span>installed<span class="w"> </span>numpy-1.18.2<span class="w"> </span>scipy-1.4.1
+<span class="o">(</span>scipy-example<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>pip<span class="w"> </span>list
+Package<span class="w">    </span>Version
+----------<span class="w"> </span>-------
+numpy<span class="w">      </span><span class="m">1</span>.18.2
+pip<span class="w">        </span><span class="m">20</span>.0.2
+scipy<span class="w">      </span><span class="m">1</span>.4.1
+setuptools<span class="w"> </span><span class="m">46</span>.1.1
 </pre></div>
 </div>
 <p>If you want to install an older version, it’s relatively easy</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>old-scipy-example<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ pip install <span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.2.3
-Collecting <span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.2.3
-  Downloading https://files.pythonhosted.org/packages/96/e7/e06976ab209ef44f0b3dc638b686338f68b8a2158a1b2c9036ac8677158a/scipy-1.2.3-cp37-cp37m-manylinux1_x86_64.whl <span class="o">(</span><span class="m">24</span>.8MB<span class="o">)</span>
-    <span class="m">100</span>% <span class="p">|</span>████████████████████████████████<span class="p">|</span> <span class="m">24</span>.8MB 239kB/s
-Collecting numpy&gt;<span class="o">=</span><span class="m">1</span>.8.2 <span class="o">(</span>from <span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.2.3<span class="o">)</span>
-  Using cached https://files.pythonhosted.org/packages/b7/ce/d0b92f0283faa4da76ea82587ff9da70104e81f59ba14f76c87e4196254e/numpy-1.18.2-cp37-cp37m-manylinux1_x86_64.whl
-Installing collected packages: numpy, scipy
-Successfully installed numpy-1.18.2 scipy-1.2.3
-<span class="o">(</span>old-scipy-example<span class="o">)</span> <span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ pip list
-Package    Version
----------- -------
-numpy      <span class="m">1</span>.18.2
-pip        <span class="m">20</span>.0.2
-scipy      <span class="m">1</span>.2.3
-setuptools <span class="m">46</span>.1.1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>old-scipy-example<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.2.3
+Collecting<span class="w"> </span><span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.2.3
+<span class="w">  </span>Downloading<span class="w"> </span>https://files.pythonhosted.org/packages/96/e7/e06976ab209ef44f0b3dc638b686338f68b8a2158a1b2c9036ac8677158a/scipy-1.2.3-cp37-cp37m-manylinux1_x86_64.whl<span class="w"> </span><span class="o">(</span><span class="m">24</span>.8MB<span class="o">)</span>
+<span class="w">    </span><span class="m">100</span>%<span class="w"> </span><span class="p">|</span>████████████████████████████████<span class="p">|</span><span class="w"> </span><span class="m">24</span>.8MB<span class="w"> </span>239kB/s
+Collecting<span class="w"> </span>numpy&gt;<span class="o">=</span><span class="m">1</span>.8.2<span class="w"> </span><span class="o">(</span>from<span class="w"> </span><span class="nv">scipy</span><span class="o">==</span><span class="m">1</span>.2.3<span class="o">)</span>
+<span class="w">  </span>Using<span class="w"> </span>cached<span class="w"> </span>https://files.pythonhosted.org/packages/b7/ce/d0b92f0283faa4da76ea82587ff9da70104e81f59ba14f76c87e4196254e/numpy-1.18.2-cp37-cp37m-manylinux1_x86_64.whl
+Installing<span class="w"> </span>collected<span class="w"> </span>packages:<span class="w"> </span>numpy,<span class="w"> </span>scipy
+Successfully<span class="w"> </span>installed<span class="w"> </span>numpy-1.18.2<span class="w"> </span>scipy-1.2.3
+<span class="o">(</span>old-scipy-example<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>pip<span class="w"> </span>list
+Package<span class="w">    </span>Version
+----------<span class="w"> </span>-------
+numpy<span class="w">      </span><span class="m">1</span>.18.2
+pip<span class="w">        </span><span class="m">20</span>.0.2
+scipy<span class="w">      </span><span class="m">1</span>.2.3
+setuptools<span class="w"> </span><span class="m">46</span>.1.1
 </pre></div>
 </div>
 <p>That’s a quick introduction to how you can install Python packages locally.</p>
-</div>
-<div class="section" id="special-cases">
-<h3>Special Cases<a class="headerlink" href="#special-cases" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="special-cases">
+<h3>Special Cases<a class="headerlink" href="#special-cases" title="Permalink to this heading">¶</a></h3>
 <p>Say for instance you want to use software X in a Jupyter Notebook. X is already installed on Katana.</p>
 <p>In that case, your workflow would be:</p>
 <blockquote>
@@ -362,70 +366,70 @@ setuptools <span class="m">46</span>.1.1
 </ul>
 </div></blockquote>
 <p>For example, using the Katana TensorFlow installation and a desire for Jupyter:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ module load tensorflow/1.14gpu
-<span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ python3 -m venv /home/z1234567/.venvs/tf --system-site-packages
-<span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ <span class="nb">source</span> ~/.venvs/tf/bin/activate
-<span class="o">(</span>tf<span class="o">)</span> <span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ pip install jupyter
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>tensorflow/1.14gpu
+<span class="o">[</span>z1234567@katana1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>/home/z1234567/.venvs/tf<span class="w"> </span>--system-site-packages
+<span class="o">[</span>z1234567@katana1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>~/.venvs/tf/bin/activate
+<span class="o">(</span>tf<span class="o">)</span><span class="w"> </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>jupyter
 </pre></div>
 </div>
 <p>This will throw errors because there are a collection of packages missing in relation to the latest Jupyter. They shouldn’t affect your ability to run <a class="reference internal" href="jupyter-notebooks.html#jupyter-notebooks"><span class="std std-ref">Jupyter Notebooks</span></a> with tensorflow.</p>
-</div>
-</div>
-<div class="section" id="virtual-environments-from-the-inside">
-<h2>Virtual Environments from the inside<a class="headerlink" href="#virtual-environments-from-the-inside" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="virtual-environments-from-the-inside">
+<h2>Virtual Environments from the inside<a class="headerlink" href="#virtual-environments-from-the-inside" title="Permalink to this heading">¶</a></h2>
 <p>We’ve built a venv in our <code class="code docutils literal notranslate"><span class="pre">~/.venvs</span></code> directory. Let’s take a look inside. This presumes you have used the command</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ python3 -m venv /home/z1234567/.venvs/venv-tutorial-1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>/home/z1234567/.venvs/venv-tutorial-1
 </pre></div>
 </div>
 <p>to set up your virtualenv.</p>
 <p>Here is a quick overview of the basics.</p>
 <p>We can see there is a directory in <code class="code docutils literal notranslate"><span class="pre">~/.venvs</span></code> that has the same name as the virtualenv we created.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ ls -l ~/.venvs/
-total <span class="m">0</span>
-drwx------.  <span class="m">5</span> z1234567 unsw   <span class="m">69</span> Mar <span class="m">23</span> <span class="m">11</span>:45 venv-tutorial-1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>~/.venvs/
+total<span class="w"> </span><span class="m">0</span>
+drwx------.<span class="w">  </span><span class="m">5</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">   </span><span class="m">69</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>venv-tutorial-1
 </pre></div>
 </div>
 <p>Inside that directory we can see some more directories. The two important directories here are <code class="code docutils literal notranslate"><span class="pre">bin</span></code> and <code class="code docutils literal notranslate"><span class="pre">lib</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ ls -l ~/.venvs/venv-tutorial-1/
-total <span class="m">8</span>
-drwx------. <span class="m">2</span> z1234567 unsw <span class="m">4096</span> Mar <span class="m">23</span> <span class="m">11</span>:45 bin
-drwx------. <span class="m">2</span> z1234567 unsw    <span class="m">6</span> Mar <span class="m">23</span> <span class="m">11</span>:45 include
-drwx------. <span class="m">3</span> z1234567 unsw   <span class="m">22</span> Mar <span class="m">23</span> <span class="m">11</span>:45 lib
-lrwxrwxrwx. <span class="m">1</span> z1234567 unsw    <span class="m">3</span> Mar <span class="m">23</span> <span class="m">11</span>:45 lib64 -&gt; lib
--rw-------. <span class="m">1</span> z1234567 unsw   <span class="m">83</span> Mar <span class="m">23</span> <span class="m">11</span>:45 pyvenv.cfg
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>~/.venvs/venv-tutorial-1/
+total<span class="w"> </span><span class="m">8</span>
+drwx------.<span class="w"> </span><span class="m">2</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>bin
+drwx------.<span class="w"> </span><span class="m">2</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">    </span><span class="m">6</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>include
+drwx------.<span class="w"> </span><span class="m">3</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">   </span><span class="m">22</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>lib
+lrwxrwxrwx.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">    </span><span class="m">3</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>lib64<span class="w"> </span>-&gt;<span class="w"> </span>lib
+-rw-------.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">   </span><span class="m">83</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>pyvenv.cfg
 </pre></div>
 </div>
 <p>In <code class="code docutils literal notranslate"><span class="pre">bin</span></code> you will see executables. The main one of note is <code class="code docutils literal notranslate"><span class="pre">activate</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ ls -l ~/.venvs/venv-tutorial-1/bin/
-total <span class="m">36</span>
-drwx------. <span class="m">2</span> z1234567 unsw <span class="m">4096</span> Mar <span class="m">23</span> <span class="m">11</span>:45 .
-drwx------. <span class="m">5</span> z1234567 unsw   <span class="m">69</span> Mar <span class="m">23</span> <span class="m">11</span>:45 ..
--rw-r--r--. <span class="m">1</span> z1234567 unsw <span class="m">2235</span> Mar <span class="m">23</span> <span class="m">11</span>:45 activate
--rw-r--r--. <span class="m">1</span> z1234567 unsw <span class="m">1291</span> Mar <span class="m">23</span> <span class="m">11</span>:45 activate.csh
--rw-r--r--. <span class="m">1</span> z1234567 unsw <span class="m">2443</span> Mar <span class="m">23</span> <span class="m">11</span>:45 activate.fish
--rwxr-xr-x. <span class="m">1</span> z1234567 unsw  <span class="m">266</span> Mar <span class="m">23</span> <span class="m">11</span>:45 easy_install
--rwxr-xr-x. <span class="m">1</span> z1234567 unsw  <span class="m">266</span> Mar <span class="m">23</span> <span class="m">11</span>:45 easy_install-3.7
--rwxr-xr-x. <span class="m">1</span> z1234567 unsw  <span class="m">248</span> Mar <span class="m">23</span> <span class="m">11</span>:45 pip
--rwxr-xr-x. <span class="m">1</span> z1234567 unsw  <span class="m">248</span> Mar <span class="m">23</span> <span class="m">11</span>:45 pip3
--rwxr-xr-x. <span class="m">1</span> z1234567 unsw  <span class="m">248</span> Mar <span class="m">23</span> <span class="m">11</span>:45 pip3.7
-lrwxrwxrwx. <span class="m">1</span> z1234567 unsw    <span class="m">7</span> Mar <span class="m">23</span> <span class="m">11</span>:45 python -&gt; python3
-lrwxrwxrwx. <span class="m">1</span> z1234567 unsw   <span class="m">30</span> Mar <span class="m">23</span> <span class="m">11</span>:45 python3 -&gt; /apps/python/3.7.4/bin/python3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>~/.venvs/venv-tutorial-1/bin/
+total<span class="w"> </span><span class="m">36</span>
+drwx------.<span class="w"> </span><span class="m">2</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>.
+drwx------.<span class="w"> </span><span class="m">5</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">   </span><span class="m">69</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>..
+-rw-r--r--.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w"> </span><span class="m">2235</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>activate
+-rw-r--r--.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w"> </span><span class="m">1291</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>activate.csh
+-rw-r--r--.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w"> </span><span class="m">2443</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>activate.fish
+-rwxr-xr-x.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">  </span><span class="m">266</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>easy_install
+-rwxr-xr-x.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">  </span><span class="m">266</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>easy_install-3.7
+-rwxr-xr-x.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">  </span><span class="m">248</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>pip
+-rwxr-xr-x.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">  </span><span class="m">248</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>pip3
+-rwxr-xr-x.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">  </span><span class="m">248</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>pip3.7
+lrwxrwxrwx.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">    </span><span class="m">7</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>python<span class="w"> </span>-&gt;<span class="w"> </span>python3
+lrwxrwxrwx.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">   </span><span class="m">30</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>python3<span class="w"> </span>-&gt;<span class="w"> </span>/apps/python/3.7.4/bin/python3
 </pre></div>
 </div>
 <p>In <code class="code docutils literal notranslate"><span class="pre">lib</span></code> we need to traverse a few more directories, but eventually we will see where the packages are installed. As you can see, <code class="code docutils literal notranslate"><span class="pre">pip</span></code> and <code class="code docutils literal notranslate"><span class="pre">setuptools</span></code> are already installed. These are the default:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ ls -l ~/.venvs/venv-tutorial-1/lib/python3.7/site-packages/
-total <span class="m">16</span>
--rw-------. <span class="m">1</span> z1234567 unsw  <span class="m">126</span> Mar <span class="m">23</span> <span class="m">11</span>:45 easy_install.py
-drwx------. <span class="m">5</span> z1234567 unsw   <span class="m">90</span> Mar <span class="m">23</span> <span class="m">11</span>:45 pip
-drwx------. <span class="m">2</span> z1234567 unsw <span class="m">4096</span> Mar <span class="m">23</span> <span class="m">11</span>:45 pip-19.0.3.dist-info
-drwx------. <span class="m">5</span> z1234567 unsw   <span class="m">89</span> Mar <span class="m">23</span> <span class="m">11</span>:45 pkg_resources
-drwx------. <span class="m">2</span> z1234567 unsw   <span class="m">40</span> Mar <span class="m">23</span> <span class="m">11</span>:45 **pycache**
-drwx------. <span class="m">6</span> z1234567 unsw <span class="m">4096</span> Mar <span class="m">23</span> <span class="m">11</span>:45 setuptools
-drwx------. <span class="m">2</span> z1234567 unsw <span class="m">4096</span> Mar <span class="m">23</span> <span class="m">11</span>:45 setuptools-40.8.0.dist-info
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>~/.venvs/venv-tutorial-1/lib/python3.7/site-packages/
+total<span class="w"> </span><span class="m">16</span>
+-rw-------.<span class="w"> </span><span class="m">1</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">  </span><span class="m">126</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>easy_install.py
+drwx------.<span class="w"> </span><span class="m">5</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">   </span><span class="m">90</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>pip
+drwx------.<span class="w"> </span><span class="m">2</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>pip-19.0.3.dist-info
+drwx------.<span class="w"> </span><span class="m">5</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">   </span><span class="m">89</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>pkg_resources
+drwx------.<span class="w"> </span><span class="m">2</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w">   </span><span class="m">40</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>**pycache**
+drwx------.<span class="w"> </span><span class="m">6</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>setuptools
+drwx------.<span class="w"> </span><span class="m">2</span><span class="w"> </span>z1234567<span class="w"> </span>unsw<span class="w"> </span><span class="m">4096</span><span class="w"> </span>Mar<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">11</span>:45<span class="w"> </span>setuptools-40.8.0.dist-info
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 	    </div>
@@ -458,19 +462,19 @@ drwx------. <span class="m">2</span> z1234567 unsw <span class="m">4096</span> M
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0',
+            VERSION:'1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/underscore.js">
+    <script type="text/javascript" src="../_static/documentation_options.js">
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js">
 
     </script>
 

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>About Katana &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>About Katana &mdash; Katana User Documentation 1.1 documentation</title>
   
 
   
@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+  
 
   
 
@@ -26,7 +30,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+    <link rel="top" title="Katana User Documentation 1.1 documentation" href="../index.html"/>
         <link rel="up" title="Using Katana" href="index.html"/>
         <link rel="next" title="Running Jobs on Katana" href="running_jobs.html"/>
         <link rel="prev" title="Accessing Katana" href="accessing_katana.html"/>
@@ -61,7 +65,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -155,28 +159,28 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="about-katana">
-<span id="id1"></span><h1>About Katana<a class="headerlink" href="#about-katana" title="Permalink to this headline">¶</a></h1>
+  <section id="about-katana">
+<span id="id1"></span><h1>About Katana<a class="headerlink" href="#about-katana" title="Permalink to this heading">¶</a></h1>
 <p>Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources for groups working with non-sensitive data. It contains over 6,000 CPU cores, 8 GPU compute nodes (V100 and A100), and 6Pb of disk storage. Katana provides a flexible compute environment where users can run jobs that wouldn’t be possible or practical on their desktop or laptop. For full details of the compute nodes including a full list see the compute node information section below.</p>
 <p>Katana is powerful on its own, but can be seen as a training or development base before migrating up to systems like Australia’s peak HPC system <a class="reference external" href="https://nci.org.au/our-systems/hpc-systems">Gadi</a>, located at <a class="reference external" href="https://nci.org.au/">NCI</a>. Research Technology Services also provide training, advice and support for new users or those uncertain if High Performance Computing is the right fit for their research needs.</p>
-<div class="section" id="system-configuration">
-<span id="id2"></span><h2>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">¶</a></h2>
+<section id="system-configuration">
+<span id="id2"></span><h2>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>RPM based Linux OSes. RedHat on the management plane, CentOS on the nodes</p></li>
 <li><p><a class="reference external" href="https://www.pbspro.org/">PBSPro</a> version 19.1.3</p></li>
 <li><p>Large global scratch at <code class="code docutils literal notranslate"><span class="pre">/srv/scratch</span></code>, local scratch at <code class="code docutils literal notranslate"><span class="pre">$TMPDIR</span></code></p></li>
 <li><p>12, 48, 100, 200 hour <a class="reference internal" href="../glossary.html#term-Walltime"><span class="xref std std-term">Walltime</span></a> queues with prioritisation</p></li>
 </ul>
-</div>
-<div class="section" id="compute">
-<span id="compute-resources"></span><h2>Compute<a class="headerlink" href="#compute" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="compute">
+<span id="compute-resources"></span><h2>Compute<a class="headerlink" href="#compute" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Heterogenous hardware: Dell, Lenovo, Huawei.</p></li>
 <li><p>Roughly 170 nodes</p></li>
 </ul>
-</div>
-<div class="section" id="gpu-compute">
-<span id="gpu-resources"></span><h2>GPU Compute<a class="headerlink" href="#gpu-compute" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="gpu-compute">
+<span id="gpu-resources"></span><h2>GPU Compute<a class="headerlink" href="#gpu-compute" title="Permalink to this heading">¶</a></h2>
 <p>The most popular use of these nodes is for Tensorflow.</p>
 <ul class="simple">
 <li><p>Eight GPU capable nodes</p>
@@ -197,7 +201,7 @@ You will need to wait in the common queue - or buy
 a GPU node for your group on which you will get priority</p>
 </div>
 <p>To access a GPU node interactively, you can use a command like</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana ~<span class="o">]</span>$ qsub -I -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">8</span>:ngpus<span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>46gb,walltime<span class="o">=</span><span class="m">2</span>:00:00
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>qsub<span class="w"> </span>-I<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">8</span>:ngpus<span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>46gb,walltime<span class="o">=</span><span class="m">2</span>:00:00
 </pre></div>
 </div>
 <p>Note the 2 hour limit - that is the <em>fastest</em> way to get onto the GPU nodes. Unfortunately, there’s no way to tell you that
@@ -206,8 +210,8 @@ your session has started, so you will need to monitor your command.</p>
 <p class="admonition-title">Note</p>
 <p>GPU-enabled software should be installed on a GPU node within an interactive session, in case the software is probing for GPU hardware or libraries.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 	    </div>
@@ -240,19 +244,19 @@ your session has started, so you will need to monitor your command.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0',
+            VERSION:'1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/underscore.js">
+    <script type="text/javascript" src="../_static/documentation_options.js">
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js">
 
     </script>
 

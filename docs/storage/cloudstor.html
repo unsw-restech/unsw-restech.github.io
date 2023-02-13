@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Cloudstor &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>Cloudstor &mdash; Katana User Documentation 1.1 documentation</title>
   
 
   
@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+  
 
   
 
@@ -26,7 +30,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+    <link rel="top" title="Katana User Documentation 1.1 documentation" href="../index.html"/>
         <link rel="up" title="Storage" href="index.html"/>
         <link rel="next" title="OneDrive" href="onedrive.html"/>
         <link rel="prev" title="How to use the UNSW Data Archive" href="data_archive.html"/>
@@ -61,7 +65,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -155,12 +159,12 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="cloudstor">
-<h1>Cloudstor<a class="headerlink" href="#cloudstor" title="Permalink to this headline">¶</a></h1>
+  <section id="cloudstor">
+<h1>Cloudstor<a class="headerlink" href="#cloudstor" title="Permalink to this heading">¶</a></h1>
 <p>You can access <a class="reference external" href="https://cloudstor.aarnet.edu.au/">Cloudstor</a> from <a class="reference internal" href="kdm.html#katana-data-mover"><span class="std std-ref">Katana Data Mover</span></a></p>
 <p>RClone is installed on KDM so you can upload data into Cloudstor.</p>
-<div class="section" id="configure-rclone">
-<h2>Configure RClone<a class="headerlink" href="#configure-rclone" title="Permalink to this headline">¶</a></h2>
+<section id="configure-rclone">
+<h2>Configure RClone<a class="headerlink" href="#configure-rclone" title="Permalink to this heading">¶</a></h2>
 <p>1. First, you will need to <a class="reference external" href="https://support.aarnet.edu.au/hc/en-us/articles/236034707-How-do-I-manage-change-my-passwords-">set your Sync Password</a> in the
 <a class="reference external" href="https://cloudstor.aarnet.edu.au/plus/settings/personal">Cloudstor settings page</a>, and keep a copy locally.</p>
 <div class="admonition warning">
@@ -173,7 +177,7 @@ login password.</p>
 <ol class="arabic simple" start="2">
 <li><p>Next, login to KDM and run:</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm ~<span class="o">]</span>$ rclone config
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>config
 </pre></div>
 </div>
 <p>You will be asked a set of questions. The short answers are:</p>
@@ -190,34 +194,34 @@ login password.</p>
 <li><p>bearer_token: (blank)</p></li>
 </ol>
 <p>You should then see something like this to which you should answer yes:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Remote config
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Remote<span class="w"> </span>config
 --------------------
 <span class="o">[</span>CloudStor<span class="o">]</span>
-<span class="nb">type</span> <span class="o">=</span> webdav
-<span class="nv">url</span> <span class="o">=</span> https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/
-<span class="nv">vendor</span> <span class="o">=</span> owncloud
-<span class="nv">user</span> <span class="o">=</span> first.last@unsw.edu.au
-<span class="nv">pass</span> <span class="o">=</span> *** ENCRYPTED ***
+<span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>webdav
+<span class="nv">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>https://cloudstor.aarnet.edu.au/plus/remote.php/webdav/
+<span class="nv">vendor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>owncloud
+<span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>first.last@unsw.edu.au
+<span class="nv">pass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>***<span class="w"> </span>ENCRYPTED<span class="w"> </span>***
 --------------------
-y<span class="o">)</span> Yes this is OK
-e<span class="o">)</span> Edit this remote
-d<span class="o">)</span> Delete this remote
-y/e/d&gt; y
+y<span class="o">)</span><span class="w"> </span>Yes<span class="w"> </span>this<span class="w"> </span>is<span class="w"> </span>OK
+e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>this<span class="w"> </span>remote
+d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>this<span class="w"> </span>remote
+y/e/d&gt;<span class="w"> </span>y
 </pre></div>
 </div>
 <p>Then quit and test:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm ~<span class="o">]</span>$ rclone copy --progress --transfers <span class="m">8</span> testdata CloudStor:/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>copy<span class="w"> </span>--progress<span class="w"> </span>--transfers<span class="w"> </span><span class="m">8</span><span class="w"> </span>testdata<span class="w"> </span>CloudStor:/
 </pre></div>
 </div>
 <p>If it doesn’t work, you can edit the config or make a new one.</p>
 <p>The ‘name’ field you are asked at step two of the config is what the config and
 end point will be known as. If you put in the name <code class="code docutils literal notranslate"><span class="pre">Murgatroyd</span></code> then you
 would have to access the instance like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm ~<span class="o">]</span>$ rclone copy --progress --transfers <span class="m">8</span> testdata Murgatroyd:/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>copy<span class="w"> </span>--progress<span class="w"> </span>--transfers<span class="w"> </span><span class="m">8</span><span class="w"> </span>testdata<span class="w"> </span>Murgatroyd:/
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 	    </div>
@@ -250,19 +254,19 @@ would have to access the instance like this:</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0',
+            VERSION:'1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/underscore.js">
+    <script type="text/javascript" src="../_static/documentation_options.js">
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js">
 
     </script>
 

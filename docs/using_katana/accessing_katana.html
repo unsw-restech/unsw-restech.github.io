@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Accessing Katana &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>Accessing Katana &mdash; Katana User Documentation 1.1 documentation</title>
   
 
   
@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+  
 
   
 
@@ -26,7 +30,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+    <link rel="top" title="Katana User Documentation 1.1 documentation" href="../index.html"/>
         <link rel="up" title="Using Katana" href="index.html"/>
         <link rel="next" title="About Katana" href="about_katana.html"/>
         <link rel="prev" title="Using Katana" href="index.html"/>
@@ -61,7 +65,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -155,33 +159,33 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="accessing-katana">
-<h1>Accessing Katana<a class="headerlink" href="#accessing-katana" title="Permalink to this headline">¶</a></h1>
+  <section id="accessing-katana">
+<h1>Accessing Katana<a class="headerlink" href="#accessing-katana" title="Permalink to this heading">¶</a></h1>
 <p>Anyone at UNSW can apply for a general account on Katana. This level is designed for those that think Katana would suit their research needs or will typically use less than 10,000 CPU hours a quarter. This level still gets access to the same level of support including software installation, help getting started or running their jobs. The only difference is the number of compute jobs that can be run at any time and how long they can run for - general users can only use a 12 hour <a class="reference internal" href="../glossary.html#term-Walltime"><span class="xref std std-term">Walltime</span></a>.</p>
 <p>If your needs require more CPU hours or consulation, some Faculties, Schools and Research Groups have invested in Katana and have a higher level of access. Users in this situation should speak to their supervisor.</p>
-<div class="section" id="requesting-an-account">
-<span id="id1"></span><h2>Requesting an Account<a class="headerlink" href="#requesting-an-account" title="Permalink to this headline">¶</a></h2>
+<section id="requesting-an-account">
+<span id="id1"></span><h2>Requesting an Account<a class="headerlink" href="#requesting-an-account" title="Permalink to this heading">¶</a></h2>
 <p>To apply for an account you can send an email to the <a class="reference external" href="mailto:ITServiceCentre&#37;&#52;&#48;unsw&#46;edu&#46;au">UNSW IT Service Centre</a> giving your zID, your role within UNSW and the name of your supervisor or head of your research group.</p>
-</div>
-<div class="section" id="connecting-to-katana">
-<span id="id2"></span><h2>Connecting to Katana<a class="headerlink" href="#connecting-to-katana" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="connecting-to-katana">
+<span id="id2"></span><h2>Connecting to Katana<a class="headerlink" href="#connecting-to-katana" title="Permalink to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When you are connecting to Katana via <code class="code docutils literal notranslate"><span class="pre">katana.restech.unsw.edu.au</span></code> you are connecting to one of two login nodes <code class="code docutils literal notranslate"><span class="pre">katana1.restech.unsw.edu.au</span></code> or <code class="code docutils literal notranslate"><span class="pre">katana2.restech.unsw.edu.au</span></code>. If you have a long running <a class="reference internal" href="../software/tmux.html#tmux"><span class="std std-ref">TMUX</span></a> open, you will need to login to the node on which it was started.</p>
 </div>
-<div class="section" id="linux-and-mac">
-<h3>Linux and Mac<a class="headerlink" href="#linux-and-mac" title="Permalink to this headline">¶</a></h3>
+<section id="linux-and-mac">
+<h3>Linux and Mac<a class="headerlink" href="#linux-and-mac" title="Permalink to this heading">¶</a></h3>
 <p>From a Linux or Mac OS machine you can connect via ssh in a terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>laptop:~$ ssh z1234567@katana.restech.unsw.edu.au
 </pre></div>
 </div>
-</div>
-<div class="section" id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">¶</a></h3>
 <p>From a Windows machine an SSH client such as <a class="reference external" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">PuTTY</a> or <a class="reference external" href="https://mobaxterm.mobatek.net/">MobaXTerm</a> is required.</p>
 <p>If you are comfortable using PowerShell, OpenSSH is available on recent Windows versions. If not persent, it can be <a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse">installed on Windows 10</a>.</p>
-<div class="section" id="windows-subsystem-for-linux-wsl">
-<h4>Windows subsystem for Linux (WSL)<a class="headerlink" href="#windows-subsystem-for-linux-wsl" title="Permalink to this headline">¶</a></h4>
+<section id="windows-subsystem-for-linux-wsl">
+<h4>Windows subsystem for Linux (WSL)<a class="headerlink" href="#windows-subsystem-for-linux-wsl" title="Permalink to this heading">¶</a></h4>
 <p>You can run a Linux environmet directly on Windows using <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/about">Windows Subsystem for Linux</a> (WSL).</p>
 <p>There are two ways to install WSL on your system:</p>
 <ol class="arabic simple">
@@ -189,31 +193,31 @@
 <li><p>Manually enable <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WSL in PowerShell</a> and then install a Linux distribution through the Microsoft Store.</p></li>
 </ol>
 <p>Using WSL will not only let you connect to katana with SSH, but also provides many GNU/Linux tools that are useful when working with HPC and research data.</p>
-</div>
-</div>
-<div class="section" id="ssh-keepalive">
-<h3>SSH KeepAlive<a class="headerlink" href="#ssh-keepalive" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="ssh-keepalive">
+<h3>SSH KeepAlive<a class="headerlink" href="#ssh-keepalive" title="Permalink to this heading">¶</a></h3>
 <p>To stop your connection disconnecting after some idle time, you can send null packets to keep your session alive. You want to change the frequency of these packets from 0 (none) to a small time interval, say 60 seconds. The configuration differs depending on the SSH client used.</p>
 <p>On PuTTy: Category -&gt; Connection -&gt; “Seconds between keepalives”</p>
 <p>On MobaXterm: Settings -&gt; Configuration -&gt; SSH -&gt; SSH keepalive</p>
 <p>On Linux and WSL you send keepalive packets for all servers by editing ~/.ssh/config and adding the lines</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Host *
-   ServerAliveInterval <span class="m">60</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Host<span class="w"> </span>*
+<span class="w">   </span>ServerAliveInterval<span class="w"> </span><span class="m">60</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="graphical-sessions">
-<span id="graphical-session"></span><h3>Graphical sessions<a class="headerlink" href="#graphical-sessions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="graphical-sessions">
+<span id="graphical-session"></span><h3>Graphical sessions<a class="headerlink" href="#graphical-sessions" title="Permalink to this heading">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Please use <a class="reference internal" href="ondemand.html#katana-ondemand"><span class="std std-ref">Katana OnDemand</span></a> (kod.restech.unsw.edu.au) if available for your application. It is significantly easier to use for newcomers.</p>
 </div>
 <p>Some software - <a class="reference internal" href="../software/ansys.html#ansys"><span class="std std-ref">Ansys</span></a>, <a class="reference internal" href="../software/jupyter-notebooks.html#jupyter-notebooks"><span class="std std-ref">Jupyter Notebooks</span></a>, <a class="reference internal" href="../software/matlab.html#matlab"><span class="std std-ref">Matlab</span></a>, and <a class="reference internal" href="../software/r.html#r-and-rstudio"><span class="std std-ref">R and RStudio</span></a> being among the most popular - are easier with a graphical session. If you require an interactive graphical session to Katana then you can use the <a class="reference external" href="http://wiki.x2go.org/doku.php">X2Go</a> client.</p>
 <p>Start X2Go and create a session for Katana. The details that you need to enter for the session are:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Session name: Katana
-Host: katana.restech.unsw.edu.au
-Login: zID
-Session type: Mate
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Session<span class="w"> </span>name:<span class="w"> </span>Katana
+Host:<span class="w"> </span>katana.restech.unsw.edu.au
+Login:<span class="w"> </span>zID
+Session<span class="w"> </span>type:<span class="w"> </span>Mate
 </pre></div>
 </div>
 <img alt="../_images/x2go.png" src="../_images/x2go.png" />
@@ -222,17 +226,17 @@ Session type: Mate
 <p>The usability of a graphical connection to Katana is highly dependent on network latency and performance.</p>
 </div>
 <p>Once you have logged into a Katana desktop, you should start a terminal</p>
-<img alt="_static/terminal_graphical_session_new.png" src="_static/terminal_graphical_session_new.png" />
+<img alt="../_images/terminal_graphical_session.png" src="../_images/terminal_graphical_session.png" />
 <p>Then run an interactive session. Here you can see a command similar to what you would run for an interactive session with 8 CPUs and 16 GB for one hour. You will probably need more time. You can tell your interactive session has started when you see the name of the machine change - in this image I am on k247.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub -I -X -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">8</span>:mem<span class="o">=</span>16gb,walltime<span class="o">=</span><span class="m">1</span>:00:00
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qsub<span class="w"> </span>-I<span class="w"> </span>-X<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">8</span>:mem<span class="o">=</span>16gb,walltime<span class="o">=</span><span class="m">1</span>:00:00
 </pre></div>
 </div>
 <img alt="../_images/interactive_session_graphical.png" src="../_images/interactive_session_graphical.png" />
 <p>Once that’s started, you can load the modules and run the command line name of the software you want. That is how you run Graphical Interfaces or GUIs using Katana’s grunt.</p>
 <img alt="../_images/rstudio_graphical_session.png" src="../_images/rstudio_graphical_session.png" />
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
 	    </div>
@@ -265,19 +269,19 @@ Session type: Mate
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0',
+            VERSION:'1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/underscore.js">
+    <script type="text/javascript" src="../_static/documentation_options.js">
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js">
 
     </script>
 

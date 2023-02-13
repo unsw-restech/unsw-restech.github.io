@@ -21,12 +21,12 @@ After logging in, you can:
 
 Installed interactive apps are availble in a drop-down list
 
-.. image:: ../_static/kod_interactive_apps.png 
+<!-- .. image:: ../_static/kod_interactive_apps.png -->
 
 
 The status of your interactive sessions can be seen using the rightmost 'My Interactive Sessions' icon. 
 
-.. image:: ../_static/kod_interactive_sessions_status.png
+<!-- .. image:: ../_static/kod_interactive_sessions_status.png -->
 
 
 Clicking on the Session ID display files that are useful for debubbing purposes. Please include their contents if submitting a support request.

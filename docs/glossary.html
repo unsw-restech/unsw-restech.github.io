@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Glossary &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>Glossary &mdash; Katana User Documentation 1.1 documentation</title>
   
 
   
@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="_static/css/pdj.css" type="text/css" />
 
   
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/css/pdj.css" type="text/css" />
+  
 
   
 
@@ -26,7 +30,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Katana User Documentation 1.0 documentation" href="index.html"/>
+    <link rel="top" title="Katana User Documentation 1.1 documentation" href="index.html"/>
         <link rel="prev" title="Frequently Asked Questions" href="faq.html"/>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -59,7 +63,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -153,9 +157,9 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="glossary">
-<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
-<dl class="glossary simple">
+  <section id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">¶</a></h1>
+<dl class="simple glossary">
 <dt id="term-Active-Job">Active Job<a class="headerlink" href="#term-Active-Job" title="Permalink to this term">¶</a></dt><dd><p>Active jobs are jobs that have been assigned to a compute node and are currently running. These can be seen by running <code class="code docutils literal notranslate"><span class="pre">qstat</span></code> and looking for an A in the second last column. See <a class="reference internal" href="using_katana/running_jobs.html#more-info-from-pbs"><span class="std std-ref">Show all jobs on the system</span></a></p>
 </dd>
 <dt id="term-Array-Job">Array Job<a class="headerlink" href="#term-Array-Job" title="Permalink to this term">¶</a></dt><dd><p>If you want to run the same job multiple times with slight differences (filenames, data source, etc), then you can create an array job which will submit multiple jobs for you from the one job script.</p>
@@ -209,7 +213,7 @@
 <dt id="term-Walltime">Walltime<a class="headerlink" href="#term-Walltime" title="Permalink to this term">¶</a></dt><dd><p>In HPC, walltime is the amount of time that you will be allocated when your job runs. If your jobs runs longer than the walltime, it will be killed by the <a class="reference internal" href="#term-Job-Scheduler"><span class="xref std std-term">Job Scheduler</span></a>. It is used by the scheduler for helping allocate resources onto servers. On <strong>Katana</strong> it is also used to determine which <a class="reference internal" href="#term-Queue"><span class="xref std std-term">Queue</span></a> your job will end up in. The shorter the walltime, the more opportunity your job has to run which in turn means that it will start sooner. In short - it’s harder to find 100 hours of aviable time than it is to find 12 hours.</p>
 </dd>
 </dl>
-</div>
+</section>
 
 
 	    </div>
@@ -240,19 +244,19 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'1.0',
+            VERSION:'1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="_static/jquery.js">
-
-    </script>
-    <script type="text/javascript" src="_static/underscore.js">
+    <script type="text/javascript" src="_static/documentation_options.js">
 
     </script>
     <script type="text/javascript" src="_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="_static/sphinx_highlight.js">
 
     </script>
 

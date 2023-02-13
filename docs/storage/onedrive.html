@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>OneDrive &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>OneDrive &mdash; Katana User Documentation 1.1 documentation</title>
   
 
   
@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+  
 
   
 
@@ -26,7 +30,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+    <link rel="top" title="Katana User Documentation 1.1 documentation" href="../index.html"/>
         <link rel="up" title="Storage" href="index.html"/>
         <link rel="next" title="Software" href="../software/index.html"/>
         <link rel="prev" title="Cloudstor" href="cloudstor.html"/>
@@ -61,7 +65,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -155,11 +159,11 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="onedrive">
-<h1>OneDrive<a class="headerlink" href="#onedrive" title="Permalink to this headline">¶</a></h1>
+  <section id="onedrive">
+<h1>OneDrive<a class="headerlink" href="#onedrive" title="Permalink to this heading">¶</a></h1>
 <p>You can mount Microsoft’s <a class="reference external" href="https://onedrive.live.com/">OneDrive</a> on Katana.</p>
-<div class="section" id="onedrive-background">
-<h2>OneDrive Background<a class="headerlink" href="#onedrive-background" title="Permalink to this headline">¶</a></h2>
+<section id="onedrive-background">
+<h2>OneDrive Background<a class="headerlink" href="#onedrive-background" title="Permalink to this heading">¶</a></h2>
 <p>We don’t recommend researchers mount their OneDrive because the configuration process is not ideal. However, it is possible with the following method.</p>
 <p><a class="reference external" href="https://rclone.org/onedrive/">There are limitations to using RClone with OneDrive</a> that users will need to be
 aware of and which the UNSW team cannot help with.</p>
@@ -170,9 +174,9 @@ command is run.</p>
 <p>Please mount OneDrive on Katana Data Mover, not the login nodes.</p>
 </div>
 <p>The configuration section will probably only once, whereas the “how to mount” section will need to be run each time.</p>
-</div>
-<div class="section" id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://consenthelper.it.unsw.edu.au/consent?appId=c8800f43-7805-46c2-b8b2-1c55f3859a4c">OneDrive needs your consent</a> to give rclone access to your files.</p></li>
 </ol>
@@ -182,13 +186,13 @@ about data storage.</p>
 <ol class="arabic simple" start="3">
 <li><p>You will need at least one empty directory for mounting. Restech recommends creating the directory <code class="docutils literal notranslate"><span class="pre">/home/z1234567/OneDrive</span></code> to mount OneDrive onto.</p></li>
 </ol>
-</div>
-<div class="section" id="configure-rclone-for-onedrive">
-<h2>Configure RClone for OneDrive<a class="headerlink" href="#configure-rclone-for-onedrive" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="configure-rclone-for-onedrive">
+<h2>Configure RClone for OneDrive<a class="headerlink" href="#configure-rclone-for-onedrive" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Login to KDM and run:</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm ~<span class="o">]</span>$ rclone config
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>config
 </pre></div>
 </div>
 <p>You will be asked a set of questions. The short answers are:</p>
@@ -209,38 +213,38 @@ about data storage.</p>
 </ol>
 <p>You should then see something like this to which you should answer yes:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>--------------------
- <span class="o">[</span>MS OneDrive<span class="o">]</span>
- <span class="nb">type</span> <span class="o">=</span> onedrive
- <span class="nv">client_id</span> <span class="o">=</span> c8800f43-7805-46c2-b8b2-1c55f3859a4c
- <span class="nv">client_secret</span> <span class="o">=</span> SECRET
- <span class="nv">region</span> <span class="o">=</span> global
- <span class="nv">token</span> <span class="o">=</span> <span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;eyJ0e...asdasd&quot;</span><span class="o">}</span>
- <span class="nv">drive_type</span> <span class="o">=</span> business
- --------------------
- y<span class="o">)</span> Yes this is OK <span class="o">(</span>default<span class="o">)</span>
- e<span class="o">)</span> Edit this remote
- d<span class="o">)</span> Delete this remote
- y/e/d&gt;
+<span class="w"> </span><span class="o">[</span>MS<span class="w"> </span>OneDrive<span class="o">]</span>
+<span class="w"> </span><span class="nb">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>onedrive
+<span class="w"> </span><span class="nv">client_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>c8800f43-7805-46c2-b8b2-1c55f3859a4c
+<span class="w"> </span><span class="nv">client_secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>SECRET
+<span class="w"> </span><span class="nv">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>global
+<span class="w"> </span><span class="nv">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;access_token&quot;</span>:<span class="s2">&quot;eyJ0e...asdasd&quot;</span><span class="o">}</span>
+<span class="w"> </span><span class="nv">drive_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>business
+<span class="w"> </span>--------------------
+<span class="w"> </span>y<span class="o">)</span><span class="w"> </span>Yes<span class="w"> </span>this<span class="w"> </span>is<span class="w"> </span>OK<span class="w"> </span><span class="o">(</span>default<span class="o">)</span>
+<span class="w"> </span>e<span class="o">)</span><span class="w"> </span>Edit<span class="w"> </span>this<span class="w"> </span>remote
+<span class="w"> </span>d<span class="o">)</span><span class="w"> </span>Delete<span class="w"> </span>this<span class="w"> </span>remote
+<span class="w"> </span>y/e/d&gt;
 </pre></div>
 </div>
-</div>
-<div class="section" id="how-to-mount-onedrive">
-<h2>How to mount OneDrive<a class="headerlink" href="#how-to-mount-onedrive" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="how-to-mount-onedrive">
+<h2>How to mount OneDrive<a class="headerlink" href="#how-to-mount-onedrive" title="Permalink to this heading">¶</a></h2>
 <p>Once logged in:</p>
 <ol class="arabic simple">
 <li><p>Mount the drive. The basic syntax is:</p></li>
 </ol>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rclone mount &lt;remote-name&gt;: /path/to/local/mount
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rclone<span class="w"> </span>mount<span class="w"> </span>&lt;remote-name&gt;:<span class="w"> </span>/path/to/local/mount
 </pre></div>
 </div>
 <p>We need to add a couple of flags to make this warning free and usable. Most
 notably <cite>–daemon</cite> and <cite>–vfs-cache-mode writes</cite>.</p>
 <p>If you have followed the ResTech recommendations, your command will look like:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm ~<span class="o">]</span>$ rclone mount OneDrive: /home/z1234567/OneDrive --daemon --vfs-cache-mode writes
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@kdm<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>rclone<span class="w"> </span>mount<span class="w"> </span>OneDrive:<span class="w"> </span>/home/z1234567/OneDrive<span class="w"> </span>--daemon<span class="w"> </span>--vfs-cache-mode<span class="w"> </span>writes
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 	    </div>
@@ -273,19 +277,19 @@ notably <cite>–daemon</cite> and <cite>–vfs-cache-mode writes</cite>.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0',
+            VERSION:'1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/underscore.js">
+    <script type="text/javascript" src="../_static/documentation_options.js">
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js">
 
     </script>
 

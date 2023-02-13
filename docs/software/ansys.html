@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Ansys &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>Ansys &mdash; Katana User Documentation 1.1 documentation</title>
   
 
   
@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+  
 
   
 
@@ -26,7 +30,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+    <link rel="top" title="Katana User Documentation 1.1 documentation" href="../index.html"/>
         <link rel="up" title="Software" href="index.html"/>
         <link rel="next" title="Biosciences" href="biosciences.html"/>
         <link rel="prev" title="Software" href="index.html"/>
@@ -61,7 +65,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -155,49 +159,49 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="ansys">
-<h1>Ansys<a class="headerlink" href="#ansys" title="Permalink to this headline">¶</a></h1>
+  <section id="ansys">
+<h1>Ansys<a class="headerlink" href="#ansys" title="Permalink to this heading">¶</a></h1>
 <p>Both Ansys Workbench and Ansys Electronic Desktop are available on <a class="reference internal" href="../using_katana/ondemand.html#katana-ondemand"><span class="std std-ref">Katana OnDemand</span></a>.</p>
 <p>This is the most user-friendly approach to running Ansys jobs on Katana.</p>
-<div class="section" id="ansys-batch-jobs">
-<h2>Ansys Batch Jobs<a class="headerlink" href="#ansys-batch-jobs" title="Permalink to this headline">¶</a></h2>
+<section id="ansys-batch-jobs">
+<h2>Ansys Batch Jobs<a class="headerlink" href="#ansys-batch-jobs" title="Permalink to this heading">¶</a></h2>
 <p>Ansys workbench is available on <a class="reference external" href="https://www.myaccess.unsw.edu.au/applications/ansys-workbench">myAccess</a> for undergraduate and postgraduate students in the Faculty of Engineering.</p>
 <p>If you install Ansys on your local machine, you can generate your model files locally and transfer them tto katana to run in a batch job.</p>
-<div class="section" id="ansys-cfx">
-<h3>Ansys CFX<a class="headerlink" href="#ansys-cfx" title="Permalink to this headline">¶</a></h3>
+<section id="ansys-cfx">
+<h3>Ansys CFX<a class="headerlink" href="#ansys-cfx" title="Permalink to this heading">¶</a></h3>
 <p>For Ansys CFX the .cfx and .def files need to be transferred to Katana.</p>
 <p>A brief batch script example is given below. A step-by-step guide is availabe <a class="reference external" href="https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-cfx.md">on our GitHub</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#&lt;RESOURCE REQUESTS&gt;</span>
 
-<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$PBS_O_WORKDIR</span>
 
-module load intelmpi/2019.6.166
-module load ansys/2021r1
+module<span class="w"> </span>load<span class="w"> </span>intelmpi/2019.6.166
+module<span class="w"> </span>load<span class="w"> </span>ansys/2021r1
 
-cfx5solve -batch -def &lt;filename&gt;.def -part <span class="nv">$NCPUS</span> -start-method <span class="s2">&quot;Intel MPI Local Parallel&quot;</span>
+cfx5solve<span class="w"> </span>-batch<span class="w"> </span>-def<span class="w"> </span>&lt;filename&gt;.def<span class="w"> </span>-part<span class="w"> </span><span class="nv">$NCPUS</span><span class="w"> </span>-start-method<span class="w"> </span><span class="s2">&quot;Intel MPI Local Parallel&quot;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="ansys-fluent">
-<h3>Ansys Fluent<a class="headerlink" href="#ansys-fluent" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ansys-fluent">
+<h3>Ansys Fluent<a class="headerlink" href="#ansys-fluent" title="Permalink to this heading">¶</a></h3>
 <p>Similarly, Ansys Fluent input can be generated locally and transferred to Katana to run in a batch job.</p>
 <p>Again, a brief batch script is below, and a step-by-step guide is available <a class="reference external" href="https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-fluent.md">on our Github</a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#&lt;RESOURCE REQUESTS&gt;</span>
 
-<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$PBS_O_WORKDIR</span>
 
-module load ansys/2021r1
-module load intelmpi/2019.6.166
+module<span class="w"> </span>load<span class="w"> </span>ansys/2021r1
+module<span class="w"> </span>load<span class="w"> </span>intelmpi/2019.6.166
 
-fluent 3d -g -t <span class="nv">$NCPUS</span> -i fluent.in &gt; output.out
+fluent<span class="w"> </span>3d<span class="w"> </span>-g<span class="w"> </span>-t<span class="w"> </span><span class="nv">$NCPUS</span><span class="w"> </span>-i<span class="w"> </span>fluent.in<span class="w"> </span>&gt;<span class="w"> </span>output.out
 </pre></div>
 </div>
 <p>If you wish to use Ansys on NCI’s Gadi, UNSW has a institutional licence that requies you join the relevant software group as detailed in <cite>NCI’s documentation &lt;opus.nci.org.au/display/Help/Ansys+Fluent&gt;_</cite>.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
 	    </div>
@@ -230,19 +234,19 @@ fluent 3d -g -t <span class="nv">$NCPUS</span> -i fluent.in &gt; output.out
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0',
+            VERSION:'1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/underscore.js">
+    <script type="text/javascript" src="../_static/documentation_options.js">
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js">
 
     </script>
 

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Katana Data Mover &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>Katana Data Mover &mdash; Katana User Documentation 1.1 documentation</title>
   
 
   
@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+  
 
   
 
@@ -26,7 +30,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+    <link rel="top" title="Katana User Documentation 1.1 documentation" href="../index.html"/>
         <link rel="up" title="Storage" href="index.html"/>
         <link rel="next" title="How to use the UNSW Data Archive" href="data_archive.html"/>
         <link rel="prev" title="Storage Locations" href="storage_locations.html"/>
@@ -61,7 +65,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -155,8 +159,8 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="katana-data-mover">
-<h1>Katana Data Mover<a class="headerlink" href="#katana-data-mover" title="Permalink to this headline">¶</a></h1>
+  <section id="katana-data-mover">
+<h1>Katana Data Mover<a class="headerlink" href="#katana-data-mover" title="Permalink to this heading">¶</a></h1>
 <p>Also known as <code class="code docutils literal notranslate"><span class="pre">kdm</span></code> or <code class="code docutils literal notranslate"><span class="pre">kdm.restech.unsw.edu.au</span></code></p>
 <p>If you have data that you would like to copy to or within the Katana cluster, archive or even compress and decompress you should use the Katana Data Mover - also known as the KDM server - rather than using the head node. This section contains instructions on how to use KDM server.</p>
 <p>If you are familiar with using Linux commands to copy or move files then you can do that directly by logging on to <code class="code docutils literal notranslate"><span class="pre">kdm.restech.unsw.edu.au</span></code> via <code class="code docutils literal notranslate"><span class="pre">ssh</span></code> in the same way that you would log in to Katana and then use the <code class="code docutils literal notranslate"><span class="pre">cp</span></code>, <code class="code docutils literal notranslate"><span class="pre">mv</span></code> and <code class="code docutils literal notranslate"><span class="pre">rsync</span></code> commands that you would normally use under Linux.</p>
@@ -165,56 +169,56 @@
 <p class="admonition-title">Note</p>
 <p>We require people to “move data” through the data mover. We have hundreds of users, most of whom have data ranging from very large to impossibly large. This is why we have the <code class="code docutils literal notranslate"><span class="pre">kdm</span></code>. If you are transferring a couple of small text files - job scripts for instance - you can copy directly to the Katana. But we would ask you to keep it to a minimum, and nothing bigger than 2-3 MB.</p>
 </div>
-<div class="section" id="copying-files-to-and-from-a-cluster">
-<h2>Copying Files To and From a Cluster<a class="headerlink" href="#copying-files-to-and-from-a-cluster" title="Permalink to this headline">¶</a></h2>
+<section id="copying-files-to-and-from-a-cluster">
+<h2>Copying Files To and From a Cluster<a class="headerlink" href="#copying-files-to-and-from-a-cluster" title="Permalink to this heading">¶</a></h2>
 <p>The method of transferring files to and from clusters depends on your local machine. If you are a Linux user then you should use rsync and if you are a Windows user then you should download and install <a class="reference external" href="https://winscp.net/eng/download.php">WinSCP</a> or <a class="reference external" href="https://filezilla-project.org/">FileZilla</a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Filezilla is often marked as being a security risk. There is nothing that Research Technology Services can do about that - it’s an issue for UNSW IT, Symantec, and FileZilla. If this happens to you, please try <a class="reference external" href="https://winscp.net/eng/download.php">WinSCP</a> - it’s very good.</p>
 </div>
-<div class="section" id="filezilla">
-<span id="using-filezilla"></span><h3>Filezilla<a class="headerlink" href="#filezilla" title="Permalink to this headline">¶</a></h3>
+<section id="filezilla">
+<span id="using-filezilla"></span><h3>Filezilla<a class="headerlink" href="#filezilla" title="Permalink to this heading">¶</a></h3>
 <p>Once you have installed Filezilla you can go into the site manager and create a new site in the site manager using the settings below.</p>
 <img alt="../_images/filezilla.png" src="../_images/filezilla.png" />
 <p>You can also use the Quick Connect bar as shown here:</p>
 <img alt="../_images/filezillaquick.png" src="../_images/filezillaquick.png" />
-</div>
-<div class="section" id="from-my-computer-to-katana-home">
-<h3>From my computer to Katana Home<a class="headerlink" href="#from-my-computer-to-katana-home" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="from-my-computer-to-katana-home">
+<h3>From my computer to Katana Home<a class="headerlink" href="#from-my-computer-to-katana-home" title="Permalink to this heading">¶</a></h3>
 <p>To copy the directory <code class="code docutils literal notranslate"><span class="pre">/home/1234567/my-directory</span></code> from your local computer to Katana scratch. The trailing <code class="code docutils literal notranslate"><span class="pre">:</span></code> is important!</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@localhost:~$ rsync -avh /path/to/my-directory z1234567@kdm.restech.unsw.edu.au:
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@localhost:~$<span class="w"> </span>rsync<span class="w"> </span>-avh<span class="w"> </span>/path/to/my-directory<span class="w"> </span>z1234567@kdm.restech.unsw.edu.au:
 </pre></div>
 </div>
-</div>
-<div class="section" id="from-my-computer-to-katana-scratch">
-<h3>From my computer to Katana Scratch<a class="headerlink" href="#from-my-computer-to-katana-scratch" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@localhost:~$ rsync -avh /path/to/my-directory z1234567@kdm.restech.unsw.edu.au:/srv/scratch/z1234567
+</section>
+<section id="from-my-computer-to-katana-scratch">
+<h3>From my computer to Katana Scratch<a class="headerlink" href="#from-my-computer-to-katana-scratch" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@localhost:~$<span class="w"> </span>rsync<span class="w"> </span>-avh<span class="w"> </span>/path/to/my-directory<span class="w"> </span>z1234567@kdm.restech.unsw.edu.au:/srv/scratch/z1234567
 </pre></div>
 </div>
-</div>
-<div class="section" id="from-katana-to-my-computer">
-<h3>From Katana to my computer<a class="headerlink" href="#from-katana-to-my-computer" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="from-katana-to-my-computer">
+<h3>From Katana to my computer<a class="headerlink" href="#from-katana-to-my-computer" title="Permalink to this heading">¶</a></h3>
 <p>First, you need to make sure the data is in either your Home directory or your scratch</p>
 <p>If the data is in <code class="code docutils literal notranslate"><span class="pre">/home/z1234567/my-remote-results</span></code> and you want it in your home directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@localhost:~$ rsync -avh z1234567@kdm.restech.unsw.edu.au:my-remote-results /home/me/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@localhost:~$<span class="w"> </span>rsync<span class="w"> </span>-avh<span class="w"> </span>z1234567@kdm.restech.unsw.edu.au:my-remote-results<span class="w"> </span>/home/me/
 </pre></div>
 </div>
 <p>If the data is in <code class="code docutils literal notranslate"><span class="pre">/srv/scratch/my-remote-results</span></code> and you want it in your home directory:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@localhost:~$ rsync -avh z1234567@kdm.restech.unsw.edu.au:/srv/scratch/my-remote-results /home/me
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>me@localhost:~$<span class="w"> </span>rsync<span class="w"> </span>-avh<span class="w"> </span>z1234567@kdm.restech.unsw.edu.au:/srv/scratch/my-remote-results<span class="w"> </span>/home/me
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="../software/tmux.html#tmux"><span class="std std-ref">TMUX</span></a> is available if your data is large and the rsync might take a long time.</p>
 </div>
-</div>
-</div>
-<div class="section" id="mounting-university-provided-space-on-kdm">
-<h2>Mounting University Provided Space on KDM<a class="headerlink" href="#mounting-university-provided-space-on-kdm" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="mounting-university-provided-space-on-kdm">
+<h2>Mounting University Provided Space on KDM<a class="headerlink" href="#mounting-university-provided-space-on-kdm" title="Permalink to this heading">¶</a></h2>
 <p>The university provides a large amount of space if you need. You can find more information about <a class="reference external" href="https://www.myit.unsw.edu.au/services/staff/storage-staff">staff storage</a> on the <a class="reference external" href="https://www.myit.unsw.edu.au/services/staff/storage/fsam-staff">UNSW website</a>.</p>
 <p>To make this available on KDM you can</p>
-</div>
-</div>
+</section>
+</section>
 
 
 	    </div>
@@ -247,19 +251,19 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0',
+            VERSION:'1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/underscore.js">
+    <script type="text/javascript" src="../_static/documentation_options.js">
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js">
 
     </script>
 

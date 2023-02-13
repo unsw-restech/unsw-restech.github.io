@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Running Jobs on Katana &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>Running Jobs on Katana &mdash; Katana User Documentation 1.1 documentation</title>
   
 
   
@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+  
 
   
 
@@ -26,7 +30,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+    <link rel="top" title="Katana User Documentation 1.1 documentation" href="../index.html"/>
         <link rel="up" title="Using Katana" href="index.html"/>
         <link rel="next" title="GitHub" href="github.html"/>
         <link rel="prev" title="About Katana" href="about_katana.html"/>
@@ -61,7 +65,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -155,10 +159,10 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="running-jobs-on-katana">
-<span id="running-jobs"></span><h1>Running Jobs on Katana<a class="headerlink" href="#running-jobs-on-katana" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="brief-overview">
-<h2>Brief Overview<a class="headerlink" href="#brief-overview" title="Permalink to this headline">¶</a></h2>
+  <section id="running-jobs-on-katana">
+<span id="running-jobs"></span><h1>Running Jobs on Katana<a class="headerlink" href="#running-jobs-on-katana" title="Permalink to this heading">¶</a></h1>
+<section id="brief-overview">
+<h2>Brief Overview<a class="headerlink" href="#brief-overview" title="Permalink to this heading">¶</a></h2>
 <p>The <a class="reference internal" href="../glossary.html#term-Login-Node"><span class="xref std std-term">Login Node</span></a> of a cluster is a shared resource for all users and is used for preparing, submitting and managing jobs.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -180,20 +184,11 @@
 </div>
 <p>The main resources available for use are Memory (RAM), <a class="reference internal" href="../glossary.html#term-CPU-Core"><span class="xref std std-term">CPU Core</span></a> (number of CPUs) and <a class="reference internal" href="../glossary.html#term-Walltime"><span class="xref std std-term">Walltime</span></a> (how long you want the CPUs for). These need to be considered carefully when writing your job script, since the decisions you make will impact which queue your jobs ends up on.</p>
 <p>As you request more memory, CPU cores, or walltime, the number of available queues goes down. The limits are which the number of queues decrease are summarised in the table below</p>
-</div>
-<div class="section" id="job-queue-limits-summary">
-<h2>Job queue limits summary<a class="headerlink" href="#job-queue-limits-summary" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="job-queue-limits-summary">
+<h2>Job queue limits summary<a class="headerlink" href="#job-queue-limits-summary" title="Permalink to this heading">¶</a></h2>
 <p>Typical job queue limit cut-offs are shown below. <strong>The walltime is what determines whether a job can be run on any node, or only on a restricted set of nodes.</strong></p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 14%" />
-<col style="width: 23%" />
-<col style="width: 15%" />
-<col style="width: 14%" />
-<col style="width: 24%" />
-<col style="width: 4%" />
-<col style="width: 5%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Resource</p></th>
 <th class="head" colspan="6"><p>Queue limit cut-offs</p></th>
@@ -233,57 +228,57 @@
 <p>Try to combine or divide batch jobs to fit within that 12 hour limit for fastest starting times.</p>
 </div>
 <p>The resources available on a specific compute node can be shown with the <a class="reference internal" href="#qstat"><span class="std std-ref">qstat</span></a> command.</p>
-</div>
-<div class="section" id="interactive-jobs">
-<span id="interactive-session"></span><span id="interactive-job"></span><h2>Interactive Jobs<a class="headerlink" href="#interactive-jobs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="interactive-jobs">
+<span id="interactive-session"></span><span id="interactive-job"></span><h2>Interactive Jobs<a class="headerlink" href="#interactive-jobs" title="Permalink to this heading">¶</a></h2>
 <p>An interactive job or interactive session is a session on a compute node with the required physical resources for the period of time requested. To request an interactive job, add the -I flag (capital i) to <code class="code docutils literal notranslate"><span class="pre">qsub</span></code>. Default sessions will have 1 CPU core, 1GB and 1 hour</p>
 <p>For example, the following two commands. The first provides a default session, the second provides a session with two CPU core and 8GB memory for three hours. You can tell when an interactive job has started when you see the name of the server change from <code class="code docutils literal notranslate"><span class="pre">katana1</span></code> or <code class="code docutils literal notranslate"><span class="pre">katana2</span></code> to the name of the server your job is running on. In these cases it’s <code class="code docutils literal notranslate"><span class="pre">k181</span></code> and <code class="code docutils literal notranslate"><span class="pre">k201</span></code> respectively.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ qsub -I
-qsub: waiting <span class="k">for</span> job <span class="m">313704</span>.kman.restech.unsw.edu.au to start
-qsub: job <span class="m">313704</span>.kman.restech.unsw.edu.au ready
-<span class="o">[</span>z1234567@k181 ~<span class="o">]</span>$
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>qsub<span class="w"> </span>-I
+qsub:<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>job<span class="w"> </span><span class="m">313704</span>.kman.restech.unsw.edu.au<span class="w"> </span>to<span class="w"> </span>start
+qsub:<span class="w"> </span>job<span class="w"> </span><span class="m">313704</span>.kman.restech.unsw.edu.au<span class="w"> </span>ready
+<span class="o">[</span>z1234567@k181<span class="w"> </span>~<span class="o">]</span>$
 </pre></div>
 </div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ qsub -I -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>8gb,walltime<span class="o">=</span><span class="m">3</span>:00:00
-qsub: waiting <span class="k">for</span> job <span class="m">1234</span>.kman.restech.unsw.edu.au to start
-qsub: job <span class="m">1234</span>.kman.restech.unsw.edu.au ready
-<span class="o">[</span>z1234567@k201 ~<span class="o">]</span>$
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>qsub<span class="w"> </span>-I<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>8gb,walltime<span class="o">=</span><span class="m">3</span>:00:00
+qsub:<span class="w"> </span>waiting<span class="w"> </span><span class="k">for</span><span class="w"> </span>job<span class="w"> </span><span class="m">1234</span>.kman.restech.unsw.edu.au<span class="w"> </span>to<span class="w"> </span>start
+qsub:<span class="w"> </span>job<span class="w"> </span><span class="m">1234</span>.kman.restech.unsw.edu.au<span class="w"> </span>ready
+<span class="o">[</span>z1234567@k201<span class="w"> </span>~<span class="o">]</span>$
 </pre></div>
 </div>
 <p>Jobs are constrained by the resources that are requested. In the previous example the first job - running on <code class="code docutils literal notranslate"><span class="pre">k181</span></code> - would be terminated after 1 hour or if a command within the session consumed more than 8GB memory. The job (and therefore the session) can also be terminated by the user with <code class="code docutils literal notranslate"><span class="pre">CTRL-D</span></code> or the <code class="code docutils literal notranslate"><span class="pre">logout</span></code> command.</p>
 <p>Interactive jobs can be particularly useful while developing and testing code for a future batch job, or performing an interactive analysis that requires significant compute resources. Never attempt such tasks on the login node – submit an interactive job instead.</p>
-</div>
-<div class="section" id="batch-jobs">
-<span id="id1"></span><h2>Batch Jobs<a class="headerlink" href="#batch-jobs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="batch-jobs">
+<span id="id1"></span><h2>Batch Jobs<a class="headerlink" href="#batch-jobs" title="Permalink to this heading">¶</a></h2>
 <p>A batch job is a script that runs autonomously on a compute node. The script must contain the necessary sequence of commands to complete a task independently of any input from the user. This section contains information about how to create and submit a batch job on Katana.</p>
-<div class="section" id="getting-started">
-<h3>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h3>
+<section id="getting-started">
+<h3>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h3>
 <p>The following script simply executes a pre-compiled program (“myprogram”) in the user’s home directory:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-<span class="nb">cd</span> <span class="nv">$HOME</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>
 
 ./myprogram
 </pre></div>
 </div>
 <p>This script can be submitted to the cluster with <code class="code docutils literal notranslate"><span class="pre">qsub</span></code> and it will become a job and be assigned to a queue. If the script is in a file called <code class="code docutils literal notranslate"><span class="pre">myjob.pbs</span></code> then the following command will submit the job with the default resource requirements (1 CPU core with 1GB of memory for 1 hour):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1 ~<span class="o">]</span>$ qsub myjob.pbs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana1<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>qsub<span class="w"> </span>myjob.pbs
 <span class="m">1237</span>.kman.restech.unsw.edu.au
 </pre></div>
 </div>
 <p>As with interactive jobs, the <code class="code docutils literal notranslate"><span class="pre">-l</span></code> (lowercase L) flag can be used to specify resource requirements for the job:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana ~<span class="o">]</span>$ qsub -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>4gb,walltime<span class="o">=</span><span class="m">12</span>:00:00 myjob.pbs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>qsub<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>4gb,walltime<span class="o">=</span><span class="m">12</span>:00:00<span class="w"> </span>myjob.pbs
 <span class="m">1238</span>.kman.restech.unsw.edu.au
 </pre></div>
 </div>
 <p>If we wanted to use the GPU resources, we would write something like this - note that because of configuration of machines, you should request: <cite>ncpus=(#ngpus*8):mem=(#ngpus*46)</cite></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana ~<span class="o">]</span>$ qsub -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">8</span>:ngpus<span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>46gb,walltime<span class="o">=</span><span class="m">12</span>:00:00 myjob.pbs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>qsub<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">8</span>:ngpus<span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>46gb,walltime<span class="o">=</span><span class="m">12</span>:00:00<span class="w"> </span>myjob.pbs
 <span class="m">1238</span>.kman.restech.unsw.edu.au
 </pre></div>
 </div>
-</div>
-<div class="section" id="a-job-script">
-<h3>A Job Script<a class="headerlink" href="#a-job-script" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="a-job-script">
+<h3>A Job Script<a class="headerlink" href="#a-job-script" title="Permalink to this heading">¶</a></h3>
 <p>Job scripts offer a much more convenient method for invoking any of the options that can be passed to <code class="code docutils literal notranslate"><span class="pre">qsub</span></code> on the command-line. In a shell script, a line starting with # is a comment and will be ignored by the shell interpreter. However, in a job script, a line starting with #PBS can be used to pass options to the <code class="code docutils literal notranslate"><span class="pre">qsub</span></code> command.</p>
 <p>Here is an overview of the different parts of a job script which we will examine further below. In the following sections we will add some code, explain what it does, then show some new code, and iterate up to something quite powerful.</p>
 <p>For the previous example, the job script could be rewritten as:</p>
@@ -292,7 +287,7 @@ qsub: job <span class="m">1234</span>.kman.restech.unsw.edu.au ready
 <span class="c1">#PBS -l select=1:ncpus=1:mem=4gb</span>
 <span class="c1">#PBS -l walltime=12:00:00</span>
 
-<span class="nb">cd</span> <span class="nv">$HOME</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>
 
 ./myprogram
 </pre></div>
@@ -308,7 +303,7 @@ qsub: job <span class="m">1234</span>.kman.restech.unsw.edu.au ready
 The following section - the lines starting with <code class="code docutils literal notranslate"><span class="pre">#PBS</span></code> - are where we will be configuring how the job will be run - here we are asking for resources.
 The final section shows the commands that will be executed in the configured session.</p>
 <p>The script can now be submitted with much less typing:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana ~<span class="o">]</span>$ qsub myjob.pbs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>qsub<span class="w"> </span>myjob.pbs
 <span class="m">1239</span>.kman.restech.unsw.edu.au
 </pre></div>
 </div>
@@ -324,16 +319,16 @@ The final section shows the commands that will be executed in the configured ses
 </pre></div>
 </div>
 <p>When a job starts, it needs to know where to save its output and do its work. This is called the <em>current working directory</em>. By default the job scheduler will make your <em>current working directory</em> your home directory (<code class="code docutils literal notranslate"><span class="pre">/home/z1234567</span></code>). This isn’t likely or ideal and is important that each job sets its current working directory appropriately. There are a couple of ways to do this, the easiest is to set the <em>current working directory</em> to the directory you are in when you execute <code class="code docutils literal notranslate"><span class="pre">qsub</span></code> by using</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span><span class="nv">$PBS_O_WORKDIR</span>
 </pre></div>
 </div>
 <p>There is one last special variable you should know about, especially if you are working with large datasets. The storage on the compute node your job is running on will always be faster than the network drive.</p>
 <p>If you use the storage close to the CPUs - in the server rather than on the shared drives, called <a class="reference internal" href="../glossary.html#term-Local-Scratch"><span class="xref std std-term">Local Scratch</span></a> - you can often save hours of time reading and writing across the network.</p>
 <p>In order to do this, you can copy data to and from the local scratch, called <code class="code docutils literal notranslate"><span class="pre">$TMPDIR</span></code>:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp /home/z1234567/project/massivedata.tar.gz <span class="nv">$TMPDIR</span>
-tar xvf massivedata.tar.gz
-my_analysis.py massive_data
-cp -r <span class="nv">$TMPDIR</span>/my_output /home/z1234567
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp<span class="w"> </span>/home/z1234567/project/massivedata.tar.gz<span class="w"> </span><span class="nv">$TMPDIR</span>
+tar<span class="w"> </span>xvf<span class="w"> </span>massivedata.tar.gz
+my_analysis.py<span class="w"> </span>massive_data
+cp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$TMPDIR</span>/my_output<span class="w"> </span>/home/z1234567
 </pre></div>
 </div>
 <p>There are a lot of things that can be done with PBSPro, but you don’t and won’t need to know it all. These few basics will get you started.</p>
@@ -347,15 +342,15 @@ cp -r <span class="nv">$TMPDIR</span>/my_output /home/z1234567
 <span class="c1">#PBS -j oe</span>
 <span class="c1">#PBS -o /home/z1234567/results/Output_Report</span>
 
-<span class="nb">cd</span> <span class="nv">$PBS_O_WORKDIR</span>
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$PBS_O_WORKDIR</span>
 
 ./myprogram
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="array-jobs">
-<span id="id2"></span><h2>Array Jobs<a class="headerlink" href="#array-jobs" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="array-jobs">
+<span id="id2"></span><h2>Array Jobs<a class="headerlink" href="#array-jobs" title="Permalink to this heading">¶</a></h2>
 <p>One common use of computational clusters is to do the same thing multiple times - sometimes with slightly different input, sometimes to get averages from randomness within the process. This is made easier with array jobs.</p>
 <p>An array job is a single job script that spawns many almost identical sub-jobs. The only difference between the sub-jobs is an environment variable <code class="code docutils literal notranslate"><span class="pre">$PBS_ARRAY_INDEX</span></code> whose value uniquely identifies an individual sub-job. A regular job becomes an array job when it uses the <code class="code docutils literal notranslate"><span class="pre">#PBS</span> <span class="pre">-J</span></code> flag.</p>
 <p>For example, the following script will spawn 100 sub-jobs. Each sub-job will require one CPU core, 1GB memory and 1 hour run-time, and it will execute the same application. However, a different input file will be passed to the application within each sub-job. The first sub-job will read input data from a file called <code class="code docutils literal notranslate"><span class="pre">1.dat</span></code>, the second sub-job will read input data from a file called <code class="code docutils literal notranslate"><span class="pre">2.dat</span></code> and so on.</p>
@@ -370,15 +365,15 @@ cp -r <span class="nv">$TMPDIR</span>/my_output /home/z1234567
 <span class="c1">#PBS -j oe</span>
 <span class="c1">#PBS -J 1-100</span>
 
-<span class="nb">cd</span> <span class="si">${</span><span class="nv">PBS_O_WORKDIR</span><span class="si">}</span>
+<span class="nb">cd</span><span class="w"> </span><span class="si">${</span><span class="nv">PBS_O_WORKDIR</span><span class="si">}</span>
 
-./myprogram <span class="si">${</span><span class="nv">PBS_ARRAY_INDEX</span><span class="si">}</span>.dat
+./myprogram<span class="w"> </span><span class="si">${</span><span class="nv">PBS_ARRAY_INDEX</span><span class="si">}</span>.dat
 </pre></div>
 </div>
 <p>There are some more examples of array jobs including how to group your computations in an array job on the <a class="reference external" href="https://github.com/unsw-edu-au/Restech-HPC/tree/master/hpc-examples">UNSW Github HPC examples</a> page.</p>
-</div>
-<div class="section" id="splitting-large-batch-jobs">
-<h2>Splitting large Batch Jobs<a class="headerlink" href="#splitting-large-batch-jobs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="splitting-large-batch-jobs">
+<h2>Splitting large Batch Jobs<a class="headerlink" href="#splitting-large-batch-jobs" title="Permalink to this heading">¶</a></h2>
 <p>If your batch job can be split into multiple steps you may want to split one big job up into a number of smaller jobs. There are a number of reasons to spend the time to implement this.</p>
 <ol class="arabic simple">
 <li><p>If your large job runs for over 200 hours, it won’t finish on Katana.</p></li>
@@ -386,9 +381,9 @@ cp -r <span class="nv">$TMPDIR</span>/my_output /home/z1234567
 <li><p>Katana has prioritisations based on how many resources any one user uses. If you ask for 200GB of memory, this will be accounted for when working out your next job’s priority.</p></li>
 <li><p>Because there are many more resources for 12 hour jobs, seven or eight 12 hour jobs will often finish well before a single 100 hour job even starts.</p></li>
 </ol>
-</div>
-<div class="section" id="get-information-about-the-state-of-the-scheduler">
-<span id="state-of-pbs"></span><h2>Get information about the state of the scheduler<a class="headerlink" href="#get-information-about-the-state-of-the-scheduler" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="get-information-about-the-state-of-the-scheduler">
+<span id="state-of-pbs"></span><h2>Get information about the state of the scheduler<a class="headerlink" href="#get-information-about-the-state-of-the-scheduler" title="Permalink to this heading">¶</a></h2>
 <p>When deciding which jobs to run, the scheduler takes the following details into account:</p>
 <ul class="simple">
 <li><p>are there available resources</p></li>
@@ -398,187 +393,187 @@ cp -r <span class="nv">$TMPDIR</span>/my_output /home/z1234567
 <li><p>how long has the job been in the queue</p></li>
 </ul>
 <p>You can get an overview of the compute nodes and a list of all the jobs running on each node using <code class="code docutils literal notranslate"><span class="pre">pstat</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ pstat
-k001  normal-mrcbio           free          <span class="m">12</span>/44   <span class="m">200</span>/1007gb  <span class="m">314911</span>*12
-k002  normal-mrcbio           free          <span class="m">40</span>/44    <span class="m">56</span>/ 377gb  <span class="m">314954</span>*40
-k003  normal-mrcbio           free          <span class="m">40</span>/44   <span class="m">375</span>/ 377gb  <span class="m">314081</span>*40
-k004  normal-mrcbio           free          <span class="m">40</span>/44    <span class="m">62</span>/ 377gb  <span class="m">314471</span>*40
-k005  normal-ccrc             free           <span class="m">0</span>/32     <span class="m">0</span>/ 187gb
-k006  normal-physics          job-busy      <span class="m">32</span>/32   <span class="m">180</span>/ 187gb  <span class="m">282533</span>*32
-k007  normal-physics          job-busy      <span class="m">32</span>/32   <span class="m">180</span>/ 187gb  <span class="m">284666</span>*32
-k008  normal-physics          free           <span class="m">0</span>/32     <span class="m">0</span>/ 187gb
-k009  normal-physics          job-busy      <span class="m">32</span>/32   <span class="m">124</span>/ 187gb  <span class="m">314652</span>*32
-k010  normal-physics          free           <span class="m">0</span>/32     <span class="m">0</span>/ 187gb
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>pstat
+k001<span class="w">  </span>normal-mrcbio<span class="w">           </span>free<span class="w">          </span><span class="m">12</span>/44<span class="w">   </span><span class="m">200</span>/1007gb<span class="w">  </span><span class="m">314911</span>*12
+k002<span class="w">  </span>normal-mrcbio<span class="w">           </span>free<span class="w">          </span><span class="m">40</span>/44<span class="w">    </span><span class="m">56</span>/<span class="w"> </span>377gb<span class="w">  </span><span class="m">314954</span>*40
+k003<span class="w">  </span>normal-mrcbio<span class="w">           </span>free<span class="w">          </span><span class="m">40</span>/44<span class="w">   </span><span class="m">375</span>/<span class="w"> </span>377gb<span class="w">  </span><span class="m">314081</span>*40
+k004<span class="w">  </span>normal-mrcbio<span class="w">           </span>free<span class="w">          </span><span class="m">40</span>/44<span class="w">    </span><span class="m">62</span>/<span class="w"> </span>377gb<span class="w">  </span><span class="m">314471</span>*40
+k005<span class="w">  </span>normal-ccrc<span class="w">             </span>free<span class="w">           </span><span class="m">0</span>/32<span class="w">     </span><span class="m">0</span>/<span class="w"> </span>187gb
+k006<span class="w">  </span>normal-physics<span class="w">          </span>job-busy<span class="w">      </span><span class="m">32</span>/32<span class="w">   </span><span class="m">180</span>/<span class="w"> </span>187gb<span class="w">  </span><span class="m">282533</span>*32
+k007<span class="w">  </span>normal-physics<span class="w">          </span>job-busy<span class="w">      </span><span class="m">32</span>/32<span class="w">   </span><span class="m">180</span>/<span class="w"> </span>187gb<span class="w">  </span><span class="m">284666</span>*32
+k008<span class="w">  </span>normal-physics<span class="w">          </span>free<span class="w">           </span><span class="m">0</span>/32<span class="w">     </span><span class="m">0</span>/<span class="w"> </span>187gb
+k009<span class="w">  </span>normal-physics<span class="w">          </span>job-busy<span class="w">      </span><span class="m">32</span>/32<span class="w">   </span><span class="m">124</span>/<span class="w"> </span>187gb<span class="w">  </span><span class="m">314652</span>*32
+k010<span class="w">  </span>normal-physics<span class="w">          </span>free<span class="w">           </span><span class="m">0</span>/32<span class="w">     </span><span class="m">0</span>/<span class="w"> </span>187gb
 </pre></div>
 </div>
 <p>To get information about a particular node, you can use <code class="code docutils literal notranslate"><span class="pre">pbsnodes</span></code> but on its own it is a firehose. Using it with a particular node name is more effective:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ pbsnodes k254
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>pbsnodes<span class="w"> </span>k254
 k254
-     <span class="nv">Mom</span> <span class="o">=</span> k254
-     <span class="nv">ntype</span> <span class="o">=</span> PBS
-     <span class="nv">state</span> <span class="o">=</span> job-busy
-     <span class="nv">pcpus</span> <span class="o">=</span> <span class="m">32</span>
-     <span class="nb">jobs</span> <span class="o">=</span> <span class="m">313284</span>.kman.restech.unsw.edu.au/0, <span class="m">313284</span>.kman.restech.unsw.edu.au/1, <span class="m">313284</span>.kman.restech.unsw.edu.au/2
-     resources_available.arch <span class="o">=</span> linux
-     resources_available.cpuflags <span class="o">=</span> avx,avx2,avx512bw,avx512cd,avx512dq,avx512f,avx512vl
-     resources_available.cputype <span class="o">=</span> skylake-avx512
-     resources_available.host <span class="o">=</span> k254
-     resources_available.mem <span class="o">=</span> 196396032kb
-     resources_available.ncpus <span class="o">=</span> <span class="m">32</span>
-     resources_available.node_weight <span class="o">=</span> <span class="m">1</span>
-     resources_available.normal-all <span class="o">=</span> Yes
-     resources_available.normal-qmchda <span class="o">=</span> Yes
-     resources_available.normal-qmchda-maths_business-maths <span class="o">=</span> Yes
-     resources_available.normal-qmchda-maths_business-maths-general <span class="o">=</span> Yes
-     resources_available.vmem <span class="o">=</span> 198426624kb
-     resources_available.vnode <span class="o">=</span> k254
-     resources_available.vntype <span class="o">=</span> compute
-     resources_assigned.accelerator_memory <span class="o">=</span> 0kb
-     resources_assigned.hbmem <span class="o">=</span> 0kb
-     resources_assigned.mem <span class="o">=</span> 50331648kb
-     resources_assigned.naccelerators <span class="o">=</span> <span class="m">0</span>
-     resources_assigned.ncpus <span class="o">=</span> <span class="m">32</span>
-     resources_assigned.ngpus <span class="o">=</span> <span class="m">0</span>
-     resources_assigned.vmem <span class="o">=</span> 0kb
-     <span class="nv">resv_enable</span> <span class="o">=</span> True
-     <span class="nv">sharing</span> <span class="o">=</span> default_shared
-     <span class="nv">last_state_change_time</span> <span class="o">=</span> Thu Apr <span class="m">30</span> <span class="m">08</span>:06:23 <span class="m">2020</span>
-     <span class="nv">last_used_time</span> <span class="o">=</span> Thu Apr <span class="m">30</span> <span class="m">07</span>:08:25 <span class="m">2020</span>
+<span class="w">     </span><span class="nv">Mom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>k254
+<span class="w">     </span><span class="nv">ntype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>PBS
+<span class="w">     </span><span class="nv">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>job-busy
+<span class="w">     </span><span class="nv">pcpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span>
+<span class="w">     </span><span class="nb">jobs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">313284</span>.kman.restech.unsw.edu.au/0,<span class="w"> </span><span class="m">313284</span>.kman.restech.unsw.edu.au/1,<span class="w"> </span><span class="m">313284</span>.kman.restech.unsw.edu.au/2
+<span class="w">     </span>resources_available.arch<span class="w"> </span><span class="o">=</span><span class="w"> </span>linux
+<span class="w">     </span>resources_available.cpuflags<span class="w"> </span><span class="o">=</span><span class="w"> </span>avx,avx2,avx512bw,avx512cd,avx512dq,avx512f,avx512vl
+<span class="w">     </span>resources_available.cputype<span class="w"> </span><span class="o">=</span><span class="w"> </span>skylake-avx512
+<span class="w">     </span>resources_available.host<span class="w"> </span><span class="o">=</span><span class="w"> </span>k254
+<span class="w">     </span>resources_available.mem<span class="w"> </span><span class="o">=</span><span class="w"> </span>196396032kb
+<span class="w">     </span>resources_available.ncpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span>
+<span class="w">     </span>resources_available.node_weight<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">     </span>resources_available.normal-all<span class="w"> </span><span class="o">=</span><span class="w"> </span>Yes
+<span class="w">     </span>resources_available.normal-qmchda<span class="w"> </span><span class="o">=</span><span class="w"> </span>Yes
+<span class="w">     </span>resources_available.normal-qmchda-maths_business-maths<span class="w"> </span><span class="o">=</span><span class="w"> </span>Yes
+<span class="w">     </span>resources_available.normal-qmchda-maths_business-maths-general<span class="w"> </span><span class="o">=</span><span class="w"> </span>Yes
+<span class="w">     </span>resources_available.vmem<span class="w"> </span><span class="o">=</span><span class="w"> </span>198426624kb
+<span class="w">     </span>resources_available.vnode<span class="w"> </span><span class="o">=</span><span class="w"> </span>k254
+<span class="w">     </span>resources_available.vntype<span class="w"> </span><span class="o">=</span><span class="w"> </span>compute
+<span class="w">     </span>resources_assigned.accelerator_memory<span class="w"> </span><span class="o">=</span><span class="w"> </span>0kb
+<span class="w">     </span>resources_assigned.hbmem<span class="w"> </span><span class="o">=</span><span class="w"> </span>0kb
+<span class="w">     </span>resources_assigned.mem<span class="w"> </span><span class="o">=</span><span class="w"> </span>50331648kb
+<span class="w">     </span>resources_assigned.naccelerators<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">     </span>resources_assigned.ncpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span>
+<span class="w">     </span>resources_assigned.ngpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">     </span>resources_assigned.vmem<span class="w"> </span><span class="o">=</span><span class="w"> </span>0kb
+<span class="w">     </span><span class="nv">resv_enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>True
+<span class="w">     </span><span class="nv">sharing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>default_shared
+<span class="w">     </span><span class="nv">last_state_change_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Thu<span class="w"> </span>Apr<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">08</span>:06:23<span class="w"> </span><span class="m">2020</span>
+<span class="w">     </span><span class="nv">last_used_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Thu<span class="w"> </span>Apr<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">07</span>:08:25<span class="w"> </span><span class="m">2020</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="managing-jobs-on-katana">
-<span id="managing-jobs"></span><h2>Managing Jobs on Katana<a class="headerlink" href="#managing-jobs-on-katana" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="managing-jobs-on-katana">
+<span id="managing-jobs"></span><h2>Managing Jobs on Katana<a class="headerlink" href="#managing-jobs-on-katana" title="Permalink to this heading">¶</a></h2>
 <p>Once you have jobs running, you will want visibility of the system so that you can manage them - delete jobs, change jobs, check that jobs are still running.</p>
 <p>There are a couple of easy to use commands that help with this process.</p>
-<div class="section" id="qstat">
-<h3>qstat<a class="headerlink" href="#qstat" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="show-all-jobs-on-the-system">
-<span id="more-info-from-pbs"></span><h4>Show all jobs on the system<a class="headerlink" href="#show-all-jobs-on-the-system" title="Permalink to this headline">¶</a></h4>
+<section id="qstat">
+<h3>qstat<a class="headerlink" href="#qstat" title="Permalink to this heading">¶</a></h3>
+<section id="show-all-jobs-on-the-system">
+<span id="more-info-from-pbs"></span><h4>Show all jobs on the system<a class="headerlink" href="#show-all-jobs-on-the-system" title="Permalink to this heading">¶</a></h4>
 <p><code class="code docutils literal notranslate"><span class="pre">qstat</span></code> gives very long output. Consider piping to <code class="code docutils literal notranslate"><span class="pre">less</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 ~<span class="o">]</span>$ qstat <span class="p">|</span> less
-Job id            Name             User              Time Use S Queue
-----------------  ---------------- ----------------  -------- - -----
-<span class="m">245821</span>.kman       s-m20-i20-200h   z1234567                 <span class="m">0</span> Q medicine200
-<span class="m">280163</span>.kman       Magcomp25A2      z1234567          <span class="m">3876</span>:18: R mech700
-<span class="m">282533</span>.kman       Proj_MF_Nu1      z1234567          <span class="m">3280</span>:08: R cosmo200
-<span class="m">284666</span>.kman       Proj_BR_Nu1      z1234567          <span class="m">3279</span>:27: R cosmo200
-<span class="m">308559</span>.kman       JASASec55        z1234567          <span class="m">191</span>:21:3 R maths200
-<span class="m">309615</span>.kman       <span class="m">2020</span>-04-06.BUSC  z1234567          <span class="m">185</span>:00:5 R babs200
-<span class="m">310623</span>.kman       Miaocyclegan     z1234567          <span class="m">188</span>:06:3 R simigpu200
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>qstat<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+Job<span class="w"> </span>id<span class="w">            </span>Name<span class="w">             </span>User<span class="w">              </span>Time<span class="w"> </span>Use<span class="w"> </span>S<span class="w"> </span>Queue
+----------------<span class="w">  </span>----------------<span class="w"> </span>----------------<span class="w">  </span>--------<span class="w"> </span>-<span class="w"> </span>-----
+<span class="m">245821</span>.kman<span class="w">       </span>s-m20-i20-200h<span class="w">   </span>z1234567<span class="w">                 </span><span class="m">0</span><span class="w"> </span>Q<span class="w"> </span>medicine200
+<span class="m">280163</span>.kman<span class="w">       </span>Magcomp25A2<span class="w">      </span>z1234567<span class="w">          </span><span class="m">3876</span>:18:<span class="w"> </span>R<span class="w"> </span>mech700
+<span class="m">282533</span>.kman<span class="w">       </span>Proj_MF_Nu1<span class="w">      </span>z1234567<span class="w">          </span><span class="m">3280</span>:08:<span class="w"> </span>R<span class="w"> </span>cosmo200
+<span class="m">284666</span>.kman<span class="w">       </span>Proj_BR_Nu1<span class="w">      </span>z1234567<span class="w">          </span><span class="m">3279</span>:27:<span class="w"> </span>R<span class="w"> </span>cosmo200
+<span class="m">308559</span>.kman<span class="w">       </span>JASASec55<span class="w">        </span>z1234567<span class="w">          </span><span class="m">191</span>:21:3<span class="w"> </span>R<span class="w"> </span>maths200
+<span class="m">309615</span>.kman<span class="w">       </span><span class="m">2020</span>-04-06.BUSC<span class="w">  </span>z1234567<span class="w">          </span><span class="m">185</span>:00:5<span class="w"> </span>R<span class="w"> </span>babs200
+<span class="m">310623</span>.kman<span class="w">       </span>Miaocyclegan<span class="w">     </span>z1234567<span class="w">          </span><span class="m">188</span>:06:3<span class="w"> </span>R<span class="w"> </span>simigpu200
 ...
 </pre></div>
 </div>
-</div>
-<div class="section" id="list-just-my-jobs">
-<h4>List just my jobs<a class="headerlink" href="#list-just-my-jobs" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="list-just-my-jobs">
+<h4>List just my jobs<a class="headerlink" href="#list-just-my-jobs" title="Permalink to this heading">¶</a></h4>
 <p>You can use either your <strong>ZID</strong> or the <a class="reference internal" href="../glossary.html#term-Environment-Variable"><span class="xref std std-term">Environment Variable</span></a> <code class="code docutils literal notranslate"><span class="pre">$USER</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z2134567@katana2 src<span class="o">]</span>$ qstat -u <span class="nv">$USER</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z2134567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qstat<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
 kman.restech.unsw.edu.au:
-                                                            Req<span class="s1">&#39;d  Req&#39;</span>d   Elap
-Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
---------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
-<span class="m">315230</span>.kman.res z2134567 general1 job.pbs       --    <span class="m">1</span>   <span class="m">1</span>    1gb <span class="m">01</span>:00 Q   --
+<span class="w">                                                            </span>Req<span class="s1">&#39;d  Req&#39;</span>d<span class="w">   </span>Elap
+Job<span class="w"> </span>ID<span class="w">          </span>Username<span class="w"> </span>Queue<span class="w">    </span>Jobname<span class="w">    </span>SessID<span class="w"> </span>NDS<span class="w"> </span>TSK<span class="w"> </span>Memory<span class="w"> </span>Time<span class="w">  </span>S<span class="w"> </span>Time
+---------------<span class="w"> </span>--------<span class="w"> </span>--------<span class="w"> </span>----------<span class="w"> </span>------<span class="w"> </span>---<span class="w"> </span>---<span class="w"> </span>------<span class="w"> </span>-----<span class="w"> </span>-<span class="w"> </span>-----
+<span class="m">315230</span>.kman.res<span class="w"> </span>z2134567<span class="w"> </span>general1<span class="w"> </span>job.pbs<span class="w">       </span>--<span class="w">    </span><span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">    </span>1gb<span class="w"> </span><span class="m">01</span>:00<span class="w"> </span>Q<span class="w">   </span>--
 </pre></div>
 </div>
 <p>If you add the <code class="code docutils literal notranslate"><span class="pre">-s</span></code> flag, you will get slightly more status information.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ qstat -su z1234567
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qstat<span class="w"> </span>-su<span class="w"> </span>z1234567
 
 kman.restech.unsw.edu.au:
-                                                            Req<span class="s1">&#39;d  Req&#39;</span>d   Elap
-Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time
---------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
-<span class="m">315230</span>.kman.res z1234567 general1 job.pbs     <span class="m">61915</span>   <span class="m">1</span>   <span class="m">1</span>    1gb <span class="m">01</span>:00 R <span class="m">00</span>:03
-   Job run at Fri May <span class="m">01</span> at <span class="m">14</span>:28 on <span class="o">(</span>k019:mem<span class="o">=</span>1048576kb:ncpus<span class="o">=</span><span class="m">1</span>:ngpus<span class="o">=</span><span class="m">0</span><span class="o">)</span>
-<span class="m">315233</span>.kman.res z1234567 general1 job.pbs       --    <span class="m">1</span>   <span class="m">1</span>    1gb <span class="m">01</span>:00 Q   --
-    --
+<span class="w">                                                            </span>Req<span class="s1">&#39;d  Req&#39;</span>d<span class="w">   </span>Elap
+Job<span class="w"> </span>ID<span class="w">          </span>Username<span class="w"> </span>Queue<span class="w">    </span>Jobname<span class="w">    </span>SessID<span class="w"> </span>NDS<span class="w"> </span>TSK<span class="w"> </span>Memory<span class="w"> </span>Time<span class="w">  </span>S<span class="w"> </span>Time
+---------------<span class="w"> </span>--------<span class="w"> </span>--------<span class="w"> </span>----------<span class="w"> </span>------<span class="w"> </span>---<span class="w"> </span>---<span class="w"> </span>------<span class="w"> </span>-----<span class="w"> </span>-<span class="w"> </span>-----
+<span class="m">315230</span>.kman.res<span class="w"> </span>z1234567<span class="w"> </span>general1<span class="w"> </span>job.pbs<span class="w">     </span><span class="m">61915</span><span class="w">   </span><span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">    </span>1gb<span class="w"> </span><span class="m">01</span>:00<span class="w"> </span>R<span class="w"> </span><span class="m">00</span>:03
+<span class="w">   </span>Job<span class="w"> </span>run<span class="w"> </span>at<span class="w"> </span>Fri<span class="w"> </span>May<span class="w"> </span><span class="m">01</span><span class="w"> </span>at<span class="w"> </span><span class="m">14</span>:28<span class="w"> </span>on<span class="w"> </span><span class="o">(</span>k019:mem<span class="o">=</span>1048576kb:ncpus<span class="o">=</span><span class="m">1</span>:ngpus<span class="o">=</span><span class="m">0</span><span class="o">)</span>
+<span class="m">315233</span>.kman.res<span class="w"> </span>z1234567<span class="w"> </span>general1<span class="w"> </span>job.pbs<span class="w">       </span>--<span class="w">    </span><span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">    </span>1gb<span class="w"> </span><span class="m">01</span>:00<span class="w"> </span>Q<span class="w">   </span>--
+<span class="w">    </span>--
 </pre></div>
 </div>
-</div>
-<div class="section" id="list-information-about-a-particular-job">
-<h4>List information about a particular job<a class="headerlink" href="#list-information-about-a-particular-job" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ qstat -f <span class="m">315236</span>
-Job Id: <span class="m">315236</span>.kman.restech.unsw.edu.au
-    <span class="nv">Job_Name</span> <span class="o">=</span> job.pbs
-    <span class="nv">Job_Owner</span> <span class="o">=</span> z1234567@katana2
-    <span class="nv">job_state</span> <span class="o">=</span> Q
-    <span class="nv">queue</span> <span class="o">=</span> general12
-    <span class="nv">server</span> <span class="o">=</span> kman.gen
-    <span class="nv">Checkpoint</span> <span class="o">=</span> u
-    <span class="nv">ctime</span> <span class="o">=</span> Fri May  <span class="m">1</span> <span class="m">14</span>:41:00 <span class="m">2020</span>
-    <span class="nv">Error_Path</span> <span class="o">=</span> katana2:/home/z1234567/src/job.pbs.e315236
-    <span class="nv">group_list</span> <span class="o">=</span> GENERAL
-    <span class="nv">Hold_Types</span> <span class="o">=</span> n
-    <span class="nv">Join_Path</span> <span class="o">=</span> n
-    <span class="nv">Keep_Files</span> <span class="o">=</span> n
-    <span class="nv">Mail_Points</span> <span class="o">=</span> a
-    <span class="nv">mtime</span> <span class="o">=</span> Fri May  <span class="m">1</span> <span class="m">14</span>:41:00 <span class="m">2020</span>
-    <span class="nv">Output_Path</span> <span class="o">=</span> katana2:/home/z1234567/src/job.pbs.o315236
-    <span class="nv">Priority</span> <span class="o">=</span> <span class="m">0</span>
-    <span class="nv">qtime</span> <span class="o">=</span> Fri May  <span class="m">1</span> <span class="m">14</span>:41:00 <span class="m">2020</span>
-    <span class="nv">Rerunable</span> <span class="o">=</span> True
-    Resource_List.ib <span class="o">=</span> no
-    Resource_List.mem <span class="o">=</span> 1gb
-    Resource_List.ncpus <span class="o">=</span> <span class="m">1</span>
-    Resource_List.ngpus <span class="o">=</span> <span class="m">0</span>
-    Resource_List.nodect <span class="o">=</span> <span class="m">1</span>
-    Resource_List.place <span class="o">=</span> pack
-    Resource_List.select <span class="o">=</span> <span class="m">1</span>:mem<span class="o">=</span>1gb:ncpus<span class="o">=</span><span class="m">1</span>
-    Resource_List.walltime <span class="o">=</span> <span class="m">01</span>:00:00
-    <span class="nv">substate</span> <span class="o">=</span> <span class="m">10</span>
-    <span class="nv">Variable_List</span> <span class="o">=</span> <span class="nv">PBS_O_HOME</span><span class="o">=</span>/home/z1234567,PBS_O_LANG<span class="o">=</span>en_AU.UTF-8,
-        <span class="nv">PBS_O_LOGNAME</span><span class="o">=</span>z1234567,
-        <span class="nv">PBS_O_PATH</span><span class="o">=</span>/home/z1234567/bin:/usr/lib64/qt-3.3/bin:/usr/lib64/ccache:
-        /usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/pbs/bin,PBS_O_M
-        <span class="nv">AIL</span><span class="o">=</span>/var/spool/mail/z1234567,PBS_O_SHELL<span class="o">=</span>/bin/bash,PBS_O_WORKDIR<span class="o">=</span>/home
-        /z1234567/src,PBS_O_SYSTEM<span class="o">=</span>Linux,PBS_O_QUEUE<span class="o">=</span>submission,PBS_O_HOST<span class="o">=</span>kat
-        ana2
-    <span class="nv">etime</span> <span class="o">=</span> Fri May  <span class="m">1</span> <span class="m">14</span>:41:00 <span class="m">2020</span>
-    <span class="nv">eligible_time</span> <span class="o">=</span> <span class="m">00</span>:00:00
-    <span class="nv">Submit_arguments</span> <span class="o">=</span> -W <span class="nv">group_list</span><span class="o">=</span>GENERAL -N job.pbs job.pbs.JAZDNgL
-    <span class="nv">project</span> <span class="o">=</span> _pbs_project_default
+</section>
+<section id="list-information-about-a-particular-job">
+<h4>List information about a particular job<a class="headerlink" href="#list-information-about-a-particular-job" title="Permalink to this heading">¶</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qstat<span class="w"> </span>-f<span class="w"> </span><span class="m">315236</span>
+Job<span class="w"> </span>Id:<span class="w"> </span><span class="m">315236</span>.kman.restech.unsw.edu.au
+<span class="w">    </span><span class="nv">Job_Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>job.pbs
+<span class="w">    </span><span class="nv">Job_Owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>z1234567@katana2
+<span class="w">    </span><span class="nv">job_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Q
+<span class="w">    </span><span class="nv">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>general12
+<span class="w">    </span><span class="nv">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>kman.gen
+<span class="w">    </span><span class="nv">Checkpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>u
+<span class="w">    </span><span class="nv">ctime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Fri<span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">14</span>:41:00<span class="w"> </span><span class="m">2020</span>
+<span class="w">    </span><span class="nv">Error_Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>katana2:/home/z1234567/src/job.pbs.e315236
+<span class="w">    </span><span class="nv">group_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>GENERAL
+<span class="w">    </span><span class="nv">Hold_Types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>n
+<span class="w">    </span><span class="nv">Join_Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>n
+<span class="w">    </span><span class="nv">Keep_Files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>n
+<span class="w">    </span><span class="nv">Mail_Points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>a
+<span class="w">    </span><span class="nv">mtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Fri<span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">14</span>:41:00<span class="w"> </span><span class="m">2020</span>
+<span class="w">    </span><span class="nv">Output_Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>katana2:/home/z1234567/src/job.pbs.o315236
+<span class="w">    </span><span class="nv">Priority</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="nv">qtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Fri<span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">14</span>:41:00<span class="w"> </span><span class="m">2020</span>
+<span class="w">    </span><span class="nv">Rerunable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>True
+<span class="w">    </span>Resource_List.ib<span class="w"> </span><span class="o">=</span><span class="w"> </span>no
+<span class="w">    </span>Resource_List.mem<span class="w"> </span><span class="o">=</span><span class="w"> </span>1gb
+<span class="w">    </span>Resource_List.ncpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>Resource_List.ngpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span>Resource_List.nodect<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>Resource_List.place<span class="w"> </span><span class="o">=</span><span class="w"> </span>pack
+<span class="w">    </span>Resource_List.select<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>:mem<span class="o">=</span>1gb:ncpus<span class="o">=</span><span class="m">1</span>
+<span class="w">    </span>Resource_List.walltime<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">01</span>:00:00
+<span class="w">    </span><span class="nv">substate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
+<span class="w">    </span><span class="nv">Variable_List</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">PBS_O_HOME</span><span class="o">=</span>/home/z1234567,PBS_O_LANG<span class="o">=</span>en_AU.UTF-8,
+<span class="w">        </span><span class="nv">PBS_O_LOGNAME</span><span class="o">=</span>z1234567,
+<span class="w">        </span><span class="nv">PBS_O_PATH</span><span class="o">=</span>/home/z1234567/bin:/usr/lib64/qt-3.3/bin:/usr/lib64/ccache:
+<span class="w">        </span>/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/pbs/bin,PBS_O_M
+<span class="w">        </span><span class="nv">AIL</span><span class="o">=</span>/var/spool/mail/z1234567,PBS_O_SHELL<span class="o">=</span>/bin/bash,PBS_O_WORKDIR<span class="o">=</span>/home
+<span class="w">        </span>/z1234567/src,PBS_O_SYSTEM<span class="o">=</span>Linux,PBS_O_QUEUE<span class="o">=</span>submission,PBS_O_HOST<span class="o">=</span>kat
+<span class="w">        </span>ana2
+<span class="w">    </span><span class="nv">etime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Fri<span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">14</span>:41:00<span class="w"> </span><span class="m">2020</span>
+<span class="w">    </span><span class="nv">eligible_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">00</span>:00:00
+<span class="w">    </span><span class="nv">Submit_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-W<span class="w"> </span><span class="nv">group_list</span><span class="o">=</span>GENERAL<span class="w"> </span>-N<span class="w"> </span>job.pbs<span class="w"> </span>job.pbs.JAZDNgL
+<span class="w">    </span><span class="nv">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>_pbs_project_default
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="qdel">
-<h3>qdel<a class="headerlink" href="#qdel" title="Permalink to this headline">¶</a></h3>
-<p>Remove a job from the queue or kill it if it’s started. To remove an array job, you must include the square braces and they will need to be escaped. In that situation you use <code class="code docutils literal notranslate"><span class="pre">qdel</span> <span class="pre">12345\[\]</span></code>. Uses the <code class="code docutils literal notranslate"><span class="pre">$JOBID</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ qdel <span class="m">315252</span>
+</section>
+</section>
+<section id="qdel">
+<h3>qdel<a class="headerlink" href="#qdel" title="Permalink to this heading">¶</a></h3>
+<p>Remove a job from the queue or kill it if it’s started. To remove an array job, you must include the square braces and they will need to be escaped. In that situation you use <code class="code docutils literal notranslate"><span class="pre">qdel</span> <span class="pre">12345[]</span></code>. Uses the <code class="code docutils literal notranslate"><span class="pre">$JOBID</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qdel<span class="w"> </span><span class="m">315252</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="qalter">
-<h3>qalter<a class="headerlink" href="#qalter" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="qalter">
+<h3>qalter<a class="headerlink" href="#qalter" title="Permalink to this heading">¶</a></h3>
 <p>Once a job has been submitted, it can be altered. However, once a job begins execution, the only values that can be modified are <code class="code docutils literal notranslate"><span class="pre">cputime</span></code>, <code class="code docutils literal notranslate"><span class="pre">walltime</span></code>, and <code class="code docutils literal notranslate"><span class="pre">run_count</span></code>. These can only be reduced.</p>
 <p>Users can only lower resource requests on queued jobs. If you need to increase resources, contact a systems administrator. In this example you will see the resources change - but not the <code class="code docutils literal notranslate"><span class="pre">Submit_arguments</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ qsub -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>128mb job.pbs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qsub<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>128mb<span class="w"> </span>job.pbs
 <span class="m">315259</span>.kman.restech.unsw.edu.au
-<span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ qstat -f <span class="m">315259</span>
-Job Id: <span class="m">315259</span>.kman.restech.unsw.edu.au
-    ...
-    Resource_List.mem <span class="o">=</span> 128mb
-    Resource_List.ncpus <span class="o">=</span> <span class="m">2</span>
-    ...
-    <span class="nv">Submit_arguments</span> <span class="o">=</span> -W <span class="nv">group_list</span><span class="o">=</span>GENERAL -N job.pbs -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>128mb job.pbs.YOOu3lB
-    <span class="nv">project</span> <span class="o">=</span> _pbs_project_default
+<span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qstat<span class="w"> </span>-f<span class="w"> </span><span class="m">315259</span>
+Job<span class="w"> </span>Id:<span class="w"> </span><span class="m">315259</span>.kman.restech.unsw.edu.au
+<span class="w">    </span>...
+<span class="w">    </span>Resource_List.mem<span class="w"> </span><span class="o">=</span><span class="w"> </span>128mb
+<span class="w">    </span>Resource_List.ncpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
+<span class="w">    </span>...
+<span class="w">    </span><span class="nv">Submit_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-W<span class="w"> </span><span class="nv">group_list</span><span class="o">=</span>GENERAL<span class="w"> </span>-N<span class="w"> </span>job.pbs<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>128mb<span class="w"> </span>job.pbs.YOOu3lB
+<span class="w">    </span><span class="nv">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>_pbs_project_default
 
-<span class="o">[</span>z1234567@katana2 src<span class="o">]</span>$ qalter -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">4</span>:mem<span class="o">=</span>512mb <span class="m">315259</span><span class="p">;</span> qstat -f <span class="m">315259</span>
-Job Id: <span class="m">315259</span>.kman.restech.unsw.edu.au
-    ...
-    Resource_List.mem <span class="o">=</span> 512mb
-    Resource_List.ncpus <span class="o">=</span> <span class="m">4</span>
-    ...
-    <span class="nv">Submit_arguments</span> <span class="o">=</span> -W <span class="nv">group_list</span><span class="o">=</span>GENERAL -N job.pbs -l <span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>128mb job.pbs.YOOu3lB
-    <span class="nv">project</span> <span class="o">=</span> _pbs_project_default
+<span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qalter<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">4</span>:mem<span class="o">=</span>512mb<span class="w"> </span><span class="m">315259</span><span class="p">;</span><span class="w"> </span>qstat<span class="w"> </span>-f<span class="w"> </span><span class="m">315259</span>
+Job<span class="w"> </span>Id:<span class="w"> </span><span class="m">315259</span>.kman.restech.unsw.edu.au
+<span class="w">    </span>...
+<span class="w">    </span>Resource_List.mem<span class="w"> </span><span class="o">=</span><span class="w"> </span>512mb
+<span class="w">    </span>Resource_List.ncpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span>
+<span class="w">    </span>...
+<span class="w">    </span><span class="nv">Submit_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-W<span class="w"> </span><span class="nv">group_list</span><span class="o">=</span>GENERAL<span class="w"> </span>-N<span class="w"> </span>job.pbs<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>128mb<span class="w"> </span>job.pbs.YOOu3lB
+<span class="w">    </span><span class="nv">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>_pbs_project_default
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="tips-for-using-pbs-and-katana-effectively">
-<span id="scheduler-tips"></span><h2>Tips for using PBS and Katana effectively<a class="headerlink" href="#tips-for-using-pbs-and-katana-effectively" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="keep-your-jobs-under-12-hours-if-possible">
-<h3>Keep your jobs under 12 hours if possible<a class="headerlink" href="#keep-your-jobs-under-12-hours-if-possible" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="tips-for-using-pbs-and-katana-effectively">
+<span id="scheduler-tips"></span><h2>Tips for using PBS and Katana effectively<a class="headerlink" href="#tips-for-using-pbs-and-katana-effectively" title="Permalink to this heading">¶</a></h2>
+<section id="keep-your-jobs-under-12-hours-if-possible">
+<h3>Keep your jobs under 12 hours if possible<a class="headerlink" href="#keep-your-jobs-under-12-hours-if-possible" title="Permalink to this heading">¶</a></h3>
 <p>If you request more than 12 hours of <code class="code docutils literal notranslate"><span class="pre">WALLTIME</span></code> then you can only use the nodes bought by your school or research group. Keeping your job’s run time request under 12 hours means that it can run on any node in the cluster.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -587,15 +582,15 @@ Job Id: <span class="m">315259</span>.kman.restech.unsw.edu.au
 <p>In fact, if there is spare capacity on Katana, which there is most of the time, six 10 hours jobs will finish before a single 20 hour job will.
 Requesting more resources for your job decreases the places that the job can run</p>
 <p>The most obvious example is going over the 12 hour limit which limits the number of compute nodes that your job can run on. For example specifying the CPU in your job script restricts you to the nodes with that CPU. A job that requests 20Gb will run on a 128Gb node with a 100Gb job already running but a 30Gb job will not be able to.</p>
-</div>
-<div class="section" id="running-your-jobs-interactively-makes-it-hard-to-manage-multiple-concurrent-jobs">
-<h3>Running your jobs interactively makes it hard to manage multiple concurrent jobs<a class="headerlink" href="#running-your-jobs-interactively-makes-it-hard-to-manage-multiple-concurrent-jobs" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="running-your-jobs-interactively-makes-it-hard-to-manage-multiple-concurrent-jobs">
+<h3>Running your jobs interactively makes it hard to manage multiple concurrent jobs<a class="headerlink" href="#running-your-jobs-interactively-makes-it-hard-to-manage-multiple-concurrent-jobs" title="Permalink to this heading">¶</a></h3>
 <p>If you are currently only running jobs interactively then you should move to batch jobs which allow you to submit more jobs which then start, run and finish automatically.
 If you have multiple batch jobs that are almost identical then you should consider using array jobs</p>
 <p>If your batch jobs are the same except for a change in file name or another variable then you should have a look at using array jobs.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
 	    </div>
@@ -628,19 +623,19 @@ If you have multiple batch jobs that are almost identical then you should consid
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0',
+            VERSION:'1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/underscore.js">
+    <script type="text/javascript" src="../_static/documentation_options.js">
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js">
 
     </script>
 

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Compressing Large Directories &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>Compressing Large Directories &mdash; Katana User Documentation 1.1 documentation</title>
   
 
   
@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+  
 
   
 
@@ -26,7 +30,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+    <link rel="top" title="Katana User Documentation 1.1 documentation" href="../index.html"/>
         <link rel="up" title="Software" href="index.html"/>
         <link rel="next" title="Reference Data" href="../reference_data.html"/>
         <link rel="prev" title="TMUX" href="tmux.html"/>
@@ -61,7 +65,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -155,15 +159,15 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="compressing-large-directories">
-<h1>Compressing Large Directories<a class="headerlink" href="#compressing-large-directories" title="Permalink to this headline">¶</a></h1>
+  <section id="compressing-large-directories">
+<h1>Compressing Large Directories<a class="headerlink" href="#compressing-large-directories" title="Permalink to this heading">¶</a></h1>
 <p>If you want to compress large directories or directories with a large number of files, we recommend a simple tool called <a class="reference external" href="https://github.com/unsw-edu-au/tgzme/blob/master/tgzme.sh">tgzme</a> developed by one of our researchers.</p>
 <p>It’s essentially a smart shell script wrapped around the one line command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar -c <span class="nv">$DIRECTORY</span> <span class="p">|</span> pigz &gt; <span class="nv">$DIRECTORY</span>.tar.gz
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar<span class="w"> </span>-c<span class="w"> </span><span class="nv">$DIRECTORY</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>pigz<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$DIRECTORY</span>.tar.gz
 </pre></div>
 </div>
 <p>We thank <a class="reference external" href="https://orcid.org/0000-0002-3645-5539">Dr. Edwards</a> for his contribution.</p>
-</div>
+</section>
 
 
 	    </div>
@@ -196,19 +200,19 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0',
+            VERSION:'1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/underscore.js">
+    <script type="text/javascript" src="../_static/documentation_options.js">
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js">
 
     </script>
 

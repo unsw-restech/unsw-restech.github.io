@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Comsol &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>Comsol &mdash; Katana User Documentation 1.1 documentation</title>
   
 
   
@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+  
 
   
 
@@ -26,7 +30,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+    <link rel="top" title="Katana User Documentation 1.1 documentation" href="../index.html"/>
         <link rel="up" title="Software" href="index.html"/>
         <link rel="next" title="Environment Modules" href="environment_modules.html"/>
         <link rel="prev" title="Biosciences" href="biosciences.html"/>
@@ -61,7 +65,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -155,19 +159,19 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="comsol">
-<h1>Comsol<a class="headerlink" href="#comsol" title="Permalink to this headline">¶</a></h1>
+  <section id="comsol">
+<h1>Comsol<a class="headerlink" href="#comsol" title="Permalink to this heading">¶</a></h1>
 <p>Comsol is best run interactively on <a class="reference internal" href="../using_katana/ondemand.html#katana-ondemand"><span class="std std-ref">Katana OnDemand</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You will need to belong to a group that owns a COMSOL licence (mech, spree, quantum, biomodel)</p>
 </div>
-<div class="section" id="comsol-batch-jobs">
-<h2>Comsol Batch Jobs<a class="headerlink" href="#comsol-batch-jobs" title="Permalink to this headline">¶</a></h2>
+<section id="comsol-batch-jobs">
+<h2>Comsol Batch Jobs<a class="headerlink" href="#comsol-batch-jobs" title="Permalink to this heading">¶</a></h2>
 <p>COMSO is available to download on <a class="reference external" href="https://www.myaccess.unsw.edu.au/applications/ansys-workbench">myAccess</a> for undergraduate and postgraduate students in Chemical and Biomedical Engineering. This will allow you to generate module files locally, and transfer them to Katana to process in a batch job.</p>
 <p>An example comsol batch job file is available <cite>on our GitHub &lt;https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/comsol/comsol.pbs&gt;_</cite> and an uncommented version is reproduced below.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">#</span>!/bin/bash
-<span class="gp">#</span>&lt;RESOURCE REQUESTS&gt;
+<span class="gp">#</span>&lt;RESOURCE<span class="w"> </span>REQUESTS&gt;
 
 <span class="go">mkdir -p ${TMPDIR}/comsol</span>
 
@@ -184,8 +188,8 @@
 <span class="go">-batchlog ${MY_COMSOL_DIR}/MyModel.log</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
 	    </div>
@@ -218,19 +222,19 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0',
+            VERSION:'1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/underscore.js">
+    <script type="text/javascript" src="../_static/documentation_options.js">
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js">
 
     </script>
 

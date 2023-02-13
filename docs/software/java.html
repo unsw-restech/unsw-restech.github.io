@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Java &mdash; Katana User Documentation 1.0 documentation</title>
+  <title>Java &mdash; Katana User Documentation 1.1 documentation</title>
   
 
   
@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
 
   
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/css/pdj.css" type="text/css" />
+  
 
   
 
@@ -26,7 +30,7 @@
         <link rel="index" title="Index"
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="Katana User Documentation 1.0 documentation" href="../index.html"/>
+    <link rel="top" title="Katana User Documentation 1.1 documentation" href="../index.html"/>
         <link rel="up" title="Software" href="index.html"/>
         <link rel="next" title="Jupyter Notebooks" href="jupyter-notebooks.html"/>
         <link rel="prev" title="Intel Compilers and Software Libraries" href="intel_compilers_and_libraries.html"/>
@@ -61,7 +65,7 @@
 	
           
           
-              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../help_and_support.html">Help and Support</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../help_and_support.html#scheduled-maintenance">Scheduled Maintenance</a></li>
@@ -155,18 +159,18 @@
           <div role="main" class="">
 
 	    <div id="content" class="hfeed entry-container hentry">
-  <div class="section" id="java">
-<h1>Java<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h1>
+  <section id="java">
+<h1>Java<a class="headerlink" href="#java" title="Permalink to this heading">¶</a></h1>
 <p>Java is installed as part of the Operating System but we would strongly recommend against using that version - we cannot guarantee scientific reproducibility with that version. Please use the java modules.</p>
 <p>Each Java module sets</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>_JAVA_TOOL_OPTIONS -Xmx1g
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>_JAVA_TOOL_OPTIONS<span class="w"> </span>-Xmx1g
 </pre></div>
 </div>
 <p>This sets the heap memory to 1GB. If you need more, set the environment variable <code class="code docutils literal notranslate"><span class="pre">_JAVA_OPTIONS</span></code> which overrides <code class="code docutils literal notranslate"><span class="pre">_JAVA_TOOL_OPTIONS</span></code></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">_JAVA_OPTIONS</span><span class="o">=</span><span class="s2">&quot;-Xmx5g&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">_JAVA_OPTIONS</span><span class="o">=</span><span class="s2">&quot;-Xmx5g&quot;</span>
 </pre></div>
 </div>
-</div>
+</section>
 
 
 	    </div>
@@ -199,19 +203,19 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'1.0',
+            VERSION:'1.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-    <script type="text/javascript" src="../_static/jquery.js">
-
-    </script>
-    <script type="text/javascript" src="../_static/underscore.js">
+    <script type="text/javascript" src="../_static/documentation_options.js">
 
     </script>
     <script type="text/javascript" src="../_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="../_static/sphinx_highlight.js">
 
     </script>
 
