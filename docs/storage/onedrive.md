@@ -20,7 +20,7 @@ The configuration section will probably only need to run once, whereas the "how 
 
 ## Prerequisites
 
-1. `OneDrive needs your consent` to give rclone access to your files. 
+1. [OneDrive needs your consent](https://consenthelper.it.unsw.edu.au/consent?appId=c8800f43-7805-46c2-b8b2-1c55f3859a4c) to give rclone access to your files. 
 2. We can't guarantee or test if this works for researchers in Germany or 
 China. OneDrive has a different set up for Germany and China due to local laws 
 about data storage.

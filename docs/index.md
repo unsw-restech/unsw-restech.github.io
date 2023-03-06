@@ -39,4 +39,4 @@ No known issues at the moment.
 Any use of Katana is covered by the [Conditions of Use - UNSW ICT Resources](https://www.it.unsw.edu.au/students/policies/agree_to_rules.html). 
 
 !!! warning
-    Katana is not suitable for highly sensitive data. You should use the UNSW Data Classification scheme to classify your data and learn about managing your research data by visiting the [Research Data Management Hub](https://research.unsw.edu.au/research-data-management-hub>).
+    Katana is not suitable for highly sensitive data. You should use the UNSW Data Classification scheme to classify your data and learn about managing your research data by visiting the [Research Data Management Hub](https://research.unsw.edu.au/research-data-management-hub).
