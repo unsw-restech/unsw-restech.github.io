@@ -2,7 +2,7 @@ title: Katana OnDemand
 
 There are a number of GUI based software packages that are offered through a web interface. The requirements are a Katana account and for the user to be either on campus or connected to the [UNSW VPN](https://vpn.unsw.edu.au).
 
-These can be accessed from https://kod.restech.unsw.edu.au
+These can be accessed from [https://kod.restech.unsw.edu.au](https://kod.restech.unsw.edu.au)
 
 After logging in, you can:
 
