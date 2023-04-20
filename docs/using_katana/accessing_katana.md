@@ -22,7 +22,7 @@ To apply for an account you can send an email to the [UNSW IT Service Centre](ma
         laptop:~$ ssh z1234567@katana.restech.unsw.edu.au
         ```
     === "Windows"
-        From a Windows machine an SSH client such as PuTTY or MobaXTerm is required. 
+        From a Windows machine an SSH client such as [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or [MobaXTerm](https://mobaxterm.mobatek.net/) is required. 
 
         If you are comfortable using PowerShell, OpenSSH is available on recent Windows versions. If not present, it can be [installed on Windows 10](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse). 
 
@@ -59,25 +59,48 @@ On Linux and WSL you send keepalive packets for all servers by editing ~/.ssh/co
 !!! warning
     Please use [Katana OnDemand](./ondemand.md) (kod.restech.unsw.edu.au) if available for your application. It is significantly easier to use for newcomers. 
 
-Some software - [Ansys](../software/ansys.md), [Jupyter Notebooks](../software/jupyter-notebooks.md), [Matlab](../software/matlab.md), [R and RStudio](../software/r.md) being among the most popular - are easier with a graphical session. If you require an interactive graphical session to Katana then you can use the X2Go client.
+Some software - [Ansys](../software/ansys.md), [Jupyter Notebooks](../software/jupyter-notebooks.md), [Matlab](../software/matlab.md), [R and RStudio](../software/r.md) being among the most popular - are easier with a graphical session.
+If you require an interactive graphical session to Katana then you can use either the FastX web or desktop client.
 
-Start X2Go and create a session for Katana. The details that you need to enter for the session are:
+### FastX web client
 
-``` bash
-Session name: Katana
-Host: katana.restech.unsw.edu.au
-Login: zID
-Session type: Mate
-```
+Katana graphical sessions can be started at [https://katana.restech.unsw.edu.au](https://katana.restech.unsw.edu.au).
+
+Login and double click the `MATE` entry on the left.
 
 <figure markdown>
-  ![Image title](../assets/x2go.png){ width="400" }
-  <figcaption>x2go client settings</figcaption>
+  ![Image title](../assets/fastx_bookmarks.png){ width="400" }
+  <figcaption>FastX applications</figcaption>
+</figure>
+
+Select which login server to start your session on, or leave it on automatic.
+
+<figure markdown>
+  ![Image title](../assets/fastx_serverlist.png){ width="400" }
+  <figcaption>FastX server list</figcaption>
 </figure>
 
 
-!!! note ""
-    If you have connected from a Linux machine (or a Mac with X11 support via X11.app or XQuartz) then connecting via SSH will allow you to open graphical applications from the command line. To run these programs you should start an interactive job on one of the compute nodes so that none of the computational processing takes place on the head node.
+### FastX desktop client
+
+The FastX desktop client can be downloaded from [https://www.starnet.com/download/fastx-client](https://www.starnet.com/download/fastx-client)
+
+Start FastX and create a session for Katana. The details that you need to enter for the session are:
+
+``` bash
+Host: katana.restech.unsw.edu.au
+User: zID
+Name: Katana
+```
+
+<figure markdown>
+  ![Image title](../assets/fastx_desktop_connection.png){ width="418" }
+  <figcaption>FastX connection settings</figcaption>
+</figure>
+
+
+<!-- !!! note ""
+    If you have connected from a Linux machine (or a Mac with X11 support via X11.app or XQuartz) then connecting via SSH will allow you to open graphical applications from the command line. To run these programs you should start an interactive job on one of the compute nodes so that none of the computational processing takes place on the head node. -->
 
 !!! warning
     The usability of a graphical connection to Katana is highly dependent on network latency and performance.
@@ -87,7 +110,7 @@ Once you have logged into a Katana desktop, you should start a terminal
 
 <figure markdown>
   ![Image title](../assets/terminal_graphical_session_new.png){ width="400" }
-  <figcaption>x2go desktop view</figcaption>
+  <figcaption>FastX desktop view</figcaption>
 </figure>
 
 
@@ -99,20 +122,13 @@ qsub -I -X -l select=1:ncpus=8:mem=16gb,walltime=1:00:00
 
 <figure markdown>
   ![Image title](../assets/interactive_session_graphical.png){ width="600" }
-  <figcaption>x2go terminal view</figcaption>
+  <figcaption>FastX terminal view</figcaption>
 </figure>
 
 Once that's started, you can load the modules and run the command line name of the software you want. That is how you run Graphical Interfaces or GUIs using Katana's grunt.
 
 
-<figure markdown>
+<!-- <figure markdown>
   ![Image title](../assets/rstudio_graphical_session.png){ width="400" }
-  <figcaption>x2go rstudio view</figcaption>
-</figure>
-
-
-[Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
-
-[MobaXTerm](https://mobaxterm.mobatek.net/)
-
-[X2Go](http://wiki.x2go.org/doku.php)
+  <figcaption>FastX rstudio view</figcaption>
+</figure> -->
