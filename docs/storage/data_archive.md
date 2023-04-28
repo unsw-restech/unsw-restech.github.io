@@ -23,7 +23,7 @@ module avail unswdataarchive
 Use the help command for usage
 
 ``` bash
-module help unswdataarchive/2020-03-19
+module help unswdataarchive/2021-02-17
 ```
 
 ## Initial Setup
@@ -31,7 +31,7 @@ module help unswdataarchive/2020-03-19
 To use the Data Archive you need to set up a configuration file. Here's how to create the generic config in the directory you are in:
 
 ``` bash
-[z1234567@kdm ~]$ module add unswdataarchive/2020-03-19
+[z1234567@kdm ~]$ module add unswdataarchive/2021-02-17
 [z1234567@kdm ~]$ get-config-file
 ```
 
