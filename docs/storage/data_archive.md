@@ -1,6 +1,6 @@
 title: How to use the UNSW Data Archive
 
-The UNSW Data Archive is the primary research storage facility provided by UNSW. The Data Archive gives UNSW researchers a free, safe and secure storage service to store and access research data well beyond the life of the project that collected that data.
+The [UNSW Data Archive](http://www.dataarchive.unsw.edu.au/) is the primary research storage facility provided by UNSW. The Data Archive gives UNSW researchers a free, safe and secure storage service to store and access research data well beyond the life of the project that collected that data.
 
 To help researchers make use of this system the Katana Data Mover has a script that you can use to copy files from Katana into a project on the Data Archive system.
 
@@ -9,10 +9,9 @@ To help researchers make use of this system the Katana Data Mover has a script t
 
 The best documentation on how to use the `Data Archive` is found on their website:
 
-- using the `web application`
-- using `SFTP`
-- using the `Command Line`
-
+- using the [web application](http://www.dataarchive.unsw.edu.au/help/web-application-guide)
+- using [SFTP](http://www.dataarchive.unsw.edu.au/help/sftp-client-guide)
+- using the [Command Line](http://www.dataarchive.unsw.edu.au/help/command-line-script-guide)
 
 To see what versions of the Data Archive script are available log on to `kdm.restech.unsw.edu.au` and type
 
@@ -61,11 +60,3 @@ To get data **from** the archive, we use `download.sh`
 ``` bash
 download.sh /UNSW_RDS/D0000000/your/collection/name /path/to/your/local/directory
 ```
-
-[Data Archive](http://www.dataarchive.unsw.edu.au/)
-
-[web application](http://www.dataarchive.unsw.edu.au/help/web-application-guide)
-
-[SFTP](http://www.dataarchive.unsw.edu.au/help/sftp-client-guide)
-
-[Command Line](http://www.dataarchive.unsw.edu.au/help/command-line-script-guide)
