@@ -2,7 +2,7 @@ title: Zip
 
 ## Compressing Large Directories
 
-If you want to compress large directories or directories with a large number of files, we recommend a simple tool called tgzme_ developed by one of our researchers.
+If you want to compress large directories or directories with a large number of files, we recommend a simple tool called tgzme developed by one of our researchers.
 
 It's essentially a smart shell script wrapped around the one line command:
 

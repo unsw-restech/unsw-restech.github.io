@@ -2,12 +2,12 @@ title: About Katana
 
 Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources for groups working with non-sensitive data. It contains over 6,000 CPU cores, 8 GPU compute nodes (V100 and A100), and 6Pb of disk storage. Katana provides a flexible compute environment where users can run jobs that wouldn't be possible or practical on their desktop or laptop. For full details of the compute nodes including a full list see the compute node information section below.
 
-Katana is powerful on its own, but can be seen as a training or development base before migrating up to systems like Australia's peak HPC system Gadi_, located at NCI_. Research Technology Services also provide training, advice and support for new users or those uncertain if High Performance Computing is the right fit for their research needs.
+Katana is powerful on its own, but can be seen as a training or development base before migrating up to systems like Australia's peak HPC system Gadi, located at NCI. Research Technology Services also provide training, advice and support for new users or those uncertain if High Performance Computing is the right fit for their research needs.
 
 ## System Configuration
 
-- RPM based Linux OSes. RedHat on the management plane, CentOS on the nodes
-- PBSPro_ version 19.1.3
+- RPM based Linux OSes. Rocky on the management plane and nodes
+- PBSPro version 19.1.3
 - Large global scratch at `/srv/scratch`, local scratch at `$TMPDIR`
 - 12, 48, 100, 200 hour [Walltime](../glossary.md#walltime) queues with prioritisation
 

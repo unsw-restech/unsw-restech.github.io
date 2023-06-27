@@ -1,8 +1,8 @@
 title: Perl
 
-The default version of Perl on Katana is 5.16.3 which is provided by CentOS 7 and can be found at `#!bash /usr/bin/perl`.
+The default version of Perl on Katana is 5.26.3 which is provided by Rocky 8.7 and can be found at `#!bash /usr/bin/perl`.
 
-This is an older version of Perl. We have Perl 5.28.0 installed as a module. 
+This is an older version of Perl. We have Perl 5.36.0 installed as a module. 
 
 It is common for perl scripts to begin with 
 

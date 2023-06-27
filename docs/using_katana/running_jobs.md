@@ -8,7 +8,7 @@ The [Login Node](../glossary.md#login-node) of a cluster is a shared resource fo
    
 Jobs are submitted from the login node, which delivers them to the [Head Node](../glossary.md#head-node) for job and resource management. Once the resources have been allocated and are available, the job will run on one or more of the compute nodes as requested. 
 
-Different clusters use different tools to manage resources and schedule jobs - OpenPBS_ and SLURM_ are two popular systems. Katana, like NCI's Gadi, uses OpenPBS_ for this purpose.
+Different clusters use different tools to manage resources and schedule jobs - OpenPBS and SLURM are two popular systems. Katana, like NCI's Gadi, uses OpenPBS for this purpose.
 
 Jobs are submitted using the `qsub` command. There are two types of job that `qsub` will accept: an [Interactive Job](../glossary.md#interactive-job) and a [Batch Job](../glossary.md#batch-job). Regardless of type, the resource manager will put your job in a [Queue](../glossary.md#queue).
 

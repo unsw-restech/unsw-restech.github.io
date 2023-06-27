@@ -195,7 +195,7 @@ Your School or Research Group may also have policies for compute nodes that they
 
 ### **Facilities external to UNSW**
 
-If you are using facilities at Intersect_ or NCI_ in addition to Katana they may also require some form of acknowledgement.
+If you are using facilities at Intersect or NCI in addition to Katana they may also require some form of acknowledgement.
 
 
 [Intersect](https://intersect.org.au/attribution)

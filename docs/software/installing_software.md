@@ -28,7 +28,7 @@ only precompiled binaries. When downloading binaries, make sure you select the
 correct architecure and operating system for katana.
 
 !!! note
-    Centos 7, 64-bit, Intel x86_6 / AMD64
+    Rocky 8.7, 64-bit, Intel x86_6 / AMD64
 
 ``` bash
 wget https://website.org/binary/application  

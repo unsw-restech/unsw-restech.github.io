@@ -13,10 +13,10 @@ If you are not familiar with using the Linux command line for moving or copying 
 
 ## Copying Files To and From a Cluster
 
-The method of transferring files to and from clusters depends on your local machine. If you are a Linux user then you should use rsync and if you are a Windows user then you should download and install WinSCP_ or FileZilla_
+The method of transferring files to and from clusters depends on your local machine. If you are a Linux user then you should use rsync and if you are a Windows user then you should download and install WinSCP or FileZilla
 
 !!! warning
-    Filezilla is often marked as being a security risk. There is nothing that Research Technology Services can do about that - it's an issue for UNSW IT, Symantec, and FileZilla. If this happens to you, please try WinSCP_ - it's very good.
+    Filezilla is often marked as being a security risk. There is nothing that Research Technology Services can do about that - it's an issue for UNSW IT, Symantec, and FileZilla. If this happens to you, please try WinSCP - it's very good.
 
 ### Filezilla
 
