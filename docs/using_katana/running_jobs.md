@@ -466,7 +466,7 @@ HTML heading tags are used instead of '###' otherwise the right sidebar index br
 
 ## Job Stats
 
-As soon as your job finishes, PBS produces job statistics along with a summary of your job. This summary appears as follows (replace 4638435.kman.restech.unsw.edu.au.OU for your output file; the steps for retrieving the file name are outlined below):
+As soon as your job finishes, PBS produces job statistics along with a summary of your job. This summary appears as follows (replace ```4638435.kman.restech.unsw.edu.au.OU``` for your output file; the steps for retrieving the file name are outlined below):
 ```bash
 z123456@katana2:~ $ cat 4638435.kman.restech.unsw.edu.au.OU
 
@@ -487,11 +487,11 @@ Job execution was successful. Exit Status 0.
 ```
 This text is appended at the end of your output file. If you haven't specified an output file, one will be generated for you and placed in the folder where you submit your job.
 
-If you're unsure about the location of your job statistics file, you can run the following command (replace '4682962' with your job ID):
+If you're unsure about the location of your job statistics file, you can run the following command (replace 4682962 with your job ID):
 ```bash
 z123456@katana2:~ $ qstat -xf 4682962
 ```
-then search for Output_Path. For example, in below example, the absolute path of the output file is ```/home/z123456/output_file.txt```:
+then search for Output_Path. For example, in below example, the absolute path of the output file is ```/home/z123456/output_file.txt```. Interactive jobs do no show a file name, for those case the output file name look as ```4638435.kman.restech.unsw.edu.au.OU``` and is placed on the folder where you submitted the job:
 ```bash
 z3536424@katana2:~/hacky $ qstat -xf 4686875
 Job Id: 4686875.kman.restech.unsw.edu.au
