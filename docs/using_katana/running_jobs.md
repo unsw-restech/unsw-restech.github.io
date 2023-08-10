@@ -464,6 +464,95 @@ HTML heading tags are used instead of '###' otherwise the right sidebar index br
             project = _pbs_project_default
         ```
 
+## Job Stats
+
+As soon as your job finishes, PBS produces job statistics along with a summary of your job. This summary appears as follows (replace 4638435.kman.restech.unsw.edu.au.OU for your output file):
+```bash
+z123456@katana2:~ $ cat 4638435.kman.restech.unsw.edu.au.OU
+
+================================================================================
+                     Resource Usage on 27/07/2023 15:43:37
+
+Job Id: 4638435
+Queue: CSE
+Walltime: 00:00:03  (requested 01:00:00)
+Job execution was successful. Exit Status 0.
+
+--------------------------------------------------------------------------------
+|              |             CPUs              |            Memory             |
+--------------------------------------------------------------------------------
+| Node         | Requested   Used   Efficiency | Requested   Used   Efficiency |
+| k080         |     1        0.0      0.0%    |   1.0gb    0.01gb     1.0%    |
+--------------------------------------------------------------------------------
+```
+This text is appended at the end of your output file. If you haven't specified an output file, one will be generated for you and placed in the folder where you submit your job.
+
+If you're unsure about the location of your job statistics file, you can run the following command (replace '4682962' with your job ID):
+```bash
+z123456@katana2:~ $ qstat -xf 4682962
+```
+then search for Output_Path. For example, in below example, the absolute path of the output file is ```/home/z123456/output_file.txt```:
+```bash
+z3536424@katana2:~/hacky $ qstat -xf 4686875
+Job Id: 4686875.kman.restech.unsw.edu.au
+    Job_Name = hacky
+    Job_Owner = z3536424@katana2
+    resources_used.cpupercent = 0
+    resources_used.cput = 00:00:00
+    resources_used.mem = 6896kb
+    resources_used.ncpus = 1
+    resources_used.vmem = 6896kb
+    resources_used.walltime = 00:00:09
+    job_state = F
+    queue = cse12
+    server = kman
+    Checkpoint = u
+    ctime = Thu Aug 10 16:10:39 2023
+    Error_Path = /dev/pts/0
+    exec_host = k242/3
+    exec_vnode = (k242:ncpus=1:mem=1048576kb:ngpus=0)
+    Hold_Types = n
+    interactive = True
+    Join_Path = n
+    Keep_Files = n
+    Mail_Points = a
+    mtime = Thu Aug 10 16:11:09 2023
+    Output_Path = /home/z123456/output_file.txt
+    Priority = 0
+    qtime = Thu Aug 10 16:10:39 2023
+    Rerunable = False
+    Resource_List.ib = no
+    Resource_List.mem = 1gb
+    Resource_List.ncpus = 1
+    Resource_List.ngpus = 0
+    Resource_List.nodect = 1
+    Resource_List.place = group=cse12
+    Resource_List.select = ncpus=1:mem=1gb
+    Resource_List.walltime = 01:00:00
+    stime = Thu Aug 10 16:10:55 2023
+    obittime = Thu Aug 10 16:11:09 2023
+    session_id = 2621006
+    jobdir = /home/z3536424
+    substate = 92
+    Variable_List = PBS_O_HOME=/home/z3536424,PBS_O_LANG=en_AU.UTF-8,
+	PBS_O_LOGNAME=z3536424,
+	PBS_O_PATH=/home/z3536424/.local/bin:/usr/share/Modules/bin:/usr/lib64
+	/ccache:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/pbs/bin,
+	PBS_O_MAIL=/var/spool/mail/z3536424,PBS_O_SHELL=/bin/bash,
+	PBS_O_WORKDIR=/home/z3536424/hacky,PBS_O_SYSTEM=Linux,
+	PBS_O_QUEUE=cse12,PBS_O_HOST=katana2
+    comment = Job run at Thu Aug 10 at 16:10 on (k242:ncpus=1:mem=1048576kb:ngp
+	us=0) and finished
+    etime = Thu Aug 10 16:10:39 2023
+    run_count = 1
+    eligible_time = 00:00:19
+    Exit_status = 0
+    Submit_arguments = -N hacky -I
+    history_timestamp = 1691647869
+    project = _pbs_project_default
+    Submit_Host = katana2
+```
+
 ## Tips for using PBS and Katana effectively
 
 ### Keep your jobs under 12 hours if possible
