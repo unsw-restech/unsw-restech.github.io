@@ -491,7 +491,7 @@ If you're unsure about the location of your job statistics file, you can run the
 ```bash
 z123456@katana2:~ $ qstat -xf 4682962
 ```
-then search for Output_Path. For example, in below example, the absolute path of the output file is ```/home/z123456/output_file.txt```. Interactive jobs do no show a file name, for those case the output file name look as ```4638435.kman.restech.unsw.edu.au.OU``` and is placed on the folder where you submitted the job:
+then search for Output_Path. For example, in below example, the absolute path of the output file is ```/home/z123456/output_file.txt```. Interactive jobs do no show a file name, for those cases the output file name look as ```4638435.kman.restech.unsw.edu.au.OU``` and is placed on the folder where you submitted the job:
 ```bash
 z3536424@katana2:~/hacky $ qstat -xf 4686875
 Job Id: 4686875.kman.restech.unsw.edu.au
