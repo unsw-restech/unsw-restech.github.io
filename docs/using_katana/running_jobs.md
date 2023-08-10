@@ -466,7 +466,7 @@ HTML heading tags are used instead of '###' otherwise the right sidebar index br
 
 ## Job Stats
 
-As soon as your job finishes, PBS produces job statistics along with a summary of your job. This summary appears as follows (replace 4638435.kman.restech.unsw.edu.au.OU for your output file):
+As soon as your job finishes, PBS produces job statistics along with a summary of your job. This summary appears as follows (replace 4638435.kman.restech.unsw.edu.au.OU for your output file; the steps for retrieving the file name are outlined below):
 ```bash
 z123456@katana2:~ $ cat 4638435.kman.restech.unsw.edu.au.OU
 
