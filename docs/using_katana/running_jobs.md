@@ -188,7 +188,6 @@ The output that would normally go to screen and error messages of a batch job wi
 
 ``` bash
 #PBS -j oe
-#PBS -o /home/z1234567/results/Output_Report
 ```
 
 When a job starts, it needs to know where to save its output and do its work. This is called the *current working directory*. By default the job scheduler will make your *current working directory* your home directory (`/home/z1234567`). This isn't likely or ideal and is important that each job sets its current working directory appropriately. There are a couple of ways to do this, the easiest is to set the *current working directory* to the directory you are in when you execute `qsub` by using
@@ -222,7 +221,6 @@ Here's the full script as we've described. You can copy this into a text editor 
 #PBS -M your.name.here@unsw.edu.au
 #PBS -m ae
 #PBS -j oe
-#PBS -o /home/z1234567/results/Output_Report
     
 cd $PBS_O_WORKDIR
     
