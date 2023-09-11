@@ -251,7 +251,7 @@ cd ${PBS_O_WORKDIR}
 ./myprogram ${PBS_ARRAY_INDEX}.dat
 ```
 
-There are some more examples of array jobs including how to group your computations in an array job on the [UNSW Github HPC examples](https://github.com/unsw-edu-au/Restech-HPC/tree/master/hpc-examples) page.
+There are some more examples of array jobs including how to group your computations in an array job on the [UNSW Github HPC examples](https://github.com/unsw-edu-au/Restech-HPC/tree/master/hpc-examples) page. (Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repo)
 
 ## Splitting large Batch Jobs
 

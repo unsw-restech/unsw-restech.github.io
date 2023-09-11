@@ -21,7 +21,7 @@ Please follow the instructions on [UNSW research GitHub page](https://research.u
 
 
 
-- [Restech-HPC](https://github.com/unsw-edu-au/Restech-HPC/tree/master/hpc-examples) - Example job scripts for Katana and NCI
+- [Restech-HPC](https://github.com/unsw-edu-au/Restech-HPC/tree/master/hpc-examples) - Example job scripts for Katana and NCI (Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repo)
 - [UNSW-Data-Archive](https://github.com/unsw-edu-au/UNSW-Data-Archive) - Scripts for uploading to and downloading from the UNSW Data Archive
 - [UNSW-eNotebook-LabArchives](https://github.com/unsw-edu-au/UNSW-eNotebook-LabArchives) - UNSW eNotebook (LabArchives) widgets
 - [UNSW has an organisation in GitHub](https://github.com/unsw-edu-au)

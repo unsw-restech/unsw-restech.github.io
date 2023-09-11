@@ -14,7 +14,7 @@ If you install Ansys on your local machine, you can generate your model files lo
 
 For Ansys CFX the .cfx and .def files need to be transferred to Katana.
 
-A brief batch script example is given below. A step-by-step guide is availabe [on our GitHub](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-cfx.md).
+A brief batch script example is given below. A step-by-step guide is available [on our GitHub](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-cfx.md). (Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repo)
 
 ``` bash
    #!/bin/bash
@@ -32,7 +32,7 @@ A brief batch script example is given below. A step-by-step guide is availabe [o
 
 Similarly, Ansys Fluent input can be generated locally and transferred to Katana to run in a batch job.
 
-Again, a brief batch script is below, and a step-by-step guide is available [on our Github](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-fluent.md). 
+Again, a brief batch script is below, and a step-by-step guide is available [on our Github](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-fluent.md) (Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repo).
 
 ``` bash 
    #!/bin/bash
