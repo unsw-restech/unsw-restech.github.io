@@ -7,7 +7,7 @@
 ### **Contact the Research Technology Services team**
 
 For Katana issues including: functional issues, software installation, reference data sets, general questions - 
-email the [IT Service Centre](mailto:ITServiceCentre@unsw.edu.au), including the word **Katana** in the subject line.
+email the [IT Service Centre](mailto:ITServiceCentre@unsw.edu.au), including the word **Katana** in your message.
 
 !!! info
     This is the best and primary way to get help from UNSW Research Technology Services beyond this document. You *must* use your UNSW email address *or* your zID. Without this information, we have no idea who you might be.
