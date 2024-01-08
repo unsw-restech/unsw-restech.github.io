@@ -1,6 +1,6 @@
 title: Storage Locations
 
-The storage on Katana is split into several different types, each of which serves a different purpose. 
+The storage on Katana is split into several different types, each of which serves a different purpose and may only be accessible from certain locations. 
 
 !!! important
     We have just said *each of which serves a different purpose*. Despite that, there will be overlap. And personal preference. In most cases it will be obvious where to put your information. If it isn't and you need help with your decision making, you can email the [Research Data team](https://research.unsw.edu.au/research-data-management-unsw>) team at rdm@unsw.edu.au for advice. They are friendly people.
