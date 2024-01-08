@@ -55,7 +55,6 @@ nav:
         - 'storage/storage_locations.md'
         - 'storage/kdm.md'
         - 'storage/data_archive.md'
-        - 'storage/cloudstor.md'
         - 'storage/onedrive.md'
     - 'Software':
         - 'software/environment_modules.md'
