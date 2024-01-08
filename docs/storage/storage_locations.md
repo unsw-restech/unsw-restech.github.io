@@ -70,7 +70,7 @@ The storage on Katana is split into several different types, each of which serve
     <td>Storage of shared user and data files</td>
     <td>Y</td>
     <td colspan="2">Depends on storage location</td>
-	<td>Only available on [KDM](kdm.md) (and login nodes)</td>
+	<td>Only available on <a href="/storage/KDM">KDM</a> (and login nodes for small files)</td>
   </tr>
 </tbody>
 </table>
