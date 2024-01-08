@@ -72,5 +72,14 @@ The storage on Katana is split into several different types, each of which serve
     <td colspan="2">Depends on storage location</td>
 	<td>Only available on <a href="/storage/kdm">KDM</a> (and login nodes for small files)</td>
   </tr>
+    <tr>
+    <td>Instrument Dara Store (IDS)</td>
+    <td>/home/z1234567/ids</td>
+    <td>$HOME/ids</td>
+    <td>Storage of instrument data generated within MWAC</td>
+    <td>Y</td>
+    <td colspan="2">Depends on storage location</td>
+	<td>Only available on <a href="/storage/kdm">KDM</a></td>
+  </tr>
 </tbody>
 </table>
