@@ -19,6 +19,7 @@ The storage on Katana is split into several different types, each of which serve
     <th>Backed up?</th>
     <th>Size limit</th>
     <th>Who has access</th>
+	<th>Where can it be used?</th>
   </tr>
 </thead>
 <tbody>
@@ -30,6 +31,7 @@ The storage on Katana is split into several different types, each of which serve
     <td>Y</td>
     <td>10Gb</td>
     <td>Only the user</td>
+	<td>Anywhere</td>
   </tr>
   <tr>
     <td>User scratch</td>
@@ -39,6 +41,7 @@ The storage on Katana is split into several different types, each of which serve
     <td>N</td>
     <td>128 GB</td>
     <td>Only the user</td>
+	<td>Anywhere</td>
   </tr>
   <tr>
     <td>Shared scratch</td>
@@ -48,6 +51,7 @@ The storage on Katana is split into several different types, each of which serve
     <td>N</td>
     <td>Upon group requirements</td>
     <td>All users in the group</td>
+	<td>Anywhere</td>
   </tr>
   <tr>
     <td>Local scratch</td>
@@ -57,6 +61,7 @@ The storage on Katana is split into several different types, each of which serve
     <td>N</td>
     <td>200Gb shared between node users</td>
     <td>Temporary for each job</td>
+	<td>Only on compute nodes</td>
   </tr>
   <tr>
     <td>UNSW Research Storage</td>
@@ -64,7 +69,8 @@ The storage on Katana is split into several different types, each of which serve
     <td>$HOME/sharename</td>
     <td>Storage of shared user and data files</td>
     <td>Y</td>
-    <td colspan="2">According to Data Management Plan</td>
+    <td colspan="2">Depends on storage location</td>
+	<td>Only on KDM (and login nodes)</td>
   </tr>
 </tbody>
 </table>
