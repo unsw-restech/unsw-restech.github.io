@@ -7,7 +7,7 @@
 ### **Contact the Research Technology Services team**
 
 For Katana issues including: functional issues, software installation, reference data sets, general questions - 
-email the [IT Service Centre](mailto:ITServiceCentre@unsw.edu.au), including the word **Katana** in your message.
+please email [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
 
 !!! info
     This is the best and primary way to get help from UNSW Research Technology Services beyond this document. You *must* use your UNSW email address *or* your zID. Without this information, we have no idea who you might be.
@@ -28,7 +28,7 @@ email the [IT Service Centre](mailto:ITServiceCentre@unsw.edu.au), including the
 
 For face to face support: [Drop-In Hour](https://research.unsw.edu.au/restech-drop-hour-formerly-hacky-hour) Wednesdays, 1pm.
 
-For questions about [research data at UNSW](https://research.unsw.edu.au/research-data-management-unsw>) - on storage, movement or Data Management Plans, please email the [Research Data Team](mailto:rdm@unsw.edu.au>). If you specifically wish to increase Katana storage allocations, please email the [IT Service Centre](mailto:itservicecentre@unsw.edu.au) - note that such increases are not automatic.
+For questions about [research data at UNSW](https://research.unsw.edu.au/research-data-management-unsw>) - on storage, movement or Data Management Plans, please email the [Research Data Team](mailto:rdm@unsw.edu.au>). If you specifically wish to increase Katana storage allocations, please email [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) - note that such increases are not automatic.
 
 ### **Katana System Status and Known Issues**
 
