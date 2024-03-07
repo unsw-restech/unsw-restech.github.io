@@ -105,7 +105,7 @@ For fine grain detail, you may need to get access to the worker node that the jo
 then you can see a list of your running jobs and where they are running. You can then use ssh to log on to the individual nodes and run`#!bash top` or`#!bash htop` to see the load on the node including memory usage for each of the processes on the node.
 
 #### How do I request the installation or upgrade of a piece of software ?
-If you wish to have a new piece of software installed or software that is already installed upgraded please send an email to the <a href="mailto: ITServiceCentre@unsw.edu.au">IT Service Centre</a> from your UNSW email account with details of what software change you require.
+If you wish to have a new piece of software installed or software that is already installed upgraded please send an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) from your UNSW email account with details of what software change you require.
 
 #### Why is my job stuck in the queue whilst other jobs run?
 The queues are not set up to be first-in-first-out. In fact all of the queued jobs sit in one big pool of jobs that are ready to run. The scheduler assigns priorities to jobs in the pool and the job with the highest priority is the next one to run. The length of time spent waiting in the pool is just one of several factors that are used to determine priority.
@@ -167,7 +167,7 @@ As well as local scratch, global scratch and your cluster home drive are accessi
 Use`#!bash rsync` to copy data to the KDM server. More information is above.
 
 #### Is there any way of connecting my own file storage to one of the clusters?
-Whilst it is not possible to connect individual drives to any of the clusters, some units and research groups have purchased large capacity storage units which are co-located with the clusters. This storage is then available on the cluster nodes. For more information please contact the Research Technology Service Team by placing a request with the [IT Service Centre](mailto:ITServiceCentre@unsw.edu.au).
+Whilst it is not possible to connect individual drives to any of the clusters, some units and research groups have purchased large capacity storage units which are co-located with the clusters. This storage is then available on the cluster nodes. For more information please contact the Research Technology Service Team by sending an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
 
 #### Can I specify how much file storage I want on local scratch?
 If you want to specify the minimum amount of space on the drive before your job will be assigned to a node then you can use the file option in your job script. Unfortunately setting up more complicated file requirements is currently problematic.
