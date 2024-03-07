@@ -6,7 +6,7 @@ If your needs require more CPU hours or consulation, some Faculties, Schools and
 
 ## Requesting an Account
 
-To apply for an account you can send an email to the [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) giving your zID, your role within UNSW and the name of your supervisor or head of your research group.
+To apply for an account, please send an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au), giving your zID, your role within UNSW and the name of your supervisor or head of your research group.
 
 
 ## Connecting to Katana
