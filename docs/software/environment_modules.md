@@ -125,7 +125,7 @@ cd ${PBS_O_WORKDIR}
 ./myprog
 ```
 
-Perl, Python and R all have their own library/module systems: `CPAN`, `PyPI` and `CRAN`. If you need a library or module from one of these sources, and there is significant demand, then we will install it.  Please email such requests to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au?subject=Katana Software Install).
+Perl, Python and R all have their own library/module systems: `CPAN`, `PyPI` and `CRAN`. If you need a library or module from one of these sources, and there is significant demand, then we will install it.  Please email such requests to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au?subject="Katana Software Install").
 
 [CPAN](https://www.cpan.org/)
 
