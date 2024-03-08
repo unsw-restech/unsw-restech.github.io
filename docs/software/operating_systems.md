@@ -1,6 +1,5 @@
 title: Operating Systems
 
-Katana compute and management nodes are currently running Rocky 8.7.
+Katana nodes currently run Rocky Linux 8.9.
 
-Research software is installed in modules so that they can be loaded or unloaded as necessary. This way we can offer and run multiple versions of each package at the same time.
-
+Research software is installed in environment modules. This enables multiple versions of the same software to be installed, and each user can choose which version they wish to use.
