@@ -41,7 +41,7 @@ Yes, if you have an account then you can connect to Katana from both inside and 
 ---
 
 ####  Does Katana run a 32 bit or a 64 bit operating system?
-Katana [Compute Nodes](glossary.md#compute_nodes) and [Head Node](glossary.md#head_node) run a 64 bit version of the Rocky distribution of Linux. Currently version 8.7.
+Katana [Compute Nodes](glossary.md#compute_nodes) and [Head Node](glossary.md#head_node) run a 64 bit version of the Rocky distribution of Linux. Currently version 8.9.
 
 ####  How much memory is available per core and/or per node?
 The amount of memory available varies across the cluster. To determine how much memory each node has available use the 'pbsnodes' command. Roughly, you can safely use 4GB per core requested. You can request more memory but it may delay time spent in the queue.
