@@ -125,4 +125,4 @@ You should be able to module load your own software module as your own.
 Many R and Python packages are installed on katana. We have specific documentation to install your own packages in [R](./r.md#installing-libraries) and [Python](./python.md#pip3---the-python-package-manager-the-package-installer-for-python)`
 
 !!! note
-    If you do need assistance with software install after trying yourself, then send an email to [IT Service Centre](mailto:ITServiceCentre@unsw.edu.au) with Katana in the subject line.
+    If you have tried to install software yourself, but you need further assistance, then please send an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
