@@ -109,13 +109,12 @@ Environment modules only affect the particular session in which they are loaded.
 
 ## How can I invoke my module commands automatically?
 
-The best way of doing this is to add your Module commands to your job scripts. This approach is useful for preserving the required environment for each job. For example:
+Add environment module commands to your job script. This approach is useful for preserving the required environment for each job. For example:
 
 ``` bash
 #!/bin/bash
 
-#PBS -l nodes=1:ppn=1
-#PBS -l vmem=4gb
+#PBS -l select=1:ncpus=1:mem=4gb
 #PBS -j oe
     
 module purge
@@ -126,7 +125,7 @@ cd ${PBS_O_WORKDIR}
 ./myprog
 ```
 
-Perl, Python and R all have their own library/module systems: `CPAN`, `PyPI`` and `CRAN`. If you need a library or module from one of these sources, and there is significant demand, then we will install it.  Please email such requests to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au?subject=Katana Software Install).
+Perl, Python and R all have their own library/module systems: `CPAN`, `PyPI` and `CRAN`. If you need a library or module from one of these sources, and there is significant demand, then we will install it.  Please email such requests to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au?subject=Katana Software Install).
 
 [CPAN](https://www.cpan.org/)
 
