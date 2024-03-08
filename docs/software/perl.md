@@ -1,6 +1,6 @@
 title: Perl
 
-The default version of Perl on Katana is 5.26.3, which is provided by Rocky 8.9 and can be found at `#!bash /usr/bin/perl`.
+The default version of Perl on Katana is 5.26.3, which is provided by Rocky Linux 8.9 and can be found at `#!bash /usr/bin/perl`.
 
 Perl 5.36.0 is also installed as an environment module. 
 
