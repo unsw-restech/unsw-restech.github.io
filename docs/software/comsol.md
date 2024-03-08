@@ -7,7 +7,7 @@ Comsol is best run interactively on [Katana OnDemand](../using_katana/ondemand.m
 
 ## Comsol Batch Jobs
 
-COMSO is available to download on [myAccess](https://www.myaccess.unsw.edu.au/applications/ansys-workbench) for undergraduate and postgraduate students in Chemical and Biomedical Engineering. This will allow you to generate module files locally, and transfer them to Katana to process in a batch job.
+COMSOL is available to download on [myAccess](https://www.myaccess.unsw.edu.au/applications/ansys-workbench) for undergraduate and postgraduate students in Chemical and Biomedical Engineering. This will allow you to generate module files locally, and transfer them to Katana to process in a batch job.
 
 An example comsol batch job file is available [on our GitHub](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/comsol/comsol.pbs) (Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repo) and an uncommented version is reproduced below.
 
