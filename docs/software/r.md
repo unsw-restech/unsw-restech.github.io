@@ -3,9 +3,7 @@ title: R and RStudio
 R is installed as a module. Each version has a number of libraries installed 
 within it.
 
-If you would like a new library installed, please email the 
-[IT Service Centre](mailto:ITServiceCentre@unsw.edu.au) with "Katana R Module 
-installation" in the subject line.
+If you would like a new library installed, please email [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
 
 If you would like to use **RStudio**, we recommend you use the [Katana OnDemand](../using_katana/ondemand.md) service.
 
