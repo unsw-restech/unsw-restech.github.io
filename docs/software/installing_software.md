@@ -24,11 +24,11 @@ As detailed in [Environment Modules](./environment_modules.md), software already
 ## Installing a binary package
 
 While installing from source is preferred for effeciency reasons, sometimes
-only precompiled binaries. When downloading binaries, make sure you select the
-correct architecure and operating system for katana.
+only precompiled binaries are available. When downloading binaries, make sure you select the
+correct architecture and operating system for Katana.
 
 !!! note
-    Rocky 8.7, 64-bit, Intel x86_6 / AMD64
+    Rocky Linux 8.9, 64-bit, Intel x86_64 / AMD64
 
 ``` bash
 wget https://website.org/binary/application  
