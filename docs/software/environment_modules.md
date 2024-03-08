@@ -24,8 +24,7 @@ matlab/2009b          matlab/2011b          matlab/2013a
 
 ## What if the software that I want is not on the list?
 
-
-If you require software installed on the cluster, email the [IT Service Centre](mailto:ITServiceCentre@unsw.edu.au) detailing the software that you would like installed and that you would like to have it installed on Katana. Please include links and desired version numbers.
+If you require software installed on Katana then please email the details to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) including URLs and desired version numbers.
 
 ## How do I add a particular version of software to my environment?
 
@@ -127,7 +126,7 @@ cd ${PBS_O_WORKDIR}
 ./myprog
 ```
 
-Perl, Python and R all have their own library/module systems - `CPAN`, `PyPI`` and `CRAN`. If a library or module you want from one of these sources isn't installed in the module, please email us at [IT Service Desk](mailto:ITServiceCentre@unsw.edu.au?subject=Katana Software Install).
+Perl, Python and R all have their own library/module systems: `CPAN`, `PyPI`` and `CRAN`. If you need a library or module from one of these sources, and there is significant demand, then we will install it.  Please email such requests to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au?subject=Katana Software Install).
 
 [CPAN](https://www.cpan.org/)
 
