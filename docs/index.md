@@ -2,7 +2,7 @@
 
 ### **Scheduled Maintenance**
 !!! warning ""
-    Febuary 2023 upgrade completed - you may need to complete some steps to reconnect, see [FAQ](./faq.md#how-do-i-fix-the-ssh-warning-after-the-february-2023-upgrade).
+    Next scheduled maintenance period: Monday 6 May 2024
 
 ### **Contact the Research Technology Services team**
 
