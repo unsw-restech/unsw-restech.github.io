@@ -1,8 +1,4 @@
-title: GitHub
-
-Version control systems like GitHub record changes to files over time, allowing you to go back to older versions, and create new branches for experimentation. 
-
-Version control is most useful for keeping track of programming code and documentation - large text based corpora that aren't suitable for storing in databases.
+title: Job Script Template
 
 `UNSW has an organisation in GitHub` for researchers and staff, joining this organisation gives you access to the UNSW-only repositories like:
  

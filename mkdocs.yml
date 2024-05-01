@@ -1,5 +1,6 @@
 site_name: Katana User Documentation
 theme:
+    favicon: assets/favicon.ico
     name: material
     custom_dir: overrides
     palette:
@@ -23,6 +24,8 @@ theme:
         #- navigation.expand
         - navigation.top
         - announce.dismiss
+        - toc.integrate
+        - navigation.path
 extra_css:
     - stylesheets/extra.css
 extra:
@@ -45,12 +48,11 @@ repo_url: https://github.com/unsw-restech/unsw-restech.github.io
 repo_name: unsw-restech/katana-docs
 nav:
     - 'index.md'
-    - 'Using Katana':
+    - 'Getting Started':
         - 'using_katana/accessing_katana.md'
-        - 'using_katana/about_katana.md'
         - 'using_katana/running_jobs.md'
-        - 'using_katana/github.md'
-        - 'using_katana/ondemand.md'
+        - 'using_katana/about_katana.md'
+    - 'using_katana/ondemand.md'
     - 'Storage':
         - 'storage/storage_locations.md'
         - 'storage/kdm.md'
@@ -59,24 +61,28 @@ nav:
     - 'Software':
         - 'software/environment_modules.md'
         - 'software/installing_software.md'
-        - 'software/ansys.md'
-        - 'software/biosciences.md'
-        - 'software/comsol.md'
-        - 'software/intel_compilers_and_libraries.md'
-        - 'software/java.md'
+        - 'software/script_templates.md'
+        #- 'software/ansys.md'
+        #- 'software/biosciences.md'
+        #- 'software/comsol.md'
+        #- 'software/intel_compilers_and_libraries.md'
+        #- 'software/java.md'
         - 'software/jupyter-notebooks.md'
-        - 'software/matlab.md'
-        - 'software/operating_systems.md'
-        - 'software/perl.md'
+        #- 'software/matlab.md'
+        #- 'software/operating_systems.md'
+        #- 'software/perl.md'
         - 'software/python.md'
         - 'software/r.md'
-        - 'software/sas.md'
-        - 'software/stata.md'
-        - 'software/tmux.md'
-        - 'software/zip.md'
-    - 'reference_data.md'
-    - 'faq.md'
-    - 'glossary.md'
+        #- 'software/sas.md'
+        #- 'software/stata.md'
+        #- 'software/tmux.md'
+        #- 'software/zip.md'
+        - 'software/others.md'
+    #- 'Help and Support':
+    - 'help_support/user_support.md'
+    #- 'help_support/reference_data.md'
+    - 'help_support/faq.md'
+    - 'help_support/glossary.md'
 
 plugins:
     - search
