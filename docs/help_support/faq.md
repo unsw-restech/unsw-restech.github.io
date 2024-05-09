@@ -31,7 +31,7 @@ Adapted from [^1].
 The best place to store source code is to use version control and store it in a repository.  This means that you will be able to keep every version of your code and revert to an earlier version if you require. [UNSW has a central github account](https://research.unsw.edu.au/github), but we encourage you to create your own.
 
 #### I just got some money from a grant. What can I spend it on?
-There are a number of different options for using research funding to improve your ability to run computationally intensive programs. The best starting point is to [contact us](./index.md#contact-the-research-technology-services-team) to figure out the different options.  
+There are a number of different options for using research funding to improve your ability to run computationally intensive programs. The best starting point is to [contact us](./index#contact-the-research-technology-services-team) to figure out the different options.  
 
 #### Can I access Katana from outside UNSW?
 Yes, if you have an account then you can connect to Katana from both inside and outside UNSW. Some services - like remote desktops - will not be as responsive as inside the UNSW network.
@@ -41,13 +41,13 @@ Yes, if you have an account then you can connect to Katana from both inside and 
 ---
 
 ####  Does Katana run a 32 bit or a 64 bit operating system?
-Katana [Compute Nodes](glossary.md#compute_nodes) and [Head Node](glossary.md#head_node) run a 64 bit version of the Rocky distribution of Linux. Currently version 8.9.
+Katana [Compute Nodes](glossary#compute_nodes) and [Head Node](glossary#head_node) run a 64 bit version of the Rocky distribution of Linux. Currently version 8.9.
 
 ####  How much memory is available per core and/or per node?
 The amount of memory available varies across the cluster. To determine how much memory each node has available use the 'pbsnodes' command. Roughly, you can safely use 4GB per core requested. You can request more memory but it may delay time spent in the queue.
 
 #### How much memory can I use on the login node for compiling software?
-The login nodes have a total of 24GB of memory each. Each individual user is limited to 4GB and should only be used to compile software. If you need more, do it in an [Interactive Job](glossary.md#interactive_job).
+The login nodes have a total of 24GB of memory each. Each individual user is limited to 4GB and should only be used to compile software. If you need more, do it in an [Interactive Job](glossary#interactive_job).
 
 #### Why isn't my job making it onto a node even though it says that some nodes are free?
 There are three main reasons you will see this behavior. The first of them is specific to Katana and the other two apply to any cluster.
@@ -66,7 +66,7 @@ Whilst there is not a technical limit to the number of jobs you can submit, subm
 #### What is the maximum number of CPUs I can use in parallel?
 As many as your account and queue will allow you. But there are trade-offs - if you ask for 150 CPUs (~5 full servers) you might be waiting more than a couple of months for your job to run. 
 
-If you are regularly wanting to run large parallel jobs (16+ cores per job) on Katana you should consider [seeking support](./index.md) so that we are aware of your jobs. We may be able to provide you additional assistance on resource usage for parallel jobs. 
+If you are regularly wanting to run large parallel jobs (16+ cores per job) on Katana you should consider [seeking support](./index) so that we are aware of your jobs. We may be able to provide you additional assistance on resource usage for parallel jobs. 
 
 #### Why does my SSH connection periodically disconnect?
 With all networks there is a limit to how long a connection between two computers will stay open if no data is travelling between them. Look to set your ServerAliveInterval or Keep Alive interval to 60 in your secure shell software (putty, ssh). 
@@ -123,7 +123,7 @@ The following three factors combine to generate the job priority.
 The job will be killed by the scheduler. You will get a message to that effect if you have any types of notification enabled (logs, emails).
 
 #### What happens if my job is still running when it reaches the end of the time that I have requested?
-When your job hits its [Walltime](glossary.md#walltime) it is automatically terminated by the scheduler.
+When your job hits its [Walltime](glossary#walltime) it is automatically terminated by the scheduler.
 
 #### 200 hours is not long enough! What can I do?
 If you find that your jobs take longer than the maximum WALL time then there are several different options to change your code so that it fits inside the parameters.
