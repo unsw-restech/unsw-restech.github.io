@@ -1,40 +1,50 @@
-# Help and Support
+title: Home
 
-### **Scheduled Maintenance**
-!!! warning ""
-    Next scheduled maintenance period: Monday 6 May 2024
+# Katana - Shared Computational Cluster at UNSW 
 
-### **Contact the Research Technology Services team**
+!!! warning 
+    **Scheduled Maintenance**:
+    Febuary 2023 upgrade completed - you may need to complete some steps to reconnect, see [FAQ](./help_support/faq#how-do-i-fix-the-ssh-warning-after-the-february-2023-upgrade).
 
-For Katana issues including: functional issues, software installation, reference data sets, general questions - 
-please email [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
 
-!!! info
-    This is the best and primary way to get help from UNSW Research Technology Services beyond this document. You *must* use your UNSW email address *or* your zID. Without this information, we have no idea who you might be.
+Katana, a computational cluster at UNSW, offers access to over 6,000 CPU cores, 8 GPU compute nodes (V100 and A100), and 6Pb of disk storage. It enables users to run complex jobs not feasible on personal devices. See [details](/using_katana/about_katana) for more information.
 
-    When writing your email, please include a clear and detailed description of the issue experienced, including error messages and node name. Something like "It doesn't work" doesn't help us help you! If at all possible, include the steps someone else needs to do to reproduce the problem, the job identifier, the date and time of your problem and on which Katana node it occurred, the script filename and the directory you were running from.
+<figure markdown>
+  [![Image title](../assets/restech_logo.png){ width="800" }](https://unsw.sharepoint.com/sites/restech){:target="_blank"}
+</figure>
 
-    **Example of a bad request**
-        i'm trying to do some work on katana, but it seems that the server is slow or not responsive at times. i'm logged in from inside unsw today, so working from home shouldn't be the issue.
-        
-    **Example of a great request**
-        When I tried to run Sentaurus TCAD today (2020-05-01) on Katana I got this error message regardless of structures I wanted to simulate:
-            
-        “Job failed
-        Error: Child process with pid '116643' got the signal 'SIGSEGV' (segmentation violation)
-        job exits with status 1”
-        
-        My job ran on k052 with jobid 300000, my zID is z2134567
 
-For face to face support: [Drop-In Hour](https://research.unsw.edu.au/restech-drop-hour-formerly-hacky-hour) Wednesdays, 1pm.
+## Are you looking for....
 
-For questions about [research data at UNSW](https://research.unsw.edu.au/research-data-management-unsw>) - on storage, movement or Data Management Plans, please email the [Research Data Team](mailto:rdm@unsw.edu.au>). If you specifically wish to increase Katana storage allocations, please email [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) - note that such increases are not automatic.
+<div style="display: flex; justify-content: space-around;">
+    <div style="flex: 1; margin: 0 10px;">
+      <div style="display: inline-block; text-align: center;">
+            <img src="../assets/kod_square.png" alt="Easy access to Katana" style="max-width: 100%; height: 230px;">
+            <div><a href="/using_katana/ondemand">Easy access to Katana</a></div>
+        </a>
+      </div>
+    </div>
+    <div style="flex: 1; margin: 0 10px;">
+      <div style="display: inline-block; text-align: center;">
+            <img src="../assets/next_training.png" alt="Next Katana related trainings" style="max-width: 100%; height: 230px;">
+            <div><a href="https://unsw.sharepoint.com/sites/restech" target="_blank">Next Katana related trainings</a></div>
+        </a>
+      </div>
+    </div>
+    <div style="flex: 1; margin: 0 10px;">
+      <div style="display: inline-block; text-align: center;">
+            <img src="../assets/help_support.png" alt="Contact staff for help" style="max-width: 100%; height: 230px;">
+            <div><a href="help_support/user_support">Contact staff for help</a></div>
+        </a>
+      </div>
+    </div>
+</div>
 
-### **Katana System Status and Known Issues**
 
-No known issues at the moment.
 
-### **Katana Terms of Use**
+
+
+## **Katana Terms of Use**
 
 Any use of Katana is covered by the [Conditions of Use - UNSW ICT Resources](https://www.it.unsw.edu.au/students/policies/agree_to_rules.html). 
 

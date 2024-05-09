@@ -1,41 +1,47 @@
-title: Katana OnDemand
+title: Web access to Katana
 
-There are a number of GUI based software packages that are offered through a web interface. The requirements are a Katana account and for the user to be either on campus or connected to the [UNSW VPN](https://vpn.unsw.edu.au).
+# Katana OnDemand
 
-These can be accessed from https://kod.restech.unsw.edu.au
+[Katana OnDemand](https://kod.restech.unsw.edu.au){:target="_blank"} gives you web interface to Katana
 
-After logging in, you can:
+If you are not on campus, please make sure you are connected to [UNSW VPN](https://vpn.unsw.edu.au){:target="_blank"}.
 
-- Access your `/home/`, `/srv/scratch/` and any project files from the Files menu. While you can upload files through this interface, please don't upload anything larger than about 10MB. 
+<figure>
+    <img src="../../assets/kod_home.png" alt="Katana OnDemand" width="800">
+  <figcaption>
+    <a href="https://kod.restech.unsw.edu.au" target="_blank">Katana OnDemand</a>
+  </figcaption>
+</figure>
 
-- See your active jobs in a web based view of the traditional `qstat` command
-
-- Start a new interactive app
 
 
-Installed interactive apps are availble in a drop-down list
+## Access your files
+
+On Katana OnDemand, you can easily **upload**, **download**, **delete** and **modify** files
 
 <figure markdown>
-  ![Image title](../assets/kod_interactive_apps.png){ width="400" }
-  <figcaption>ondemand interactive apps</figcaption>
+  ![Image title](../assets/kod_files.png){ width="800" }
 </figure>
+
+## Interactive Apps
+
+You can run [Virtual Desktop](../software/virtual_desktop), [JupyterLab](../software/jupyter-notebooks), [RStudio](../software/r), Terminal Session of Katana on your web browser.
 
 The status of your interactive sessions can be seen using the rightmost 'My Interactive Sessions' icon. 
 
-<figure markdown>
-  ![Image title](../assets/kod_interactive_sessions_status.png){ width="400" }
-  <figcaption>ondemand interactive sessions</figcaption>
-</figure>
+<div class="video-container">
+  <video width="800" controls>
+    <source src="../../assets/interactive_session_demos.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
-Clicking on the Session ID display files that are useful for debubbing purposes. Please include their contents if submitting a support request.
+<style>
+    .video-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px; /* Adjust as needed */
+    }
+  </style>
 
-
-## Software Available in OnDemand
-
-- [R and RStudio](../software/r.md)
-- [Jupyter Notebooks](../software/jupyter-notebooks.md), JupyterLab and various kernels
-- [Matlab](../software/matlab.md)
-- [Stata](../software/stata.md)
-- [Comsol](../software/comsol.md)
-- [Ansys](../software/ansys.md)
 

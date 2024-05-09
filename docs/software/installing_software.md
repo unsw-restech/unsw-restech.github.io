@@ -15,12 +15,19 @@ Some common software packages are already available as part of katana's the oper
 !!! warning
     Do not try to run system commands as a user. These include: apt-get install, yum install, su, or sudo. 
 
-As detailed in [Environment Modules](./environment_modules.md), software already installed by HPC staff is listed with:
+As detailed in [Environment Modules](./environment_modules), software already installed by HPC staff is listed with:
 
 ``` bash 
    module avail
 ```
 
+## R and Python Packages
+
+Many R and Python packages are installed on katana. We have specific documentation to install your own packages in [R](./r#installing-libraries) and [Python](./python#pip3---the-python-package-manager-the-package-installer-for-python)`
+
+!!! note
+    If you have tried to install software yourself, but you need further assistance, then please send an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
+    
 ## Installing a binary package
 
 While installing from source is preferred for effeciency reasons, sometimes
@@ -50,7 +57,7 @@ Compiling from source is preferred for efficiency reasons, but is a more involve
 
 ### Github cloning
 
-Source code is commonly stored on GitHub for easy version control. Git is available by default on katana. Remember: UNSW has its own [GitHub organisation](../using_katana/github.md).
+Source code is commonly stored on GitHub for easy version control. Git is available by default on katana. Remember: UNSW has its own [GitHub organisation](../using_katana/github).
 
 
 Copy the web address revealed by the green 'Code' button on the repository. Creating a local copy of the repository is then as simple as:
@@ -68,7 +75,7 @@ Please read the README and INSTALL files in full before attempting compilation.
 
 ### Compilers 
 
-Try to use the system compilers `gcc` and `ld`. However, many codes require specific compilers and versions. Katana has many compilers available as modules including the [Intel Compilers and Software Libraries](./intel_compilers_and_libraries.md)
+Try to use the system compilers `gcc` and `ld`. However, many codes require specific compilers and versions. Katana has many compilers available as modules including the [Intel Compilers and Software Libraries](./intel_compilers_and_libraries)
 
 !!! note 
     Please install software using an interactive session, qsub -I, not directly on the login node. 
@@ -119,10 +126,3 @@ Key sections will likely need to modify are:
     Insert "module use --append $HOME/apps/Modules" into your ~/.bashrc to enable using your own modules upon login. 
 
 You should be able to module load your own software module as your own.
-
-## R and Python Packages
-
-Many R and Python packages are installed on katana. We have specific documentation to install your own packages in [R](./r.md#installing-libraries) and [Python](./python.md#pip3---the-python-package-manager-the-package-installer-for-python)`
-
-!!! note
-    If you have tried to install software yourself, but you need further assistance, then please send an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
