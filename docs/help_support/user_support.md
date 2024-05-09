@@ -2,12 +2,6 @@ title: Help and Support
 
 # Help and Support 
 
-!!! warning 
-    **Scheduled Maintenance**:
-    Febuary 2023 upgrade completed - you may need to complete some steps to reconnect, see [FAQ](./faq.md#how-do-i-fix-the-ssh-warning-after-the-february-2023-upgrade).
-
-
-
 ### **Contact the Research Technology Services team**
 
 For Katana issues including: functional issues, software installation, reference data sets, general questions - 

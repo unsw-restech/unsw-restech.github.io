@@ -2,11 +2,6 @@ title: Home
 
 # Katana - Shared Computational Cluster at UNSW 
 
-!!! warning 
-    **Scheduled Maintenance**:
-    Febuary 2023 upgrade completed - you may need to complete some steps to reconnect, see [FAQ](./help_support/faq#how-do-i-fix-the-ssh-warning-after-the-february-2023-upgrade).
-
-
 Katana, a computational cluster at UNSW, offers access to over 6,000 CPU cores, 8 GPU compute nodes (V100 and A100), and 6Pb of disk storage. It enables users to run complex jobs not feasible on personal devices. See [details](/using_katana/about_katana) for more information.
 
 <figure markdown>
