@@ -6,8 +6,8 @@ Katana is powerful on its own, but can be seen as a training or development base
 
 ## System Configuration
 
-- RPM based Linux OSes. Rocky on the management plane and nodes
-- OpenPBS version 
+- RPM based Linux OSes. Rocky 8 on the management plane and nodes
+- OpenPBS version 23.06.06
 - Large global scratch at `/srv/scratch`, local scratch at `$TMPDIR`
 - 12, 48, 100, 200 hour [Walltime queues with prioritisation](/using_katana/running_jobs/#job-queue-limits-summary)
 
