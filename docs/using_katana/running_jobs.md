@@ -9,30 +9,30 @@ title: Running Jobs on Katana
   </figcaption>
 </figure>
 
-The [Login Node](../glossary#login-node) of a cluster is a shared resource for all users and is used for preparing, submitting and managing jobs. 
+The [Login Node](../../help_support/glossary#login-node) of a cluster is a shared resource for all users and is used for preparing, submitting and managing jobs. 
 
 !!! warning
     Run any computationally intensive processes on the **compute nodes**, not **login nodes** 
    
-Jobs are submitted from the login node, which delivers them to the [Head Node](../glossary#head-node) for job and resource management. Once the resources have been allocated and are available, the job will run on one or more of the compute nodes as requested. 
+Jobs are submitted from the login node, which delivers them to the [Head Node](../../help_support/glossary#head-node) for job and resource management. Once the resources have been allocated and are available, the job will run on one or more of the compute nodes as requested. 
 
 Different clusters use different tools to manage resources and schedule jobs - OpenPBS and SLURM are two popular systems. Katana, like NCI's Gadi, uses OpenPBS for this purpose.
 
-Jobs are submitted using the `qsub` command. There are two types of job that `qsub` will accept: an [Batch Job](../glossary#batch-job) and a [Interactive Job](../glossary#interactive-job). Regardless of type, the resource manager will put your job in a [Queue](../glossary#queue).
+Jobs are submitted using the `qsub` command. There are two types of job that `qsub` will accept: an [Batch Job](../../help_support/glossary#batch-job) and a [Interactive Job](../../help_support/glossary#interactive-job). Regardless of type, the resource manager will put your job in a [Queue](../../help_support/glossary#queue).
 
-An **interactive job** provides a shell session on a [Compute Nodes](../glossary#compute-nodes). You interact directly with the compute node running the software you need explicitly. Interactive jobs are useful for experimentation, debugging, and planning for **batch jobs**.
+An **interactive job** provides a shell session on a [Compute Nodes](../../help_support/glossary#compute-nodes). You interact directly with the compute node running the software you need explicitly. Interactive jobs are useful for experimentation, debugging, and planning for **batch jobs**.
 
 !!! note
     For calculations that run longer than a few hours, **batch jobs** are preferred.   
 
-In contrast, a [Batch Job](../glossary#batch-job) is a scripted job that - after submission via `qsub` - runs from start to finish without any user intervention. The vast majority of jobs on the cluster are batch jobs. This type of job is appropriate for production runs that will consume several hours or days. 
+In contrast, a [Batch Job](../../help_support/glossary#batch-job) is a scripted job that - after submission via `qsub` - runs from start to finish without any user intervention. The vast majority of jobs on the cluster are batch jobs. This type of job is appropriate for production runs that will consume several hours or days. 
 
-To submit a [Batch Job](../glossary#batch-job) you will need to create a job script which specifies the resources that your job requires and calls your program. The general structure of [A Job Script](#a-job-script) is shown below.
+To submit a [Batch Job](../../help_support/glossary#batch-job) you will need to create a job script which specifies the resources that your job requires and calls your program. The general structure of [A Job Script](#a-job-script) is shown below.
 
 !!! important
-    All jobs go into a [Queue](../glossary#queue) while waiting for resources to become available. The length of time your jobs wait in a queue for resources depends on a number of factors.
+    All jobs go into a [Queue](../../help_support/glossary#queue) while waiting for resources to become available. The length of time your jobs wait in a queue for resources depends on a number of factors.
 
-The main resources available for use are Memory (RAM), [CPU Core](../glossary#cpu-core) (number of CPUs) and [Walltime](../glossary#walltime) (how long you want the CPUs for). These need to be considered carefully when writing your job script, since the decisions you make will impact which queue your jobs ends up on.
+The main resources available for use are Memory (RAM), [CPU Core](../../help_support/glossary#cpu-core) (number of CPUs) and [Walltime](../../help_support/glossary#walltime) (how long you want the CPUs for). These need to be considered carefully when writing your job script, since the decisions you make will impact which queue your jobs ends up on.
 
 As you request more memory, CPU cores, or walltime, the number of available queues goes down. The limits are which the number of queues decrease are summarised in the table below
 
@@ -133,7 +133,7 @@ cd $PBS_O_WORKDIR
 
 There is one last special variable you should know about, especially if you are working with large datasets. The storage on the compute node your job is running on will always be faster than the network drive.
 
-If you use the storage close to the CPUs - in the server rather than on the shared drives, called [Local Scratch](../glossary#local-scratch) - you can often save hours of time reading and writing across the network. 
+If you use the storage close to the CPUs - in the server rather than on the shared drives, called [Local Scratch](../../help_support/glossary#local-scratch) - you can often save hours of time reading and writing across the network. 
 
 In order to do this, you can copy data to and from the local scratch, called `$TMPDIR`:
 
@@ -336,7 +336,7 @@ HTML heading tags are used instead of '###' otherwise the right sidebar index br
 
         <h3>List just my jobs</h3>
 
-        You can use either your **ZID** or the [Environment Variable](../glossary#environment-variable) `$USER`
+        You can use either your **ZID** or the [Environment Variable](../../help_support/glossary#environment-variable) `$USER`
 
         ``` bash
             [z2134567@katana2 src]$ qstat -u $USER

@@ -25,19 +25,23 @@ On Katana OnDemand, you can easily **upload**, **download**, **delete** and **mo
 
 ## Interactive Apps
 
-You can run [Virtual Desktop](../software/virtual_desktop.md), [JupyterLab](../software/jupyter-notebooks.md), [RStudio](../software/r.md), Terminal Session of Katana on your web browser.
+You can run [Virtual Desktop](../software/virtual_desktop), [JupyterLab](../software/jupyter-notebooks), [RStudio](../software/r), Terminal Session of Katana on your web browser.
 
 The status of your interactive sessions can be seen using the rightmost 'My Interactive Sessions' icon. 
 
-<figure markdown>
-  ![Image title](../assets/kod_interactive_apps.png){ width="400" }
-  <figcaption>ondemand interactive apps</figcaption>
-</figure>
+<div class="video-container">
+  <video width="800" controls>
+    <source src="../../assets/interactive_session_demos.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
+<style>
+    .video-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px; /* Adjust as needed */
+    }
+  </style>
 
-
-<figure markdown>
-  ![Image title](../assets/kod_interactive_sessions_status.png){ width="400" }
-  <figcaption>ondemand interactive sessions</figcaption>
-</figure>
 
