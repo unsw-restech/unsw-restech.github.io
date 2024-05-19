@@ -1,26 +1,22 @@
 ### Active Job 
 
-Active jobs are jobs that have been assigned to a compute node and are currently running. These can be seen by running `qstat` and looking for an A in the second last column. [See examples](../../using_katana/running_jobs#managing-jobs-on-katana).
+Active or running jobs are jobs that have been assigned to a compute node and are currently running. These can be seen by running `qstat` and looking for a R in the second last column. [See examples](../../using_katana/running_jobs#managing-jobs-on-katana).
 
 ---
 
 ### Array Job
 
-If you want to run the same job multiple times with slight differences (filenames, data source, etc), then you can create an array job which will submit multiple jobs for you from the one job script. 
+If you want to run the same job multiple times with slight differences (filenames, data source, variable, etc), then you can create an array job which will submit multiple jobs for you from the one job script. 
 
 ---
 
 ### Batch Job
 
-A batch job is a job on a cluster that runs without any further input once it has been submitted. Almost all jobs on the cluster are batch jobs. All jobs are either batch jobs or [Interactive Job](./#interactive-job).
+A batch job is a job on a cluster that runs without any further input once it has been submitted and will start running as soon as it reaches a compute node. Almost all jobs on the cluster are batch jobs with the remainder being [Interactive Jobs](./#interactive-job) including thuse
+that are run using [Katana OnDemand](./using_katana/ondemand)
 
 ---
 
-### Blade 
-
-Some of the compute nodes Katana are called blade servers which allow a higher density of servers in the same space. Each blade consists of multiple CPUs with 6 or more cores.
-
----
 
 ### Cluster
 
