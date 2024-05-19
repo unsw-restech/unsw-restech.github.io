@@ -13,7 +13,7 @@ If you want to run the same job multiple times with slight differences (filename
 ### Batch Job
 
 A batch job is a job on a cluster that runs without any further input once it has been submitted and will start running as soon as it reaches a compute node. Almost all jobs on the cluster are batch jobs with the remainder being [Interactive Jobs](./#interactive-job) including thuse
-that are run using [Katana OnDemand](./using_katana/ondemand)
+that are run using [Katana OnDemand](../../using_katana/ondemand/)
 
 ---
 
