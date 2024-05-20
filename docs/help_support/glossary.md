@@ -1,18 +1,19 @@
 ### Active Job 
 
-Active or running jobs are jobs that have been assigned to a compute node and are currently running. These can be seen by running `qstat` and looking for a R in the second last column. [See examples](../../using_katana/running_jobs#managing-jobs-on-katana).
+Active jobs (also called running jobs) are jobs that have been assigned to a compute node and are currently running. These can be seen by running `qstat` and 
+looking for a R in the second last column. [See examples](../../using_katana/running_jobs#managing-jobs-on-katana).
 
 ---
 
 ### Array Job
 
-If you want to run the same job multiple times with slight differences (filenames, data source, variable, etc), then you can create an array job which will submit multiple jobs for you from the one job script. 
+If you want to run the same job multiple times with slight differences (filenames, data sources, variables, etc), then you can create an array job which will submit multiple jobs for you from the one job script. 
 
 ---
 
 ### Batch Job
 
-A batch job is a job on a cluster that runs without any further input once it has been submitted and will start running as soon as it reaches a compute node. Almost all jobs on the cluster are batch jobs with the remainder being [Interactive Jobs](./#interactive-job) including thuse
+A batch job is a job on a cluster that runs without any further input once it has been submitted and will start running as soon as it reaches a compute node. Almost all jobs on the cluster are batch jobs with the remainder being [Interactive Jobs](./#interactive-job) including those
 that are run using [Katana OnDemand](../../using_katana/ondemand/)
 
 ---
@@ -20,7 +21,7 @@ that are run using [Katana OnDemand](../../using_katana/ondemand/)
 
 ### Cluster
 
-A computer cluster is a set of connected computers that work together so that, in many respects, they can be viewed as a single system. Using a cluster is referred to as High Performance Computing or HPC. Most will have a [Management Plane](./#management-plane) and several [Compute Nodes](./#compute-nodes).
+A computational cluster is a set of connected computers that work together to create a single system amd is often referred to as a supercomputer or HPC (High Performance Computing) system. Most will have a [Management Plane](./#management-plane) and several [Compute Nodes](./#compute-nodes).
 
 ---
 
@@ -102,33 +103,39 @@ The module command is a means of providing access to different versions of softw
 
 ---
 
-### Management Plane
+### Management Servers
 
-The Management Plane is the set of servers that sit above or adjacent to the [Compute Nodes](./#compute-nodes). These servers are used to manage the system, manage the storage, or manage the network. Users have access to the [Login Node](./#login-node) and [Data Transfer Node](./#data-transfer-node). Other servers include the [Head Node](./#head-node). 
+The Management Servers are a collection of servers, including the [Head Node](./#head-node), that can only be accessed by the people running the cluster. These servers
+are used to create accounts, schedule jobs, provide computational software, manage Katana storage and keep Katana running.
 
 ---
 
 ### MPI
 
-Message Passing Infrastructure (MPI) is a technology for running a [Batch Job](./#batch-job) on more than one [Compute Nodes](./#compute-nodes). Designed for situations where parts of the job can run on independent nodes with the results being transferred to other nodes for the next part of the job to be run.
+Message Passing Infrastructure (MPI) is a technology for running a [Batch Job](./#batch-job) on more than one [Compute Node](./#compute-nodes). Some software has
+been designed for situations where parts of the job can run on independent compute nodes with the results being transferred to other nodes
+for the next part of the job to be run.
 
 ---
 
 ### Network Drive 
 
-A network drive is a drive that is independent from the cluster. 
+A network drive is a drive that is independent from the cluster such as oneDrive.
 
 ---
 
 ### Queue
 
-All submitted jobs are put into a queue. Each queue has a collection of resources available to it. As those resources become available, new jobs will be assigned to those resources. Job prioritisation is done by the scheduler and depends on a number of factors including length of wait time and total resource use by the user over the previous month.
+All submitted jobs are put into a queue which has a collection of resources available to it. As those resources become available, new jobs will be assigned to those resources. 
+Job prioritisation is done by the scheduler and depends on a number of factors including length of wait time and total resource use by the user over the previous month.
 
 ---
 
 ### Queued Jobs 
 
-Queued jobs are eligible to run but are waiting for a [Compute Nodes](./#compute-nodes) that matches their requirements to become available. Which idle job will be assigned to a compute node next depends on the [Job Scheduler](./#job-scheduler). These can be seen by running `qstat` and looking for a Q in the second last column. [See examples](../../using_katana/running_jobs#managing-jobs-on-katana).
+Queued jobs are jobs that are waiting for a [Compute Nodes](./#compute-nodes) that matches their requirements to become available. 
+Which idle job will be assigned to a compute node next depends on the [Job Scheduler](./#job-scheduler) and can be seen by 
+running `qstat` and looking for a Q in the second last column. [See examples](../../using_katana/running_jobs#managing-jobs-on-katana).
 
 ---
 
@@ -146,4 +153,10 @@ Scratch space is a non backed up storage area where users can store transient da
 
 ### Walltime
 
-In HPC, walltime is the amount of time that you will be allocated when your job runs. If your jobs runs longer than the walltime, it will be killed by the [Job Scheduler](./#job-scheduler). It is used by the scheduler for helping allocate resources onto servers. On **Katana** it is also used to determine which [Queue](./#queue) your job will end up in. The shorter the walltime, the more opportunity your job has to run which in turn means that it will start sooner. In short it's harder to find 100 hours of aviable time than it is to find 12 hours.
+Om HPC systems like Katana, walltime is the amount of time that you will be allocated when your job runs. If your job runs longer than the walltime, 
+it will be killed by the [Job Scheduler](./#job-scheduler) to free up resources for one of the waiting jobs. Walltiime is one of the factors used by
+the scheduler to decide when your job will run. 
+On **Katana** it Walltime is also used to determine which [Queue](./#queue) your job will be assigned to. The shorter the walltime, the more 
+opportunity your job has to run which in turn means that it will start sooner. In short, running a job with a walltime of 12 hours is easier than running
+a job will a walltime of 100 hours. It is imprtant to note rhat youur job will be scheduled based on the walltime that you have requested and not
+how long your job takes to run.
