@@ -16,7 +16,8 @@ which will submit multiple jobs for you from the one job script.
 
 A batch job is a job on a cluster that runs without any further input once it has been submitted
 and will start running as soon as it reaches a compute node even if it is the middle of the night. Almost all jobs on the cluster are
-batch jobs with the remainder being [Interactive Jobs](./#interactive-job) including those that are run using [Katana OnDemand](../../using_katana/ondemand/)
+batch jobs with the remainder being [Interactive Jobs](./#interactive-job) including those that are run 
+using [Katana OnDemand](../../using_katana/ondemand/). [See examples](../../using_katana/running_jobs/#batch-jobs).
 
 ---
 
@@ -63,37 +64,55 @@ For example, all users can reference `$TMPDIR` in their [Job Script](./#job-scri
 
 ### Global Scratch 
 
-Global scratch is a large data store for data that isn't backed up. It differs from local scratch in that it is available from every node including the [Head Node](./#head-node). If you have data files or working directories this is where you should put them.
+Global scratch is a large data store that isn't backed up. It is availble from all nodes in Katana including the
+from every node including the [Head Node](./#head-node)[Katana Data Mover (KDM)](./storage/). If you have data files 
+or or want to save your computation results when your job finishes this is where you should put them.
 
 ---
 
 ### Head Node
 
-The head node of the [Cluster](./#cluster) is the computer that manages job and resource management. This is where the [Job Scheduler](./#job-scheduler) and [Resource Manager](./#resource-manager) are run. It is kept separate from the [Login Node](./#login-node) so that production doesn't stop if someone accidentally breaks the [Login Node](./#login-node).
+The head node of the [Cluster](./#cluster) is the computer that manages job and resource management. This is where the 
+[Job Scheduler](./#job-scheduler) and [Resource Manager](./#resource-manager) are run. It is kept separate from 
+the [Login Node](./#login-node) so that the cluster can keep running if something goes wrong with the [Login Node](./#login-node).
+It also means that if anything goes wrong with the scheduler it doesn't affect the users who are using the login nodes.
 
 ---
 
 ### Held Jobs
 
-Held jobs are jobs that cannot currently run. They are put into that state by either the server or the system administrator. Jobs stay held until released by a systems administrator, at which point they become [Queued Jobs](./#queued-jobs). These can be seen by running `qstat` and looking for an H in the second last column. [See examples](../../using_katana/running_jobs#managing-jobs-on-katana).
+Held jobs are jobs that cannot currently run. They are most often put into that state by either the server or the system administrator
+but users an also put their jobs on hold. Users sometime want to submit multiple jobs at the same time but want to control
+the order in which they run. Unless a job has been held by a user, it will stay on the held state until released by one of the people managing Katana,
+at which point they become [Queued Jobs](./#queued-jobs). These can be seen by running `qstat` and looking for an H in the
+second last column. [See examples](../../using_katana/running_jobs#managing-jobs-on-katana).
 
 ---
 
 ### Interactive Job 
 
-An interactive job is a way of testing your program and data on a cluster without negatively impacting the [Login Node](./#login-node). Once a request has been submitted and accepted for an interactive job, the user will no longer be on the relatively small login nodes, and will have access to the resources requested on the [Compute Nodes](./#compute-nodes). In other words, your terminal session will move from a small (virtual) computer you share with many people to a large computer you share with very few people. All jobs are either a [Batch Job](./#batch-job) or an interactive job. Instructions on using [interactive jobs](../../using_katana/running_jobs#interactive-jobs).
+An interactive job is a way of running your software on a cluster without negatively impacting the [Login Node](./#login-node). 
+Once a request has been submitted and starts running on a [Compute Nodes](./#compute-nodes) with the resources that you requestd.
+You can thn figure out exactly what you need to do to run your program and you can use that information to convert your commands
+into a baatch job. All jobs on Katana are either a [Batch Job](./#batch-job) or an interactive job. Instructions on
+using [interactive jobs](../../using_katana/running_jobs#interactive-jobs).
     
 ---
 
 ### Job Scheduler
 
-The job scheduler monitors the jobs currenty running on the cluster and assigns [Queued Jobs](./#queued-jobs) to [Compute Nodes](./#compute-nodes) based on recent cluster useage, job resource requirements and nodes available to the research group of the submitter. In summary the job scheduler determines when and where a job should run. The job scheduler that we use is called PBSPro.
+The job scheduler monitors the jobs currenty running on the cluster and assigns [Queued Jobs](./#queued-jobs) to
+[Compute Nodes](./#compute-nodes) based on recent cluster useage, job resource requirements and nodes available to
+the research group of the submitter. To put it another way, the job scheduler determines when and where a job should run.
+The job scheduler that is used on Katana is called Owe use is called OpenPBS.
 
 ---
 
 ### Job Script
 
-A job script is a file containing all of the information needed to run a [Batch Job](./#batch-job) including the resource requirements and the actual commands to run the job.
+A job script is a file containing all of the information needed to run a [Batch Job](./#batch-job) including the resource
+requirements and the commands to run the job. A job script can be thought of as a file containing everything that you
+would need to type in if you wre running an interative job. [See examples](../../using_katana/running_jobs/#batch-jobs).
 
 ---
 
