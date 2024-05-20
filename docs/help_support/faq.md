@@ -81,7 +81,7 @@ Secondly, the idle nodes may not have sufficient resources for your job. For exa
 You have requested 12 cpu cores but there are only 10 available. You may have requested a particular walltime and your job would not be finished before a bigger job that 
 will use at least some of these resources is due to begin. 
 
-Thirdly, the most common example of resources waiting to be used by a job occurs with distributed memory jobs which have a resevation on the node and they is just waiting for all of their 
+Thirdly, the most common example of resources waiting to be used by a job is with distributed memory jobs. They have a reservation on the node and they are just waiting for all of their 
 requested resources to become available. In this case, your job can only use the reserved nodes if your job can finish before the nodes are required by the 
 distributed memory job. For example, if a job has been waiting a week (yes, it happens) for `#!bash walltime=200,cpu=88,mem=600GB` (very long, two whole nodes),
 then those resources will need to be made available at some point. This is an excellent example of why breaking your jobs up into smaller parts is good practice.
@@ -94,7 +94,7 @@ Whilst there is not a technical limit to the number of jobs you can submit, subm
 job scheduler and your jobs may be deleted without warning. This is an editorial decision by management.
 
 #### What is the maximum number of CPUs I can use in parallel?
-As many as your account and queue will allow you. But there are trade-offs - if you ask for 150 CPUs (~5 full servers) you might be waiting more than a couple of months for your job to run. 
+As many as your account and queue will allow you. But there are trade-offs - if you ask for 150 CPUs (~5 full servers) you might be waiting more than a couple of months for your job to run.
 
 If you are regularly wanting to run large parallel jobs (over 32 cores per job) on Katana you should consider [seeking support](./index) so that we are aware of your jobs. 
 We may be able to provide you additional assistance on resource usage for parallel jobs. 
@@ -107,7 +107,7 @@ Look to set your ServerAliveInterval or Keep Alive interval to 60 in your secure
 Yes you increase the resource values for jobs that are still queued, but even then you are constrained by the limits of the particular queue 
 that you are submitting to. This means that if your job is in the 12 hour queue you cannot request a walltime of more than 12 hours.
 Once it has been assigned to a node the intricacies of the scheduling policy means that it becomes impossible for 
-anyone including the administrator to make any further changes
+anyone including the administrator to make any further changes.
 
 #### Where does Standard Output (STDOUT) go when a job is run?
 By default Standard Output is redirected to storage on the node and then transferred when the job is completed. If you are generating data you 
@@ -152,16 +152,22 @@ have a new piece of software installed or software that is already installed upg
 from your UNSW email account with details of what software change you require.
 
 #### Why is my job stuck in the queue whilst other jobs run?
-The queues are not set up to be first-in-first-out. In fact all of the queued jobs sit in one big pool of jobs that are ready to run. The scheduler assigns priorities to jobs in the pool and the job with the highest priority is the next one to run. The length of time spent waiting in the pool is just one of several factors that are used to determine priority.
+The queues are not set up to be first-in-first-out. In fact all of the queued jobs sit in one big pool of jobs that are ready to run. The scheduler assigns priorities to jobs in the pool 
+and the job with the highest priority is the next one to run. The length of time spent waiting in the pool is just one of several factors that are used to determine priority.
 
-For example, people who have used the cluster heavily over the last two weeks receive a negative contribution to their jobs' priority, whereas a light user will receive a positive contribution. You can see this in action with the diagnose -p and diagnose -f commands.
+For example, people who have used the cluster heavily over the last two weeks receive a negative contribution to their jobs' priority, whereas a user who hasn't used Katana much recently
+will receive a positive contribution. You can see this in action with the diagnose -p and diagnose -f commands.
 
 #### You mentioned waiting time as a factor, what else affects the job priority?
 The following three factors combine to generate the job priority.
 
-- How many resources (cpu and memory) have you and your group consumed in the last 14 days? Your personal consumption is weighted more highly than your group's consumption. Heavy recent usage contributes a negative priority. Light recent usage contributes a positive priority.
-- How many resources does the job require? Always a positive contribution to priority, but increases linearly with the amount of cpu and memory requested, i.e. we like big jobs.
-- How long has the job been waiting in the queue? Always a positive contribution to priority, but increases linearly with the amount of time your job has been waiting in the queue. Note that throttling policies will prevent some jobs from being considered for scheduling, in which case their clock does not start ticking until that throttling constraint is lifted.
+- How many resources (cpu and memory) have you and your group consumed in the last 14 days? Your personal consumption is weighted more highly than your group's consumption. 
+Heavy recent usage contributes a negative priority. Light recent usage contributes a positive priority.
+- How many resources does the job require? Always a positive contribution to priority, but increases linearly with the amount 
+of cpu and memory requested, i.e. we like big jobs.
+- How long has the job been waiting in the queue? Always a positive contribution to priority, but increases linearly with the amount of time your job has been waiting 
+in the queue. Note that throttling policies will prevent some jobs from being considered for scheduling, in which case their clock does not start ticking until that 
+throttling constraint is lifted.
 
 #### What happens if my job uses more memory than I requested?
 The job will be killed by the scheduler. You will get a message to that effect if you have any types of notification enabled (logs, emails). If this happens you should increase the
@@ -179,9 +185,11 @@ If you find that your jobs take longer than the maximum WALL time then there are
 You may want to also look to see if there is anything that you can do to make your code run better like making better use of local scratch if your code is I/O intensive.
 
 #### Do sub-jobs within an array job run in parallel, or do they queue up serially?
-Submitting an array job with 100 sub-jobs is equivalent to submitting 100 individual jobs. So if sufficient resources are available then all 100 sub-jobs could run in parallel. Otherwise some sub-jobs will run and other sub-jobs must wait in the queue for resources to become available.
+Submitting an array job with 100 sub-jobs is equivalent to submitting 100 individual jobs. So if sufficient resources are available then all 100 sub-jobs could run in parallel. 
+Otherwise some sub-jobs will run and other sub-jobs must wait in the queue for resources to become available.
 
-The '%' option in the array request offers the ability to self impose a limit on the number of concurrently running sub-jobs. Also, if you need to impose an order on when the jobs are run then the 'depend' attribute can help.
+The '%' option in the array request offers the ability to self impose a limit on the number of concurrently running sub-jobs. Also, if you need to impose an order on when 
+the jobs are run then the 'depend' attribute can help.
 
 #### In a pbs file does the MEM requested refer to each node or the total memory on all nodes being used (if I am using more than 1 node?)
 MEM refers to the amount of memory per node.
@@ -191,7 +199,9 @@ MEM refers to the amount of memory per node.
 ---
 
 #### What storage is available to me?
-Katana provides three different storage areas, cluster home drives, local scratch and global scratch. The storage page has additional information on the differences and advantages of each of the different types of storage. You may also want to consider storing your code using a version control service like GitHub. This means that you will be able to keep every version of your code and revert to an earlier version if you require.
+Katana provides three different storage areas, cluster home drives, local scratch and global scratch. The storage page has additional information on the differences and
+advantages of each of the different types of storage. You may also want to consider storing your code using a version control service like GitHub. This means that you
+will be able to keep every version of your code and revert to an earlier version if you require.
 
 #### Which storage is fastest?
 In order of performance the best storage to use is local scratch, global scratch and cluster home drive.
