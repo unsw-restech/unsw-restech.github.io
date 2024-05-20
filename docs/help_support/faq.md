@@ -1,40 +1,52 @@
 title: FAQ
 
+
 ### **General FAQ**
 
----
-
-#### How do I fix the SSH WARNING after the February 2023 upgrade?
-
-Katana's host key has been changed, so reconnecting will trigger a long "WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!" message.
-To fix this, you will need to purge the old known host entries from each of your client devices.
-
-!!! info 
-    === "Command line (Windows/Linux/Mac)"
-        1. Run the "remove with" suggestion from your warning, or fix all at once using:
-        ``` sh
-        ssh-keygen -R katana.unsw.edu.au
-        ssh-keygen -R kdm.restech.unsw.edu.au
-        ssh-keygen -R katana.restech.unsw.edu.au
-        ssh-keygen -R katana1.restech.unsw.edu.au
-        ssh-keygen -R katana2.restech.unsw.edu.au
-        ssh-keygen -R katana3.restech.unsw.edu.au
-        ```
-    === "Putty (Windows)"
-        1. Search and open regedit.exe
-        2. Navigate to HKEY_CURRENT_USER/SOFTWARE/SimonTatham/PuTTy/SshHostKeys
-        3. Right click on any katana/kdm keys and click delete
-Adapted from [^1].
-[^1]: https://www.rit.edu/researchcomputing/instructions/Clearing-the-known_hosts-SSH-File
-
 #### Where is the best place to store my code?
-The best place to store source code is to use version control and store it in a repository.  This means that you will be able to keep every version of your code and revert to an earlier version if you require. [UNSW has a central github account](https://research.unsw.edu.au/github), but we encourage you to create your own.
+The best place to store source code is to use version control and store it in a repository.  This means that you will be able to 
+keep every version of your code and revert to an earlier version if you require. [UNSW has a central github account](https://research.unsw.edu.au/github), 
+but we encourage you to create your own.
 
 #### I just got some money from a grant. What can I spend it on?
 There are a number of different options for using research funding to improve your ability to run computationally intensive programs. The best starting point is to [contact us](./index#contact-the-research-technology-services-team) to figure out the different options.  
 
 #### Can I access Katana from outside UNSW?
 Yes, if you have an account then you can connect to Katana from both inside and outside UNSW. Some services - like remote desktops - will not be as responsive as inside the UNSW network.
+
+### **Account FAQ**
+
+---
+#### How can I request an account on Katana?
+To apply for an account, please send an email to restech.support@unsw.edu.au giving your zID, your role within UNSW and the name of your supervisor or head of your research group.
+
+#### Can I give access to a colleague at a different institution?
+Access to Katana requires a staff, student or other relationship with UNSW so access can only be granted if they have that relationship.
+
+#### When will my Katana account expire?
+
+Unless a request has been receives to remove your access, your Katana account will remain open 
+whilst you have a student, staff or other relationship with UNSW. Once you no longer
+have that relationship your Katana account will be closed. 
+
+#### What happens to my data when I leave the university?
+ 
+Before you leave the university you should upload any important data to the UNSW Data Archive. If you already have a Research Data Management Plan (RDMP) 
+then you can find upload instructions at www.dataarchive.unsw.edu.au where you will also find information on how to create a RDMP if you don't have one already.
+ 
+Once you leave UNSW your Katana account will be removed and data that you leave on Katana will be uploaded to the Data Archive in a
+project that only Restech staff have access to. Restech staff can provide a copy of your data to you If you return to UNSW or forgot 
+to take it when you left. Other people will only be able to access to your data if you give permission. 
+Data will be kept in the UNSW Data Archive for the following periods.
+ 
+•	Katana Home directories may be deleted after 5 years.
+•	Katana Scratch directories may be deleted after 5 years.
+•	Katana Shared Scratch directories may be deleted after 7 years.
+•	Katana configuration data (located in the setup directory) may be deleted after 7 years.
+•	Any misc. data that is not in an appropriate place may be deleted after 5 years.
+ 
+Once those times have been reached it will no longer be possible to retrieve a copy of your data.
+
 
 ### **Scheduler FAQ**
 
@@ -167,13 +179,17 @@ As well as local scratch, global scratch and your cluster home drive are accessi
 Use`#!bash rsync` to copy data to the KDM server. More information is above.
 
 #### Is there any way of connecting my own file storage to one of the clusters?
-Whilst it is not possible to connect individual drives to any of the clusters, some units and research groups have purchased large capacity storage units which are co-located with the clusters. This storage is then available on the cluster nodes. For more information please contact the Research Technology Service Team by sending an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
+Whilst it is not possible to connect individual drives to any of the clusters, some units and research groups have purchased large capacity storage units
+which are co-located with the clusters. This storage is then available on the cluster nodes. For more information please contact the Research Technology 
+Services Team by sending an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
 
 #### Can I specify how much file storage I want on local scratch?
-If you want to specify the minimum amount of space on the drive before your job will be assigned to a node then you can use the file option in your job script. Unfortunately setting up more complicated file requirements is currently problematic.
+If you want to specify the minimum amount of space on the drive before your job will be assigned to a node then you can use the file option in your job script. 
+Unfortunately setting up more complicated file requirements is currently problematic.
 
 #### Can I run a program directly from scratch or my home drive after logging in to the cluster rather submitting a job?
-As the file server does not have any computational resources you would be running the job from the head node on the cluster. If you need to enter information when running your job then you should start an interactive job.
+As the file server does not have any computational resources you would be running the job from the head node on the cluster. If you need to enter information when 
+running your job then you should start an interactive job.
 
 ### **Expanding Katana**
 
