@@ -18,7 +18,8 @@ Yes, if you have an account then you can connect to Katana from both inside and 
 
 ---
 #### How can I request an account on Katana?
-To apply for an account, please send an email to restech.support@unsw.edu.au giving your zID, your role within UNSW and the name of your supervisor or head of your research group.
+To apply for an account, please send an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) giving your zID, your role within UNSW and the name 
+of your supervisor or head of your research group.
 
 #### Can I give access to a colleague at a different institution?
 Access to Katana requires a staff, student or other relationship with UNSW so access can only be granted if they have that relationship.
@@ -32,7 +33,7 @@ have that relationship your Katana account will be closed.
 #### What happens to my data when I leave the university?
  
 Before you leave the university you should upload any important data to the UNSW Data Archive. If you already have a Research Data Management Plan (RDMP) 
-then you can find upload instructions at www.dataarchive.unsw.edu.au where you will also find information on how to create a RDMP if you don't have one already.
+then you can find upload instructions at [www.dataarchive.unsw.edu.au](https://www.dataarchive.unsw.edu.au) where you will also find information on how to create a RDMP if you don't have one already.
  
 Once you leave UNSW your Katana account will be removed and data that you leave on Katana will be uploaded to the Data Archive in a
 project that only Restech staff have access to. Restech staff can provide a copy of your data to you If you return to UNSW or forgot 
