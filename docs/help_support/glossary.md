@@ -1,51 +1,63 @@
 ### Active Job 
 
-Active jobs (also called running jobs) are jobs that have been assigned to a compute node and are currently running. These can be seen by running `qstat` and 
-looking for a R in the second last column. [See examples](../../using_katana/running_jobs#managing-jobs-on-katana).
+Active jobs (also called running jobs) are jobs that have been assigned to a compute node and are currently running. These can be seen by running `qstat`
+and looking for a R in the second last column. [See examples](../../using_katana/running_jobs#managing-jobs-on-katana).
 
 ---
 
 ### Array Job
 
-If you want to run the same job multiple times with slight differences (filenames, data sources, variables, etc), then you can create an array job which will submit multiple jobs for you from the one job script. 
+If you want to run the same job multiple times with slight differences (filenames, data sources, variables, etc), then you can create an array job
+which will submit multiple jobs for you from the one job script. 
 
 ---
 
 ### Batch Job
 
-A batch job is a job on a cluster that runs without any further input once it has been submitted and will start running as soon as it reaches a compute node. Almost all jobs on the cluster are batch jobs with the remainder being [Interactive Jobs](./#interactive-job) including those
-that are run using [Katana OnDemand](../../using_katana/ondemand/)
+A batch job is a job on a cluster that runs without any further input once it has been submitted
+and will start running as soon as it reaches a compute node even if it is the middle of the night. Almost all jobs on the cluster are
+batch jobs with the remainder being [Interactive Jobs](./#interactive-job) including those that are run using [Katana OnDemand](../../using_katana/ondemand/)
 
 ---
 
-
 ### Cluster
 
-A computational cluster is a set of connected computers that work together to create a single system amd is often referred to as a supercomputer or HPC (High Performance Computing) system. Most will have a [Management Plane](./#management-plane) and several [Compute Nodes](./#compute-nodes).
+A computational cluster is a set of connected computers that work together to create a single system. They are often referred to as
+supercomputers or HPC (High Performance Computing) systems. All clusters will have [Management Servers](./#management-servers), 
+[Login Nodes](./#login-node) and [Compute Nodes](./#compute-nodes). Most clusters also have one of more [Data Transfer Nodes](./#data-transfer-node).
+The data transfer node for Katana is called the [Katana Data Mover or KDM](./storage/).
 
 ---
 
 ### Compute Nodes
 
-The compute nodes are where the compute jobs run. Users submit jobs from the [Login Node](./#login-node) and the [Job Scheduler](./#job-scheduler) on the [Head Node](./#head-node) will assign the job to one or more compute nodes.
+The compute nodes are where the compute jobs run. Users submit jobs from the [Login Node](./#login-node) and the
+[Job Scheduler](./#job-scheduler) on the [Head Node](./#head-node) will assign the job to one or more compute nodes.
 
 ---
 
 ### CPU Core
 
-Each node in the cluster has one or more CPUs each of which has 6 or more cores. Each core is able to run one job at a time so a node with 12 cores could have 12 jobs running in parallel.
+Each node in the cluster has one or more CPUs each of which has 6 or more cores. Each core is able to run one 
+job at a time so a node with 12 cores could have 12 jobs running in parallel.
 
 ---
 
 ### Data Transfer Node
 
-The Data Transfer Node, also known as the [Katana Data Mover (KDM)](./storage/), is a server that is used for transferring files to, from, and within the cluster. Due to the nature of moving data around, it uses a significant amount of memory and network bandwidth. This server is used to take that load off the [Login Node](./#login-node).
+The Data Transfer Node, also known as the [Katana Data Mover (KDM)](./storage/), is a server that is used for transferring
+files to, from, and within the cluster. Due to the nature of moving data around, it uses a significant amount of memory and
+network bandwidth. This server is used to take that load off the [Login Node](./#login-node).
 
 ---
 
 ### Environment Variable 
 
-Environment variables are variables that are set in Linux to tell applications where to find programs and set program options. They will start with a $ symbol. For example, all users can reference `$TMPDIR` in their [Job Script](./#job-script) in order to use [Local Scratch](./#local-scratch)
+Environment variables are variables that are set in Linux to give programs information. These all start with a $ symbol
+and could be something like your usename or the computer name, or where to find programs and set options. They will start
+with a $ symbol. 
+
+For example, all users can reference `$TMPDIR` in their [Job Script](./#job-script) in order to use [Local Scratch](./#local-scratch)
 
 ---
 
