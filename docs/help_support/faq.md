@@ -39,11 +39,11 @@ project that only Restech staff have access to. Restech staff can provide a copy
 to take it when you left. Other people will only be able to access to your data if you give permission. 
 Data will be kept in the UNSW Data Archive for the following periods.
  
-•	Katana Home directories may be deleted after 5 years.
-•	Katana Scratch directories may be deleted after 5 years.
-•	Katana Shared Scratch directories may be deleted after 7 years.
-•	Katana configuration data (located in the setup directory) may be deleted after 7 years.
-•	Any misc. data that is not in an appropriate place may be deleted after 5 years.
+- Katana Home directories may be deleted after 5 years.
+- Katana Scratch directories may be deleted after 5 years.
+- Katana Shared Scratch directories may be deleted after 7 years.
+- Katana configuration data (located in the setup directory) may be deleted after 7 years.
+- Any misc. data that is not in an appropriate place may be deleted after 5 years.
  
 Once those times have been reached it will no longer be possible to retrieve a copy of your data.
 
