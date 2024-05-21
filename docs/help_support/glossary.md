@@ -118,26 +118,33 @@ would need to type in if you wre running an interative job. [See examples](../..
 
 ### Local Scratch 
 
-Local scratch refers to the storage available internally on each compute node. Of all the different scratch directories this storage has the best performance however you will need to move your data into local scratch as part of your job script. You can use local scratch with the [Environment Variable](./#environment-variable) `$TMPDIR`
+Local scratch refers to the storage available internally on each compute node. Of all the different storage options on Katana
+storage has the best performance which can improve the performance of your job especially if it generates a large number of small
+files. The downside of using local scratch is that you will need to copy your data in when your job starts and then copy
+it out when your job finishes as local scratch is removed when your job ends. If the software that you are using allows you to specify
+a working or temp directory then you can just specify local scratch as the option. Otherwise you will need to add something to 
+your job script to move data in and out. You can use local scratch with the [Environment Variable](./#environment-variable) `$TMPDIR`.
 
 ---
 
 ### Login Node
 
-The login nodes of the cluster is the computer that you log in to when you connect to the cluster. This node is used to compile software and submit jobs.
+The login nodes of the cluster is the computer that you connect to when you log in to the cluster. This node is most 
+often used to manage jobs incuding checking their status but is also used to compile software. 
 
 ---
 
 ### Module
 
-The module command is a means of providing access to different versions of software without risking version conflicts across multiple users.
+The module command is a means of providing access to software including allowing you to chose between different versions
+of same software. Read more on the [Environmental Modules page](../../software/environment_modules).
 
 ---
 
 ### Management Servers
 
-The Management Servers are a collection of servers, including the [Head Node](./#head-node), that can only be accessed by the people running the cluster. These servers
-are used to create accounts, schedule jobs, provide computational software, manage Katana storage and keep Katana running.
+The Management Servers are a collection of servers, including the [Head Node](./#head-node), that can only be accessed by the
+people running the cluster. These servers are used to create accounts, schedule jobs, provide computational software, manage Katana storage and keep Katana running.
 
 ---
 
@@ -151,7 +158,8 @@ for the next part of the job to be run.
 
 ### Network Drive 
 
-A network drive is a drive that is independent from the cluster such as oneDrive.
+A network drive is a drive that is independent from the cluster. Whilst files are not accessible from the login or compute nodes
+it may be possible to get access to your files on [Katana Data Mover (KDM)](./storage/) and copy files across.
 
 ---
 
