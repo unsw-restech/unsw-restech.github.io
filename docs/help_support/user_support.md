@@ -6,9 +6,13 @@ title: Help and Support
 
 - **Email** [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) for general Katana issues including functional issues, software installation and reference data sets. 
  
-- **Casual message via Microsoft Teams** [Drop-In Forum](https://teams.microsoft.com/l/channel/19%3a358ea86ab3d541529ebfb1a49287a2c5%40thread.skype/Hacky%2520Hour?groupId=96e130bc-dfcd-4e4c-a561-58333ea61ea8&tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3) to get advice from peers or connect with other researchers. Our technical staff are also active in this Teams group. Information on how to join can be found [here](https://research.unsw.edu.au/restech-teams-channel)
+- **Casual message via Microsoft Teams** [Drop-In Forum](https://teams.microsoft.com/l/channel/19%3a358ea86ab3d541529ebfb1a49287a2c5%40thread.skype/Hacky%2520Hour?groupId=96e130bc-dfcd-4e4c-a561-58333ea61ea8&tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3)
+to get advice from peers or connect with other researchers. Our technical staff are also active in this Teams group. Information on how to join can be found [here](https://research.unsw.edu.au/restech-teams-channel)
 
-- For questions about [research data at UNSW](https://research.unsw.edu.au/research-data-management-unsw>) - on storage, movement or Data Management Plans, please email the [Research Data Team](mailto:rdm@unsw.edu.au>). If you specifically wish to increase Katana storage allocations, please email [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) - note that such increases are not automatic.
+- **Data and storage** For questions about [research data at UNSW](https://research.unsw.edu.au/research-data-management-unsw>) - on 
+storage, movement or Data Management Plans, please email the [Research Data Team](mailto:rdm@unsw.edu.au>). If you wish to increase 
+your Katana storage, please email [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) - note that such increases are
+not automatic.
 
 !!! info
     This is the best and primary way to get help from UNSW Research Technology Services beyond this document. You *must* use your UNSW email address *or* your zID. Without this information, we have no idea who you might be.
