@@ -156,17 +156,26 @@ for the next part of the job to be run.
 
 ---
 
+### NCI 
+
+NCI is a national supercomputing facility in Canberra. It is home to Gadi, one of the most powerful supercomputers in the world.
+Every year, hundreds of UNSW staff and postgraduate students use Gadi to support their research. More information is available
+on the [Restech site](https://unsw.sharepoint.com/sites/Restech/SitePages/NCI.aspx).
+
+---
+
 ### Network Drive 
 
-A network drive is a drive that is independent from the cluster. Whilst files are not accessible from the login or compute nodes
+A network drive is a drive that is independent from Katana. Whilst files are not accessible from the login or compute nodes
 it may be possible to get access to your files on [Katana Data Mover (KDM)](./storage/) and copy files across.
 
 ---
 
 ### Queue
 
-All submitted jobs are put into a queue which has a collection of resources available to it. As those resources become available, new jobs will be assigned to those resources. 
-Job prioritisation is done by the scheduler and depends on a number of factors including length of wait time and total resource use by the user over the previous month.
+All submitted jobs are put into a queue which has a collection of resources available to it. As jobs finish and those resources 
+become available, new jobs will be assigned to those resources. Figuring out which job will run next is done by the scheduler
+and depends on a number of factors including length of wait time and total resource use by the user over the previous month.
 
 ---
 
@@ -180,7 +189,9 @@ running `qstat` and looking for a Q in the second last column. [See examples](..
 
 ### Resource Manager 
 
-A resource manager works with the [Job Scheduler](./#job-scheduler) to manage running jobs on a cluster. Amongst other tasks it receives and parses job submissions, starts jobs on [Compute Nodes](./#compute-nodes), monitors jobs, kills jobs, and manages how many [CPU Core](./#cpu-core) are available on each [Compute Nodes](./#compute-nodes)
+A resource manager works with the [Job Scheduler](./#job-scheduler) to manage running jobs on a cluster. Amongst other tasks it
+receives and parses job submissions, starts jobs on [Compute Nodes](./#compute-nodes), monitors jobs, kills jobs, and manages 
+how many [CPU Core](./#cpu-core) are available on each [Compute Nodes](./#compute-nodes)
 
 ---
 
@@ -195,7 +206,7 @@ Scratch space is a non backed up storage area where users can store transient da
 Om HPC systems like Katana, walltime is the amount of time that you will be allocated when your job runs. If your job runs longer than the walltime, 
 it will be killed by the [Job Scheduler](./#job-scheduler) to free up resources for one of the waiting jobs. Walltiime is one of the factors used by
 the scheduler to decide when your job will run. 
-On **Katana** it Walltime is also used to determine which [Queue](./#queue) your job will be assigned to. The shorter the walltime, the more 
+On **Katana** Walltime is also used to determine which [Queue](./#queue) your job will be assigned to. The shorter the walltime, the more 
 opportunity your job has to run which in turn means that it will start sooner. In short, running a job with a walltime of 12 hours is easier than running
 a job will a walltime of 100 hours. It is imprtant to note rhat youur job will be scheduled based on the walltime that you have requested and not
 how long your job takes to run.
