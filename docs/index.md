@@ -14,21 +14,21 @@ Katana, a computational cluster at UNSW, offers access to over 6,000 CPU cores, 
 <div style="display: flex; justify-content: space-around;">
     <div style="flex: 1; margin: 0 10px;">
       <div style="display: inline-block; text-align: center;">
-            <img src="../assets/kod_square.png" alt="Easy access to Katana" style="max-width: 100%; height: 230px;">
+            <a href="/using_katana/ondemand"><img src="../assets/kod_square.png" alt="Easy access to Katana" style="max-width: 100%; height: 230px;"></a>
             <div><a href="/using_katana/ondemand">Easy access to Katana</a></div>
         </a>
       </div>
     </div>
     <div style="flex: 1; margin: 0 10px;">
       <div style="display: inline-block; text-align: center;">
-            <img src="../assets/next_training.png" alt="Next Katana related trainings" style="max-width: 100%; height: 230px;">
+            <a href="https://unsw.sharepoint.com/sites/restech" target="_blank"><img src="../assets/next_training.png" alt="Next Katana related trainings" style="max-width: 100%; height: 230px;"></a>
             <div><a href="https://unsw.sharepoint.com/sites/restech" target="_blank">Next Katana related trainings</a></div>
         </a>
       </div>
     </div>
     <div style="flex: 1; margin: 0 10px;">
       <div style="display: inline-block; text-align: center;">
-            <img src="../assets/help_support.png" alt="Contact staff for help" style="max-width: 100%; height: 230px;">
+            <a href="help_support/user_support"><img src="../assets/help_support.png" alt="Contact staff for help" style="max-width: 100%; height: 230px;"></a>
             <div><a href="help_support/user_support">Contact staff for help</a></div>
         </a>
       </div>
