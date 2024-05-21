@@ -4,10 +4,10 @@ title: Web access to Katana
 
 [Katana OnDemand](https://kod.restech.unsw.edu.au){:target="_blank"} gives you web interface to Katana
 
-If you are not on campus, please make sure you are connected to [UNSW VPN](https://vpn.unsw.edu.au){:target="_blank"}.
+If you are not on campus, please make sure that you are connected to the [UNSW VPN](https://vpn.unsw.edu.au){:target="_blank"}.
 
 <figure>
-    <img src="../../assets/kod_home.png" alt="Katana OnDemand" width="800">
+    <a href="https://kod.restech.unsw.edu.au" target="_blank"><img src="../../assets/kod_home.png" alt="Katana OnDemand" width="800"></a>
   <figcaption>
     <a href="https://kod.restech.unsw.edu.au" target="_blank">Katana OnDemand</a>
   </figcaption>
