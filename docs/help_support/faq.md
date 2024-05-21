@@ -6,13 +6,17 @@ title: FAQ
 #### Where is the best place to store my code?
 The best place to store source code is to use version control and store it in a repository.  This means that you will be able to 
 keep every version of your code and revert to an earlier version if you require. [UNSW has a central github account](https://research.unsw.edu.au/github), 
-but we encourage you to create your own.
+which is best suited to research groups but you can also create your own repository.
 
 #### I just got some money from a grant. What can I spend it on?
-There are a number of different options for using research funding to improve your ability to run computationally intensive programs. The best starting point is to [contact us](./index#contact-the-research-technology-services-team) to figure out the different options.  
+There are a number of different options for using research funding to improve your ability to run computationally intensive
+programs. The best starting point is to [contact us](./index#contact-the-research-technology-services-team) to talk through
+the different options.  
 
 #### Can I access Katana from outside UNSW?
-Yes, if you have an account then you can connect to Katana from both inside and outside UNSW. Some services - like remote desktops - will not be as responsive as inside the UNSW network.
+Yes, if you have an account then you can connect to Katana from both inside and outside UNSW. Some services like [Katana
+OnDemand](../../using_katana/ondemand/) are only available on campus so you will need to connect to the [UNSW VPN](https://vpn.unsw.edu.au).
+You may also notice that graohical connections are not as responsive when you are working remotely.
 
 ### **Account FAQ**
 
@@ -40,14 +44,13 @@ project that only Restech staff have access to. Restech staff can provide a copy
 to take it when you left. Other people will only be able to access to your data if you give permission. 
 Data will be kept in the UNSW Data Archive for the following periods.
  
-- Katana Home directories may be deleted after 5 years.
+- Katana Home directories may be deleted after 5 years./
 - Katana Scratch directories may be deleted after 5 years.
 - Katana Shared Scratch directories may be deleted after 7 years.
 - Katana configuration data (located in the setup directory) may be deleted after 7 years.
 - Any misc. data that is not in an appropriate place may be deleted after 5 years.
  
 Once those times have been reached it will no longer be possible to retrieve a copy of your data.
-
 
 ### **Scheduler FAQ**
 
@@ -58,15 +61,15 @@ Katana [Compute Nodes](glossary#compute_nodes) and [Head Node](glossary#head_nod
 
 ####  How much memory is available per core and/or per node?
 The amount of memory available varies across the cluster. To determine how much memory each node has available use the 'pbsnodes' command. Roughly, you can safely use 4GB per core requested. 
-You can request more memory but it may delay time spent in the queue. Rather than requesting all of the memory on a compute node you should leave a few GB to allow room for the operating system to run
-and to insure that you don't request too much memory for the node.
+You can request more memory but it may delay time spent in the queue. Rather than requesting all of the memory on a compute node you should leave a few GB to allow room for the operating
+system to run and to ensure that you don't request too much memory for the node.
 
 #### How much memory can I use on the login node for compiling software?
-The login nodes have a total of 24GB of memory each. Each individual user is limited to 4GB and should only use the login node to compile software. If you need more
-memory to compile your software then you do it in an [Interactive Job](glossary#interactive_job).
+The login nodes have a total of 24GB of memory each with each user limited to 4GB and should only be used to compile software
+or manage jobs. If you need more memory to compile your software then you do it in an [Interactive Job](glossary#interactive_job).
 
-**Note:** If you compile software on a compute node then you should take care to ensure that your software is compatable with all of the nodes in Katana. The most common thing to be
-aware of is using CPU extensions like AVX which vary from node to node.
+**Note:** If you compile software on a compute node then you should take care to ensure that your software is compatable with all
+of the nodes in Katana. The most common thing to be aware of is using CPU extensions like AVX which vary from node to node.
 
 #### Why isn't my job making it onto a node even though it says that some nodes are free?
 There are three main reasons you will see this behavior. The first of them is specific to Katana and the other two apply to any cluster.
@@ -94,14 +97,18 @@ Whilst there is not a technical limit to the number of jobs you can submit, subm
 job scheduler and your jobs may be deleted without warning. This is an editorial decision by management.
 
 #### What is the maximum number of CPUs I can use in parallel?
-As many as your account and queue will allow you. But there are trade-offs - if you ask for 150 CPUs (~5 full servers) you might be waiting more than a couple of months for your job to run.
+As many as your account and queue will allow you. But there are trade-offs - 
+if you ask for 150 CPUs (~5 full servers) you might be waiting more than a couple of months for your job to run. If your job is using
+multiple CPU cores amnd is still finishing in well under 12 hours you may wish to reduce the number of CPU cores meaning that your job
+will have more places to run (as long as it is still not requesting more than 12 hours).
 
 If you are regularly wanting to run large parallel jobs (over 32 cores per job) on Katana you should consider [seeking support](./index) so that we are aware of your jobs. 
 We may be able to provide you additional assistance on resource usage for parallel jobs. 
 
 #### Why does my SSH connection periodically disconnect?
 With all networks there is a limit to how long a connection between two computers will stay open if no data is travelling between them. 
-Look to set your ServerAliveInterval or Keep Alive interval to 60 in your secure shell software (putty, ssh). 
+If you set your ServerAliveInterval or Keep Alive interval to 60 in your secure shell software (putty, ssh) then the connection
+will not be closed without warning. 
 
 #### Can I change the job script after it has been submitted?
 Yes you increase the resource values for jobs that are still queued, but even then you are constrained by the limits of the particular queue 
@@ -110,12 +117,15 @@ Once it has been assigned to a node the intricacies of the scheduling policy mea
 anyone including the administrator to make any further changes.
 
 #### Where does Standard Output (STDOUT) go when a job is run?
-By default Standard Output is redirected to storage on the node and then transferred when the job is completed. If you are generating data you 
-should redirect`#!bash STDOUT` to a different location. The best location depends on the characteristics of your job but in general all`#!bash STDOUT` should be redirected to local scratch.
+By default Standard Output, that is the output you would normally see when you run your commands, is redirected to storage on
+the node and then transferred when the job is completed. If you are generating data you should redirect`#!bash STDOUT` 
+to a different location. The best location depends on the characteristics of your job but in general
+all`#!bash STDOUT` should be redirected to local scratch.
 
 #### How do I figure out what the resource requirements of my job are?
 The best way to determine the resource requirements of your job is to be generous with the resource requirements on the first run and then refine the requirements based on what the job
-actually used. We really don't mind you being generous with your resource requests whilst you are figure out what your job needs. If you put the following information in your job script 
+actually used. We really don't mind you being generous with your resource requests whilst you are figuring
+out what your job needs. If you put the following information in your job script 
 you will receive an email when the job finishes which will include a summary of the resources used.
 
 ``` bash 
@@ -124,8 +134,8 @@ you will receive an email when the job finishes which will include a summary of 
 ```
 
 #### Can I cause problems to other users if I request too many resources or make a mistake with my job script?
-Yes, but it's extremely unlikely. We used to say no, but that's not strictly true. The reality is that if something breaks it's usually your job hitting the odd corner case we didn't 
-account for. It doesn't happen often.
+Yes, but it's extremely unlikely. We used to say no, but that's not strictly true. The reality is that if something breaks it's usually
+your job hitting the odd corner case we didn't account for. It doesn't happen often.
 
 #### Will a job script from another cluster work on Katana?
 It depends on a number of factors including the sceduling software. Some aspects are fairly common across different clusters (e.g. walltime) others are not. You 
@@ -192,31 +202,40 @@ The '%' option in the array request offers the ability to self impose a limit on
 the jobs are run then the 'depend' attribute can help.
 
 #### In a pbs file does the MEM requested refer to each node or the total memory on all nodes being used (if I am using more than 1 node?)
-MEM refers to the amount of memory per node.
+MEM refers to the amount of memory per node. If you are only requesting resources on a single node then this is the total amount of memory
+that you have requested.
 
 ### **Storage FAQ**
 
 ---
 
 #### What storage is available to me?
-Katana provides three different storage areas, cluster home drives, local scratch and global scratch. The storage page has additional information on the differences and
-advantages of each of the different types of storage. You may also want to consider storing your code using a version control service like GitHub. This means that you
-will be able to keep every version of your code and revert to an earlier version if you require.
+Katana provides three different storage areas, cluster home drives, local scratch and global scratch. The [storage page](../../storage/storage_locations/) has
+additional information on the differences and advantages of each of the different types of storage. You may also want to consider storing your code using a 
+version control service like [GitHub](https://research.unsw.edu.au/github). This means that you will be able to keep every version of your code and
+revert to an earlier version if something goes wrong.
 
 #### Which storage is fastest?
 In order of performance the best storage to use is local scratch, global scratch and cluster home drive.
 
 #### Is any of the cluster based storage backed up?
-The only cluster based storage that gets backed up is the cluster home drives. All other storage including local and global scratch is not backed up.
+The only cluster based storage that gets backed up is the cluster home drives. All files in local scratch are removed when your job
+completes. Files in global scratch are not backed up and you should keep a copy of any files that are important. You should also
+consider placing a copy of any important files in the [UNSW Data Archive](/storage/data_archive/).
 
 #### How do I actually use local scratch?
-The easiest way of making use of local scratch is to use scripts to copy files to the node at the start of your job and from the node when your job finishes. You should also use local scratch for your working directory and temporary files.
+Some software allows you to specify a temporary or working directory. If the software that you are ussing does not have that option
+then the easiest way of making use of local scratch is to use scripts to copy files to the node at the start of your job and from the
+node when your job finishes.
 
 #### Why am I having trouble creating a symbolic link?
-Not all filesystems support symbolic links. The most common examples are some Windows network shares. On Katana this includes Windows network shares such as hdrive. The target of the symbolic link can be within such a filesystem, but the link itself must be on a filesystem that supports symbolic links, e.g. the rest of your home directory or your scratch directory. 
+Not all filesystems support symbolic links. The most common examples are some Windows network shares. On Katana this includes
+Windows network shares such as hdrive. The target of the symbolic link can be within such a filesystem, but the link itself
+must be on a filesystem that supports symbolic links, e.g. the rest of your home directory or your scratch directory. 
 
 #### What storage is available on compute nodes?
-As well as local scratch, global scratch and your cluster home drive are accessible on the compute nodes.
+Local scratch, global scratch and your cluster home drive are accessible on the compute nodes. You may be able to connect to your
+other storage via the Katana Data Mover and copy files to yyou global scratch dorectory.
 
 #### What is the best way to transfer a large amount of data onto a cluster?
 Use`#!bash rsync` to copy data to the KDM server. More information is above.
