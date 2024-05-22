@@ -27,9 +27,9 @@ not automatic.
     **Example of a great request**
         When I tried to run Sentaurus TCAD today (2020-05-01) on Katana I got this error message regardless of structures I wanted to simulate:
             
-        “Job failed
+        Job failed
         Error: Child process with pid '116643' got the signal 'SIGSEGV' (segmentation violation)
-        job exits with status 1”
+        job exits with status 1
         
         My job ran on k052 with jobid 300000, my zID is z2134567
 
