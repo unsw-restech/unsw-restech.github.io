@@ -4,7 +4,8 @@ title: Installing software
 ## Checking if a package is installed
 
 !!! note
-    Before installing software yourself, check if it has already been installed in a system-wide module or by one of your research colleagues.
+    Before installing software yourself, check if it has already been installed as part of the environment or as a module. You may also want to
+	speak to one of your research colleagues to find out if they have installed it for themselves already.
 
 Some common software packages are already available as part of katana's the operating system. They are listed by: 
 
