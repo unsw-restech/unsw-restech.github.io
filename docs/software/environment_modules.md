@@ -1,9 +1,6 @@
 title: Environment Modules
 
-Environment Modules offer a simple means of customising your environment to access the required versions of installed software and this section provides information on how they are used on Katana.
-
-When we use modules, we are changing our "environment", hence the name. 
-
+Environment Modules are a means of changing your environment to run specfic versions of installed sotware. This section provides information on how they are used on Katana.
 
 ## How do I discover what software is available?
 
@@ -24,7 +21,8 @@ matlab/2009b          matlab/2011b          matlab/2013a
 
 ## What if the software that I want is not on the list?
 
-If you require software installed on Katana then please email the details to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) including URLs and desired version numbers.
+If you require additional software installed on Katana then please email the details to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) including URLs and
+the version number that you wish installed.
 
 ## How do I add a particular version of software to my environment?
 
@@ -35,6 +33,14 @@ or
 
 ``` bash
 [z1234567@katana1 ~]$ module load matlab/2018b
+```
+
+## Which versions of software am I currently using?
+
+``` bash
+[z1234567@katana1 ~]$ module list
+    Currently Loaded Modulefiles:
+     1) intel/18.0.1.163   2) matlab/2018b
 ```
 
 ## How do I remove a particular version of software from my environment?
@@ -53,14 +59,6 @@ or
 
 ``` bash
 [z1234567@katana1 ~]$ module purge
-```
-
-## Which versions of software am I currently using?
-
-``` bash
-[z1234567@katana1 ~]$ module list
-    Currently Loaded Modulefiles:
-     1) intel/18.0.1.163   2) matlab/2018b
 ```
 
 ## How do I find out more about a particular piece of software?
@@ -105,7 +103,8 @@ setenv         LAST_MODULE_VERSION 1.42.3
 
 ## Why does the cluster forget my choice of modules?
 
-Environment modules only affect the particular session in which they are loaded. Loading a module in one SSH session will not affect any other SSH session or even any jobs submitted from that session. Modules must be loaded in every session where they will be used.
+Environment modules are desined to make a temporary change to your evironment and only affect the session in which they are loaded. Loading a module in one SSH session 
+will not affect any other SSH session or any jobs submitted from that session. Modules must be loaded in every session where they will be used.
 
 ## How can I invoke my module commands automatically?
 
@@ -125,7 +124,10 @@ cd ${PBS_O_WORKDIR}
 ./myprog
 ```
 
-Perl, Python and R all have their own library/module systems: `CPAN`, `PyPI` and `CRAN`. If you need a library or module from one of these sources, and there is significant demand, then we will install it.  Please email such requests to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
+## How do module files interact with Perl, Python and R?
+
+Perl, Python and R all have their own library/module systems: `CPAN`, `PyPI` and `CRAN`. If you need a library or module from one of these
+sources, and there is significant demand, then we will install it.  Please email such requests to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
 
 [CPAN](https://www.cpan.org/)
 

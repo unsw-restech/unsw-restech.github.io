@@ -15,12 +15,14 @@ your Katana storage, please email [restech.support@unsw.edu.au](mailto:restech.s
 not automatic.
 
 !!! info
-    This is the best and primary way to get help from UNSW Research Technology Services beyond this document. You *must* use your UNSW email address *or* your zID. Without this information, we have no idea who you might be.
+    This is the best way to get help from UNSW Research Technology Services. You *must* use your UNSW email address *or* your zID. Without this information, we don't
+	know who you are and may be unable to solve your issue.
 
-    When writing your email, please include a clear and detailed description of the issue experienced, including error messages and node name. Something like "It doesn't work" doesn't help us help you! If at all possible, include the steps someone else needs to do to reproduce the problem, the job identifier, the date and time of your problem and on which Katana node it occurred, the script filename and the directory you were running from.
+    When writing your email, please include a clear and detailed description of the request or issue experienced including any error messages and node name if appropriate. 
+	Something like "It doesn't work" doesn't help us help you! If at all possible, include the steps someone else needs to do to reproduce the problem, the job identifier, the date and time of your problem and on which Katana node it occurred, the script filename and the directory you were running from.
 
     **Example of a bad request**
-        i'm trying to do some work on katana, but it seems that the server is slow or not responsive at times. i'm logged in from inside unsw today, so working from home shouldn't be the issue.
+        I'm trying to do some work on katana, but it seems to be running slowly today.
         
     **Example of a great request**
         When I tried to run Sentaurus TCAD today (2020-05-01) on Katana I got this error message regardless of structures I wanted to simulate:
