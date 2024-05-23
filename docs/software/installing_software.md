@@ -5,7 +5,7 @@ title: Installing software
 
 !!! note
     Before installing software yourself, check if it has already been installed as part of the environment or as a module. You may also want to
-	speak to one of your research colleagues to find out if they have installed it for themselves already.
+	speak to one of your research colleagues to find out if they have installed it for themselves.
 
 Some common software packages are already available as part of katana's the operating system. They are listed by: 
 
@@ -16,7 +16,7 @@ Some common software packages are already available as part of katana's the oper
 !!! warning
     Do not try to run system commands as a user. These include: apt-get install, yum install, su, or sudo. 
 
-As detailed in [Environment Modules](./environment_modules), software already installed by HPC staff is listed with:
+You can see the list of software applications already installed on Katana using the [Environment Module](./environment_modules) command:
 
 ``` bash 
    module avail
@@ -24,10 +24,11 @@ As detailed in [Environment Modules](./environment_modules), software already in
 
 ## R and Python Packages
 
-Many R and Python packages are installed on katana. We have specific documentation to install your own packages in [R](./r#installing-libraries) and [Python](./python#pip3---the-python-package-manager-the-package-installer-for-python)`
+Many Python and R packages are installed on katana. We have specific documentation to install your own packages in [Python](./python#pip3---the-python-package-manager-the-package-installer-for-python)`
+and [R](./r#installing-libraries)
 
 !!! note
-    If you have tried to install software yourself, but you need further assistance, then please send an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
+    If you have tried to install packages software yourself, but you need further assistance, then please send an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
     
 ## Installing a binary package
 
