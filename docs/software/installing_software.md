@@ -75,7 +75,7 @@ as you can refer to a specific version of the software and someone else can easi
 binary version and downloading the source. Downloading the binary and the source versions will look something like:
 
 ``` bash
-   https://github.com/project/project/releases/download/v1.48.1/project.linux_8.zip
+   wget https://github.com/project/project/releases/download/v1.48.1/project.linux_8.zip
 ```
 
 ``` bash
