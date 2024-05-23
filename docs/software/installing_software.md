@@ -62,11 +62,13 @@ Compiling from source is preferred for efficiency reasons but is generally a mor
 	Otherwise you should install the software in your scratch directory.
 
 
-### Github cloning
+### Installing software from Github
 
 Source code is commonly stored on GitHub for easy version control. Git is available by default on katana. Remember: UNSW has its own [GitHub organisation](../using_katana/github).
 
 The process to install code which comes from GitHub depends on how the author of the code has set it up. 
+
+### Installing a Github software release
 
 Often the software owner will create a software __release__  which is a copy of the software with everything frozen at that point in time. This helps with reproducability of results
 as you can refer to a specific version of the software and someone else can easily install the same version on their computer. You will often be able to choose between a
@@ -79,6 +81,8 @@ binary version and downloading the source. Downloading the binary and the source
 ``` bash
    wget https://github.com/project/project/archive/refs/tags/v1.48.1.tar.gz
 ```
+
+### Github cloning
 
 If the owner of the software has not created a release or the latest release is too old then you can download the repository and use it to compile the software.
 Copy the web address revealed by the green 'Code' button on the repository. Creating a local copy of the repository uses the following command:
