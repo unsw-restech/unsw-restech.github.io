@@ -1,15 +1,15 @@
 title: Jupyter Notebooks
 
-Jupyter Notebooks and JupyterLab are best run in [Katana OnDemand](../using_katana/ondemand.md). 
+Jupyter Notebooks and JupyterLab are best run via [Katana OnDemand](../using_katana/ondemand.md). 
 
-Katana OnDemand comes with some built in environment and kernels that are 
-available for use out of the box.
+When you use Jupyter Notebooks and JupyterLab on Katana OnDemand it comes with some built in environments and kernels 
+that are available for use. If none of these work for you then you can install your own environment or kernel.
 
 ## Python virtual environments
 
 If you need to use the Jupyter Notebook or Jupyter Lab with your own 
 [Python Virtual Environments](./python.md#python-virtual-environments) you will need to create your own
-Python Jupyter kernel. Here is an example:
+Python Jupyter kernel using the instructions below:
 
 ### Create and load the virtual environment
 
@@ -57,7 +57,7 @@ $ conda activate my_conda_env
 
 ### Create the Jupyter Kernel 
 
-You can alternatively install the kernel manually: `Installing the kernel manually`_
+You can alternatively install the kernel manually: `Installing the kernel manually`
 
 ``` bash
 (my_conda_env) $ install_jupyter_kernels
