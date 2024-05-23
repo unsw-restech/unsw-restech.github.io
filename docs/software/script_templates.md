@@ -6,11 +6,9 @@ title: Job Script Template
 -  `UNSW-Data-Archive - Scripts for uploading to and downloading from the UNSW Data Archive`
 -  `UNSW-eNotebook-LabArchives - UNSW eNotebook (LabArchives) widgets`
  
-We encourage researchers to use the `Citation File Format` when writing code.
-
 ## How to sign up to the UNSW GitHub organisation
 
-Please visit the [UNSW research GitHub page](https://research.unsw.edu.au/github) to for information about GitHub including how to join the UNSW GitHub organisation. You 
+Please visit the [UNSW research GitHub page](https://research.unsw.edu.au/github) for information about GitHub including how to join the UNSW GitHub organisation. You 
 will then be able to access the following repository:
 
 - [Restech-HPC](https://github.com/unsw-edu-au/Restech-HPC/tree/master/hpc-examples) - Example job scripts for Katana and NCI 
