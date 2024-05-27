@@ -7,9 +7,9 @@ way to run Ansys is to use [Katana OnDemand](../using_katana/ondemand.md).
 
 **Ansys Batch Jobs**
 
-Ansys workbench is available on [MyAccess](https://www.myaccess.unsw.edu.au/applications/ansys-workbench) for undergraduate and postgraduate students in the Faculty of Engineering. 
+Ansys workbench is available on [myAccess](https://www.myaccess.unsw.edu.au/applications/ansys-workbench) for undergraduate and postgraduate students in the Faculty of Engineering. 
 
-If you install Ansys on your local machine or run it using MyAccess, you can generate your model files and then transfer them to katana so that you can run them in a 
+If you install Ansys on your local machine or run it using myAccess, you can generate your model files and then transfer them to katana so that you can run them in a 
 [batch job](../using_katana/running_jobs/#batch-jobs). 
 
 **Ansys CFX**
@@ -81,17 +81,18 @@ Any of the Perl versions that you see when running the [module command](../softw
 
 
 ## Comsol
-
-Comsol is best run interactively on [Katana OnDemand](../using_katana/ondemand.md). 
+The most user friendly way to run Comsol interactively is to use [Katana OnDemand](../using_katana/ondemand.md).
 
 !!! note
     You will need to belong to a group that owns a COMSOL licence (mech, spree, quantum, biomodel) 
 
 **Comsol Batch Jobs**
 
-COMSOL is available to download on [myAccess](https://www.myaccess.unsw.edu.au/applications/ansys-workbench) for undergraduate and postgraduate students in Chemical and Biomedical Engineering. This will allow you to generate module files locally, and transfer them to Katana to process in a batch job.
+**Note:** The version of COMSOL available via [myAccess](https://www.myaccess.unsw.edu.au/applications/ansys-workbench) **MUST NOT** be used for any research including generating
+files to be used on Katana.
 
-An example comsol batch job file is available [on our GitHub](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/comsol/comsol.pbs) (Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repo) and an uncommented version is reproduced below.
+An example comsol batch job file is available in [our GitHub repository](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/comsol/comsol.pbs).
+(Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repository) and an uncommented version is reproduced below.
 
 ``` bash title="console"
     #!/bin/bash
