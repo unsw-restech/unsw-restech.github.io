@@ -243,14 +243,14 @@ When you login to Katana using the terminal, it is a "live" session - if you clo
 downloading a large data set or have an [interactive session running from the command line](../using_katana/running_jobs/#interactive-jobs) and you need to go somewhere else then you may
 end up losing all of your work and need to start again. The solution to this problem is to use `tmux` to create an **interruptible session** when you first connect to Katana.
 
+!!! note
+    You will need to take note of the Katana login node that you have logged in to (katana1, katana2 or katana3) as you will need to connect to the same login node to return to your `tmux` session.
+
 To start tmux, type `tmux` at the terminal which will create a new session will start with a green information band at the bottom of the screen. Anything you start in this session 
 will keep running even if you disconnect from that session for any reason unless the server needs to be restarted.
 
 If you have used `tmux` and are disconnected you can reconnect by logging in to the server and using the command `tmux a`.
 
-!!! note
-    You will need to take note of the Katana login node that you connected to (katana1, katana2 or katana3) as you will need to connect to the same login node to return to your `tmux` session.
-	
 `tmux` has a number of other useful features such as multiple sessions and split screens. More information on features and how to use `tmux` is available
 on [the tmux website](https://github.com/tmux/tmux/wiki).
 
@@ -258,9 +258,10 @@ on [the tmux website](https://github.com/tmux/tmux/wiki).
 
 **Compressing Large Directories**
 
-If you want to compress large directories or directories with a large number of files, we recommend a simple tool called tgzme developed by one of our researchers.
+If you want to compress large directories or directories with a large number of files, we recommend using [tgzme](https://github.com/unsw-edu-au/tgzme/blob/master/tgzme.sh)
+which was developed by one of our researchers, [Dr. Edwards](https://orcid.org/0000-0002-3645-5539).
 
-It's essentially a smart shell script wrapped around the one line command:
+The software is based on the command:
 
 ``` bash
 tar -c $DIRECTORY | pigz > $DIRECTORY.tar.gz
@@ -268,7 +269,7 @@ tar -c $DIRECTORY | pigz > $DIRECTORY.tar.gz
 
 We thank `Dr. Edwards` for his contribution.
 
-[tgzme](https://github.com/unsw-edu-au/tgzme/blob/master/tgzme.sh)
 
-[Dr. Edwards](https://orcid.org/0000-0002-3645-5539)
+
+
 
