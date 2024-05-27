@@ -2,21 +2,22 @@ title: Others
 
 ## Ansys
 
-Both Ansys Workbench and Ansys Electronic Desktop are available on [Katana OnDemand](../using_katana/ondemand.md). 
-
-This is the most user-friendly approach to running Ansys jobs on Katana.
+Both Ansys Workbench and Ansys Electronic Desktop are available on Katana. The most user friendly
+way to run Ansys is to use [Katana OnDemand](../using_katana/ondemand.md). 
 
 **Ansys Batch Jobs**
 
-Ansys workbench is available on [myAccess](https://www.myaccess.unsw.edu.au/applications/ansys-workbench) for undergraduate and postgraduate students in the Faculty of Engineering. 
+Ansys workbench is available on [MyAccess](https://www.myaccess.unsw.edu.au/applications/ansys-workbench) for undergraduate and postgraduate students in the Faculty of Engineering. 
 
-If you install Ansys on your local machine, you can generate your model files locally and transfer them tto katana to run in a batch job. 
+If you install Ansys on your local machine or run it using MyAccess, you can generate your model files and then transfer them to katana so that you can run them in a 
+[batch job](../using_katana/running_jobs/#batch-jobs). 
 
 **Ansys CFX**
 
-For Ansys CFX the .cfx and .def files need to be transferred to Katana.
+If you want to use Ansys CFX on Katana then you will need to upload the .cfx and .def files to Katana.
 
-A brief batch script example is given below. A step-by-step guide is available [on our GitHub](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-cfx.md). (Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repo)
+A brief batch script example is given below. For more detail visit [our GitHub page](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-cfx.md). 
+(Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repository)
 
 ``` bash
    #!/bin/bash
@@ -32,9 +33,8 @@ A brief batch script example is given below. A step-by-step guide is available [
 
 **Ansys Fluent**
 
-Similarly, Ansys Fluent input can be generated locally and transferred to Katana to run in a batch job.
-
-Again, a brief batch script is below, and a step-by-step guide is available [on our Github](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-fluent.md) (Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repo).
+Ansys Fluent input can also be generated locally and transferred to Katana to run in a batch job with a brief bash script shown here snd more complete
+examples in [our Github repository](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-fluent.md). (Note: You will need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repo).
 
 ``` bash 
    #!/bin/bash
@@ -43,14 +43,15 @@ Again, a brief batch script is below, and a step-by-step guide is available [on 
    cd $PBS_O_WORKDIR
 
    module load ansys/2021r1
-   module load intelmpi/2019.6.166
+   module load intelmpi/2021.7.1
 
    fluent 3d -g -t $NCPUS -i fluent.in > output.out
 ```
 
 **Ansys on Gadi**
 
-If you wish to use Ansys on NCI's Gadi, UNSW has a institutional licence that requies you join the relevant software group as detailed in [NCI's documentation](opus.nci.org.au/display/Help/Ansys+Fluent).
+If you have an account on [Gadi](https://nci.org.au/our-services/supercomputing), the Supercomputer located at [NCI](https://nci.org.au/), you can also use Ansys there once you join the on once you have an account. UNSW has a institutional licence
+that requies you join the relevant software group as detailed in [NCI's documentation](https://opus.nci.org.au/display/Help/Ansys+Fluent).
 
 ## Biosciences
 
@@ -59,17 +60,14 @@ you want isn't obvious, it might be within another package:
 
 **Stand alone**
 
-Blast+: `:::bash module load blast+/2.9.0`
+Blast+: `:::bash module load blast-plus/2.12.0`
 
-Mothur: `:::bash module load mothur/1.44.2`
+Mothur: `:::bash module load mothur/1.48.0`
 
 **Python Module**
 
+Any of the Python versions that you see when running the [module command](../software/environment_modules) on Katana will include **BioPython** and **Snakemake**.
 `:::bash module avail python`
-
-BioPython
-
-Snakemake
 
 **R Module**
 
@@ -78,9 +76,8 @@ Snakemake
 Bioconductor
 
 **Perl Module**
+Any of the Perl versions that you see when running the [module command](../software/environment_modules) on Katana will include **BioPerl**.
 `:::bash module avail perl`
-
-BioPerl 
 
 
 ## Comsol
