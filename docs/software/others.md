@@ -7,10 +7,10 @@ way to run Ansys is to use [Katana OnDemand](../using_katana/ondemand.md).
 
 **Ansys Batch Jobs**
 
-Ansys workbench is available on [myAccess](https://www.myaccess.unsw.edu.au/applications/ansys-workbench) for undergraduate and postgraduate students in the Faculty of Engineering. 
+**Note:** The version of Ansys available via myAccess **MUST NOT** be used for any research including generating
+files to be used on Katana.
 
-If you install Ansys on your local machine or run it using myAccess, you can generate your model files and then transfer them to katana so that you can run them in a 
-[batch job](../using_katana/running_jobs/#batch-jobs). 
+Once you are familiar with how running jobs on Katana works you can run them in a [batch job](../using_katana/running_jobs/#batch-jobs). 
 
 **Ansys CFX**
 
