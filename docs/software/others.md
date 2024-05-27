@@ -76,7 +76,8 @@ Any of the Python versions that you see when running the [module command](../sof
 Bioconductor
 
 **Perl Module**
-Any of the Perl versions that you see when running the [module command](../software/environment_modules) on Katana will include **BioPerl**.
+Any of the Perl versions that you see when running the [module command](../software/environment_modules) on Katana will include **BioPerl**. If you do not use the
+module command to access Perl then you won't have be able to use BioPerl and other Perl tools. 
 `:::bash module avail perl`
 
 
@@ -125,7 +126,7 @@ and MPI. This software has been optimised by Intel to take advantage of the spec
 - Libraries
     - Intel Math Kernel Library (MKL) (module name: intel-mkl)
     - Intel Threading Building Blocks (TBB) (module name: intel-tbb)
-    - Intel Integrated Performance Primitives (IPP) (module name: intel-
+    - Intel Integrated Performance Primitives (IPP)
 - Debugger
     - Intel Debugger (idbc)
 
@@ -236,25 +237,22 @@ If you wish to load or install additional Stata modules or commands you should u
 sysdir set PERSONAL $HOME/myadofiles
 ```
 
-## TMUX
+## tmux
 
-tmux is available on Katana. It can be used to manage multiple sessions, including keeping them alive despite a terminal losing connectivity or being shutdown.
+When you login to Katana using the terminal, it is a "live" session - if you close the terminal or turn off your computer the session will close. If you have a long running program such as
+downloading a large data set or have an [interactive session running from the command line](../using_katana/running_jobs/#interactive-jobs) and you need to go somewhere else then you may
+end up losing all of your work and need to start again. The solution to this problem is to use `tmux` to create an **interruptible session** when you first connect to Katana.
 
-When you login to Katana using the terminal, it is a "live" session - if you close the terminal, the session will also close. If you shut your laptop or turn off the network, you will also kill the session.
+To start tmux, type `tmux` at the terminal which will create a new session will start with a green information band at the bottom of the screen. Anything you start in this session 
+will keep running even if you disconnect from that session for any reason unless the server needs to be restarted.
 
-This is fine, except when you have a long running program - say you are downloading a large data set - and you need to leave campus.
+If you have used `tmux` and are disconnected you can reconnect by logging in to the server and using the command `tmux a`.
 
-In these situations, you can use `tmux` to create an **interruptible session**. `tmux` has other powerful features - multiple sessions and split screens being two of many features.
-
-To start tmux, type `tmux` at the terminal. A new session will start and there will be a green information band at the bottom of the screen. 
-
-Anything you start in this session will keep running even if you are disconnected from that session regardless of the reason. Except when the server itself is rebooted. That - and I hope this is obvious - will kill all sessions.
-
-If you do get detached, you can re-attach by logging into the same server and using the command `tmux a`
-
-tmux is similar to another program called `screen` which is also available. 
-
-[tmux](https://github.com/tmux/tmux/wiki)
+!!! note
+    You will need to take note of the Katana login node that you connected to (katana1, katana2 or katana3) as you will need to connect to the same login node to return to your `tmux` session.
+	
+`tmux` has a number of other useful features such as multiple sessions and split screens. More information on features and how to use `tmux` is available
+on [the tmux website](https://github.com/tmux/tmux/wiki).
 
 ## Zip
 
