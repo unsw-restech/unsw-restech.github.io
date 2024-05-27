@@ -88,7 +88,7 @@ The most user friendly way to run Comsol interactively is to use [Katana OnDeman
 
 **Comsol Batch Jobs**
 
-**Note:** The version of COMSOL available via [myAccess](https://www.myaccess.unsw.edu.au/applications/ansys-workbench) **MUST NOT** be used for any research including generating
+**Note:** The version of COMSOL available via myAccess **MUST NOT** be used for any research including generating
 files to be used on Katana.
 
 An example comsol batch job file is available in [our GitHub repository](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/comsol/comsol.pbs).
@@ -115,23 +115,27 @@ An example comsol batch job file is available in [our GitHub repository](https:/
 
 ## Intel Compilers and Software Libraries
 
-Research Technology Services has a licence for Intel Compiler Collection which can be accessed by loading a module and contains 3 groups of software, namely compilers, libraries and a debugger. This software has been optimised by Intel to take advantage of the specific capabilities of the different intel CPUs installed in the Intel based clusters.
+Research Technology Services has a licence for Intel Compiler Collection which can be accessed by loading a module and contains 4 groups of software, namely compilers, libraries, a debugger
+and MPI. This software has been optimised by Intel to take advantage of the specific capabilities of the different intel CPUs installed in the Intel based clusters.
 
-- Compilers
+- Compilers (module name: intel-compilers)
     - Intel C Compiler (icc)
     - Intel C++ Compiler (icpc)
     - Intel Fortran Compiler (ifort)
 - Libraries
-    - Intel Math Kernel Library (MKL)
-    - Intel Threading Building Blocks (TBB)
-    - Intel Integrated Performance Primitives (IPP)
+    - Intel Math Kernel Library (MKL) (module name: intel-mkl)
+    - Intel Threading Building Blocks (TBB) (module name: intel-tbb)
+    - Intel Integrated Performance Primitives (IPP) (module name: intel-
 - Debugger
     - Intel Debugger (idbc)
 
 ## Java
 
-Java is installed as part of the Operating System but we would strongly recommend against using that version - we cannot guarantee scientific reproducibility with that version. Please use the java modules. 
+Java is installed as part of the Operating System but as the version can change without warning we recommend using one of the versions of Java
+available via the [module command](../software/environment_modules).
 
+`:::bash module avail java`
+ 
 Each Java module sets 
 
 ``` bash 
@@ -149,8 +153,8 @@ This sets the heap memory to 1GB. If you need more, set the environment variable
 
 **Running interactively**
 
-Interactive sessions of matlab are best run on [Katana OnDemand](../using_katana/ondemand.md). 
-
+You can run an interactive session of Matlab using [Katana OnDemand](../using_katana/ondemand) for a graphical session or [using the qsub command](using_katana/running_jobs/#interactive-jobs)
+for a text based session using the commands below.
 
 **Batch Jobs**
 
@@ -182,7 +186,7 @@ matlab -batch -r scriptfile
 
 Katana nodes currently run Rocky Linux 8.9.
 
-Research software is installed in environment modules. This enables multiple versions of the same software to be installed, and each user can choose which version they wish to use.
+Research software is installed in [environment modules](../software/environment_modules/). This enables multiple versions of the same software to be installed, and each user can choose which version they wish to use.
 
 ## Perl
 
@@ -196,13 +200,15 @@ It is common for Perl scripts to begin with:
 #!/usr/bin/perl
 ```
 
-However, that will restrict you to the default version of Perl supplied with the Linux distribution.  For greater flexibility, try using the following: 
+However, that will restrict you to the default version of Perl supplied with the Linux distribution.  If, instead of using that line, you use the following: 
 
 ``` bash
 #!/usr/bin/env perl
 ```
-Then if you choose to use a different version of Perl (by loading an environment module) it will not be necessary to modify your scripts.
 
+This will then look in your path so if you load Oerl via an environment module) it will not be necessary to modify your scripts.
+
+<!--
 ## SAS
 
 The 64-bit version of SAS is available as a module.
@@ -212,6 +218,7 @@ By default SAS will store temporary files in `/tmp` which can easily fill up, le
 ``` bash
     -work /my/directory
 ```
+-->
 
 ## Stata
 
