@@ -1,11 +1,17 @@
 title: R and RStudio
 
-R is installed as a module. Each version has a number of libraries installed 
-within it.
+R is installed as a module with a number of R packages installed. Before you try installing a R package you should see if it has already been installed
+by using the following command once you have started R:
 
-If you would like a new library installed, please email [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
+``` bash
+library()
+```
 
-If you would like to use **RStudio**, we recommend you use the [Katana OnDemand](../using_katana/ondemand.md) service.
+Because R allows users to use their on library of installed packages you will be able to install most packages for yourself. If you would like help installing
+a new library please email [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
+
+If you would like to use **RStudio**, we recommend you use [Katana OnDemand](../using_katana/ondemand.md) which allows you to specify the version of R that you
+wish to use.
 
 ## Installing libraries
 
@@ -34,5 +40,15 @@ Start R or RStudio and install
     ...
     * DONE (mypackage)
 ```
+
+If one or more of the packages that you have installed for yourself rely on accessing software via the module command then you will need to load the module before starting R. If you forgot or are
+using RStudio where this is not possible then you can load the module from within R by making use of the file `/usr/share/Modules/init/r.R` in the following way to both load and unload modules.
+``` r
+
+    > load("/usr/share/Modules/init/r.R")
+    > module("add","gdal/3.5.3")
+	> module("del","gdal/3.5.3")
+```
+
 
 [CRAN](https://cran.r-project.org/web/packages/index.html)
