@@ -1,19 +1,33 @@
 title: R and RStudio
 
-R is installed as a module with a number of R packages installed. Before you try installing a R package you should see if it has already been installed
-by using the following command once you have started R:
+R is installed as a module with a number of R packages installed. It can be useful to always use the same version of R to avoid the possibility of changes that affect your
+calculations between different versions.
 
-``` bash
-library()
+## Installing libraries
+
+Because R allows users to use their on library of installed packages you will be able to install most packages for yourself. To see the packages that are already installed as
+part of R or you have installed for yourself you can use the library command as shown below.
+
+``` r
+    >library()
 ```
 
-Because R allows users to use their on library of installed packages you will be able to install most packages for yourself. If you would like help installing
-a new library please email [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
+If you would like help installing a new library please email [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
+
+Most of the time you will be able to install R packages using the following command which will automatically look after all of the software dependencies. 
+
+``` r
+    
+    > install.packages('devtools')
+        ...
+    * DONE (mypackage)
+```
+
+
 
 If you would like to use **RStudio**, we recommend you use [Katana OnDemand](../using_katana/ondemand.md) which allows you to specify the version of R that you
 wish to use.
 
-## Installing libraries
 
 Please try installing R libraries yourself before contacting the service desk. 
 
