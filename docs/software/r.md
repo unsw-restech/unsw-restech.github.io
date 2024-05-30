@@ -73,8 +73,8 @@ If there is a conflict between the installed Conda packages then you can create 
     conda install RStudio
 ```
 
-Once RStudio has been installed you can start a **FastX Desktop** with your required resour, open a terminal window by clinking on the item at the top of the screen.
-You can then activate your Conda environment and then use the following command to start RStudio:
+Once RStudio has been installed you can start a **FastX Desktop** with your required resources, open a terminal window by clicking on the icon at the top of the screen.
+Once the terminal opens you can then activate your Conda environment and then use the following command to start RStudio:
 
 ``` bash
     rstudio
