@@ -16,7 +16,7 @@ Most of the time you will be able to install R packages from [CRAN](https://cran
 look after all of the package dependencies for you.
 
 ``` r
-    > install.packages('devtools')
+    > install.packages('mypackage')
         ...
     * DONE (mypackage)
 ```
@@ -36,7 +36,7 @@ If you have problems installing a package and would like help installing it plea
 ## Rstudio and JupyterLab in Katana OnDemand
 
 If you would like to use **RStudio** on Katana, we recommend you use [Katana OnDemand](../using_katana/ondemand.md) which allows you to specify the version of R that you
-wish to use including any packages that you have previously installed. 
+wish to use including any packages that you have previously installed. Depending on the packages that you have installed you may need to use the module command decribed above.
 
 It is also possible to use the R Kernel with the packages that you have installed from within JuypterLab but we recommend using RStudio instead as it has been written specificlly for R.
 If you wish to use the R Kernel within JuypterLab then you can use the following commands within R before you start JupyterLab.
