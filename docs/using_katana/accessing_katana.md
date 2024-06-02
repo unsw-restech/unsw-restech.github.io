@@ -13,13 +13,13 @@ If your needs require more CPU hours or consulation, some Faculties, Schools and
 <div style="display: flex; justify-content: space-around;">
     <div style="flex: 1; margin: 0 10px;">
         <div style="display: inline-block; text-align: center;">
-            <img src="../../assets/kod_square.png" alt="Graphical/Web Access to Katana" style="max-width: 100%; height: 300px;">
+            <a href="/using_katana/ondemand"><img src="../../assets/kod_square.png" alt="Graphical/Web Access to Katana" style="max-width: 100%; height: 300px;"></a>
             <div><a href="/using_katana/ondemand">Via Web/Graphical Session</a></div>
         </div>
     </div>
     <div style="flex: 1; margin: 0 10px;">
         <div style="display: inline-block; text-align: center;">
-            <img src="../../assets/terminal.png" alt="Terminal Access to Katana" style="max-width: 100%; height: 300px;">
+            <a href="/using_katana/accessing_katana/#connecting-to-katana-via-terminal"><img src="../../assets/terminal.png" alt="Terminal Access to Katana" style="max-width: 100%; height: 300px;"></a>
             <div><a href="/using_katana/accessing_katana/#connecting-to-katana-via-terminal">Via Terminal</a></div>
         </div>
     </div>
@@ -57,7 +57,8 @@ If your needs require more CPU hours or consulation, some Faculties, Schools and
 
 ## SSH KeepAlive
 
-To stop your connection disconnecting after some idle time, you can send null packets to keep your session alive. You want to change the frequency of these packets from 0 (none) to a small time interval, say 60 seconds. The configuration differs depending on the SSH client used.
+To stop your connection disconnecting after some idle time, you can send some empty packets to keep your session alive. You want to change the
+frequency of these packets from 0 (none) to a small time interval, say 60 seconds. The configuration differs depending on the SSH client used.
 
 On PuTTy: Category -> Connection -> "Seconds between keepalives"
 
