@@ -575,18 +575,23 @@ If your batch jobs are the same except for a change in file name or another vari
 
 ## Other Advanced Usages
 
-As well as the information presented here, the  Restech Github repositories
+As well as the information presented here, examples are available in the [Restech HPC Github repository](../using_katana/running_jobs/#restech-github-repositories)
 
 ### Array Jobs
 
-One common use of computational clusters is to do the same thing multiple times - sometimes with slightly different input, sometimes to get averages from randomness within the process. This is made easier with array jobs.
+One common use of computational clusters is to do the same thing multiple times - sometimes with slightly different input, sometimes to get averages from randomness within the process.
+This is made easier with array jobs.
 
-An array job is a single job script that spawns many almost identical sub-jobs. The only difference between the sub-jobs is an environment variable `$PBS_ARRAY_INDEX` whose value uniquely identifies an individual sub-job. A regular job becomes an array job when it uses the `#PBS -J` flag. 
+An array job is a single job script that spawns many almost identical sub-jobs. The only difference between the sub-jobs is an environment variable `$PBS_ARRAY_INDEX` whose value uniquely
+identifies an individual sub-job. A regular job becomes an array job when it uses the `#PBS -J` flag. 
 
-For example, the following script will spawn 100 sub-jobs. Each sub-job will require one CPU core, 1GB memory and 1 hour run-time, and it will execute the same application. However, a different input file will be passed to the application within each sub-job. The first sub-job will read input data from a file called `1.dat`, the second sub-job will read input data from a file called `2.dat` and so on. 
+For example, the following script will spawn 100 sub-jobs. Each sub-job will require one CPU core, 1GB memory and 1 hour run-time, and it will execute the same application. However, a different
+input file will be passed to the application within each sub-job. The first sub-job will read input data from a file called `1.dat`, the second sub-job will read input data from a file called
+`2.dat` and so on. 
 
 !!! note
-    In this example we are using `brace expansion` - the {} characters around the bash variables - because they are needed for variables that change, like array indices. They aren't strictly necessary for `$PBS_O_WORKDIR` but we include them to show consistency.
+    In this example we are using `brace expansion` - the {} characters around the bash variables - because they are needed for variables that change, like array indices. They aren't strictly
+	necessary for `$PBS_O_WORKDIR` but we include them to show consistency.
 
 ``` bash
 #!/bin/bash
