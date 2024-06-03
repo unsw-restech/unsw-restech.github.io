@@ -54,7 +54,8 @@ cd $HOME
 ./myprogram
 ```
 
-This script can be submitted to the cluster with `qsub` and it will become a job and be assigned to a queue. If the script is in a file called `myjob.pbs` then the following command will submit the job with the default resource requirements (1 CPU core with 1GB of memory for 1 hour):
+This script can be submitted to the cluster with `qsub` and it will become a job and be assigned to a queue. If the script is in a file called `myjob.pbs` then the following
+command will submit the job with the default resource requirements (1 CPU core with 1GB of memory for 1 hour):
 
 ``` bash
 [z1234567@katana1 ~]$ qsub myjob.pbs
@@ -78,9 +79,11 @@ If we wanted to use the GPU resources, we would write something like this - note
 
 #### A Job Script
 
-Job scripts offer a much more convenient method for invoking any of the options that can be passed to `qsub` on the command-line. In a shell script, a line starting with # is a comment and will be ignored by the shell interpreter. However, in a job script, a line starting with #PBS can be used to pass options to the `qsub` command.
+Job scripts offer a much more convenient method for invoking any of the options that can be passed to `qsub` on the command-line. In a shell script, a line starting with # is a comment and will
+be ignored by the shell interpreter. However, in a job script, a line starting with #PBS can be used to pass options to the `qsub` command.
 
-Here is an overview of the different parts of a job script which we will examine further below. In the following sections we will add some code, explain what it does, then show some new code, and iterate up to something quite powerful.
+Here is an overview of the different parts of a job script which we will examine further below. In the following sections we will add some code, explain what it does, then show some new code,
+and iterate up to something quite powerful.
 
 For the previous example, the job script could be rewritten as:
 
@@ -110,30 +113,39 @@ The script can now be submitted with much less typing:
 1239.kman.restech.unsw.edu.au
 ```
 
-Unlike submission of an interactive job, which results in a session on a compute node ready to accept commands, the submission of a batch job returns the ID of the new job. This is confirmation that the job was submitted successfully. The job is now processed by the job scheduler and resource manager. Commands for checking the status of the job can be found in the section [Managing Jobs on Katana](#managing-jobs-on-katana).
+Unlike submission of an interactive job, which results in a session on a compute node ready to accept commands, the submission of a batch job returns the ID of the new job. This is confirmation
+that the job was submitted successfully. The job is now processed by the job scheduler and resource manager. Commands for checking the status of the job can be found in the section below,
+[Managing Jobs on Katana](#managing-jobs-on-katana).
 
-If you wish to be notified by email when the job finishes then use the `-M` flag to specify the email address and the `-m` flag to declare which events cause a notification. Here we will get an email if the job aborts (`-m a`) due to an error or ends (`-m e`) naturally. 
+If you wish to be notified by email when the job finishes then use the `-M` flag to specify the email address and the `-m` flag to declare which events cause a notification. Here we will get an
+email if the job aborts (`-m a`) due to an error or ends (`-m e`) naturally. 
 
 ``` bash
 #PBS -M your.name.here@unsw.edu.au
 #PBS -m ae
 ```
 
-The output that would normally go to screen and error messages of a batch job will be saved to file when your job ends. By default these files will be called `JOB_NAME.oJOB_ID` and `JOB_NAME.eJOB_ID`, and they will appear in the directory that was the current working directory when the job was submitted. In the above example, they would be `myjob.o1239` and `myjob.e1239`.  You can merge these into a single file with the `-j oe` flag. The `-o` flag allows you to rename the file.
+The output that would normally go to screen and error messages of a batch job will be saved to file when your job ends. By default these files will be called `JOB_NAME.oJOB_ID` and `JOB_NAME.eJOB_ID`, 
+and they will appear in the directory that was the current working directory when the job was submitted. In the above example, they would be `myjob.o1239` and `myjob.e1239`.  You can merge these into
+a single file with the `-j oe` flag. The `-o` flag allows you to rename the file.
 
 ``` bash
 #PBS -j oe
 ```
 
-When a job starts, it needs to know where to save its output and do its work. This is called the *current working directory*. By default the job scheduler will make your *current working directory* your home directory (`/home/z1234567`). This isn't likely or ideal and is important that each job sets its current working directory appropriately. There are a couple of ways to do this, the easiest is to set the *current working directory* to the directory you are in when you execute `qsub` by using
+When a job starts, it needs to know where to save its output and do its work. This is called the *current working directory*. By default the job scheduler will make your *current working directory*
+your home directory (`/home/z1234567`). This isn't likely or ideal and is important that each job sets its current working directory appropriately. There are a couple of ways to do this, the easiest
+is to set the *current working directory* to the directory you are in when you execute `qsub` by using
 
 ``` bash
 cd $PBS_O_WORKDIR
 ```
 
-There is one last special variable you should know about, especially if you are working with large datasets. The storage on the compute node your job is running on will always be faster than the network drive.
+There is one last special variable you should know about, especially if you are working with large datasets. The storage on the compute node your job is running on will always be faster than
+the network drive.
 
-If you use the storage close to the CPUs - in the server rather than on the shared drives, called [Local Scratch](../../help_support/glossary#local-scratch) - you can often save hours of time reading and writing across the network. 
+If you use the storage close to the CPUs - in the server rather than on the shared drives, called [Local Scratch](../../help_support/glossary#local-scratch) - you can often save hours of time
+reading and writing across the network. 
 
 In order to do this, you can copy data to and from the local scratch, called `$TMPDIR`:
 
@@ -162,11 +174,22 @@ cd $PBS_O_WORKDIR
 ./myprogram
 ```
 
+#### Restech Github repositories
+
+Once you follow the instructions on the [UNSW research GitHub page](https://research.unsw.edu.au/github) which has information about GitHub including how to join the UNSW GitHub organisation
+you will be able to access the following research related repositories including the Restech HPC repository that includes examples of Katana job scripts:
+
+- [Restech-HPC](https://github.com/unsw-edu-au/Restech-HPC/tree/master/hpc-examples) - Example job scripts for Katana and NCI 
+- [UNSW-Data-Archive](https://github.com/unsw-edu-au/UNSW-Data-Archive) - Scripts for uploading to and downloading from the UNSW Data Archive
+- [UNSW-eNotebook-LabArchives](https://github.com/unsw-edu-au/UNSW-eNotebook-LabArchives) - UNSW eNotebook (LabArchives) widgets
+
 ### Interactive Jobs
 
-An interactive job or interactive session is a session on a compute node with the required physical resources for the period of time requested. To request an interactive job, add the -I flag (capital i) to `qsub`. Default sessions will have 1 CPU core, 1GB and 1 hour
+An interactive job or interactive session is a session on a compute node with the required physical resources for the period of time requested. To request an interactive job, add the -I flag
+(capital i) to `qsub`. Default sessions will have 1 CPU core, 1GB and 1 hour
 
-For example, the following two commands. The first provides a default session, the second provides a session with two CPU core and 8GB memory for three hours. You can tell when an interactive job has started when you see the name of the server change from `katana1` or `katana2` to the name of the server your job is running on. In these cases it's `k181` and `k201` respectively.
+For example, the following two commands. The first provides a default session, the second provides a session with two CPU core and 8GB memory for three hours. You can tell when an interactive
+job has started when you see the name of the server change from `katana1` or `katana2` to the name of the server your job is running on. In these cases it's `k181` and `k201` respectively.
 
 
 === "Default Resources"
@@ -551,6 +574,8 @@ If you have multiple batch jobs that are almost identical then you should consid
 If your batch jobs are the same except for a change in file name or another variable then you should have a look at using array jobs.
 
 ## Other Advanced Usages
+
+As well as the information presented here, the  Restech Github repositories
 
 ### Array Jobs
 
