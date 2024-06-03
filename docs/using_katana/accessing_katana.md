@@ -8,10 +8,10 @@ your role within UNSW and the name of your supervisor or head of your research g
 Anyone at UNSW can apply for a general account on Katanif they think that Katana would suit their research needs and will typically use 
 less than 10,000 CPU core hours a quarter. If a researcher requires or uses more than that they should also give consideration to using NCI.
 
-All Katana users gets access to [../../help_support/user_support/](help with software installation, getting started on Katana or running their jobs). 
+All Katana users gets access to [help with software installation, getting started on Katana or running their jobs](../../help_support/user_support/). 
 
 The only difference between Katana users is the number of compute jobs that can be run at any time and how long they can run for - general 
-users can only use a 12 hour [Walltime]../../help_support/glossary#walltime).
+users can only use a 12 hour [Walltime](../../help_support/glossary#walltime).
 
 If your needs require more CPU hours or consulation, some Faculties, Schools and Research Groups have invested in Katana and have a higher level of access.
 Users in this situation should speak to their supervisor.
