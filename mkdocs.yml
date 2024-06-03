@@ -61,7 +61,7 @@ nav:
     - 'Software':
         - 'software/environment_modules.md'
         - 'software/installing_software.md'
-        - 'software/script_templates.md'
+        # - 'software/script_templates.md'
         #- 'software/ansys.md'
         #- 'software/biosciences.md'
         #- 'software/comsol.md'
