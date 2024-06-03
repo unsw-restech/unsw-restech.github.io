@@ -73,7 +73,8 @@ Any of the Python versions that you see when running the [module command](../sof
 
 `:::bash module avail R`
 
-Bioconductor
+As Bioconductoris installed within R, once you have loaded the version of R that you want to use you can install it for yourself into your personal R library by following the
+instructions at the [Bioconductor web site](https://www.bioconductor.org/).
 
 **Perl Module**
 Any of the Perl versions that you see when running the [module command](../software/environment_modules) on Katana will include **BioPerl**. If you do not use the
@@ -132,8 +133,8 @@ and MPI. This software has been optimised by Intel to take advantage of the spec
 
 ## Java
 
-Java is installed as part of the Operating System but as the version can change without warning we recommend using one of the versions of Java
-available via the [module command](../software/environment_modules).
+Java is installed as part of the Operating System but that version of Java can change without warning leading to reproducable concerns. Because of this risk
+we recommend using one of the versions of Java available via the [module command](../software/environment_modules).
 
 `:::bash module avail java`
  
@@ -231,7 +232,9 @@ When using Stata in a pbs batch script, the syntax is
 stata -b do StataClusterWorkshop.do
 ```
 
-If you wish to load or install additional Stata modules or commands you should use findit command on your local computer to find the command that you are looking for. Then create a directory called `myadofiles` in your home directory and copy the .ado (and possibly the .hlp) file into that directory. Now that the command is there it just remains to tell Stata to look in that directory which can be done by using the following Stata command.
+If you wish to load or install additional Stata modules or commands you should use findit command on your local computer to find the command that you are looking for.
+Then create a directory called `myadofiles` in your home directory and copy the .ado (and possibly the .hlp) file into that directory. Now that the command is there 
+it just remains to tell Stata to look in that directory which can be done by using the following Stata command.
 
 ``` bash
 sysdir set PERSONAL $HOME/myadofiles

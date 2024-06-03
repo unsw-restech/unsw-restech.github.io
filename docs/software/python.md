@@ -20,7 +20,8 @@ or more likely
 
 ## Conda and Anaconda
 
-We get a lot of questions about installing Conda and Anaconda. Unfortunately neither are designed to be installed in multi-user environments.
+We get a lot of questions about installing Conda and Anaconda. Unfortunately neither are designed to be installed in multi-user environments but you can install them in your 
+home or scratch director
 
 You are able to install them into your home directory and we encourage you to do so.
 
