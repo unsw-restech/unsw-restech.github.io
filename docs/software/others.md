@@ -71,7 +71,7 @@ Any of the Python versions that you see when running the [module command](../sof
 
 **R Module**
 
-`:::bash module avail R`
+`:::bash module avail r`
 
 As Bioconductoris is installed within R the best approach is to load the latest version of R to reduce the possibility of dependency issues. Then you can install
 it in your personal R library by following the instructions at the [Bioconductor web site](https://www.bioconductor.org/). An example of how to install Bioconductor
