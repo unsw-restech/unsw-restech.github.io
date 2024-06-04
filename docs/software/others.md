@@ -73,8 +73,17 @@ Any of the Python versions that you see when running the [module command](../sof
 
 `:::bash module avail R`
 
-As Bioconductoris installed within R, once you have loaded the version of R that you want to use you can install it for yourself into your personal R library by following the
-instructions at the [Bioconductor web site](https://www.bioconductor.org/).
+As Bioconductoris is installed within R the best approach is to load the latest version of R to reduce the possibility of dependency issues. Then you can install
+it in your personal R library by following the instructions at the [Bioconductor web site](https://www.bioconductor.org/). An example of how to install Bioconductor
+and some Bioconductor packages is shown below.
+
+``` r
+    > if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+    > BiocManager::install("Biobase")
+    > BiocManager::install(c("GenomicFeatures", "AnnotationDbi"))
+    > BiocManager::install("DESeq2")
+```
 
 **Perl Module**
 Any of the Perl versions that you see when running the [module command](../software/environment_modules) on Katana will include **BioPerl**. If you do not use the
