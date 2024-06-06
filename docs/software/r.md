@@ -58,7 +58,7 @@ The instructions on installing R within Conda, if required, are given below.
 
 <summary>Instructions for using R within Conda</summary>
 
-!!! warning
+[!CAUTION]
     Using Conda to install complex software such as R or Rstudio which have a large number of dependencies may not provide provide you a recent version.
 
 If you wish to install R as part of a Conda environment then you can use the following commands to install R in a new repository called R_software after . This may be the
