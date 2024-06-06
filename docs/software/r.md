@@ -38,8 +38,9 @@ If you have problems installing a package and would like help installing it plea
 If you would like to use **RStudio** on Katana, we recommend you use [Katana OnDemand](../using_katana/ondemand.md) which allows you to specify the version of R that you
 wish to use including any packages that you have previously installed. Depending on the packages that you have installed you may need to use the module command decribed above.
 
-It is also possible to use the R Kernel with the packages that you have installed from within JuypterLab but we recommend using RStudio instead as it has been written specificlly for R.
-If you wish to use the R Kernel within JuypterLab then you can use the following commands within R before you start JupyterLab.
+It is also possible to use the [R Kernel within JuypterLab](../software/jupyter-notebooks/) including having access to the packages that you have installed
+but we recommend using RStudio instead as it has been written specificlly for R. If you wish to use the R Kernel within JuypterLab then you can use the following commands within R before you
+start JupyterLab. 
 
 ``` r
     > install.packages("devtools")
@@ -49,9 +50,20 @@ If you wish to use the R Kernel within JuypterLab then you can use the following
 
 # R and RStudio in Conda
 
-If you wish to install R as part of a Conda environment then you can use the following commands to install R in a new repository called R_software after Conda is installed. This may be the
-easiest approach to take if you need to use a version of R that is not installed on Katana or a specialised collection of packages like [BioConductor](https://www.bioconductor.org/). If you are having trouble figuring out which approach
-to take please email Restech team at [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
+Whilst it is possible to install R and RStudio within [Conda is installed](../software/python/) you will probably not be able to install the version of R and supporting software that you wish to use.
+If the version that you wish to use is not currently used on Katana then you should email the Restech team at [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) and they will install it for you.
+The instructions on installing R within Conda, if required, are given below.
+
+<details>
+
+<summary>Instructions for using R within Conda</summary>
+
+!!! warning
+    Using Conda to install complex software such as R or Rstudio which have a large number of dependencies may not provide provide you a recent version.
+
+If you wish to install R as part of a Conda environment then you can use the following commands to install R in a new repository called R_software after . This may be the
+easiest approach to take if you need to use a version of R that is not installed on Katana or a specialised collection of packages like [BioConductor](https://www.bioconductor.org/). If you 
+are having trouble figuring out which approach to take please email the Restech team at [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
 
 ``` bash
     conda create --name R_software
@@ -79,3 +91,5 @@ Once the terminal opens you can then activate your Conda environment and then us
 ``` bash
     rstudio
 ```
+
+</details>

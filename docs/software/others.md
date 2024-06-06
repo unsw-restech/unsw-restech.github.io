@@ -55,8 +55,13 @@ that requies you join the relevant software group as detailed in [NCI's document
 
 ## Biosciences
 
-There are a number of Bioscience software packages installed and datasets installed. If you look in the `#!bash /data` directory you will find several bioscience related datasets including
-multiple versions of the [NCBI](https://www.ncbi.nlm.nih.gov/) nr and nt databases. If you are having trouble finding a software package it might be within another package:
+There are a number of Bioscience software packages installed. If you are having trouble finding a software package it might be within another package such as the omes mentioned on this
+page.
+
+**Datasets**
+
+To avoid multiple users needing to download datasets for themselves we have downloaded some of the most commonly used ones multiple versions
+of the [NCBI](https://www.ncbi.nlm.nih.gov/) nr and nt databases into the `#!bash /data` directory. 
 
 **Stand alone**
 
@@ -91,7 +96,10 @@ module command to access Perl then you won't have be able to use BioPerl and oth
 `:::bash module avail perl`
 
 **Conda**
-If you would like to install software using Conda you there are instructions on how to do it on the [Python page](../software/python/).
+If you would like to install software using Conda there are instructions on how to do it on the [Python page](../software/python/).
+
+!!! note
+    Some software packages like Bioconductor do not work well if installed in Conda due to software dependencies and the time that it takes for new versions to be included in Conda.
 
 ## Comsol
 The most user friendly way to run Comsol interactively is to use [Katana OnDemand](../using_katana/ondemand.md).
