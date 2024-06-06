@@ -50,7 +50,7 @@ start JupyterLab.
 
 # R and RStudio in Conda
 
-Whilst it is possible to install R and RStudio within [Conda](../software/python/) you will probably not be able to install the version of R and supporting software that you wish to use.
+Whilst it is possible to install R and RStudio within [Conda](../../software/python/) you will probably not be able to install the version of R and supporting software that you wish to use.
 If the version that you wish to use is not currently used on Katana then you should email the Restech team at [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au) and they will install it for you.
 The instructions on installing R within Conda, if required, are given below.
 
@@ -59,7 +59,7 @@ The instructions on installing R within Conda, if required, are given below.
 <summary>Instructions for using R within Conda</summary>
 
 !!! r
-    Using Conda to install complex software such as R or Rstudio which have a large number of dependencies may not provide provide you a recent version.
+    Using Conda to install complex software with large number of dependencies such as R or Rstudio may not provide provide you a recent version.
 
 If you wish to install R as part of a Conda environment then you can use the following commands to install R in a new repository called R_software after . This may be the
 easiest approach to take if you need to use a version of R that is not installed on Katana or a specialised collection of packages like [BioConductor](https://www.bioconductor.org/). If you 
