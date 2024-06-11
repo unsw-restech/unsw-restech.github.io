@@ -10,7 +10,7 @@ way to run Ansys is to use [Katana OnDemand](../using_katana/ondemand.md).
 **Note:** The version of Ansys available via myAccess **MUST NOT** be used for any research including generating
 files to be used on Katana.
 
-Once you are familiar with how running jobs on Katana works you can run them in a [batch job](../using_katana/running_jobs/#batch-jobs). 
+Once you are familiar with how running jobs on Katana works you can run them in a [batch job](../using_katana/running_jobs/#batch-jobs) which mean that your jobs don't need any input from you. 
 
 **Ansys CFX**
 
@@ -34,7 +34,8 @@ A brief batch script example is given below. For more detail visit [our GitHub p
 **Ansys Fluent**
 
 Ansys Fluent input can also be generated locally and transferred to Katana to run in a batch job with a brief bash script shown here snd more complete
-examples in [our Github repository](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-fluent.md). (Note: You will need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repo).
+examples in [our Github repository](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-fluent.md). (Note: You will need to 
+[join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repo).
 
 ``` bash 
    #!/bin/bash
@@ -78,7 +79,7 @@ Any of the Python versions that you see when running the [module command](../sof
 
 `:::bash module avail r`
 
-As Bioconductoris is installed within R the best approach is to load the latest version of R to reduce the possibility of dependency issues. Then you can install
+As Bioconductor is installed within R the best approach is to load the latest version of R to reduce the possibility of dependency issues. Then you can install
 it in your personal R library by following the instructions at the [Bioconductor web site](https://www.bioconductor.org/). An example of how to install Bioconductor
 and some Bioconductor packages is shown below.
 
@@ -99,7 +100,8 @@ module command to access Perl then you won't have be able to use BioPerl and oth
 If you would like to install software using Conda there are instructions on how to do it on the [Python page](../software/python/).
 
 !!! note
-    Some software packages like Bioconductor do not work well if installed in Conda due to software dependencies and the time that it takes for new versions to be included in Conda.
+    Some software packages like Bioconductor do not work well if installed in Conda due to software dependencies and the time that it takes for a new version
+	of the software to be included in Conda.
 
 ## Comsol
 The most user friendly way to run Comsol interactively is to use [Katana OnDemand](../using_katana/ondemand.md).
@@ -113,7 +115,7 @@ The most user friendly way to run Comsol interactively is to use [Katana OnDeman
 files to be used on Katana.
 
 An example comsol batch job file is available in [our GitHub repository](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/comsol/comsol.pbs).
-(Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repository) and an uncommented version is reproduced below.
+(Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repository) as well as being presented below.
 
 ``` bash title="console"
     #!/bin/bash
@@ -173,13 +175,14 @@ This sets the heap memory to 1GB. If you need more, set the environment variable
 ## Matlab
 
 **Running interactively**
-
+PBS_O_WORKDIR
 You can run an interactive session of Matlab using [Katana OnDemand](../using_katana/ondemand) for a graphical session or [using the qsub command](using_katana/running_jobs/#interactive-jobs)
 for a text based session using the commands below.
 
 **Batch Jobs**
 
-You can run matab within a batch job. The example below shows the flags used to start matlab without a graphical interface. The matlab script (scriptfile.m) needs to be in the same directory as qsub was run to submit the batch job. 
+You can run Matab within a batch job. The example below shows the flags used to start Matlab without a graphical interface. Your job will start in your Katana home directory so we are assuming
+that your Matlab script is in your home directory.
 
 ``` bash
 module load matlab/R2022a
@@ -187,12 +190,31 @@ module load matlab/R2022a
 matlab -nodisplay -nosplash -r scriptfile
 ```
 
-If you wish to submit the job from a different directory than your matlab script, you need to provide the full file path to cd (change directory) command with matlab. Note the use of quotes.
+If your Matlab script is not located in your home directory you can either provide the full path to the Matlab command or change to the directory within your batch file. The advantage of
+changing directory is that it makes it easy to save any results into the same directory.
 
+To provide a full path you can use the following example:
 ``` bash
+
 module load matlab/R2022a
 
-matlab -nodisplay -nosplash -r "cd('/path/to/script/');scriptfile"
+matlab -nodisplay -nosplash -r /path/to/script/scriptfile
+```
+
+If you want to change to a different directory you can use the following example.
+``` bash
+cd /path/to/script/
+module load matlab/R2022a
+
+matlab -nodisplay -nosplash -r scriptfile
+```
+
+If your files are in the same directory that you submitted the batch job from then you can use the variable `#!bash $PBS_O_WORKDIR`, which contains the location that the job was submitted, in your script.
+``` bash
+cd $PBS_O_WORKDIR
+module load matlab/R2022a
+
+matlab -nodisplay -nosplash -r scriptfile
 ```
 
 Later versions of matlab provide the '-batch' flag as an alternative. 
@@ -205,15 +227,16 @@ matlab -batch -r scriptfile
 
 ## Operating Systems
 
-Katana nodes currently run Rocky Linux 8.9.
+Katana nodes currently run Rocky Linux. To find out exactly which version you can use the command `#!bash cat /etc/redhat-release`
 
-Research software is installed in [environment modules](../software/environment_modules/). This enables multiple versions of the same software to be installed, and each user can choose which version they wish to use.
+Research software is installed in [environment modules](../software/environment_modules/). This enables multiple versions of the same software to be installed, 
+and each user can choose which version they wish to use.
 
 ## Perl
 
-The default version of Perl on Katana is 5.26.3, which is provided by Rocky Linux 8.9 and can be found at `#!bash /usr/bin/perl`.
+The default version of Perl on Katana is 5.26.3, which is provided by Rocky Linux and can be found at `#!bash /usr/bin/perl`.
 
-Perl 5.36.0 is also installed as an environment module. 
+We have also installed Perl via an environment module. 
 
 It is common for Perl scripts to begin with:
 
@@ -227,7 +250,7 @@ However, that will restrict you to the default version of Perl supplied with the
 #!/usr/bin/env perl
 ```
 
-This will then look in your path so if you load Oerl via an environment module) it will not be necessary to modify your scripts.
+This will then look in your path so if you load Perl via an environment module) it will not be necessary to modify your scripts.
 
 <!--
 ## SAS
@@ -290,8 +313,3 @@ tar -c $DIRECTORY | pigz > $DIRECTORY.tar.gz
 ```
 
 We thank `Dr. Edwards` for his contribution.
-
-
-
-
-
