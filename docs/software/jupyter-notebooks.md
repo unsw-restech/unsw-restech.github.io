@@ -52,16 +52,11 @@ Here is an example:
 ``` bash
 $ conda create -n my_conda_env -c conda-forge ipykernel
 $ conda activate my_conda_env
-```
 
+```
+Once you have activated your Conda environment you will need to create your Jupyter kernal using one of the commands listed above.
 
 ### Create the Jupyter Kernel 
-
-You can alternatively install the kernel manually: `Installing the kernel manually`
-
-``` bash
-(my_conda_env) $ install_jupyter_kernels
-```
 
 Kernels other than ``ipykernel``, need ``jupyter`` to be installed in addition to the kernel.
 
