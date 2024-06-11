@@ -33,7 +33,7 @@ both load and unload modules.
 
 If you have problems installing a package and would like help installing it please email [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
 
-## Rstudio and JupyterLab in Katana OnDemand
+## RStudio and JupyterLab in Katana OnDemand
 
 If you would like to use **RStudio** on Katana, we recommend you use [Katana OnDemand](../using_katana/ondemand.md) which allows you to specify the version of R that you
 wish to use including any packages that you have previously installed. Depending on the packages that you have installed you may need to use the module command decribed above.

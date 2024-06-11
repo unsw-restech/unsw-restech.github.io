@@ -56,7 +56,7 @@ $ conda activate my_conda_env
 ```
 Once you have activated your Conda environment you will need to create your Jupyter kernal using one of the commands listed above.
 
-### Create the Jupyter Kernel 
+### Other Jupyter Kernels
 
 Kernels other than ``ipykernel``, need ``jupyter`` to be installed in addition to the kernel.
 
