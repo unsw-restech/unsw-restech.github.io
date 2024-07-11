@@ -65,7 +65,7 @@ me@localhost:~$ rsync -avh z1234567@kdm.restech.unsw.edu.au:/srv/scratch/my-remo
 ```
 
 !!! note
-    [TMUX](../software/tmux.md) is available if your data is large and the rsync might take a long time.
+    [TMUX](../../software/others/#tmux) is available if your data is large and the rsync might take a long time.
 
 
 ## Mounting University Provided Space on KDM

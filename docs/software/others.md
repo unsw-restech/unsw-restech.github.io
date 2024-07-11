@@ -10,7 +10,7 @@ way to run Ansys is to use [Katana OnDemand](../using_katana/ondemand.md).
 **Note:** The version of Ansys available via myAccess **MUST NOT** be used for any research including generating
 files to be used on Katana.
 
-Once you are familiar with how running jobs on Katana works you can run them in a [batch job](../using_katana/running_jobs/#batch-jobs) which mean that your jobs don't need any input from you. 
+Once you are familiar with how running jobs on Katana works you can run them in a [batch job](../../help_support/glossary#batch-jobs) which mean that your jobs don't need any input from you. 
 
 **Ansys CFX**
 
@@ -72,7 +72,7 @@ Mothur: `:::bash module load mothur/1.48.0`
 
 **Python Module**
 
-Any of the Python versions that you see when running the [module command](../software/environment_modules) on Katana will include **BioPython** and **Snakemake**.
+Any of the Python versions that you see when running the [module command](../../software/environment_modules) on Katana will include **BioPython** and **Snakemake**.
 `:::bash module avail python`
 
 **R Module**
@@ -92,7 +92,7 @@ and some Bioconductor packages is shown below.
 ```
 
 **Perl Module**
-Any of the Perl versions that you see when running the [module command](../software/environment_modules) on Katana will include **BioPerl**. If you do not use the
+Any of the Perl versions that you see when running the [module command](../../software/environment_modules) on Katana will include **BioPerl**. If you do not use the
 module command to access Perl then you won't have be able to use BioPerl and other Perl tools. 
 `:::bash module avail perl`
 
@@ -155,7 +155,7 @@ and MPI. This software has been optimised by Intel to take advantage of the spec
 ## Java
 
 Java is installed as part of the Operating System but that version of Java can change without warning leading to reproducable concerns. Because of this risk
-we recommend using one of the versions of Java available via the [module command](../software/environment_modules).
+we recommend using one of the versions of Java available via the [module command](../../software/environment_modules).
 
 `:::bash module avail java`
  
@@ -176,7 +176,7 @@ This sets the heap memory to 1GB. If you need more, set the environment variable
 
 **Running interactively**
 PBS_O_WORKDIR
-You can run an interactive session of Matlab using [Katana OnDemand](../using_katana/ondemand) for a graphical session or [using the qsub command](using_katana/running_jobs/#interactive-jobs)
+You can run an interactive session of Matlab using [Katana OnDemand](../using_katana/ondemand) for a graphical session or [using the qsub command](../../help_support/glossary#interactive-jobs)
 for a text based session using the commands below.
 
 **Batch Jobs**
@@ -229,7 +229,7 @@ matlab -batch -r scriptfile
 
 Katana nodes currently run Rocky Linux. To find out exactly which version you can use the command `#!bash cat /etc/redhat-release`.
 
-Research software is installed in [environment modules](../software/environment_modules/). This enables multiple versions of the same software to be installed, 
+Research software is installed in [environment modules](../../software/environment_modules/). This enables multiple versions of the same software to be installed, 
 and each user can choose which version they wish to use.
 
 ## Perl
@@ -285,7 +285,7 @@ sysdir set PERSONAL $HOME/myadofiles
 ## tmux
 
 When you login to Katana using the terminal, it is a "live" session - if you close the terminal or turn off your computer the session will close. If you have a long running program such as
-downloading a large data set or have an [interactive session running from the command line](../using_katana/running_jobs/#interactive-jobs) and you need to go somewhere else then you may
+downloading a large data set or have an [interactive session running from the command line](../../help_support/glossary#interactive-jobs) and you need to go somewhere else then you may
 end up losing all of your work and need to start again. In order to stop this from happening you can use `tmux` to create an **interruptible session** when you first connect to Katana.
 
 !!! note
