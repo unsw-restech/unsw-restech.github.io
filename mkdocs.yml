@@ -28,8 +28,6 @@ theme:
         - navigation.path
 extra_css:
     - stylesheets/extra.css
-extra:
-    generator: false
 markdown_extensions:
   - admonition
   - pymdownx.details
@@ -51,7 +49,10 @@ nav:
     - 'Getting Started':
         - 'using_katana/accessing_katana.md'
         - 'using_katana/running_jobs.md'
+        - 'using_katana/monitor_jobs.md'
+        - 'using_katana/tips_katana.md'
         - 'using_katana/about_katana.md'
+    
     - 'using_katana/ondemand.md'
     - 'Storage':
         - 'storage/storage_locations.md'
@@ -92,9 +93,10 @@ plugins:
 extra:
     base_url: "https://localhost"
     generator: false
+    analytics:
+        provider: google
+        property: G-W3KS3D0120
+
 copyright: "UNSW Sydney NSW 2052 Australia | Tel: +61 2 93851000 | CRICOS: 00098G | TEQSA: PRV12055 | ABN: 57 195 873 179"
 
-extra:
-  analytics:
-    provider: google
-    property: G-W3KS3D0120
+    
