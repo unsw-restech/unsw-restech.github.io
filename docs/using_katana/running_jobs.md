@@ -265,4 +265,16 @@ Typical job queue limit cut-offs are shown below. **The walltime is what determi
 !!! note
     Try to combine or divide batch jobs to fit within that 12 hour limit for fastest starting times. 
  
-The resources available on a specific compute node can be shown with the [qstat](#managing-jobs-on-katana) command  
+The resources available on a specific compute node can be shown with the [qstat](#managing-jobs-on-katana) command.
+
+
+##Accessing the Grace Hopper (GH200) GPU Node on Katana
+
+The GH200 features higher performance compared to V100 and A100. This node is accessible to all users but uses a different architecture, ARM. Regular Katana modules do not run on this node, but it is a powerful machine suitable for experimental applications using mainly Python. To use this node:
+
+[z1234567@katana ~]$ qsub  -l select=1:non_default_arch=true:ngpus=1  myjob.pbs
+1238.kman.restech.unsw.edu.au
+
+Or add below to your myjob.pbs file
+#PBS -l select=1:non_default_arch=true:ngpus=1
+
