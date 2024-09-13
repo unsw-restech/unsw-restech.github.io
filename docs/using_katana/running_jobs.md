@@ -268,7 +268,7 @@ Typical job queue limit cut-offs are shown below. **The walltime is what determi
 The resources available on a specific compute node can be shown with the [qstat](#managing-jobs-on-katana) command.
 
 
-##Accessing the Grace Hopper (GH200) GPU Node on Katana
+## Accessing the Grace Hopper (GH200) GPU Node on Katana
 
 The GH200 features higher performance compared to V100 and A100. This node is accessible to all users but uses a different architecture, ARM. Regular Katana modules do not run on this node, but it is a powerful machine suitable for experimental applications using mainly Python. To use this node:
 
