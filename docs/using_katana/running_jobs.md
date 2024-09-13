@@ -265,4 +265,4 @@ Typical job queue limit cut-offs are shown below. **The walltime is what determi
 !!! note
     Try to combine or divide batch jobs to fit within that 12 hour limit for fastest starting times. 
  
-The resources available on a specific compute node can be shown with the [qstat](#managing-jobs-on-katana) command.  
+The resources available on a specific compute node can be shown with the [qstat](#managing-jobs-on-katana) command  
