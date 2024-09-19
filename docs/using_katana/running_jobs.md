@@ -281,8 +281,8 @@ Or add below to your myjob.pbs file
 
 !!! Key Notes
     * The Grace Hopper node contains one 72-core ARM CPU with 480GB memory.
-    - It has a different CPU architecture to the rest of Katana, consequently different binaries must be used.
-    - We recommend using the default GNU compiler and CUDA libraries on the node, and your own installation of Conda (aarch64).
+    	It has a different CPU architecture to the rest of Katana, consequently different binaries must be used.
+     	We recommend using the default GNU compiler and CUDA libraries on the node, and your own installation of Conda (aarch64).
     * The node contains one Hopper generation GPU with 96GB HBM3 memory.
     * The CPU and GPU are connected via 900GB/s NVLink.
-    - This makes it feasible for the CPU and GPU to present their memory as unified pool, i.e. you can run GPU jobs that require more than 96GB memory.
+    	This makes it feasible for the CPU and GPU to present their memory as unified pool, i.e. you can run GPU jobs that require more than 96GB memory.
