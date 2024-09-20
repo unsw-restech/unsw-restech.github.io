@@ -279,7 +279,7 @@ Or add below to your myjob.pbs file
 #PBS -l select=1:cpu_arch=aarch64:ngpus=1:ncpus=72:mem=585505mb
 ```
 
-!!! Key Notes
+!!! Important
     * The Grace Hopper node contains one 72-core ARM CPU with 480GB memory.
     	It has a different CPU architecture to the rest of Katana, consequently different binaries must be used.
      	We recommend using the default GNU compiler and CUDA libraries on the node, and your own installation of Conda (aarch64).
