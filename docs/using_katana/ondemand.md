@@ -25,7 +25,7 @@ On Katana OnDemand, you can easily **upload**, **download**, **delete** and **mo
 
 ## Interactive Apps
 
-You can run [Virtual Desktop](../software/virtual_desktop), [JupyterLab](../software/jupyter-notebooks), [RStudio](../software/r), Terminal Session of Katana on your web browser.
+You can run [Virtual Desktop](../../software/) giving you access to multiple graphical applications, [JupyterLab](../../software/jupyter-notebooks), [RStudio](../../software/r), and a Terminal Session of Katana on your web browser.
 
 The status of your interactive sessions can be seen using the rightmost 'My Interactive Sessions' icon. 
 
