@@ -23,7 +23,7 @@ Jobs are submitted using the `qsub` command. There are two types of job that `qs
 Regardless of type, the resource manager will put your job in a [Queue](../../help_support/glossary#queue).
 
 An **interactive job** provides a shell session on a [Compute Nodes](../../help_support/glossary#compute-nodes). You interact directly with the compute node running the software you need explicitly.
-Interactive jobs are useful for experimentation, debugging, and planning for **batch jobs**. You may also want to use [Katana on Demand](../using_katana/ondemand/) for the same purpose.
+Interactive jobs are useful for experimentation, debugging, and planning for **batch jobs**. You may also want to use [Katana on Demand](../ondemand/) for the same purpose.
 
 !!! note
     For calculations that run longer than a few hours, **batch jobs** are preferred.   
@@ -119,8 +119,8 @@ The script can now be submitted with much less typing:
 ```
 
 Unlike submission of an interactive job, which results in a session on a compute node ready to accept commands, the submission of a batch job returns the ID of the new job. This is confirmation
-that the job was submitted successfully. The job is now processed by the job scheduler and resource manager. Commands for checking the status of the job can be found in the section below,
-[Managing Jobs on Katana](#managing-jobs-on-katana).
+that the job was submitted successfully. The job is now processed by the job scheduler and resource manager. Commands for checking the status of the job can be found on the page
+[Managing Jobs on Katana](../monitor_jobs).
 
 If you wish to be notified by email when the job finishes then use the `-M` flag to specify the email address and the `-m` flag to declare which events cause a notification. Here we will get an
 email if the job aborts (`-m a`) due to an error or ends (`-m e`) naturally. 
@@ -265,7 +265,7 @@ Typical job queue limit cut-offs are shown below. **The walltime is what determi
 !!! note
     Try to combine or divide batch jobs to fit within that 12 hour limit for fastest starting times. 
  
-The resources available on a specific compute node can be shown with the [qstat](#managing-jobs-on-katana) command.
+The resources available on a specific compute node can be shown with the [qstat](../monitor_jobs) command.
 
 
 ## Accessing the Grace Hopper (GH200) GPU Node on Katana
