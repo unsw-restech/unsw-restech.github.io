@@ -127,5 +127,5 @@ cd ${PBS_O_WORKDIR}
 ## How do module files interact with Perl, Python and R?
 
 Perl, Python and R all have their own library/module systems: [CPAN](https://www.cpan.org/), [PyPI](https://pypi.org/) and [CRAN](https://cran.r-project.org/). Information on 
-installing a library or module for yourself can be found on the help pages for [Perl](./others/#perl), [Python](./python) and [R](./software/r/). If you are having difficulty
+installing a library or module for yourself can be found on the help pages for [Perl](../others/#perl), [Python](../python) and [R](../software/r/). If you are having difficulty
 installing the library or module then can help you.  Please email such requests to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
