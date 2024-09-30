@@ -24,8 +24,8 @@ You can see the list of software applications already installed on Katana using 
 
 ## R and Python Packages
 
-Many Python and R packages are installed on katana. We have specific documentation to install your own packages in [Python](../python#pip3---the-python-package-manager-the-package-installer-for-python)`
-and [R](./r#installing-libraries)
+Many Python and R packages are installed on katana. We have specific documentation to install your own packages in [Python](../python#python-virtual-environments)`
+and [R](../r#installing-libraries)
 
 !!! note
     If you have tried to install packages software yourself, but you need further assistance, then please send an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
@@ -101,7 +101,7 @@ certain archictures. Please read the README and INSTALL files in full before att
 ### Compilers 
 
 It is generally best to use the system compilers `gcc` and `ld`. However, many code requires specific compilers and versions. Katana has many compilers available as modules 
-including the [Intel Compilers and Software Libraries](../others/#intel-compilers-and-software-libraries)
+including the [Intel Compilers and Software Libraries](../others#intel-compilers-and-software-libraries)
 
 !!! note 
     Please install software using an interactive session, qsub -I, not directly on the login node. 
