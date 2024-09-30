@@ -16,7 +16,7 @@ Some common software packages are already available as part of katana's the oper
 !!! warning
     Do not try to run administration commands as a user. These include: apt-get install, yum install, su, or sudo. 
 
-You can see the list of software applications already installed on Katana using the [Environment Module](./environment_modules) command:
+You can see the list of software applications already installed on Katana using the [Environment Module](../environment_modules) command:
 
 ``` bash 
    module avail
@@ -24,7 +24,7 @@ You can see the list of software applications already installed on Katana using 
 
 ## R and Python Packages
 
-Many Python and R packages are installed on katana. We have specific documentation to install your own packages in [Python](./python#pip3---the-python-package-manager-the-package-installer-for-python)`
+Many Python and R packages are installed on katana. We have specific documentation to install your own packages in [Python](../python#pip3---the-python-package-manager-the-package-installer-for-python)`
 and [R](./r#installing-libraries)
 
 !!! note
@@ -64,7 +64,7 @@ Compiling from source is preferred for efficiency reasons but is generally a mor
 
 ### Installing software from Github
 
-Source code is commonly stored on GitHub for easy version control. Git is available by default on katana. Remember: UNSW has its own [GitHub organisation](../using_katana/github).
+Source code is commonly stored on GitHub for easy version control. Git is available by default on katana. Remember: UNSW has its own [GitHub organisation](../../using_katana/github).
 
 The process to install code which comes from GitHub depends on how the author of the code has set it up. 
 
@@ -101,7 +101,7 @@ certain archictures. Please read the README and INSTALL files in full before att
 ### Compilers 
 
 It is generally best to use the system compilers `gcc` and `ld`. However, many code requires specific compilers and versions. Katana has many compilers available as modules 
-including the [Intel Compilers and Software Libraries](./intel_compilers_and_libraries)
+including the [Intel Compilers and Software Libraries](../others/#intel-compilers-and-software-libraries)
 
 !!! note 
     Please install software using an interactive session, qsub -I, not directly on the login node. 
