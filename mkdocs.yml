@@ -54,6 +54,8 @@ nav:
         - 'using_katana/about_katana.md'
     
     - 'using_katana/ondemand.md'
+    - 'AI on Katana':
+        - 'AI_in_Katana/StableDiffusion.md'
     - 'Storage':
         - 'storage/storage_locations.md'
         - 'storage/kdm.md'
