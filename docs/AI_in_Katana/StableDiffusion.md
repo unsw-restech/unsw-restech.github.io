@@ -10,8 +10,6 @@ This documentation covers how to run Stable Diffusion on a High-Performance Comp
 
 ## 1. Installation
 
-### Steps:
-
 1. **Create the Working Directory**  
    Create a directory for the Stable Diffusion setup on the scratch space (or any suitable storage on your HPC). This is where all necessary files and environments will reside:
    ```bash
@@ -44,8 +42,6 @@ This documentation covers how to run Stable Diffusion on a High-Performance Comp
 ## 2. Inference using Job Scheduling
 
 To perform inference on an HPC, job scheduling is essential to allocate resources efficiently and run tasks on available nodes. For #PBS arguments, check out [running jobs on Katana](../using_katana/running_jobs.md)
-
-### Steps:
 
 1. **Create a PBS Script**  
    A PBS script schedules the job to run on the HPC. Here's a sample script to run inference with a Stable Diffusion model:
@@ -154,7 +150,6 @@ To perform inference on an HPC, job scheduling is essential to allocate resource
 
 Finetuning Stable Diffusion with your dataset on an HPC requires adjusting the model weights to fit the specific domain of your new data.
 
-### Steps:
 1. **Prepare Dataset**
     Check out the [Hugging Face documentation on datasets](https://huggingface.co/docs/datasets/image_dataset#imagefolder) to find out how to create metadata and place dataset in a folder in a way that is compatible with model finetuning. 
 
