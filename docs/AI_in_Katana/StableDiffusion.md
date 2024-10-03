@@ -159,7 +159,11 @@ Finetuning Stable Diffusion with your dataset on an HPC requires adjusting the m
 
 
 3. **Create a PBS Script for Finetuning**  
-   The following PBS script schedules a job to finetune Stable Diffusion using the `train_text_to_image_lora.py` script provided by Hugging Face’s `diffusers` library:
+   The following PBS script schedules a job to finetune Stable Diffusion using the `train_text_to_image_lora.py` script provided by the []`diffusers` github repository](https://github.com/huggingface/diffusers):
+   ```bash
+   # Clone the diffusers repository
+   git clone https://github.com/huggingface/diffusers
+   ```
 
    ```bash
    #!/bin/bash
