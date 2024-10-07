@@ -25,7 +25,7 @@ A brief batch script example is given below. For more detail visit [our GitHub p
 
    cd $PBS_O_WORKDIR
 
-   module load intelmpi/2019.6.166
+   module load intel-mpi/2021.7.1
    module load ansys/2021r1
 
    cfx5solve -batch -def <filename>.def -part $NCPUS -start-method "Intel MPI Local Parallel"
@@ -44,7 +44,7 @@ examples in [our Github repository](https://github.com/unsw-edu-au/Restech-HPC/b
    cd $PBS_O_WORKDIR
 
    module load ansys/2021r1
-   module load intelmpi/2021.7.1
+   module load intel-mpi/2021.7.1
 
    fluent 3d -g -t $NCPUS -i fluent.in > output.out
 ```
