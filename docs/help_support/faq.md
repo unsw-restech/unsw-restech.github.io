@@ -30,7 +30,7 @@ Access to Katana requires a staff, student or other relationship with UNSW so ac
 
 #### When will my Katana account expire?
 
-Unless a request has been receives to remove your access, your Katana account will remain open 
+Unless a request has been received to remove your access, your Katana account will remain open 
 whilst you have a student, staff or other relationship with UNSW. Once you no longer
 have that relationship your Katana account will be closed. 
 
@@ -40,11 +40,11 @@ Before you leave the university you should upload any important data to the UNSW
 then you can find upload instructions at [www.dataarchive.unsw.edu.au](https://www.dataarchive.unsw.edu.au) where you will also find information on how to create a RDMP if you don't have one already.
  
 Once you leave UNSW your Katana account will be removed and data that you leave on Katana will be uploaded to the Data Archive in a
-project that only Restech staff have access to. Restech staff can provide a copy of your data to you If you return to UNSW or forgot 
+project that only Restech staff have access to. Restech staff can provide a copy of your data to you if you return to UNSW or forgot 
 to take it when you left. Other people will only be able to access to your data if you give permission. 
 Data will be kept in the UNSW Data Archive for the following periods.
  
-- Katana Home directories may be deleted after 5 years./
+- Katana Home directories may be deleted after 5 years.
 - Katana Scratch directories may be deleted after 5 years.
 - Katana Shared Scratch directories may be deleted after 7 years.
 - Katana configuration data (located in the setup directory) may be deleted after 7 years.
