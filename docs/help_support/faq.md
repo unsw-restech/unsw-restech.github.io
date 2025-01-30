@@ -16,7 +16,7 @@ the different options.
 #### Can I access Katana from outside UNSW?
 Yes, if you have an account then you can connect to Katana from both inside and outside UNSW. Some services like [Katana
 OnDemand](../../using_katana/ondemand/) are only available on campus so you will need to connect to the [UNSW VPN](https://vpn.unsw.edu.au).
-You may also notice that graohical connections are not as responsive when you are working remotely.
+You may also notice that graphical connections are not as responsive when you are working remotely.
 
 ### **Account FAQ**
 
