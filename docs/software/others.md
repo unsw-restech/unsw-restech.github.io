@@ -56,13 +56,12 @@ that requies you join the relevant software group as detailed in [NCI's document
 
 ## Biosciences
 
-There are a number of Bioscience software packages installed. If you are having trouble finding a software package it might be within another package such as the omes mentioned on this
+There are a number of Bioscience software packages installed. If you are having trouble finding a software package it might be within another package such as the ones mentioned on this
 page.
 
 **Datasets**
 
-To avoid multiple users needing to download datasets for themselves we have downloaded some of the most commonly used ones multiple versions
-of the [NCBI](https://www.ncbi.nlm.nih.gov/) nr and nt databases into the `#!bash /data` directory. 
+To avoid multiple users needing to download datasets for themselves we have downloaded some of the most commonly used ones, such as multiple versions of the [NCBI](https://www.ncbi.nlm.nih.gov/) `nr` and `nt` databases, into the `#!bash /data` directory. 
 
 **Stand alone**
 
