@@ -1,6 +1,6 @@
 title: About Katana
 
-Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources for groups working with non-sensitive data. It contains over 6,000 CPU cores, 8 GPU compute nodes (V100 and A100), and 6Pb of disk storage. Katana provides a flexible compute environment where users can run jobs that wouldn't be possible or practical on their desktop or laptop. For full details of the compute nodes including a full list see the compute node information section below.
+Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources for groups working with non-sensitive data. It contains over 7,000 CPU cores, 20 GPU compute nodes (H200, GH200, A100, V100 and L40S), and 6Pb of disk storage. Katana provides a flexible compute environment where users can run jobs that wouldn't be possible or practical on their desktop or laptop. For full details of the compute nodes including a full list see the compute node information section below.
 
 Katana is powerful on its own, but can be seen as a training or development base before migrating up to systems like Australia's peak HPC system [Gadi at NCI](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi). Research Technology Services also provide [training and support](https://unsw.sharepoint.com/sites/restech) for new users or those uncertain if High Performance Computing is the right fit for their research needs.
 
@@ -13,15 +13,18 @@ Katana is powerful on its own, but can be seen as a training or development base
 
 ## Compute
 
-- Heterogenous hardware: Dell, Lenovo, Huawei.
-- Roughly 170 nodes
+- Heterogenous hardware: Dell, Lenovo, Huawei, Gigabyte, Supermicro, Xenon.
+- Roughly 150 nodes
 
 ## GPU Compute
 
-- Eight GPU capable nodes
-    - Tesla V100-SXM2, 32GB
-    - Nvidia A100, 40GB
-- Five are dedicated for the department that owns them. Three are general use for all researchers
+- Twenty GPU capable nodes
+    - 16x Nvidia H200, 141GB (4 nodes)
+    - 1x Nvidia GH200, 480GB (1 node)
+    - 20x Nvidia L40S, 48GB (4 nodes)
+    - 20x Nvidia A100, 40GB (3 nodes)
+    - 32x Tesla V100-SXM2, 32GB (8 nodes)
+- Twelve are dedicated for the department that owns them. Eight are general use for all researchers
 
 
 !!! info
