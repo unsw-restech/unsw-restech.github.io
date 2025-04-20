@@ -13,17 +13,17 @@ Katana is powerful on its own, but can be seen as a training or development base
 
 ## Compute
 
-- Heterogenous hardware: Dell, Lenovo, Gigabyte, Supermicro, Xenon.
+- Heterogenous hardware: Dell, Lenovo, Supermicro, Xenon.
 - More than 150 nodes
 
 ## GPU Compute
 
 - 25 GPU nodes
-    - 24 x Nvidia H200, 141GB (6 nodes)
-    - 1 x Nvidia GH200, 480GB (1 node)
-    - 32 x Nvidia L40S, 48GB (7 nodes)
-    - 20 x Nvidia A100, 40GB (3 nodes)
-    - 32 x Tesla V100-SXM2, 32GB (8 nodes)
+    - 24 x Nvidia H200 141GB (6 nodes)
+    - 1 x Nvidia GH200 480GB + 96GB (1 node)
+    - 32 x Nvidia L40S 48GB (7 nodes)
+    - 20 x Nvidia A100 40GB (3 nodes)
+    - 32 x Nvidia V100 32GB (8 nodes)
 - 12 GPU nodes have priority access for the school/group that purchased them
 - 13 GPU nodes are for use by all researchers
 
