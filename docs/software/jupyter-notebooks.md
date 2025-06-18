@@ -17,6 +17,7 @@ Python Jupyter kernel using the instructions below:
 $ module load python/3.8.3
 $ python3 -m venv --system-site-packages /home/z1234567/.venvs/jupyter-kernel
 $ source /home/z1234567/.venvs/jupyter-kernel/bin/activate
+$ pip install ipykernel
 ```
 
 !!! note "Create the Jupyter Kernel "
