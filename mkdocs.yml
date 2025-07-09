@@ -52,10 +52,7 @@ nav:
         - 'using_katana/monitor_jobs.md'
         - 'using_katana/tips_katana.md'
         - 'using_katana/about_katana.md'
-    
-    - 'using_katana/ondemand.md'
-    - 'AI on Katana':
-        - 'AI_in_Katana/StableDiffusion.md'
+        - 'using_katana/ondemand.md'
     - 'Storage':
         - 'storage/storage_locations.md'
         - 'storage/kdm.md'
@@ -81,6 +78,10 @@ nav:
         #- 'software/tmux.md'
         #- 'software/zip.md'
         - 'software/others.md'
+    - 'Machine Learning and AI':
+        - 'AI_in_Katana/StableDiffusion.md'
+    - 'Imaging':
+        - 'imaging/neurodesk.md'
     #- 'Help and Support':
     - 'help_support/user_support.md'
     #- 'help_support/reference_data.md'
