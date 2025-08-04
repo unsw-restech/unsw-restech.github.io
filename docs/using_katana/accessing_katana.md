@@ -2,10 +2,10 @@ title: Accessing Katana
 
 ## Requesting an Account
 
-To apply for an account, please send an email from your UNSW email address to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au), giving your zID,
-your role within UNSW and the name of your supervisor or head of your research group.
+To apply for an account, please fill out the ServicePoint form [Katana Access Request](https://servicepoint.unsw.edu.au/casm.html#/bui/home/search?selectedCategoryId=pcat:433408&selectedCategoryName=Katana%20Access%20Request),
+including your role within UNSW and the name of your supervisor or head of your research group.
 
-Anyone at UNSW can apply for a general account on Katanif they think that Katana would suit their research needs and will typically use 
+Anyone at UNSW can apply for a general account on Katana if they think that Katana would suit their research needs and will typically use 
 less than 10,000 CPU core hours a quarter. If a researcher requires or uses more than that they should also give consideration to using NCI.
 
 All Katana users gets access to [help with software installation, getting started on Katana or running their jobs](../../help_support/user_support/). 
