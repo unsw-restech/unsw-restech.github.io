@@ -83,21 +83,3 @@ Users in this situation should speak to their supervisor.
 
         Using WSL will not only let you connect to katana with SSH, but also provides many GNU/Linux tools that are useful when working with HPC and research data.
 
-
-## SSH KeepAlive
-
-To stop your connection disconnecting after some idle time, you can send some empty packets to keep your session alive. You want to change the
-frequency of these packets from 0 (none) to a small time interval, say 60 seconds. The configuration differs depending on the SSH client used.
-
-On PuTTy: Category -> Connection -> "Seconds between keepalives"
-
-On MobaXterm: Settings -> Configuration -> SSH -> SSH keepalive 
-
-On Linux and WSL you send keepalive packets for all servers by editing ~/.ssh/config and adding the lines 
-
-``` bash
-
-   Host *
-      ServerAliveInterval 60
-
-```

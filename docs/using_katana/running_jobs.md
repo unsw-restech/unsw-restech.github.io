@@ -17,8 +17,8 @@ Katana uses OpenPBS to manage resources and schedule jobs.
 
 ### Job Types
 
-- **Interactive Job** – Provides a live shell session on compute nodes for experimentation and debugging. Useful for testing and planning batch jobs.  
 - **Batch Job** – Runs a scripted job automatically from start to finish without user intervention. Ideal for long-running production tasks.
+- **Interactive Job** – Provides a live shell session on compute nodes for experimentation and debugging. Useful for testing and planning batch jobs.  
 
 All jobs enter a **queue** while waiting for resources.
 
@@ -40,7 +40,7 @@ A batch job is a script that runs autonomously on a compute node. The script spe
 
 ### Step 1: Create a Job Script File
 
-You can create a job script file using command-line editors like `nano` or `vi`. For example, using `nano`:
+You can create a job script file in command-line editors like `Powershell`. For example, using `nano`:
 
 ```bash
 # Create a new file called myjob.pbs
@@ -54,7 +54,7 @@ This opens a simple text editor in the terminal. Copy the following template int
 
 #PBS -l select=1:ncpus=1:mem=4gb
 #PBS -l walltime=12:00:00
-#PBS -M your.name.here@unsw.edu.au
+#PBS -M zID@ad.unsw.edu.au
 #PBS -m ae
 #PBS -j oe
 
@@ -62,6 +62,51 @@ cd $PBS_O_WORKDIR
 
 ./myprogram
 ```
+!!! note
+	What each line does:
+
+	```bash
+	#!/bin/bash
+	```
+
+	Tells the system to use the Bash shell to run your script. Without this, your commands may not be interpreted correctly.
+
+	```bash
+	#PBS -l select=1:ncpus=1:mem=4gb`
+	```
+
+	Requests 1 compute node with 1 CPU core and 4GB RAM. The scheduler uses this to allocate resources.
+
+	```bash
+	#PBS -l walltime=12:00:00
+	```
+
+	Sets the maximum run time to 12 hours. If your job exceeds this, it will be automatically terminated.
+
+	```bash
+	#PBS -M your.name.here@unsw.edu.au
+	#PBS -m ae
+	```
+
+	Sends an email notification if the job aborts (a) or ends normally (e). Useful to know when your job finishes or fails. (Optional)
+
+	```bash
+	#PBS -j oe
+	```
+
+	Combines the standard output and standard error into a single file, making it easier to review the results. (Optional)
+
+	```bash
+	cd $PBS_O_WORKDIR
+	```
+
+	Changes the working directory to where you ran qsub. By default, jobs start in your home directory, which may not contain the files you need. (Optional)
+
+	```bash
+	./myprogram
+	```
+
+	Runs your program. Replace myprogram with the actual program or script you want to execute.
 
 - Press `CTRL+O` to save and `CTRL+X` to exit `nano`.
 
@@ -71,32 +116,8 @@ cd $PBS_O_WORKDIR
 qsub myjob.pbs
 ```
 
-- Returns a job ID (e.g., `1239.kman.restech.unsw.edu.au`)  
+- Terminal will return a job ID (e.g., `1239.kman.restech.unsw.edu.au`)  
 - Scheduler runs the job when resources are available.
-
-### Step 3: Specifying Resources
-
-```bash
-# 1 CPU, 4GB RAM, 12 hours
-qsub -l select=1:ncpus=1:mem=4gb,walltime=12:00:00 myjob.pbs
-
-# 1 GPU, 6 CPUs, 46GB RAM, 12 hours
-qsub -l select=1:ncpus=6:ngpus=1:mem=46gb,walltime=12:00:00 myjob.pbs
-# Formula for multiple GPUs: ncpus=(#ngpus*6):mem=(#ngpus*46)
-```
-
-### Using Local Scratch for Large Data
-
-```bash
-cp /home/z1234567/project/massivedata.tar.gz $TMPDIR
-tar xvf $TMPDIR/massivedata.tar.gz
-
-my_analysis.py $TMPDIR/massivedata
-
-cp -r $TMPDIR/my_output /home/z1234567
-```
-
-> Using `$TMPDIR` (local scratch) is faster than reading/writing over network drives.
 
 ---
 
@@ -116,40 +137,60 @@ qsub -I -l select=1:ncpus=2:mem=8gb,walltime=3:00:00
 - Session ends when time expires, memory is exceeded, or user exits.  
 - Useful for developing and testing code before batch submission.  
 
----
+## Understanding Walltime
 
-## Job Queue Limits
+Walltime is the maximum amount of real time that your job is allowed to run on the cluster. It is requested when you submit a job and is used by the scheduler to plan resources.
 
-| Resource       | Queue limit cut-offs                       |
-|----------------|-------------------------------------------|
-| Memory (GB)    | 124, 180, 248, 370, 750, 1000           |
-| CPU Cores      | 16, 20, 24, 28, 32, 44                   |
-| Walltime (hrs) | 12, 48, 100, 200                          |
-
-Walltime determines node eligibility:
-
-| Walltime (hrs) | Node type                                    |
-|----------------|---------------------------------------------|
-| 12             | Any node                                    |
-| 48-100         | School-owned or general-use nodes           |
-| 200            | School-owned nodes only                      |
-
-> Tip: Combine or divide batch jobs to fit within 12-hour limit for faster starts.
+- Walltime is specified in hours, minutes, and seconds, the default walltime is 1 hour if not specified in script.
+- If your job runs longer than the walltime, it will be terminated automatically, even if it hasn’t finished.
+- Walltime affects which queues your job can be scheduled on. Shorter walltime jobs usually start faster, while longer jobs may only be able to run on specific nodes.
+- Always estimate your job’s runtime carefully. If unsure, it’s safer to slightly overestimate but not excessively, as very long walltime requests may reduce scheduling priority.
+- For long workflows, consider splitting tasks into multiple jobs to fit within walltime limits.
 
 ---
 
-## Accessing Grace Hopper (GH200) GPU Node
+## Job queue limits summary 
 
-- High-performance ARM CPU with 72 cores + Hopper GPU (96GB HBM3).  
-- Use `cpu_arch=aarch64` to request:
+Typical job queue limit cut-offs are shown below. **The walltime is what determines whether a job can be run on any node, or only on a restricted set of nodes.**
 
-```bash
-qsub -l select=1:cpu_arch=aarch64:ngpus=1:ncpus=72:mem=585505mb myjob.pbs
-```
-
-- Different architecture → different binaries required.  
-- Recommended: GNU compilers, CUDA libraries, and Conda (aarch64).  
-- CPU & GPU connected via 900GB/s NVLink → can use unified memory pool (>96GB GPU memory).
+<table>
+	<tbody>
+		<tr>
+			<td>Resource</td>
+			<td colspan="6">Queue limit cut-offs</td>
+		</tr>
+		<tr>
+			<td>Memory (GB)</td>
+			<td>124</td>
+			<td>180</td>
+			<td>248</td>
+			<td>370</td>
+			<td>750</td>
+			<td>1000</td>
+		</tr>
+		<tr>
+			<td>CPU Cores</td>
+			<td>16</td>
+			<td>20</td>
+			<td>24</td>
+			<td>28</td>
+			<td>32</td>
+			<td>44</td>
+		</tr>
+		<tr>
+			<td rowspan="2">Walltime (hrs)</td>
+			<td>12</td>
+			<td>48</td>
+			<td>100</td>
+			<td colspan="3">200</td>
+		</tr>
+		<tr>
+			<td>Any node</td>
+			<td colspan="2">School-owned or general-use nodes</td>
+			<td colspan="3">School-owned nodes only</td>
+		</tr>
+	</tbody>
+</table>
 
 ---
 
@@ -165,6 +206,56 @@ qdel <job_id>
 # Show queues
 qstat -q
 ```
+For details on how to monitor or manage you jobs, see the next page.
+
+---
+
+## Accessing Grace Hopper (GH200) GPU Node
+
+Katana includes a Grace Hopper (GH200) node, which combines an ARM-based CPU with a Hopper-generation GPU. This node offers much higher performance than Katana’s older GPU nodes (V100 and A100) and is designed for experimental, high-end workloads.
+
+#### Key Characteristics of the GH200 Node
+
+- CPU: 72-core ARM CPU (architecture: aarch64) with 480 GB memory.
+
+- GPU: One Hopper GPU with 96 GB HBM3 memory.
+
+- Memory bandwidth: The CPU and GPU are linked with 900 GB/s NVLink, allowing them to share memory. This means you can run GPU jobs requiring more than 96 GB memory, because the GPU can access CPU memory directly.
+
+- Architecture note: The ARM CPU architecture is different from the rest of Katana (x86_64). Regular Katana binaries and modules will not work here.
+
+#### Software Considerations
+
+- Use the default GNU compiler and CUDA libraries available on the node.
+
+- Install your own Python environment using Conda for ARM (aarch64), since many precompiled packages won’t run on ARM.
+
+- Jobs here are best suited for Python-based machine learning, deep learning, and experimental HPC applications.
+
+#### Submitting Jobs to the GH200 Node
+
+To request the GH200 node, you must specify the `cpu_arch=aarch64` resource in your job submission.
+
+Option 1 - Direct `qsub` command
+
+```bash
+[z1234567@katana ~]$ qsub -l select=1:cpu_arch=aarch64:ngpus=1:ncpus=72:mem=480gb myjob.pbs
+1238.kman.restech.unsw.edu.au
+```
+
+Option 2 - Inside your job script
+
+```bash
+#PBS -l select=1:cpu_arch=aarch64:ngpus=1:ncpus=72:mem=480gb
+```
+
+#### When to Use the GH200 Node
+
+- If your job requires very high GPU memory bandwidth or unified CPU–GPU memory.
+
+- If you are experimenting with next-generation AI/ML workloads.
+
+- If your application can be built or run on ARM (aarch64) architecture.
 
 ---
 
