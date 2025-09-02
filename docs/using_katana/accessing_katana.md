@@ -27,7 +27,7 @@ Users in this situation should speak to their supervisor.
     </div>
     <div style="flex: 1; margin: 0 10px;">
         <div style="display: inline-block; text-align: center;">
-            <a href="/using_katana/accessing_katana/#connecting-to-katana-via-terminal"><img src="../../assets/terminal.png" alt="Terminal Access to Katana" style="max-width: 100%; height: 300px;"></a>
+            <a href="/using_katana/accessing_katana/#connecting-to-katana-via-terminal"><img src="../../assets/kod_powershell.png" alt="Terminal Access to Katana" style="max-width: 100%; height: 300px;"></a>
             <div><a href="/using_katana/accessing_katana/#connecting-to-katana-via-terminal">Via Terminal</a></div>
         </div>
     </div>
@@ -44,13 +44,34 @@ Users in this situation should speak to their supervisor.
     === "Linux and Mac"
         From a Linux or Mac OS machine you can connect via ssh in a terminal:
 
+        Launch Terminal on your Mac OS or Linux computer, and run:
+
         ``` bash
         laptop:~$ ssh z1234567@katana.restech.unsw.edu.au
         ```
     === "Windows"
         From a Windows machine an SSH client such as [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) or [MobaXTerm](https://mobaxterm.mobatek.net/) is required. 
 
-        If you are comfortable using PowerShell, OpenSSH is available on recent Windows versions. If not present, it can be [installed on Windows 10](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse). 
+        In Putty/MobaXTerm, use `zID@katana.restech.unsw.edu.au` as host name.
+
+        Putty: 
+
+        ![Putty](../../assets/kod_Putty.png)
+        
+        Moba: 
+
+        ![Moba](../../assets/kod_MobaXterm.png)
+        
+        Then click on Open, and accept to trust the identity of server.
+
+        If you are comfortable using PowerShell, OpenSSH is available on recent Windows versions. If not present, it can be [installed on Windows 10/11 or Windows Server](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse). 
+
+        ``` powershell
+        C:\Windows\system32> ssh z1234567@katana.restech.unsw.edu.au
+        ```
+
+        Enter your zPass to connect.
+
 
     === "Windows subsystem for Linux (WSL)"
         You can run a Linux environmet directly on Windows using [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about) (WSL).
