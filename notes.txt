@@ -15,7 +15,6 @@
 # Since these are essentially different types of users
 # This also reduces extremely long pages
 
-
 # Make links open in new tab
 (?<!!)(\[[^\]]+\]\([^\)]+\))
 $1{target=_blank}
