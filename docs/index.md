@@ -27,8 +27,8 @@ Information on how to request a Katana account can be found with the
     </div>
     <div style="flex: 1; margin: 0 10px;">
       <div style="display: inline-block; text-align: center;">
-            <a href="https://unsw.sharepoint.com/sites/restech" target="_blank"><img src="../assets/next_training.png" alt="Restech training" style="max-width: 100%; height: 230px;"></a>
-            <div><a href="https://unsw.sharepoint.com/sites/restech" target="_blank">Restech training (including Katana)</a></div>
+            <a href="https://unsw.sharepoint.com/sites/restech" target="_blank"><img src="../assets/next_training.png" alt="ResTech training" style="max-width: 100%; height: 230px;"></a>
+            <div><a href="https://unsw.sharepoint.com/sites/restech" target="_blank">ResTech training (including Katana)</a></div>
         </a>
       </div>
     </div>
