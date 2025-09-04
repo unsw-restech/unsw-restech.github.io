@@ -20,7 +20,7 @@ To modify the documentation:
 
 3. **Inspect and Update CSS**: 
 If you need to make live changes to the CSS or styling, inspect the elements using your browser's developer tools. 
-You can also refer to this [helpful link on mkdocs](https://squidfunk.github.io/mkdocs-material/) to visualize the structural changes you want to implement.
+You can also refer to this [helpful link on mkdocs](https://squidfunk.github.io/mkdocs-material/) to visualise the structural changes you want to implement.
 
 ## Publish Your Website 
 
