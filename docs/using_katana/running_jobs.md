@@ -34,25 +34,64 @@ Main resources requested by jobs:
 
 ---
 
+## Create a Job Folder
+
+Create a dedicated folder for your job files. This keeps your work organized and makes it easier to manage multiple jobs.
+
+```bash
+mkdir MyFirstJob
+```
+Then navigate into the folder:
+
+```bash
+cd MyFirstJob
+```
+<div style="flex: 1; margin-right: 20px;">
+		<img src="../../assets/folder.png" style="max-width: 100%; height: 100px;">
+</div>
+
+## Create a script or program to run
+
+Before submitting a job, you need a script or program to execute. This could be a compiled binary, a Python script, an R script, or any other executable file.
+For example, create a simple Python script named `myprogram.py`:
+```bash
+nano myprogram.py
+```
+
+Inside nano, add the following code:
+
+```python
+print("Hello, Katana!")
+```
+Save this file and exit nano (CTRL+S, ENTER, CTRL+X).
+
 ## Batch Jobs (qsub)
 
-A batch job is a script that runs autonomously on a compute node. The script specifies resources and commands to run.
+A batch job is a script that runs autonomously on a compute node. The script specifies resources and commands to run. Now you will create a job script to run the program you created.
 
 ### Step 1: Create a Job Script File
-
-<figure markdown>
-  ![Simple HPC Architecture](../assets/powershell_example.png){ width="800" }
-  <figcaption>Windows Powershell</figcaption>
-</figure>
-
-You can create a job script file in command-line editors like `Powershell`. For example, using `nano`:
 
 ```bash
 # Create a new file called myjob.pbs
 nano myjob.pbs
 ```
 
-This opens a simple text editor in the terminal. Copy the following template into the editor:
+<div style="display: flex; justify-content: space-around;">
+    <div style="flex: 1; margin: 0px;">
+        <div style="display: inline-block; text-align: center;">
+            <img src="../../assets/nano_myjob.png" style="max-width: 100%; height: 100px;">
+            <div>Windows Powershell</div>
+        </div>
+    </div>
+</div>
+
+This opens a simple text editor in the terminal:
+
+<div style="flex: 1; margin-right: 20px;">
+		<img src="../../assets/nano_example.png" style="max-width: 100%; height: 300px;">
+</div>
+
+Copy the following template into the editor:
 
 ```bash
 #!/bin/bash
@@ -65,8 +104,13 @@ This opens a simple text editor in the terminal. Copy the following template int
 
 cd $PBS_O_WORKDIR
 
-./myprogram
+python3 myprogram.py
 ```
+
+<div style="flex: 1; margin-right: 20px;">
+		<img src="../../assets/myjob_.png" style="max-width: 100%; height: 300px;">
+</div>
+
 !!! note
 	What each line does:
 
@@ -74,46 +118,46 @@ cd $PBS_O_WORKDIR
 	#!/bin/bash
 	```
 
-	Tells the system to use the Bash shell to run your script. Without this, your commands may not be interpreted correctly.
+	Tells the system to use the Bash shell to run your script. Every script should start with this line.
 
 	```bash
 	#PBS -l select=1:ncpus=1:mem=4gb`
 	```
 
-	Requests 1 compute node with 1 CPU core and 4GB RAM. The scheduler uses this to allocate resources.
+	Requests 1 compute node with 1 CPU core and 4GB RAM. The scheduler uses this to allocate resources. You can adjust `ncpus` and `mem` as needed.
 
 	```bash
 	#PBS -l walltime=12:00:00
 	```
 
-	Sets the maximum run time to 12 hours. If your job exceeds this, it will be automatically terminated.
+	Sets the maximum run time to 12 hours. See the Walltime section below for more details.
 
 	```bash
 	#PBS -M your.name.here@unsw.edu.au
 	#PBS -m ae
 	```
 
-	Sends an email notification if the job aborts (a) or ends normally (e). Useful to know when your job finishes or fails. (Optional)
+	(Optional)Sends an email notification if the job aborts (a) or ends normally (e). Useful to know when your job finishes or fails. 
 
 	```bash
 	#PBS -j oe
 	```
 
-	Combines the standard output and standard error into a single file, making it easier to review the results. (Optional)
+	(Optional)Combines the standard output and standard error into a single file, making it easier to review the results.
 
 	```bash
 	cd $PBS_O_WORKDIR
 	```
 
-	Changes the working directory to where you ran qsub. By default, jobs start in your home directory, which may not contain the files you need. (Optional)
+	Changes the working directory to where you ran qsub. This ensures you are running in the correct folder.
 
 	```bash
-	./myprogram
+	python3 myprogram.py
 	```
 
 	Runs your program. Replace myprogram with the actual program or script you want to execute.
 
-- Press `CTRL+O` to save and `CTRL+X` to exit `nano`.
+- Press `CTRL+S` to save and `CTRL+X` to exit `nano`.
 
 ### Step 2: Submit the Batch Job
 
@@ -122,25 +166,46 @@ qsub myjob.pbs
 ```
 
 - Terminal will return a job ID (e.g., `1239.kman.restech.unsw.edu.au`)  
-- Scheduler runs the job when resources are available.
+- Scheduler will run the job when resources are available.
+- When the job is finished, two files will be created in your folder: `myjob.o1239` and `myjob.e1239` (where `1239` is your job ID). The `.o` file contains standard output, and the `.e` file contains any error messages. You can use `cat`, `less`, or `nano` to view these files.
+- To check the status of your job, use:
+
+```bash
+qstat job_id (e.g., qstat 6787878)
+```
 
 ---
 
 ## Interactive Jobs (qsub -I)
 
-Interactive jobs provide a shell session on compute nodes with requested resources.
+Interactive jobs let you run commands directly on Katana’s compute nodes (not the login node). This is useful when:
+
+- You need to test software before creating a batch script.
+- You want to debug or profile code in a live environment.
+- You are running short, exploratory tasks where you need to see output in real time.
+
+!!! note
+	Interactive jobs are not suitable for long-running tasks. Use batch jobs for production workloads.
+	Do not run heavy computations on the login node. Always request an interactive session so your work runs on compute resources.
+
+### Starting an Interactive Session
+
+To start an interactive job, use qsub -I with resource requests. For example:
 
 ```bash
-# Default interactive session (1 CPU, 1GB, 1 hour)
-qsub -I
-
-# Custom interactive session (2 CPUs, 8GB, 3 hours)
-qsub -I -l select=1:ncpus=2:mem=8gb,walltime=3:00:00
+qsub -I 
+or 
+qsub -I -l select=1:ncpus=2:mem=8gb -l walltime=02:00:00
 ```
 
-- Session starts when prompt changes to the compute node name (e.g., `k181`, `k201`).  
-- Session ends when time expires, memory is exceeded, or user exits.  
-- Useful for developing and testing code before batch submission.  
+<div style="flex: 1; margin-right: 20px;">
+		<img src="../../assets/interactive_job.png" style="max-width: 100%; height: 100px;">
+</div>
+
+!!! mote
+	Without resource requests, the default is 1 CPU core, 4GB RAM, and 1 hour walltime.
+
+Once your session starts, you will be logged into a compute node. You can run commands as you would on the login node.
 
 ## Understanding Walltime
 
@@ -197,71 +262,6 @@ Typical job queue limit cut-offs are shown below. **The walltime is what determi
 	</tbody>
 </table>
 
----x`
-
-## Useful Commands
-
-```bash
-# Check job status
-qstat
-
-# Delete a job
-qdel <job_id>
-
-# Show queues
-qstat -q
-```
-For details on how to monitor or manage you jobs, see the next page.
-
----
-
-## Accessing Grace Hopper (GH200) GPU Node
-
-Katana includes a Grace Hopper (GH200) node, which combines an ARM-based CPU with a Hopper-generation GPU. This node offers much higher performance than Katana’s older GPU nodes (V100 and A100) and is designed for experimental, high-end workloads.
-
-#### Key Characteristics of the GH200 Node
-
-- CPU: 72-core ARM CPU (architecture: aarch64) with 480 GB memory.
-
-- GPU: One Hopper GPU with 96 GB HBM3 memory.
-
-- Memory bandwidth: The CPU and GPU are linked with 900 GB/s NVLink, allowing them to share memory. This means you can run GPU jobs requiring more than 96 GB memory, because the GPU can access CPU memory directly.
-
-- Architecture note: The ARM CPU architecture is different from the rest of Katana (x86_64). Regular Katana binaries and modules will not work here.
-
-#### Software Considerations
-
-- Use the default GNU compiler and CUDA libraries available on the node.
-
-- Install your own Python environment using Conda for ARM (aarch64), since many precompiled packages won’t run on ARM.
-
-- Jobs here are best suited for Python-based machine learning, deep learning, and experimental HPC applications.
-
-#### Submitting Jobs to the GH200 Node
-
-To request the GH200 node, you must specify the `cpu_arch=aarch64` resource in your job submission.
-
-Option 1 - Direct `qsub` command
-
-```bash
-[z1234567@katana ~]$ qsub -l select=1:cpu_arch=aarch64:ngpus=1:ncpus=72:mem=480gb myjob.pbs
-1238.kman.restech.unsw.edu.au
-```
-
-Option 2 - Inside your job script
-
-```bash
-#PBS -l select=1:cpu_arch=aarch64:ngpus=1:ncpus=72:mem=480gb
-```
-
-#### When to Use the GH200 Node
-
-- If your job requires very high GPU memory bandwidth or unified CPU–GPU memory.
-
-- If you are experimenting with next-generation AI/ML workloads.
-
-- If your application can be built or run on ARM (aarch64) architecture.
-
 ---
 
 ## Restech GitHub Repositories
@@ -271,5 +271,3 @@ Option 2 - Inside your job script
 - [UNSW-eNotebook-LabArchives](https://github.com/unsw-edu-au/UNSW-eNotebook-LabArchives) – LabArchives widgets
 
 ---
-
-This guide includes step-by-step instructions for creating job scripts, submitting jobs, and using Katana safely, even for users without programming experience.
