@@ -40,6 +40,11 @@ A batch job is a script that runs autonomously on a compute node. The script spe
 
 ### Step 1: Create a Job Script File
 
+<figure markdown>
+  ![Simple HPC Architecture](../assets/powershell_example.png){ width="800" }
+  <figcaption>Windows Powershell</figcaption>
+</figure>
+
 You can create a job script file in command-line editors like `Powershell`. For example, using `nano`:
 
 ```bash
