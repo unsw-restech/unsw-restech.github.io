@@ -1,0 +1,1077 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../environment_modules/">
+      
+      
+        <link rel="next" href="../jupyter-notebooks/">
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Installing software - Katana User Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-W3KS3D0120"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-W3KS3D0120",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-W3KS3D0120",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#checking-if-a-package-is-installed" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Katana User Documentation" class="md-header__button md-logo" aria-label="Katana User Documentation" data-md-component="logo">
+      <!-- Logo -->
+<img id="md_logo" src="" alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Katana User Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installing software
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="yellow" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/unsw-restech/unsw-restech.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    unsw-restech/katana-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Katana User Documentation" class="md-nav__button md-logo" aria-label="Katana User Documentation" data-md-component="logo">
+      <!-- Logo -->
+<img id="md_logo" src="" alt="logo">
+    </a>
+    Katana User Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/unsw-restech/unsw-restech.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    unsw-restech/katana-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="false">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/accessing_katana/" class="md-nav__link">
+        Accessing Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/running_jobs/" class="md-nav__link">
+        Running Jobs on Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/monitor_jobs/" class="md-nav__link">
+        Monitor your Jobs(qstat, qdel, qalter)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/tips_katana/" class="md-nav__link">
+        Tips for using PBS and Katana effectively
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/about_katana/" class="md-nav__link">
+        About Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/ondemand/" class="md-nav__link">
+        Web access to Katana
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Storage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/storage_locations/" class="md-nav__link">
+        Storage Locations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/kdm/" class="md-nav__link">
+        Katana Data Mover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/data_archive/" class="md-nav__link">
+        How to use the UNSW Data Archive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/onedrive/" class="md-nav__link">
+        OneDrive
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="true">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../environment_modules/" class="md-nav__link">
+        Environment Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Installing software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Installing software
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#checking-if-a-package-is-installed" class="md-nav__link">
+    Checking if a package is installed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r-and-python-packages" class="md-nav__link">
+    R and Python Packages
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-a-binary-package" class="md-nav__link">
+    Installing a binary package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiling-from-source" class="md-nav__link">
+    Compiling from source
+  </a>
+  
+    <nav class="md-nav" aria-label="Compiling from source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installing-software-from-github" class="md-nav__link">
+    Installing software from Github
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installing-a-github-software-release" class="md-nav__link">
+    Installing a Github software release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-cloning" class="md-nav__link">
+    Github cloning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readme-and-install-files" class="md-nav__link">
+    README and INSTALL files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compilers" class="md-nav__link">
+    Compilers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-installation-files" class="md-nav__link">
+    Configuring installation files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-module-files" class="md-nav__link">
+    Creating module files
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyter-notebooks/" class="md-nav__link">
+        Jupyter Notebooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../r/" class="md-nav__link">
+        R and RStudio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../others/" class="md-nav__link">
+        Others
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          Machine Learning and AI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Machine Learning and AI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Machine Learning and AI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI_in_Katana/StableDiffusion/" class="md-nav__link">
+        Stable Diffusion on an HPC Environment
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Imaging
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Imaging" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Imaging
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../imaging/neurodesk/" class="md-nav__link">
+        Neurodesk
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/user_support/" class="md-nav__link">
+        Help and Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+  <h1>Installing software</h1>
+
+<h2 id="checking-if-a-package-is-installed">Checking if a package is installed<a class="headerlink" href="#checking-if-a-package-is-installed" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before installing software yourself, check if it has already been installed as part of the environment or as a module. You may also want to
+speak to one of your research colleagues to find out if they have installed it for themselves.</p>
+</div>
+<p>Some common software packages are already available as part of katana's the operating system. They are listed by: </p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span>yum<span class="w"> </span>list<span class="w"> </span>installed
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do not try to run administration commands as a user. These include: apt-get install, yum install, su, or sudo. </p>
+</div>
+<p>You can see the list of software applications already installed on Katana using the <a href="../environment_modules">Environment Module</a> command:</p>
+<div class="highlight"><pre><span></span><code><span class="w">   </span>module<span class="w"> </span>avail
+</code></pre></div>
+<h2 id="r-and-python-packages">R and Python Packages<a class="headerlink" href="#r-and-python-packages" title="Permanent link">¶</a></h2>
+<p>Many Python and R packages are installed on katana. We have specific documentation to install your own packages in <a href="../python#python-virtual-environments">Python</a>`
+and <a href="../r#installing-libraries">R</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have tried to install packages software yourself, but you need further assistance, then please send an email to <a href="mailto:restech.support@unsw.edu.au">restech.support@unsw.edu.au</a>.</p>
+</div>
+<h2 id="installing-a-binary-package">Installing a binary package<a class="headerlink" href="#installing-a-binary-package" title="Permanent link">¶</a></h2>
+<p>While installing from source is preferred for effeciency reasons, sometimes
+only precompiled binaries are available. When downloading binaries, make sure you select the
+correct architecture and operating system for Katana.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The login and compute nodes of Katana are currently Rocky Linux 8.9, 64-bit, Intel x86_64 / AMD64.</p>
+<p>If the software is small then you may want to install it in your home directory to take advantage of the
+nightly backup. Otherwise you should install the software in your scratch directory.</p>
+</div>
+<div class="highlight"><pre><span></span><code>wget<span class="w"> </span>https://website.org/binary/application<span class="w">  </span>
+</code></pre></div>
+<p>Change file permissions to make the application readable and executable</p>
+<div class="highlight"><pre><span></span><code>chmod<span class="w"> </span>u+rx<span class="w"> </span>./application
+</code></pre></div>
+<h2 id="compiling-from-source">Compiling from source<a class="headerlink" href="#compiling-from-source" title="Permanent link">¶</a></h2>
+<p>Compiling from source is preferred for efficiency reasons but is generally a more complicted process than a binary installation. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the software is small then you may want to install it in your home directory to take advantage of the nightly backup.
+Otherwise you should install the software in your scratch directory.</p>
+</div>
+<h3 id="installing-software-from-github">Installing software from Github<a class="headerlink" href="#installing-software-from-github" title="Permanent link">¶</a></h3>
+<p>Source code is commonly stored on GitHub for easy version control. Git is available by default on katana. Remember: UNSW has its own <a href="../../using_katana/github">GitHub organisation</a>.</p>
+<p>The process to install code which comes from GitHub depends on how the author of the code has set it up. </p>
+<h3 id="installing-a-github-software-release">Installing a Github software release<a class="headerlink" href="#installing-a-github-software-release" title="Permanent link">¶</a></h3>
+<p>Often the software owner will create a software <strong>release</strong>  which is a copy of the software with everything frozen at that point in time. This helps with reproducability of results
+as you can refer to a specific version of the software and someone else can easily install the same version on their computer. You will often be able to choose between a
+binary version and downloading the source. Downloading the binary and the source versions will look something like:</p>
+<div class="highlight"><pre><span></span><code><span class="w">   </span>wget<span class="w"> </span>https://github.com/project/project/releases/download/v1.48.1/project.linux_8.zip
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="w">   </span>wget<span class="w"> </span>https://github.com/project/project/archive/refs/tags/v1.48.1.tar.gz
+</code></pre></div>
+<h3 id="github-cloning">Github cloning<a class="headerlink" href="#github-cloning" title="Permanent link">¶</a></h3>
+<p>If the owner of the software has not created a release or the latest release is too old then you can download the repository and use it to compile the software.
+Copy the web address revealed by the green 'Code' button on the repository. Creating a local copy of the repository uses the following command:</p>
+<div class="highlight"><pre><span></span><code><span class="w">   </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/project/project.git
+</code></pre></div>
+<p>The created folder will then contain the source code and some documentation files.</p>
+<h3 id="readme-and-install-files">README and INSTALL files<a class="headerlink" href="#readme-and-install-files" title="Permanent link">¶</a></h3>
+<p>The README file contains general information for the software, and often a brief installation guide. INSTALL will contain more detailed installation instructions, including configuration for 
+certain archictures. Please read the README and INSTALL files in full before attempting compilation.</p>
+<h3 id="compilers">Compilers<a class="headerlink" href="#compilers" title="Permanent link">¶</a></h3>
+<p>It is generally best to use the system compilers <code>gcc</code> and <code>ld</code>. However, many code requires specific compilers and versions. Katana has many compilers available as modules 
+including the <a href="../others#intel-compilers-and-software-libraries">Intel Compilers and Software Libraries</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please install software using an interactive session, qsub -I, not directly on the login node. </p>
+</div>
+<h3 id="configuring-installation-files">Configuring installation files<a class="headerlink" href="#configuring-installation-files" title="Permanent link">¶</a></h3>
+<p>Commonly, a configuration script is available which allows you to set where the software is installed by using the --prefix flag as well as other options. To install
+the software in your Katana home directory you can use the following command:</p>
+<div class="highlight"><pre><span></span><code><span class="w">   </span>./configure<span class="w"> </span>--prefix<span class="o">=</span><span class="nv">$HOME</span>/apps/<span class="o">{</span>PACKAGE<span class="o">}</span>/<span class="o">{</span>VERSION<span class="o">}</span>
+</code></pre></div>
+<p>The software can then be installed according to the rules in the MakeFile. This
+is typically invoked with</p>
+<div class="highlight"><pre><span></span><code><span class="w">   </span>make
+<span class="w">   </span>make<span class="w"> </span>install
+</code></pre></div>
+<h2 id="creating-module-files">Creating module files<a class="headerlink" href="#creating-module-files" title="Permanent link">¶</a></h2>
+<p>Much like katana's <code>Environment Modules</code>, you can also have multiple versions
+of the application available through your own modules.</p>
+<p>The template for environment modules is in:</p>
+<div class="highlight"><pre><span></span><code>/apps/modules/templates/module_file
+</code></pre></div>
+<p>The template module file makes some assumptions and examples, which may not be applicable to your software.
+Key sections will likely need to modify are:</p>
+<ul>
+<li>set      basepath          $env(HOME)/apps/{SOFTWARE_NAME}</li>
+<li>
+<p>set      version           {VERSION_NUMBER}        </p>
+</li>
+<li>
+<p>set      url</p>
+</li>
+<li>
+<p>set      installed</p>
+</li>
+<li>
+<p>set      compiled_with</p>
+</li>
+<li>
+<p>set      mpiversion</p>
+</li>
+<li>
+<p>prereq     {PREREQUISITE_SOFTWARE)</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Insert "module use --append $HOME/apps/Modules" into your ~/.bashrc to enable using your own modules upon login. </p>
+</div>
+<p>You should be able to module load your own software module as your own.</p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../environment_modules/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Environment Modules" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Environment Modules
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../jupyter-notebooks/" class="md-footer__link md-footer__link--next" aria-label="Next: Jupyter Notebooks" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                Jupyter Notebooks
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      UNSW Sydney NSW 2052 Australia | Tel: +61 2 93851000 | CRICOS: 00098G | TEQSA: PRV12055 | ABN: 57 195 873 179
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.instant", "navigation.top", "announce.dismiss", "toc.integrate", "navigation.path"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

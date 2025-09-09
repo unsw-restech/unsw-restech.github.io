@@ -1,0 +1,1201 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../accessing_katana/">
+      
+      
+        <link rel="next" href="../monitor_jobs/">
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Running Jobs on Katana - Katana User Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-W3KS3D0120"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-W3KS3D0120",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-W3KS3D0120",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#running-jobs-on-katana" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Katana User Documentation" class="md-header__button md-logo" aria-label="Katana User Documentation" data-md-component="logo">
+      <!-- Logo -->
+<img id="md_logo" src="" alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Katana User Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Running Jobs on Katana
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="yellow" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/unsw-restech/unsw-restech.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    unsw-restech/katana-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Katana User Documentation" class="md-nav__button md-logo" aria-label="Katana User Documentation" data-md-component="logo">
+      <!-- Logo -->
+<img id="md_logo" src="" alt="logo">
+    </a>
+    Katana User Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/unsw-restech/unsw-restech.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    unsw-restech/katana-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="true">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accessing_katana/" class="md-nav__link">
+        Accessing Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Running Jobs on Katana
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Running Jobs on Katana
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#brief-overview" class="md-nav__link">
+    Brief Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="Brief Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-types" class="md-nav__link">
+    Job Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-job-folder" class="md-nav__link">
+    Create a Job Folder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-script-or-program-to-run" class="md-nav__link">
+    Create a script or program to run
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#batch-jobs-qsub" class="md-nav__link">
+    Batch Jobs (qsub)
+  </a>
+  
+    <nav class="md-nav" aria-label="Batch Jobs (qsub)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-job-script-file" class="md-nav__link">
+    Step 1: Create a Job Script File
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-submit-the-batch-job" class="md-nav__link">
+    Step 2: Submit the Batch Job
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactive-jobs-qsub-i" class="md-nav__link">
+    Interactive Jobs (qsub -I)
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactive Jobs (qsub -I)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#starting-an-interactive-session" class="md-nav__link">
+    Starting an Interactive Session
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-walltime" class="md-nav__link">
+    Understanding Walltime
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-queue-limits-summary" class="md-nav__link">
+    Job queue limits summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restech-github-repositories" class="md-nav__link">
+    Restech GitHub Repositories
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitor_jobs/" class="md-nav__link">
+        Monitor your Jobs(qstat, qdel, qalter)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips_katana/" class="md-nav__link">
+        Tips for using PBS and Katana effectively
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_katana/" class="md-nav__link">
+        About Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ondemand/" class="md-nav__link">
+        Web access to Katana
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Storage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/storage_locations/" class="md-nav__link">
+        Storage Locations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/kdm/" class="md-nav__link">
+        Katana Data Mover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/data_archive/" class="md-nav__link">
+        How to use the UNSW Data Archive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/onedrive/" class="md-nav__link">
+        OneDrive
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/environment_modules/" class="md-nav__link">
+        Environment Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/installing_software/" class="md-nav__link">
+        Installing software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/jupyter-notebooks/" class="md-nav__link">
+        Jupyter Notebooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/r/" class="md-nav__link">
+        R and RStudio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/others/" class="md-nav__link">
+        Others
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          Machine Learning and AI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Machine Learning and AI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Machine Learning and AI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI_in_Katana/StableDiffusion/" class="md-nav__link">
+        Stable Diffusion on an HPC Environment
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Imaging
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Imaging" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Imaging
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../imaging/neurodesk/" class="md-nav__link">
+        Neurodesk
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/user_support/" class="md-nav__link">
+        Help and Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="running-jobs-on-katana">Running Jobs on Katana<a class="headerlink" href="#running-jobs-on-katana" title="Permanent link">¶</a></h1>
+<h2 id="brief-overview">Brief Overview<a class="headerlink" href="#brief-overview" title="Permanent link">¶</a></h2>
+<p>Katana is a High Performance Computing (HPC) cluster. It allows users to run computationally intensive programs on powerful compute nodes. <strong>Login nodes</strong> are only for preparing, submitting, and managing jobs—not for heavy calculations.</p>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/simple_HPC.png" data-desc-position="bottom"><img alt="Simple HPC Architecture" src="../../assets/simple_HPC.png" width="800"></a>
+  </p>
+<figcaption>Simple HPC Architecture</figcaption>
+</figure>
+<p><strong>⚠ Warning:</strong> Do not run computationally intensive processes on <strong>login nodes</strong>; use <strong>compute nodes</strong> instead.</p>
+<p>Jobs are submitted from the login node, which delivers them to the <strong>Head Node</strong> for job and resource management. Once resources are allocated, the job will run on one or more compute nodes.</p>
+<p>Katana uses OpenPBS to manage resources and schedule jobs.</p>
+<h3 id="job-types">Job Types<a class="headerlink" href="#job-types" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Batch Job</strong> – Runs a scripted job automatically from start to finish without user intervention. Ideal for long-running production tasks.</li>
+<li><strong>Interactive Job</strong> – Provides a live shell session on compute nodes for experimentation and debugging. Useful for testing and planning batch jobs.  </li>
+</ul>
+<p>All jobs enter a <strong>queue</strong> while waiting for resources.</p>
+<h3 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">¶</a></h3>
+<p>Main resources requested by jobs:</p>
+<ul>
+<li><strong>Memory (RAM)</strong>  </li>
+<li><strong>CPU cores</strong>  </li>
+<li><strong>Walltime</strong> (time for CPUs)  </li>
+</ul>
+<blockquote>
+<p>Note: Increasing memory, CPU cores, or walltime may limit the available queues. See the queue limits below.</p>
+</blockquote>
+<hr>
+<h2 id="create-a-job-folder">Create a Job Folder<a class="headerlink" href="#create-a-job-folder" title="Permanent link">¶</a></h2>
+<p>Create a dedicated folder for your job files. This keeps your work organized and makes it easier to manage multiple jobs.</p>
+<p></p><div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>MyFirstJob
+</code></pre></div>
+Then navigate into the folder:<p></p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>MyFirstJob
+</code></pre></div>
+<div style="flex: 1; margin-right: 20px;">
+        <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/folder.png" data-desc-position="bottom"><img src="../../assets/folder.png" style="max-width: 100%; height: 100px;"></a>
+</div>
+
+<h2 id="create-a-script-or-program-to-run">Create a script or program to run<a class="headerlink" href="#create-a-script-or-program-to-run" title="Permanent link">¶</a></h2>
+<p>Before submitting a job, you need a script or program to execute. This could be a compiled binary, a Python script, an R script, or any other executable file.
+For example, create a simple Python script named <code>myprogram.py</code>:
+</p><div class="highlight"><pre><span></span><code>nano<span class="w"> </span>myprogram.py
+</code></pre></div><p></p>
+<p>Inside nano, add the following code:</p>
+<p></p><div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">"Hello, Katana!"</span><span class="p">)</span>
+</code></pre></div>
+Save this file and exit nano (CTRL+S, ENTER, CTRL+X).<p></p>
+<h2 id="batch-jobs-qsub">Batch Jobs (qsub)<a class="headerlink" href="#batch-jobs-qsub" title="Permanent link">¶</a></h2>
+<p>A batch job is a script that runs autonomously on a compute node. The script specifies resources and commands to run. Now you will create a job script to run the program you created.</p>
+<h3 id="step-1-create-a-job-script-file">Step 1: Create a Job Script File<a class="headerlink" href="#step-1-create-a-job-script-file" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a new file called myjob.pbs</span>
+nano<span class="w"> </span>myjob.pbs
+</code></pre></div>
+<div style="display: flex; justify-content: space-around;">
+    <div style="flex: 1; margin: 0px;">
+        <div style="display: inline-block; text-align: center;">
+            <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/nano_myjob.png" data-desc-position="bottom"><img src="../../assets/nano_myjob.png" style="max-width: 100%; height: 100px;"></a>
+            <div>Windows Powershell</div>
+        </div>
+    </div>
+</div>
+
+<p>This opens a simple text editor in the terminal:</p>
+<div style="flex: 1; margin-right: 20px;">
+        <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/nano_example.png" data-desc-position="bottom"><img src="../../assets/nano_example.png" style="max-width: 100%; height: 300px;"></a>
+</div>
+
+<p>Copy the following template into the editor:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="c1">#PBS -l select=1:ncpus=1:mem=4gb</span>
+<span class="c1">#PBS -l walltime=12:00:00</span>
+<span class="c1">#PBS -M zID@ad.unsw.edu.au</span>
+<span class="c1">#PBS -m ae</span>
+<span class="c1">#PBS -j oe</span>
+
+<span class="nb">cd</span><span class="w"> </span><span class="nv">$PBS_O_WORKDIR</span>
+
+python3<span class="w"> </span>myprogram.py
+</code></pre></div>
+<div style="flex: 1; margin-right: 20px;">
+        <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/myjob_.png" data-desc-position="bottom"><img src="../../assets/myjob_.png" style="max-width: 100%; height: 300px;"></a>
+</div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>What each line does:</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+</code></pre></div>
+<p>Tells the system to use the Bash shell to run your script. Every script should start with this line.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#PBS -l select=1:ncpus=1:mem=4gb`</span>
+</code></pre></div>
+<p>Requests 1 compute node with 1 CPU core and 4GB RAM. The scheduler uses this to allocate resources. You can adjust <code>ncpus</code> and <code>mem</code> as needed.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#PBS -l walltime=12:00:00</span>
+</code></pre></div>
+<p>Sets the maximum run time to 12 hours. See the Walltime section below for more details.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">#PBS -M your.name.here@unsw.edu.au</span>
+<span class="c1">#PBS -m ae</span>
+</code></pre></div>
+<p>(Optional)Sends an email notification if the job aborts (a) or ends normally (e). Useful to know when your job finishes or fails. </p>
+<div class="highlight"><pre><span></span><code><span class="c1">#PBS -j oe</span>
+</code></pre></div>
+<p>(Optional)Combines the standard output and standard error into a single file, making it easier to review the results.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="nv">$PBS_O_WORKDIR</span>
+</code></pre></div>
+<p>Changes the working directory to where you ran qsub. This ensures you are running in the correct folder.</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>myprogram.py
+</code></pre></div>
+<p>Runs your program. Replace myprogram with the actual program or script you want to execute.</p>
+</div>
+<ul>
+<li>Press <code>CTRL+S</code> to save and <code>CTRL+X</code> to exit <code>nano</code>.</li>
+</ul>
+<h3 id="step-2-submit-the-batch-job">Step 2: Submit the Batch Job<a class="headerlink" href="#step-2-submit-the-batch-job" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code>qsub<span class="w"> </span>myjob.pbs
+</code></pre></div>
+<ul>
+<li>Terminal will return a job ID (e.g., <code>1239.kman.restech.unsw.edu.au</code>)  </li>
+<li>Scheduler will run the job when resources are available.</li>
+<li>When the job is finished, two files will be created in your folder: <code>myjob.o1239</code> and <code>myjob.e1239</code> (where <code>1239</code> is your job ID). The <code>.o</code> file contains standard output, and the <code>.e</code> file contains any error messages. You can use <code>cat</code>, <code>less</code>, or <code>nano</code> to view these files.</li>
+<li>To check the status of your job, use:</li>
+</ul>
+<div class="highlight"><pre><span></span><code>qstat<span class="w"> </span>job_id<span class="w"> </span><span class="o">(</span>e.g.,<span class="w"> </span>qstat<span class="w"> </span><span class="m">6787878</span><span class="o">)</span>
+</code></pre></div>
+<hr>
+<h2 id="interactive-jobs-qsub-i">Interactive Jobs (qsub -I)<a class="headerlink" href="#interactive-jobs-qsub-i" title="Permanent link">¶</a></h2>
+<p>Interactive jobs let you run commands directly on Katana’s compute nodes (not the login node). This is useful when:</p>
+<ul>
+<li>You need to test software before creating a batch script.</li>
+<li>You want to debug or profile code in a live environment.</li>
+<li>You are running short, exploratory tasks where you need to see output in real time.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Interactive jobs are not suitable for long-running tasks. Use batch jobs for production workloads.
+Do not run heavy computations on the login node. Always request an interactive session so your work runs on compute resources.</p>
+</div>
+<h3 id="starting-an-interactive-session">Starting an Interactive Session<a class="headerlink" href="#starting-an-interactive-session" title="Permanent link">¶</a></h3>
+<p>To start an interactive job, use qsub -I with resource requests. For example:</p>
+<div class="highlight"><pre><span></span><code>qsub<span class="w"> </span>-I<span class="w"> </span>
+or<span class="w"> </span>
+qsub<span class="w"> </span>-I<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>8gb<span class="w"> </span>-l<span class="w"> </span><span class="nv">walltime</span><span class="o">=</span><span class="m">02</span>:00:00
+</code></pre></div>
+<div style="flex: 1; margin-right: 20px;">
+        <a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/interactive_job.png" data-desc-position="bottom"><img src="../../assets/interactive_job.png" style="max-width: 100%; height: 100px;"></a>
+</div>
+
+<div class="admonition mote">
+<p class="admonition-title">Mote</p>
+<p>Without resource requests, the default is 1 CPU core, 4GB RAM, and 1 hour walltime.</p>
+</div>
+<p>Once your session starts, you will be logged into a compute node. You can run commands as you would on the login node.</p>
+<h2 id="understanding-walltime">Understanding Walltime<a class="headerlink" href="#understanding-walltime" title="Permanent link">¶</a></h2>
+<p>Walltime is the maximum amount of real time that your job is allowed to run on the cluster. It is requested when you submit a job and is used by the scheduler to plan resources.</p>
+<ul>
+<li>Walltime is specified in hours, minutes, and seconds, the default walltime is 1 hour if not specified in script.</li>
+<li>If your job runs longer than the walltime, it will be terminated automatically, even if it hasn’t finished.</li>
+<li>Walltime affects which queues your job can be scheduled on. Shorter walltime jobs usually start faster, while longer jobs may only be able to run on specific nodes.</li>
+<li>Always estimate your job’s runtime carefully. If unsure, it’s safer to slightly overestimate but not excessively, as very long walltime requests may reduce scheduling priority.</li>
+<li>For long workflows, consider splitting tasks into multiple jobs to fit within walltime limits.</li>
+</ul>
+<hr>
+<h2 id="job-queue-limits-summary">Job queue limits summary<a class="headerlink" href="#job-queue-limits-summary" title="Permanent link">¶</a></h2>
+<p>Typical job queue limit cut-offs are shown below. <strong>The walltime is what determines whether a job can be run on any node, or only on a restricted set of nodes.</strong></p>
+<table>
+    <tbody>
+        <tr>
+            <td>Resource</td>
+            <td colspan="6">Queue limit cut-offs</td>
+        </tr>
+        <tr>
+            <td>Memory (GB)</td>
+            <td>124</td>
+            <td>180</td>
+            <td>248</td>
+            <td>370</td>
+            <td>750</td>
+            <td>1000</td>
+        </tr>
+        <tr>
+            <td>CPU Cores</td>
+            <td>16</td>
+            <td>20</td>
+            <td>24</td>
+            <td>28</td>
+            <td>32</td>
+            <td>44</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Walltime (hrs)</td>
+            <td>12</td>
+            <td>48</td>
+            <td>100</td>
+            <td colspan="3">200</td>
+        </tr>
+        <tr>
+            <td>Any node</td>
+            <td colspan="2">School-owned or general-use nodes</td>
+            <td colspan="3">School-owned nodes only</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+<h2 id="restech-github-repositories">Restech GitHub Repositories<a class="headerlink" href="#restech-github-repositories" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="https://github.com/unsw-edu-au/Restech-HPC/tree/master/hpc-examples">Restech-HPC</a> – Example Katana scripts  </li>
+<li><a href="https://github.com/unsw-edu-au/UNSW-Data-Archive">UNSW-Data-Archive</a> – Upload/download scripts  </li>
+<li><a href="https://github.com/unsw-edu-au/UNSW-eNotebook-LabArchives">UNSW-eNotebook-LabArchives</a> – LabArchives widgets</li>
+</ul>
+<hr>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../accessing_katana/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Accessing Katana" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Accessing Katana
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../monitor_jobs/" class="md-footer__link md-footer__link--next" aria-label="Next: Monitor your Jobs(qstat, qdel, qalter)" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                Monitor your Jobs(qstat, qdel, qalter)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      UNSW Sydney NSW 2052 Australia | Tel: +61 2 93851000 | CRICOS: 00098G | TEQSA: PRV12055 | ABN: 57 195 873 179
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.instant", "navigation.top", "announce.dismiss", "toc.integrate", "navigation.path"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

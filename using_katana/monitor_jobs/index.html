@@ -1,0 +1,1160 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../running_jobs/">
+      
+      
+        <link rel="next" href="../tips_katana/">
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Monitor your Jobs(qstat, qdel, qalter) - Katana User Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-W3KS3D0120"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-W3KS3D0120",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-W3KS3D0120",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#get-information-about-the-state-of-the-scheduler" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Katana User Documentation" class="md-header__button md-logo" aria-label="Katana User Documentation" data-md-component="logo">
+      <!-- Logo -->
+<img id="md_logo" src="" alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Katana User Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Monitor your Jobs(qstat, qdel, qalter)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="yellow" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/unsw-restech/unsw-restech.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    unsw-restech/katana-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Katana User Documentation" class="md-nav__button md-logo" aria-label="Katana User Documentation" data-md-component="logo">
+      <!-- Logo -->
+<img id="md_logo" src="" alt="logo">
+    </a>
+    Katana User Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/unsw-restech/unsw-restech.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    unsw-restech/katana-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" tabindex="0" aria-expanded="true">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accessing_katana/" class="md-nav__link">
+        Accessing Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../running_jobs/" class="md-nav__link">
+        Running Jobs on Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Monitor your Jobs(qstat, qdel, qalter)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Monitor your Jobs(qstat, qdel, qalter)
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get-information-about-the-state-of-the-scheduler" class="md-nav__link">
+    Get information about the state of the scheduler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managing-jobs-on-katana" class="md-nav__link">
+    Managing Jobs on Katana
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-stats" class="md-nav__link">
+    Job Stats
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips_katana/" class="md-nav__link">
+        Tips for using PBS and Katana effectively
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_katana/" class="md-nav__link">
+        About Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ondemand/" class="md-nav__link">
+        Web access to Katana
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Storage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/storage_locations/" class="md-nav__link">
+        Storage Locations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/kdm/" class="md-nav__link">
+        Katana Data Mover
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/data_archive/" class="md-nav__link">
+        How to use the UNSW Data Archive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/onedrive/" class="md-nav__link">
+        OneDrive
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/environment_modules/" class="md-nav__link">
+        Environment Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/installing_software/" class="md-nav__link">
+        Installing software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/jupyter-notebooks/" class="md-nav__link">
+        Jupyter Notebooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/r/" class="md-nav__link">
+        R and RStudio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/others/" class="md-nav__link">
+        Others
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          Machine Learning and AI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Machine Learning and AI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Machine Learning and AI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI_in_Katana/StableDiffusion/" class="md-nav__link">
+        Stable Diffusion on an HPC Environment
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Imaging
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Imaging" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Imaging
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../imaging/neurodesk/" class="md-nav__link">
+        Neurodesk
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/user_support/" class="md-nav__link">
+        Help and Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+  <h1>Monitor your Jobs(qstat, qdel, qalter)</h1>
+
+<h2 id="get-information-about-the-state-of-the-scheduler">Get information about the state of the scheduler<a class="headerlink" href="#get-information-about-the-state-of-the-scheduler" title="Permanent link">¶</a></h2>
+<p>When deciding which jobs to run, the scheduler takes the following details into account:</p>
+<ul>
+<li>are there available resources</li>
+<li>how recently has this user run jobs successfully</li>
+<li>how many resources has this user used recently</li>
+<li>how long is the job's Walltime</li>
+<li>how long has the job been in the queue</li>
+</ul>
+<p>You can get an overview of the compute nodes and a list of all the jobs running on each node using <code>pstat</code></p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>pstat
+k001<span class="w">  </span>normal-mrcbio<span class="w">           </span>free<span class="w">          </span><span class="m">12</span>/44<span class="w">   </span><span class="m">200</span>/1007gb<span class="w">  </span><span class="m">314911</span>*12
+k002<span class="w">  </span>normal-mrcbio<span class="w">           </span>free<span class="w">          </span><span class="m">40</span>/44<span class="w">    </span><span class="m">56</span>/<span class="w"> </span>377gb<span class="w">  </span><span class="m">314954</span>*40
+k003<span class="w">  </span>normal-mrcbio<span class="w">           </span>free<span class="w">          </span><span class="m">40</span>/44<span class="w">   </span><span class="m">375</span>/<span class="w"> </span>377gb<span class="w">  </span><span class="m">314081</span>*40
+k004<span class="w">  </span>normal-mrcbio<span class="w">           </span>free<span class="w">          </span><span class="m">40</span>/44<span class="w">    </span><span class="m">62</span>/<span class="w"> </span>377gb<span class="w">  </span><span class="m">314471</span>*40
+k005<span class="w">  </span>normal-ccrc<span class="w">             </span>free<span class="w">           </span><span class="m">0</span>/32<span class="w">     </span><span class="m">0</span>/<span class="w"> </span>187gb
+k006<span class="w">  </span>normal-physics<span class="w">          </span>job-busy<span class="w">      </span><span class="m">32</span>/32<span class="w">   </span><span class="m">180</span>/<span class="w"> </span>187gb<span class="w">  </span><span class="m">282533</span>*32
+k007<span class="w">  </span>normal-physics<span class="w">          </span>job-busy<span class="w">      </span><span class="m">32</span>/32<span class="w">   </span><span class="m">180</span>/<span class="w"> </span>187gb<span class="w">  </span><span class="m">284666</span>*32
+k008<span class="w">  </span>normal-physics<span class="w">          </span>free<span class="w">           </span><span class="m">0</span>/32<span class="w">     </span><span class="m">0</span>/<span class="w"> </span>187gb
+k009<span class="w">  </span>normal-physics<span class="w">          </span>job-busy<span class="w">      </span><span class="m">32</span>/32<span class="w">   </span><span class="m">124</span>/<span class="w"> </span>187gb<span class="w">  </span><span class="m">314652</span>*32
+k010<span class="w">  </span>normal-physics<span class="w">          </span>free<span class="w">           </span><span class="m">0</span>/32<span class="w">     </span><span class="m">0</span>/<span class="w"> </span>187gb<span class="w">      </span>
+</code></pre></div>
+<p>To get information about a particular node, you can use <code>pbsnodes</code> but on its own it is a firehose. Using it with a particular node name is more effective:</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>pbsnodes<span class="w"> </span>k254
+k254
+<span class="w">    </span><span class="nv">Mom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>k254
+<span class="w">    </span><span class="nv">ntype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>PBS
+<span class="w">    </span><span class="nv">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>job-busy
+<span class="w">    </span><span class="nv">pcpus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span>
+<span class="w">    </span><span class="nb">jobs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">313284</span>.kman.restech.unsw.edu.au/0,<span class="w"> </span><span class="m">313284</span>.kman.restech.unsw.edu.au/1,<span class="w"> </span><span class="m">313284</span>.kman.restech.unsw.edu.au/2<span class="w"> </span>
+<span class="w">    </span>resources_available.arch<span class="w"> </span><span class="o">=</span><span class="w"> </span>linux
+<span class="w">    </span>resources_available.cpuflags<span class="w"> </span><span class="o">=</span><span class="w"> </span>avx,avx2,avx512bw,avx512cd,avx512dq,avx512f,avx512vl
+<span class="w">    </span>resources_available.cputype<span class="w"> </span><span class="o">=</span><span class="w"> </span>skylake-avx512
+<span class="w">    </span>resources_available.host<span class="w"> </span><span class="o">=</span><span class="w"> </span>k254
+<span class="w">    </span>resources_available.mem<span class="w"> </span><span class="o">=</span><span class="w"> </span>196396032kb
+<span class="w">    </span>resources_available.ncpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span>
+<span class="w">    </span>resources_available.node_weight<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>resources_available.normal-all<span class="w"> </span><span class="o">=</span><span class="w"> </span>Yes
+<span class="w">    </span>resources_available.normal-qmchda<span class="w"> </span><span class="o">=</span><span class="w"> </span>Yes
+<span class="w">    </span>resources_available.normal-qmchda-maths_business-maths<span class="w"> </span><span class="o">=</span><span class="w"> </span>Yes
+<span class="w">    </span>resources_available.normal-qmchda-maths_business-maths-general<span class="w"> </span><span class="o">=</span><span class="w"> </span>Yes
+<span class="w">    </span>resources_available.vmem<span class="w"> </span><span class="o">=</span><span class="w"> </span>198426624kb
+<span class="w">    </span>resources_available.vnode<span class="w"> </span><span class="o">=</span><span class="w"> </span>k254
+<span class="w">    </span>resources_available.vntype<span class="w"> </span><span class="o">=</span><span class="w"> </span>compute
+<span class="w">    </span>resources_assigned.accelerator_memory<span class="w"> </span><span class="o">=</span><span class="w"> </span>0kb
+<span class="w">    </span>resources_assigned.hbmem<span class="w"> </span><span class="o">=</span><span class="w"> </span>0kb
+<span class="w">    </span>resources_assigned.mem<span class="w"> </span><span class="o">=</span><span class="w"> </span>50331648kb
+<span class="w">    </span>resources_assigned.naccelerators<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span>resources_assigned.ncpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">32</span>
+<span class="w">    </span>resources_assigned.ngpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span>resources_assigned.vmem<span class="w"> </span><span class="o">=</span><span class="w"> </span>0kb
+<span class="w">    </span><span class="nv">resv_enable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>True
+<span class="w">    </span><span class="nv">sharing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>default_shared
+<span class="w">    </span><span class="nv">last_state_change_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Thu<span class="w"> </span>Apr<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">08</span>:06:23<span class="w"> </span><span class="m">2020</span>
+<span class="w">    </span><span class="nv">last_used_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Thu<span class="w"> </span>Apr<span class="w"> </span><span class="m">30</span><span class="w"> </span><span class="m">07</span>:08:25<span class="w"> </span><span class="m">2020</span>
+</code></pre></div>
+<h2 id="managing-jobs-on-katana">Managing Jobs on Katana<a class="headerlink" href="#managing-jobs-on-katana" title="Permanent link">¶</a></h2>
+<p>Once you have jobs running, you will want visibility of the system so that you can manage them - delete jobs, change jobs, check that jobs are still running.</p>
+<p>There are a couple of easy to use commands that help with this process.</p>
+<!---
+The following is a set of "content tabs" (see https://squidfunk.github.io/mkdocs-material/reference/content-tabs)
+HTML heading tags are used instead of '###' otherwise the right sidebar index breaks
+-->
+<div class="admonition note">
+<p class="admonition-title">Job Commands</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">qstat</label><label for="__tabbed_1_2">qdel</label><label for="__tabbed_1_3">qalter</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p></p><h3>Show all jobs on the system</h3>
+<code>qstat</code> gives very long output. Consider piping to <code>less</code><p></p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="o">[</span>z1234567@katana2<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>qstat<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+<span class="w">    </span>Job<span class="w"> </span>id<span class="w">            </span>Name<span class="w">             </span>User<span class="w">              </span>Time<span class="w"> </span>Use<span class="w"> </span>S<span class="w"> </span>Queue
+<span class="w">    </span>----------------<span class="w">  </span>----------------<span class="w"> </span>----------------<span class="w">  </span>--------<span class="w"> </span>-<span class="w"> </span>-----
+<span class="w">    </span><span class="m">245821</span>.kman<span class="w">       </span>s-m20-i20-200h<span class="w">   </span>z1234567<span class="w">                 </span><span class="m">0</span><span class="w"> </span>Q<span class="w"> </span>medicine200
+<span class="w">    </span><span class="m">280163</span>.kman<span class="w">       </span>Magcomp25A2<span class="w">      </span>z1234567<span class="w">          </span><span class="m">3876</span>:18:<span class="w"> </span>R<span class="w"> </span>mech700
+<span class="w">    </span><span class="m">282533</span>.kman<span class="w">       </span>Proj_MF_Nu1<span class="w">      </span>z1234567<span class="w">          </span><span class="m">3280</span>:08:<span class="w"> </span>R<span class="w"> </span>cosmo200
+<span class="w">    </span><span class="m">284666</span>.kman<span class="w">       </span>Proj_BR_Nu1<span class="w">      </span>z1234567<span class="w">          </span><span class="m">3279</span>:27:<span class="w"> </span>R<span class="w"> </span>cosmo200
+<span class="w">    </span><span class="m">308559</span>.kman<span class="w">       </span>JASASec55<span class="w">        </span>z1234567<span class="w">          </span><span class="m">191</span>:21:3<span class="w"> </span>R<span class="w"> </span>maths200
+<span class="w">    </span><span class="m">309615</span>.kman<span class="w">       </span><span class="m">2020</span>-04-06.BUSC<span class="w">  </span>z1234567<span class="w">          </span><span class="m">185</span>:00:5<span class="w"> </span>R<span class="w"> </span>babs200
+<span class="w">    </span><span class="m">310623</span>.kman<span class="w">       </span>Miaocyclegan<span class="w">     </span>z1234567<span class="w">          </span><span class="m">188</span>:06:3<span class="w"> </span>R<span class="w"> </span>simigpu200
+<span class="w">    </span>...
+</code></pre></div>
+<p></p><h3>List just my jobs</h3><p></p>
+<p>You can use either your <strong>ZID</strong> or the <a href="../../help_support/glossary#environment-variable">Environment Variable</a> <code>$USER</code></p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="o">[</span>z2134567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qstat<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span>
+<span class="w">    </span>kman.restech.unsw.edu.au:<span class="w"> </span>
+<span class="w">                                                                </span>Req<span class="s1">'d  Req'</span>d<span class="w">   </span>Elap
+<span class="w">    </span>Job<span class="w"> </span>ID<span class="w">          </span>Username<span class="w"> </span>Queue<span class="w">    </span>Jobname<span class="w">    </span>SessID<span class="w"> </span>NDS<span class="w"> </span>TSK<span class="w"> </span>Memory<span class="w"> </span>Time<span class="w">  </span>S<span class="w"> </span>Time
+<span class="w">    </span>---------------<span class="w"> </span>--------<span class="w"> </span>--------<span class="w"> </span>----------<span class="w"> </span>------<span class="w"> </span>---<span class="w"> </span>---<span class="w"> </span>------<span class="w"> </span>-----<span class="w"> </span>-<span class="w"> </span>-----
+<span class="w">    </span><span class="m">315230</span>.kman.res<span class="w"> </span>z2134567<span class="w"> </span>general1<span class="w"> </span>job.pbs<span class="w">       </span>--<span class="w">    </span><span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">    </span>1gb<span class="w"> </span><span class="m">01</span>:00<span class="w"> </span>Q<span class="w">   </span>--<span class="w"> </span>
+</code></pre></div>
+<p>If you add the <code>-s</code> flag, you will get slightly more status information.</p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qstat<span class="w"> </span>-su<span class="w"> </span>z1234567
+
+kman.restech.unsw.edu.au:<span class="w"> </span>
+<span class="w">                                                            </span>Req<span class="s1">'d  Req'</span>d<span class="w">   </span>Elap
+Job<span class="w"> </span>ID<span class="w">          </span>Username<span class="w"> </span>Queue<span class="w">    </span>Jobname<span class="w">    </span>SessID<span class="w"> </span>NDS<span class="w"> </span>TSK<span class="w"> </span>Memory<span class="w"> </span>Time<span class="w">  </span>S<span class="w"> </span>Time
+---------------<span class="w"> </span>--------<span class="w"> </span>--------<span class="w"> </span>----------<span class="w"> </span>------<span class="w"> </span>---<span class="w"> </span>---<span class="w"> </span>------<span class="w"> </span>-----<span class="w"> </span>-<span class="w"> </span>-----
+<span class="m">315230</span>.kman.res<span class="w"> </span>z1234567<span class="w"> </span>general1<span class="w"> </span>job.pbs<span class="w">     </span><span class="m">61915</span><span class="w">   </span><span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">    </span>1gb<span class="w"> </span><span class="m">01</span>:00<span class="w"> </span>R<span class="w"> </span><span class="m">00</span>:03
+Job<span class="w"> </span>run<span class="w"> </span>at<span class="w"> </span>Fri<span class="w"> </span>May<span class="w"> </span><span class="m">01</span><span class="w"> </span>at<span class="w"> </span><span class="m">14</span>:28<span class="w"> </span>on<span class="w"> </span><span class="o">(</span>k019:mem<span class="o">=</span>1048576kb:ncpus<span class="o">=</span><span class="m">1</span>:ngpus<span class="o">=</span><span class="m">0</span><span class="o">)</span>
+<span class="m">315233</span>.kman.res<span class="w"> </span>z1234567<span class="w"> </span>general1<span class="w"> </span>job.pbs<span class="w">       </span>--<span class="w">    </span><span class="m">1</span><span class="w">   </span><span class="m">1</span><span class="w">    </span>1gb<span class="w"> </span><span class="m">01</span>:00<span class="w"> </span>Q<span class="w">   </span>--
+<span class="w">    </span>--<span class="w"> </span>
+</code></pre></div>
+<p></p><h3>List information about a particular job</h3>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qstat<span class="w"> </span>-f<span class="w"> </span><span class="m">315236</span><span class="w">                                                                                                                                       </span>
+Job<span class="w"> </span>Id:<span class="w"> </span><span class="m">315236</span>.kman.restech.unsw.edu.au<span class="w">                                                                                                                                       </span>
+<span class="w">    </span><span class="nv">Job_Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>job.pbs<span class="w">                                                                                                                                                        </span>
+<span class="w">    </span><span class="nv">Job_Owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>z1234567@katana2
+<span class="w">    </span><span class="nv">job_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Q
+<span class="w">    </span><span class="nv">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>general12
+<span class="w">    </span><span class="nv">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>kman.gen
+<span class="w">    </span><span class="nv">Checkpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>u
+<span class="w">    </span><span class="nv">ctime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Fri<span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">14</span>:41:00<span class="w"> </span><span class="m">2020</span>
+<span class="w">    </span><span class="nv">Error_Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>katana2:/home/z1234567/src/job.pbs.e315236
+<span class="w">    </span><span class="nv">group_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>GENERAL
+<span class="w">    </span><span class="nv">Hold_Types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>n
+<span class="w">    </span><span class="nv">Join_Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>n
+<span class="w">    </span><span class="nv">Keep_Files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>n
+<span class="w">    </span><span class="nv">Mail_Points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>a
+<span class="w">    </span><span class="nv">mtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Fri<span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">14</span>:41:00<span class="w"> </span><span class="m">2020</span>
+<span class="w">    </span><span class="nv">Output_Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>katana2:/home/z1234567/src/job.pbs.o315236
+<span class="w">    </span><span class="nv">Priority</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="nv">qtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Fri<span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">14</span>:41:00<span class="w"> </span><span class="m">2020</span>
+<span class="w">    </span><span class="nv">Rerunable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>True
+<span class="w">    </span>Resource_List.ib<span class="w"> </span><span class="o">=</span><span class="w"> </span>no
+<span class="w">    </span>Resource_List.mem<span class="w"> </span><span class="o">=</span><span class="w"> </span>1gb
+<span class="w">    </span>Resource_List.ncpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>Resource_List.ngpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span>Resource_List.nodect<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>Resource_List.place<span class="w"> </span><span class="o">=</span><span class="w"> </span>pack
+<span class="w">    </span>Resource_List.select<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>:mem<span class="o">=</span>1gb:ncpus<span class="o">=</span><span class="m">1</span>
+<span class="w">    </span>Resource_List.walltime<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">01</span>:00:00
+<span class="w">    </span><span class="nv">substate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span>
+<span class="w">    </span><span class="nv">Variable_List</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">PBS_O_HOME</span><span class="o">=</span>/home/z1234567,PBS_O_LANG<span class="o">=</span>en_AU.UTF-8,
+<span class="w">        </span><span class="nv">PBS_O_LOGNAME</span><span class="o">=</span>z1234567,
+<span class="w">        </span><span class="nv">PBS_O_PATH</span><span class="o">=</span>/home/z1234567/bin:/usr/lib64/qt-3.3/bin:/usr/lib64/ccache:
+<span class="w">        </span>/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/pbs/bin,PBS_O_M
+<span class="w">        </span><span class="nv">AIL</span><span class="o">=</span>/var/spool/mail/z1234567,PBS_O_SHELL<span class="o">=</span>/bin/bash,PBS_O_WORKDIR<span class="o">=</span>/home
+<span class="w">        </span>/z1234567/src,PBS_O_SYSTEM<span class="o">=</span>Linux,PBS_O_QUEUE<span class="o">=</span>submission,PBS_O_HOST<span class="o">=</span>kat
+<span class="w">        </span>ana2
+<span class="w">    </span><span class="nv">etime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Fri<span class="w"> </span>May<span class="w">  </span><span class="m">1</span><span class="w"> </span><span class="m">14</span>:41:00<span class="w"> </span><span class="m">2020</span>
+<span class="w">    </span><span class="nv">eligible_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">00</span>:00:00
+<span class="w">    </span><span class="nv">Submit_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-W<span class="w"> </span><span class="nv">group_list</span><span class="o">=</span>GENERAL<span class="w"> </span>-N<span class="w"> </span>job.pbs<span class="w"> </span>job.pbs.JAZDNgL
+<span class="w">    </span><span class="nv">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>_pbs_project_default
+</code></pre></div><p></p>
+</div>
+<div class="tabbed-block">
+<p>Remove a job from the queue or kill it if it's started. To remove an array job, you must include the square braces and they will need to be escaped. In that situation you use <code>qdel 12345\[\]</code>. Uses the <code>$JOBID</code> </p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qdel<span class="w"> </span><span class="m">315252</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Once a job has been submitted, it can be altered. However, once a job begins execution, the only values that can be modified are <code>cputime</code>, <code>walltime</code>, and <code>run_count</code>. These can only be reduced.</p>
+<p>Users can only lower resource requests on queued jobs. If you need to increase resources, contact a systems administrator. In this example you will see the resources change - but not the <code>Submit_arguments</code></p>
+<div class="highlight"><pre><span></span><code><span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qsub<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>128mb<span class="w"> </span>job.pbs
+<span class="m">315259</span>.kman.restech.unsw.edu.au
+<span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qstat<span class="w"> </span>-f<span class="w"> </span><span class="m">315259</span>
+Job<span class="w"> </span>Id:<span class="w"> </span><span class="m">315259</span>.kman.restech.unsw.edu.au
+<span class="w">    </span>...
+<span class="w">    </span>Resource_List.mem<span class="w"> </span><span class="o">=</span><span class="w"> </span>128mb
+<span class="w">    </span>Resource_List.ncpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span>
+<span class="w">    </span>...
+<span class="w">    </span><span class="nv">Submit_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-W<span class="w"> </span><span class="nv">group_list</span><span class="o">=</span>GENERAL<span class="w"> </span>-N<span class="w"> </span>job.pbs<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>128mb<span class="w"> </span>job.pbs.YOOu3lB
+<span class="w">    </span><span class="nv">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>_pbs_project_default
+
+<span class="o">[</span>z1234567@katana2<span class="w"> </span>src<span class="o">]</span>$<span class="w"> </span>qalter<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">4</span>:mem<span class="o">=</span>512mb<span class="w"> </span><span class="m">315259</span><span class="p">;</span><span class="w"> </span>qstat<span class="w"> </span>-f<span class="w"> </span><span class="m">315259</span>
+Job<span class="w"> </span>Id:<span class="w"> </span><span class="m">315259</span>.kman.restech.unsw.edu.au
+<span class="w">    </span>...
+<span class="w">    </span>Resource_List.mem<span class="w"> </span><span class="o">=</span><span class="w"> </span>512mb
+<span class="w">    </span>Resource_List.ncpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">4</span>
+<span class="w">    </span>...
+<span class="w">    </span><span class="nv">Submit_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-W<span class="w"> </span><span class="nv">group_list</span><span class="o">=</span>GENERAL<span class="w"> </span>-N<span class="w"> </span>job.pbs<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>128mb<span class="w"> </span>job.pbs.YOOu3lB
+<span class="w">    </span><span class="nv">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>_pbs_project_default
+</code></pre></div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="job-stats">Job Stats<a class="headerlink" href="#job-stats" title="Permanent link">¶</a></h2>
+<p>As soon as your job finishes, PBS produces job statistics along with a summary of your job. This summary appears as follows (replace <code>4638435.kman.restech.unsw.edu.au.OU</code> for your output file; the steps for retrieving the file name are outlined below):
+</p><div class="highlight"><pre><span></span><code>z123456@katana2:~<span class="w"> </span>$<span class="w"> </span>cat<span class="w"> </span><span class="m">4638435</span>.kman.restech.unsw.edu.au.OU
+
+<span class="o">================================================================================</span>
+<span class="w">                     </span>Resource<span class="w"> </span>Usage<span class="w"> </span>on<span class="w"> </span><span class="m">27</span>/07/2023<span class="w"> </span><span class="m">15</span>:43:37
+
+Job<span class="w"> </span>Id:<span class="w"> </span><span class="m">4638435</span>
+Queue:<span class="w"> </span>CSE
+Walltime:<span class="w"> </span><span class="m">00</span>:00:03<span class="w">  </span><span class="o">(</span>requested<span class="w"> </span><span class="m">01</span>:00:00<span class="o">)</span>
+Job<span class="w"> </span>execution<span class="w"> </span>was<span class="w"> </span>successful.<span class="w"> </span>Exit<span class="w"> </span>Status<span class="w"> </span><span class="m">0</span>.
+
+--------------------------------------------------------------------------------
+<span class="p">|</span><span class="w">              </span><span class="p">|</span><span class="w">             </span>CPUs<span class="w">              </span><span class="p">|</span><span class="w">            </span>Memory<span class="w">             </span><span class="p">|</span>
+--------------------------------------------------------------------------------
+<span class="p">|</span><span class="w"> </span>Node<span class="w">         </span><span class="p">|</span><span class="w"> </span>Requested<span class="w">   </span>Used<span class="w">   </span>Efficiency<span class="w"> </span><span class="p">|</span><span class="w"> </span>Requested<span class="w">   </span>Used<span class="w">   </span>Efficiency<span class="w"> </span><span class="p">|</span>
+<span class="p">|</span><span class="w"> </span>k080<span class="w">         </span><span class="p">|</span><span class="w">     </span><span class="m">1</span><span class="w">        </span><span class="m">0</span>.0<span class="w">      </span><span class="m">0</span>.0%<span class="w">    </span><span class="p">|</span><span class="w">   </span><span class="m">1</span>.0gb<span class="w">    </span><span class="m">0</span>.01gb<span class="w">     </span><span class="m">1</span>.0%<span class="w">    </span><span class="p">|</span>
+--------------------------------------------------------------------------------
+</code></pre></div>
+This text is appended at the end of your output file. If you haven't specified an output file, one will be generated for you and placed in the folder where you submit your job.<p></p>
+<p>If you're unsure about the location of your job statistics file, you can run the following command (replace 4682962 with your job ID):
+</p><div class="highlight"><pre><span></span><code>z123456@katana2:~<span class="w"> </span>$<span class="w"> </span>qstat<span class="w"> </span>-xf<span class="w"> </span><span class="m">4682962</span>
+</code></pre></div>
+then search for Output_Path. For example, in below example, the absolute path of the output file is <code>/home/z123456/output_file.txt</code>. Interactive jobs do no show a file name, for those cases the output file name look as <code>4638435.kman.restech.unsw.edu.au.OU</code> and is placed on the folder where you submitted the job:
+<div class="highlight"><pre><span></span><code>z3536424@katana2:~/hacky<span class="w"> </span>$<span class="w"> </span>qstat<span class="w"> </span>-xf<span class="w"> </span><span class="m">4686875</span>
+Job<span class="w"> </span>Id:<span class="w"> </span><span class="m">4686875</span>.kman.restech.unsw.edu.au
+<span class="w">    </span><span class="nv">Job_Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>hacky
+<span class="w">    </span><span class="nv">Job_Owner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>z3536424@katana2
+<span class="w">    </span>resources_used.cpupercent<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span>resources_used.cput<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">00</span>:00:00
+<span class="w">    </span>resources_used.mem<span class="w"> </span><span class="o">=</span><span class="w"> </span>6896kb
+<span class="w">    </span>resources_used.ncpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>resources_used.vmem<span class="w"> </span><span class="o">=</span><span class="w"> </span>6896kb
+<span class="w">    </span>resources_used.walltime<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">00</span>:00:09
+<span class="w">    </span><span class="nv">job_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>F
+<span class="w">    </span><span class="nv">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>cse12
+<span class="w">    </span><span class="nv">server</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>kman
+<span class="w">    </span><span class="nv">Checkpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>u
+<span class="w">    </span><span class="nv">ctime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Thu<span class="w"> </span>Aug<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">16</span>:10:39<span class="w"> </span><span class="m">2023</span>
+<span class="w">    </span><span class="nv">Error_Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/dev/pts/0
+<span class="w">    </span><span class="nv">exec_host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>k242/3
+<span class="w">    </span><span class="nv">exec_vnode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">(</span>k242:ncpus<span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>1048576kb:ngpus<span class="o">=</span><span class="m">0</span><span class="o">)</span>
+<span class="w">    </span><span class="nv">Hold_Types</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>n
+<span class="w">    </span><span class="nv">interactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>True
+<span class="w">    </span><span class="nv">Join_Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>n
+<span class="w">    </span><span class="nv">Keep_Files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>n
+<span class="w">    </span><span class="nv">Mail_Points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>a
+<span class="w">    </span><span class="nv">mtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Thu<span class="w"> </span>Aug<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">16</span>:11:09<span class="w"> </span><span class="m">2023</span>
+<span class="w">    </span><span class="nv">Output_Path</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/home/z123456/output_file.txt
+<span class="w">    </span><span class="nv">Priority</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="nv">qtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Thu<span class="w"> </span>Aug<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">16</span>:10:39<span class="w"> </span><span class="m">2023</span>
+<span class="w">    </span><span class="nv">Rerunable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>False
+<span class="w">    </span>Resource_List.ib<span class="w"> </span><span class="o">=</span><span class="w"> </span>no
+<span class="w">    </span>Resource_List.mem<span class="w"> </span><span class="o">=</span><span class="w"> </span>1gb
+<span class="w">    </span>Resource_List.ncpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>Resource_List.ngpus<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span>Resource_List.nodect<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span>Resource_List.place<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">group</span><span class="o">=</span>cse12
+<span class="w">    </span>Resource_List.select<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">ncpus</span><span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>1gb
+<span class="w">    </span>Resource_List.walltime<span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">01</span>:00:00
+<span class="w">    </span><span class="nv">stime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Thu<span class="w"> </span>Aug<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">16</span>:10:55<span class="w"> </span><span class="m">2023</span>
+<span class="w">    </span><span class="nv">obittime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Thu<span class="w"> </span>Aug<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">16</span>:11:09<span class="w"> </span><span class="m">2023</span>
+<span class="w">    </span><span class="nv">session_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2621006</span>
+<span class="w">    </span><span class="nv">jobdir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/home/z3536424
+<span class="w">    </span><span class="nv">substate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">92</span>
+<span class="w">    </span><span class="nv">Variable_List</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">PBS_O_HOME</span><span class="o">=</span>/home/z3536424,PBS_O_LANG<span class="o">=</span>en_AU.UTF-8,
+<span class="w">    </span><span class="nv">PBS_O_LOGNAME</span><span class="o">=</span>z3536424,
+<span class="w">    </span><span class="nv">PBS_O_PATH</span><span class="o">=</span>/home/z3536424/.local/bin:/usr/share/Modules/bin:/usr/lib64
+<span class="w">    </span>/ccache:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/pbs/bin,
+<span class="w">    </span><span class="nv">PBS_O_MAIL</span><span class="o">=</span>/var/spool/mail/z3536424,PBS_O_SHELL<span class="o">=</span>/bin/bash,
+<span class="w">    </span><span class="nv">PBS_O_WORKDIR</span><span class="o">=</span>/home/z3536424/hacky,PBS_O_SYSTEM<span class="o">=</span>Linux,
+<span class="w">    </span><span class="nv">PBS_O_QUEUE</span><span class="o">=</span>cse12,PBS_O_HOST<span class="o">=</span>katana2
+<span class="w">    </span><span class="nv">comment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Job<span class="w"> </span>run<span class="w"> </span>at<span class="w"> </span>Thu<span class="w"> </span>Aug<span class="w"> </span><span class="m">10</span><span class="w"> </span>at<span class="w"> </span><span class="m">16</span>:10<span class="w"> </span>on<span class="w"> </span><span class="o">(</span>k242:ncpus<span class="o">=</span><span class="m">1</span>:mem<span class="o">=</span>1048576kb:ngp
+<span class="w">    </span><span class="nv">us</span><span class="o">=</span><span class="m">0</span><span class="o">)</span><span class="w"> </span>and<span class="w"> </span>finished
+<span class="w">    </span><span class="nv">etime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Thu<span class="w"> </span>Aug<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="m">16</span>:10:39<span class="w"> </span><span class="m">2023</span>
+<span class="w">    </span><span class="nv">run_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
+<span class="w">    </span><span class="nv">eligible_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">00</span>:00:19
+<span class="w">    </span><span class="nv">Exit_status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span>
+<span class="w">    </span><span class="nv">Submit_arguments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>-N<span class="w"> </span>hacky<span class="w"> </span>-I
+<span class="w">    </span><span class="nv">history_timestamp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1691647869</span>
+<span class="w">    </span><span class="nv">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>_pbs_project_default
+<span class="w">    </span><span class="nv">Submit_Host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>katana2
+</code></pre></div><p></p>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../running_jobs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Running Jobs on Katana" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Running Jobs on Katana
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../tips_katana/" class="md-footer__link md-footer__link--next" aria-label="Next: Tips for using PBS and Katana effectively" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                Tips for using PBS and Katana effectively
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      UNSW Sydney NSW 2052 Australia | Tel: +61 2 93851000 | CRICOS: 00098G | TEQSA: PRV12055 | ABN: 57 195 873 179
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.instant", "navigation.top", "announce.dismiss", "toc.integrate", "navigation.path"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
