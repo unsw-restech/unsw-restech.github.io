@@ -32,30 +32,7 @@ Anaconda (https://www.anaconda.com/
 Miniconda (https://docs.anaconda.com/free/miniconda/
 )
 
-!!! important
-    In order to use your Conda environment within a PBS job, Conda must first be activated.
-
-    If Conda was installed in a custom location, you can find the path to source by running
-    `echo $_CONDA_ROOT/bin/activate`
-
-    ```bash
-    #!/bin/bash
-
-    #PBS -l select=1:ncpus=1:mem=4gb
-    #PBS -l walltime=12:00:00
-    #PBS -m ae
-    #PBS -j oe
-
-    cd $PBS_O_WORKDIR
-
-    source /home/$USER/miniforge3/bin/activate
-
-    conda activate my_conda
-    ```
-
-
-!!! note
-    If you are using Conda for GPU-enabled software, make sure it is installed on a GPU node during an interactive session.
+The instructions below use Miniconda. Once installed, Anaconda follows the same workflow.
 
 Example installation and setup:
 
