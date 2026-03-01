@@ -1,195 +1,156 @@
-title: Installing Software
+title: Installing software
 
-Environment software installation on Katana follows shared-system best practices. Always check existing software availability before installing anything yourself.
 
----
-
-<h2> Checking if a Package Is Already Installed </h2>
+<h2> Checking if a package is installed </h2>
 
 !!! note
-    Before installing software yourself, check whether it is already available via the system environment or as a module.
-    You may also want to ask your research colleagues if they have already installed it.
+    Before installing software yourself, check if it has already been installed as part of the environment or as a module. You may also want to
+	speak to one of your research colleagues to find out if they have installed it for themselves.
 
-Some commonly used software packages are included with Katana's operating system. You can list installed system packages with:
+Some common software packages are already available as part of katana's the operating system. They are listed by: 
 
-```bash
-yum list installed
+``` bash 
+    yum list installed
 ```
 
 !!! warning
-    Do **not** attempt to run administrative commands as a user.
-    This includes `apt-get`, `yum install`, `su`, or `sudo`.
+    Do not try to run administration commands as a user. These include: apt-get install, yum install, su, or sudo. 
 
-You can also check available applications using Environment Modules:
+You can see the list of software applications already installed on Katana using the [Environment Module](../environment_modules) command:
 
-```bash
-module avail
+``` bash 
+   module avail
 ```
-
----
 
 <h2> R and Python Packages </h2>
 
-Many Python and R packages are already installed on Katana.
-
-Documentation for installing your own packages can be found here:
-- [Python virtual environments](../python#python-virtual-environments)
-- [Installing R libraries](../r#installing-libraries)
+Many Python and R packages are installed on katana. We have specific documentation to install your own packages in [Python](../python#python-virtual-environments)`
+and [R](../r#installing-libraries)
 
 !!! note
-    If you encounter issues installing packages yourself, contact
-    restech.support@unsw.edu.au for assistance.
+    If you have tried to install packages software yourself, but you need further assistance, then please send an email to [restech.support@unsw.edu.au](mailto:restech.support@unsw.edu.au).
+    
+<h2> Installing a binary package </h2>
 
----
-
-<h2> Installing Binary Packages </h2>
-
-Installing from source is preferred for performance reasons, but some software is only distributed as precompiled binaries.
-
-When downloading binaries, ensure they match Katana��s platform.
+While installing from source is preferred for effeciency reasons, sometimes
+only precompiled binaries are available. When downloading binaries, make sure you select the
+correct architecture and operating system for Katana.
 
 !!! note
-    Katana login and compute nodes run **Rocky Linux 8.9 (64?bit, x86_64 / AMD64)**.
+    The login and compute nodes of Katana are currently Rocky Linux 8.9, 64-bit, Intel x86_64 / AMD64.
+	
+    If the software is small then you may want to install it in your home directory to take advantage of the
+	nightly backup. Otherwise you should install the software in your scratch directory.
 
-    - Small software: install in your **home directory** (backed up nightly)
-    - Large software: install in your **scratch directory**
 
-Example download:
-
-```bash
-wget https://website.org/binary/application
+``` bash
+wget https://website.org/binary/application  
 ```
 
-Make the file executable:
-
-```bash
+Change file permissions to make the application readable and executable
+   
+``` bash
 chmod u+rx ./application
 ```
 
----
+<h2> Compiling from source </h2>
 
-<h2> Compiling Software from Source </h2>
-
-Compiling from source is generally more efficient but can be more complex.
+Compiling from source is preferred for efficiency reasons but is generally a more complicted process than a binary installation. 
 
 !!! note
-    - Small software: install in your **home directory**
-    - Large software: install in your **scratch directory**
+    If the software is small then you may want to install it in your home directory to take advantage of the nightly backup.
+	Otherwise you should install the software in your scratch directory.
 
----
 
-<h2> Installing Software from GitHub </h2>
+<h2># Installing software from Github </h2>
 
-Source code is commonly hosted on GitHub. Git is available by default on Katana.
+Source code is commonly stored on GitHub for easy version control. Git is available by default on katana. Remember: UNSW has its own [GitHub organisation](../../using_katana/github).
 
-UNSW also maintains its own [GitHub organisation](../../using_katana/github).
+The process to install code which comes from GitHub depends on how the author of the code has set it up. 
 
-Installation steps depend on how the project is structured by the author.
+<h2># Installing a Github software release </h2>
 
----
+Often the software owner will create a software __release__  which is a copy of the software with everything frozen at that point in time. This helps with reproducability of results
+as you can refer to a specific version of the software and someone else can easily install the same version on their computer. You will often be able to choose between a
+binary version and downloading the source. Downloading the binary and the source versions will look something like:
 
-<h2> Installing a GitHub Release </h2>
-
-Many projects provide versioned *releases* to ensure reproducibility.
-
-You may be able to download either a binary or source release:
-
-```bash
-wget https://github.com/project/project/releases/download/v1.48.1/project.linux_8.zip
+``` bash
+   wget https://github.com/project/project/releases/download/v1.48.1/project.linux_8.zip
 ```
 
-```bash
-wget https://github.com/project/project/archive/refs/tags/v1.48.1.tar.gz
+``` bash
+   wget https://github.com/project/project/archive/refs/tags/v1.48.1.tar.gz
 ```
 
----
+<h2># Github cloning </h2>
 
-<h2> Cloning a GitHub Repository </h2>
+If the owner of the software has not created a release or the latest release is too old then you can download the repository and use it to compile the software.
+Copy the web address revealed by the green 'Code' button on the repository. Creating a local copy of the repository uses the following command:
 
-If no suitable release exists, clone the repository directly:
-
-```bash
-git clone https://github.com/project/project.git
+``` bash
+   git clone https://github.com/project/project.git
 ```
 
-This creates a local copy of the source code along with documentation.
+The created folder will then contain the source code and some documentation files.
 
----
+<h2># README and INSTALL files </h2>
 
-<h2> README and INSTALL Files </h2>
+The README file contains general information for the software, and often a brief installation guide. INSTALL will contain more detailed installation instructions, including configuration for 
+certain archictures. Please read the README and INSTALL files in full before attempting compilation.
 
-- **README**: overview and basic usage or install steps
-- **INSTALL**: detailed compilation and configuration instructions
+<h2># Compilers  </h2>
 
-Always read both files fully before attempting to compile software.
+It is generally best to use the system compilers `gcc` and `ld`. However, many code requires specific compilers and versions. Katana has many compilers available as modules 
+including the [Intel Compilers and Software Libraries](../others#intel-compilers-and-software-libraries)
 
----
+!!! note 
+    Please install software using an interactive session, qsub -I, not directly on the login node. 
 
-<h2> Compilers </h2>
+<h2># Configuring installation files </h2>
 
-The system compilers `gcc` and `ld` are recommended by default.
+Commonly, a configuration script is available which allows you to set where the software is installed by using the --prefix flag as well as other options. To install
+the software in your Katana home directory you can use the following command:
 
-Some software requires specific compilers or versions. Katana provides many via modules, including:
+``` bash
+   ./configure --prefix=$HOME/apps/{PACKAGE}/{VERSION}
+```
 
-- [Intel Compilers and Software Libraries](../others#intel-compilers-and-software-libraries)
+The software can then be installed according to the rules in the MakeFile. This
+is typically invoked with
+
+``` bash
+   make
+   make install
+```
+
+<h2> Creating module files </h2>
+
+Much like katana's `Environment Modules`, you can also have multiple versions
+of the application available through your own modules.
+
+The template for environment modules is in:
+
+``` bash
+/apps/modules/templates/module_file
+```
+
+The template module file makes some assumptions and examples, which may not be applicable to your software.
+Key sections will likely need to modify are:
+
+ 
+   * set      basepath          $env(HOME)/apps/{SOFTWARE_NAME}
+   * set      version           {VERSION_NUMBER}        
+
+   * set      url
+   * set      installed
+
+   * set      compiled_with
+   * set      mpiversion
+
+   * prereq     {PREREQUISITE_SOFTWARE)
+
 
 !!! note
-    Always install software inside an **interactive session** (`qsub -I`),
-    not directly on a login node.
+    Insert "module use --append $HOME/apps/Modules" into your ~/.bashrc to enable using your own modules upon login. 
 
----
-
-<h2> Configuring the Build </h2>
-
-Most source packages provide a configuration script.
-
-To install into your home directory:
-
-```bash
-./configure --prefix=$HOME/apps/{PACKAGE}/{VERSION}
-```
-
-Then build and install:
-
-```bash
-make
-make install
-```
-
----
-
-<h2> Creating Personal Module Files </h2>
-
-You can manage multiple versions of your own software using personal environment modules.
-
-A template module file is available at:
-
-```bash
-/ apps / modules / templates / module_file
-```
-
-You will likely need to customise:
-
-- `basepath`
-- `version`
-- `url`
-- `installed`
-- `compiled_with`
-- `mpiversion`
-- `prereq`
-
-Example values:
-
-```text
-set basepath $env(HOME)/apps/{SOFTWARE_NAME}
-set version  {VERSION_NUMBER}
-```
-
-!!! note
-    Add the following line to your `~/.bashrc` to enable personal modules:
-
-    ```bash
-    module use --append $HOME/apps/Modules
-    ```
-
-Once configured, you can load your software like any other module.
+You should be able to module load your own software module as your own.

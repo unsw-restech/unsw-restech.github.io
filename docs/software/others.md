@@ -2,326 +2,313 @@ title: Others
 
 <h2> Ansys </h2>
 
-Both Ansys Workbench and Ansys Electronic Desktop are available on Katana. The most user-friendly way to run Ansys is via Katana OnDemand:
-../using_katana/ondemand.md
+Both Ansys Workbench and Ansys Electronic Desktop are available on Katana. The most user friendly
+way to run Ansys is to use [Katana OnDemand](../using_katana/ondemand.md). 
 
-<h3> Ansys Batch Jobs </h3>
+**Ansys Batch Jobs**
 
-NOTE:
-The version of Ansys available through myAccess MUST NOT be used for any research purposes, including generating files intended to be run on Katana.
+**Note:** The version of Ansys available via myAccess **MUST NOT** be used for any research including generating
+files to be used on Katana.
 
-Once you are familiar with how jobs run on Katana, you can submit Ansys jobs as batch jobs. Batch jobs run without requiring any interactive input from you:
-../../help_support/glossary#batch-jobs
+Once you are familiar with how running jobs on Katana works you can run them in a [batch job](../../help_support/glossary#batch-jobs) which mean that your jobs don't need any input from you. 
 
-To use Ansys CFX on Katana, you must upload your .cfx and .def files to Katana.
+**Ansys CFX**
 
-A brief batch job example is shown below. For more detailed examples, see our GitHub repository:
-https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-cfx.md
+If you want to use Ansys CFX on Katana then you will need to upload the .cfx and .def files to Katana.
 
-NOTE:
-You must join the UNSW GitHub organisation to access this repository:
-https://research.unsw.edu.au/github
+A brief batch script example is given below. For more detail visit [our GitHub page](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-cfx.md). 
+(Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repository)
 
-Example batch workflow:
-```bash
-#!/bin/bash
+``` bash
+   #!/bin/bash
+   #<RESOURCE REQUESTS>
 
-<RESOURCE REQUESTS>
+   cd $PBS_O_WORKDIR
 
-cd $PBS_O_WORKDIR
+   module load intel-mpi/2021.7.1
+   module load ansys/2021r1
 
-module load intel-mpi/2021.7.1
-module load ansys/2021r1
-
-cfx5solve -batch -def <filename>.def -part $NCPUS -start-method "Intel MPI Local Parallel"
+   cfx5solve -batch -def <filename>.def -part $NCPUS -start-method "Intel MPI Local Parallel"
 ```
-<h3> Ansys Fluent </h3>
 
-Ansys Fluent input files can be generated locally and transferred to Katana to run as a batch job. A brief example is shown below, with more complete examples available in our GitHub repository:
-https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-fluent.md
+**Ansys Fluent**
 
-NOTE:
-You must join the UNSW GitHub organisation to access this repository.
+Ansys Fluent input can also be generated locally and transferred to Katana to run in a batch job with a brief bash script shown here snd more complete
+examples in [our Github repository](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/ansys/ansys-fluent.md). (Note: You will need to 
+[join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repo).
 
-Example batch workflow:
-```bash
-#!/bin/bash
+``` bash 
+   #!/bin/bash
+   #<RESOURCE REQUESTS>
 
-<RESOURCE REQUESTS>
+   cd $PBS_O_WORKDIR
 
-cd $PBS_O_WORKDIR
+   module load ansys/2021r1
+   module load intel-mpi/2021.7.1
 
-module load ansys/2021r1
-module load intel-mpi/2021.7.1
-
-fluent 3d -g -t $NCPUS -i fluent.in > output.out
+   fluent 3d -g -t $NCPUS -i fluent.in > output.out
 ```
-<h3> Ansys on Gadi </h3>
 
-If you have an account on Gadi (the NCI supercomputer), you can also run Ansys there:
-https://nci.org.au/our-services/supercomputing
+**Ansys on Gadi**
 
-UNSW has an institutional licence for Ansys on Gadi. You must join the relevant software group as described in NCI’s documentation:
-https://opus.nci.org.au/display/Help/Ansys+Fluent
+If you have an account on [Gadi](https://nci.org.au/our-services/supercomputing), the Supercomputer located at [NCI](https://nci.org.au/), you can also use Ansys there once you join the on once you have an account. UNSW has a institutional licence
+that requies you join the relevant software group as detailed in [NCI's documentation](https://opus.nci.org.au/display/Help/Ansys+Fluent).
 
 <h2> Biosciences </h2>
 
-A range of bioscience software packages is installed on Katana. If you are unable to find a specific package, it may be included as part of a larger software suite listed on this page.
+There are a number of Bioscience software packages installed. If you are having trouble finding a software package it might be within another package such as the ones mentioned on this
+page.
 
-<h3>Datasets</h3>
+**Datasets**
 
-To avoid repeated downloads by multiple users, commonly used datasets have already been downloaded. This includes multiple versions of the NCBI nr and nt databases:
-https://www.ncbi.nlm.nih.gov/
+To avoid multiple users needing to download datasets for themselves we have downloaded some of the most commonly used ones, such as multiple versions of the [NCBI](https://www.ncbi.nlm.nih.gov/) `nr` and `nt` databases, into the `#!bash /data` directory. 
 
-These datasets are stored under:
-/data
+**Stand alone**
 
-<h3>Stand-alone Software</h3>
+Blast+: `:::bash module load blast-plus/2.12.0`
 
-Blast+
-module load blast-plus/2.12.0
+Mothur: `:::bash module load mothur/1.48.0`
 
-Mothur
-module load mothur/1.48.0
+**Python Module**
 
-<h3>Python Modules</h3>
+Any of the Python versions that you see when running the [module command](../../software/environment_modules) on Katana will include **BioPython** and **Snakemake**.
+`:::bash module avail python`
 
-All Python versions available via the environment modules include BioPython and Snakemake.
+**R Module**
 
-To view available Python modules:
-module avail python
+`:::bash module avail r`
 
-<h3>R Modules</h3>
+As Bioconductor is installed within R the best approach is to load the latest version of R to reduce the possibility of dependency issues. Then you can install
+it in your personal R library by following the instructions at the [Bioconductor web site](https://www.bioconductor.org/). An example of how to install Bioconductor
+and some Bioconductor packages is shown below.
 
-To view available R modules:
-```bash
-module avail r
+``` r
+    > if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+    > BiocManager::install("Biobase")
+    > BiocManager::install(c("GenomicFeatures", "AnnotationDbi"))
+    > BiocManager::install("DESeq2")
 ```
-Bioconductor is installed within R. To minimise dependency issues, we recommend loading the latest available R version and installing Bioconductor packages into your personal R library.
 
-Installation instructions are available on the Bioconductor website:
-https://www.bioconductor.org/
+**Perl Module**
+Any of the Perl versions that you see when running the [module command](../../software/environment_modules) on Katana will include **BioPerl**. If you do not use the
+module command to access Perl then you won't have be able to use BioPerl and other Perl tools. 
+`:::bash module avail perl`
 
-Example R commands (plain text):
-```bash
-if (!require("BiocManager", quietly = TRUE))
-install.packages("BiocManager")
+**Conda**
+If you would like to install software using Conda there are instructions on how to do it on the [Python page](../software/python/).
 
-BiocManager::install("Biobase")
-BiocManager::install(c("GenomicFeatures", "AnnotationDbi"))
-BiocManager::install("DESeq2")
-```
-<h3>Perl Modules</h3>
-
-All Perl versions available through environment modules include BioPerl. If you do not use the module system to access Perl, BioPerl will not be available.
-
-To view available Perl modules:
-module avail perl
-
-<h3>Conda</h3>
-
-If you wish to install bioscience software using Conda, refer to the Python documentation page:
-../software/python/
-
-NOTE:
-Some software (such as Bioconductor) does not work well when installed via Conda due to dependency complexity and version lag.
+!!! note
+    Some software packages like Bioconductor do not work well if installed in Conda due to software dependencies and the time that it takes for a new version
+	of the software to be included in Conda.
 
 <h2> Comsol </h2>
+The most user friendly way to run Comsol interactively is to use [Katana OnDemand](../using_katana/ondemand.md).
 
-The most user-friendly way to run Comsol interactively is via Katana OnDemand:
-../using_katana/ondemand.md
+!!! note
+    You will need to belong to a group that owns a COMSOL licence (mech, spree, quantum, biomodel) 
 
-NOTE:
-You must belong to a group that owns a COMSOL licence (mech, spree, quantum, or biomodel).
+**Comsol Batch Jobs**
 
-Comsol Batch Jobs
+**Note:** The version of COMSOL available via myAccess **MUST NOT** be used for any research including generating
+files to be used on Katana.
 
-NOTE:
-The version of COMSOL available via myAccess MUST NOT be used for research, including generating files to be run on Katana.
+An example comsol batch job file is available in [our GitHub repository](https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/comsol/comsol.pbs).
+(Note: You need to [join the UNSW GitHub organisation](https://research.unsw.edu.au/github) to access this repository) as well as being presented below.
 
-An example batch job file is available in our GitHub repository:
-https://github.com/unsw-edu-au/Restech-HPC/blob/master/hpc-examples/comsol/comsol.pbs
+``` bash title="console"
+    #!/bin/bash
+    #<RESOURCE REQUESTS>
 
-NOTE:
-You must join the UNSW GitHub organisation to access this repository.
+    mkdir -p ${TMPDIR}/comsol
 
-Example batch workflow:
-```bash
-#!/bin/bash
+    export MY_COMSOL_DIR=/srv/scratch/$USER/comsoldir
 
-<RESOURCE REQUESTS>
+    module load comsol/5.6-spree
 
-mkdir -p ${TMPDIR}/comsol
-
-export MY_COMSOL_DIR=/srv/scratch/$USER/comsoldir
-
-module load comsol/5.6-spree
-
-comsol -nn 1 -np $NCPUS
--recoverydir ${MY_COMSOL_DIR}/recoveries
--tmpdir ${TMPDIR}/comsol
-batch
--inputfile ${MY_COMSOL_DIR}/MyModel.mph
--outputfile ${MY_COMSOL_DIR}/MyModelOut.mph
--batchlog ${MY_COMSOL_DIR}/MyModel.log
+    comsol -nn 1 -np $NCPUS \
+    -recoverydir ${MY_COMSOL_DIR}/recoveries \
+    -tmpdir ${TMPDIR}/comsol \
+    batch \
+    -inputfile ${MY_COMSOL_DIR}/MyModel.mph \
+    -outputfile ${MY_COMSOL_DIR}/MyModelOut.mph \
+    -batchlog ${MY_COMSOL_DIR}/MyModel.log
 ```
 
 <h2> Intel Compilers and Software Libraries </h2>
 
-Research Technology Services provides access to the Intel Compiler Collection via environment modules. This collection includes compilers, libraries, debugging tools, and MPI software optimised for Intel CPUs.
+Research Technology Services has a licence for Intel Compiler Collection which can be accessed by loading a module and contains 4 groups of software, namely compilers, libraries, a debugger
+and MPI. This software has been optimised by Intel to take advantage of the specific capabilities of the different intel CPUs installed in the Intel based clusters.
 
-Compilers (module: intel-compilers)
-
-Intel C Compiler (icc)
-
-Intel C++ Compiler (icpc)
-
-Intel Fortran Compiler (ifort)
-
-Libraries
-
-Intel Math Kernel Library (MKL) – intel-mkl
-
-Intel Threading Building Blocks (TBB) – intel-tbb
-
-Intel Integrated Performance Primitives (IPP)
-
-Debugger
-
-Intel Debugger (idbc)
+- Compilers (module name: intel-compilers)
+    - Intel C Compiler (icc)
+    - Intel C++ Compiler (icpc)
+    - Intel Fortran Compiler (ifort)
+- Libraries
+    - Intel Math Kernel Library (MKL) (module name: intel-mkl)
+    - Intel Threading Building Blocks (TBB) (module name: intel-tbb)
+    - Intel Integrated Performance Primitives (IPP)
+- Debugger
+    - Intel Debugger (idbc)
 
 <h2> Java </h2>
 
-Java is installed as part of the operating system, but that version may change without notice, potentially affecting reproducibility. For this reason, we recommend using Java versions provided through environment modules.
+Java is installed as part of the Operating System but that version of Java can change without warning leading to reproducable concerns. Because of this risk
+we recommend using one of the versions of Java available via the [module command](../../software/environment_modules).
 
-To view available Java modules:
-```bash
-module avail java
+`:::bash module avail java`
+ 
+Each Java module sets 
+
+``` bash 
+    _JAVA_TOOL_OPTIONS -Xmx1g
 ```
-Each Java module sets the environment variable:
+
+This sets the heap memory to 1GB. If you need more, set the environment variable `_JAVA_OPTIONS` which overrides `_JAVA_TOOL_OPTIONS`
+
 ```bash
-_JAVA_TOOL_OPTIONS -Xmx1g
+    export _JAVA_OPTIONS="-Xmx5g"
 ```
-This sets the Java heap size to 1 GB. If you require more memory, set _JAVA_OPTIONS to override it:
-```bash
-export _JAVA_OPTIONS="-Xmx5g"
-```
+
+
 <h2> Matlab </h2>
 
-Running Interactively
+**Running interactively**
+PBS_O_WORKDIR
+You can run an interactive session of Matlab using [Katana OnDemand](../using_katana/ondemand) for a graphical session or [using the qsub command](../../help_support/glossary#interactive-jobs)
+for a text based session using the commands below.
 
-Matlab can be run interactively using Katana OnDemand for graphical sessions, or via qsub for text-based interactive sessions:
-../using_katana/ondemand
-../../help_support/glossary#interactive-jobs
+**Batch Jobs**
 
-Batch Jobs
+You can run Matab within a batch job. The example below shows the flags used to start Matlab without a graphical interface. Your job will start in your Katana home directory so we are assuming
+that your Matlab script is in your home directory.
 
-Matlab can also be run within a batch job. The example below runs Matlab without a graphical interface. Jobs start in your home directory by default.
-
-Example:
-```bash
+``` bash
 module load matlab/R2022a
+
 matlab -nodisplay -nosplash -r scriptfile
 ```
-If your Matlab script is not in your home directory, either specify the full path or change directories within the batch script.
 
-Using a full path:
-```bash
+If your Matlab script is not located in your home directory you can either provide the full path to the Matlab command or change to the directory within your batch file. The advantage of
+changing directory is that it makes it easy to save any results into the same directory.
+
+To provide a full path you can use the following example:
+``` bash
+
 module load matlab/R2022a
+
 matlab -nodisplay -nosplash -r /path/to/script/scriptfile
 ```
-Changing directory:
-```bash
+
+If you want to change to a different directory you can use the following example.
+``` bash
 cd /path/to/script/
 module load matlab/R2022a
+
 matlab -nodisplay -nosplash -r scriptfile
 ```
-If the script is located in the directory where the job was submitted, you can use $PBS_O_WORKDIR:
-```bash
+
+If your files are in the same directory that you submitted the batch job from then you can use the variable `#!bash $PBS_O_WORKDIR`, which contains the location that the job was submitted, in your script.
+``` bash
 cd $PBS_O_WORKDIR
 module load matlab/R2022a
+
 matlab -nodisplay -nosplash -r scriptfile
 ```
-Later versions of Matlab support the -batch flag:
-```bash
+
+Later versions of matlab provide the '-batch' flag as an alternative. 
+
+``` bash
 module load matlab/R2022a
+
 matlab -batch -r scriptfile
 ```
+
 <h2> Operating Systems </h2>
 
-Katana compute nodes run Rocky Linux. To check the exact version, run:
-```bash
-cat /etc/redhat-release
-```
-Research software is managed using environment modules:
-```bash
-../../software/environment_modules/
-```
-This allows multiple versions of software to coexist and lets users select the version they need.
+Katana nodes currently run Rocky Linux. To find out exactly which version you can use the command `#!bash cat /etc/redhat-release`.
+
+Research software is installed in [environment modules](../../software/environment_modules/). This enables multiple versions of the same software to be installed, 
+and each user can choose which version they wish to use.
 
 <h2> Perl </h2>
 
-The default Perl version on Katana is 5.26.3, provided by Rocky Linux and located at:
-/usr/bin/perl
+The default version of Perl on Katana is 5.26.3, which is provided by Rocky Linux and can be found at `#!bash /usr/bin/perl`.
 
-Perl is also available via environment modules.
+We have also installed Perl via an environment module. 
 
-A typical Perl script begins with:
-```bash
+It is common for Perl scripts to begin with:
+
+``` bash
 #!/usr/bin/perl
 ```
-This restricts execution to the system Perl version. To allow Perl modules loaded via the environment module system, use:
-```bash
+
+However, that will restrict you to the default version of Perl supplied with the Linux distribution.  If, instead of using that line, you use the following: 
+
+``` bash
 #!/usr/bin/env perl
 ```
-This ensures the Perl interpreter is resolved from your PATH.
+
+This will then look in your path so if you load Perl via an environment module it will not be necessary to modify your scripts.
+
+<!--
+<h2> SAS </h2>
+
+The 64-bit version of SAS is available as a module.
+
+By default SAS will store temporary files in `/tmp` which can easily fill up, leaving the node offline. In order to avoid this we have set the default to `$TMPDIR` to save temporary files in `/var/tmp` on the Katana head node and local scratch on compute nodes. If you wish to save temporary files to a different location you can do that by using the `-work` flag with your SAS command or adding this line to your `sasv9.cfg` file:
+
+``` bash
+    -work /my/directory
+```
+-->
 
 <h2> Stata </h2>
 
-Stata is available as an environment module.
+Stata is available as a module. 
 
-When running Stata in a PBS batch script, use:
-```bash
+When using Stata in a pbs batch script, the syntax is
+
+``` bash
 stata -b do StataClusterWorkshop.do
 ```
-To install additional Stata commands, use the findit command on your local machine. Copy the resulting .ado (and possibly .hlp) files into a directory called myadofiles in your home directory.
 
-Then tell Stata to search that directory:
-```bash
+If you wish to load or install additional Stata modules or commands you should use findit command within Stata on your local computer to find the command that you are looking for.
+You should then create a directory called `myadofiles` in your home directory and copy the .ado (and possibly the .hlp) file into that directory. Now that the command is there 
+it just remains to tell Stata to look in that directory which can be done by using the following Stata command.
+
+``` bash
 sysdir set PERSONAL $HOME/myadofiles
 ```
+
 <h2> tmux </h2>
 
-Terminal sessions on Katana are live. If you disconnect or close your terminal, your session ends. This can interrupt long-running tasks or interactive jobs.
+When you login to Katana using the terminal, it is a "live" session - if you close the terminal or turn off your computer the session will close. If you have a long running program such as
+downloading a large data set or have an [interactive session running from the command line](../../help_support/glossary#interactive-jobs) and you need to go somewhere else then you may
+end up losing all of your work and need to start again. In order to stop this from happening you can use `tmux` to create an **interruptible session** when you first connect to Katana.
 
-To prevent this, use tmux to create an interruptible session.
+!!! note
+    You will need to take note of the Katana login node that you have logged in to (katana1, katana2 or katana3) as you will need to connect to the same login node to return to your `tmux` session.
 
-NOTE:
-You must reconnect to the same Katana login node (katana1, katana2, or katana3) to reattach to your tmux session.
+To start tmux, type `tmux` at the terminal which will create a new session will start with a green information band at the bottom of the screen. Anything you start in this session 
+will keep running even if you disconnect or are disconnected from that session for any reason unless the server needs to be restarted.
 
-To start tmux:
-```bash
-tmux
-```
-This opens a new session with a status bar at the bottom. Programs started inside tmux continue running even if you disconnect.
+When you wish to reconnect you login to the server that you used last time and reconnect by using the command `tmux a`.
 
-To reconnect later:
-```bash
-tmux a
-```
-tmux supports multiple sessions, split panes, and more. Documentation is available at:
-https://github.com/tmux/tmux/wiki
+`tmux` has a number of other useful features such as multiple sessions and split screens. More information on features and how to use `tmux` is available
+on [the tmux website](https://github.com/tmux/tmux/wiki).
 
 <h2> Zip </h2>
 
-Compressing Large Directories
+**Compressing Large Directories**
 
-For compressing large directories or directories with many files, we recommend using tgzme:
-https://github.com/unsw-edu-au/tgzme/blob/master/tgzme.sh
+If you want to compress large directories or directories with a large number of files, we recommend using [tgzme](https://github.com/unsw-edu-au/tgzme/blob/master/tgzme.sh)
+which was developed by one of our researchers, [Dr. Edwards](https://orcid.org/0000-0002-3645-5539).
 
-tgzme is based on the following command:
-```bash
+The software is based on the command:
+
+``` bash
 tar -c $DIRECTORY | pigz > $DIRECTORY.tar.gz
 ```
-This tool was developed by Dr. Edwards:
-https://orcid.org/0000-0002-3645-5539
+
+We thank `Dr. Edwards` for his contribution.
