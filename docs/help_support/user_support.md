@@ -32,8 +32,3 @@ not automatic.
         job exits with status 1
         
         My job ran on k052 with jobid 300000, my zID is z2134567
-
-
-### **Katana System Status and Known Issues**
-
-No known issues at the moment.
