@@ -65,5 +65,4 @@ For example, to use the R kernel ``r-irkernel``, you must also install the ``jup
 
 ``` bash
 (my_conda_env) $ conda install jupyter
-(my_conda_env) $ install_jupyter_kernels
 ```
