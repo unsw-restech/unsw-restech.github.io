@@ -80,6 +80,8 @@ nav:
         - 'software/others.md'
     - 'Machine Learning and AI':
         - 'AI_in_Katana/StableDiffusion.md'
+        - 'AI_in_Katana/Ollama.md'
+            
     - 'Imaging':
         - 'imaging/neurodesk.md'
     #- 'Help and Support':
