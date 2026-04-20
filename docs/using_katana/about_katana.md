@@ -1,6 +1,6 @@
 title: About Katana
 
-Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources for groups working with non-sensitive data. It contains over 7,000 CPU cores, 25 GPU compute nodes (H200, GH200, A100, V100 and L40S), and 8PB of disk storage. Katana provides a flexible compute environment where users can run jobs that wouldn't be possible or practical on their desktop or laptop. For full details of the compute nodes including a full list see the compute node information section below.
+Katana is a shared computational cluster located on campus at UNSW that has been designed to provide easy access to computational resources for groups working with non-sensitive data. It contains nearly 12,000 CPU cores, 186 GPU cards (H200, GH200, A100, V100, L40S, RTX Pro 6000), and 26PB of disk storage. Katana provides a flexible compute environment where users can run jobs that wouldn't be possible or practical on their desktop or laptop. For full details of the compute nodes including a full list see the compute node information section below.
 
 Katana is powerful on its own, but can be seen as a training or development base before migrating up to systems like Australia's peak HPC system [Gadi at NCI](https://opus.nci.org.au/display/Help/0.+Welcome+to+Gadi). Research Technology Services also provide [training and support](https://unsw.sharepoint.com/sites/restech) for new users or those uncertain if High Performance Computing is the right fit for their research needs.
 
@@ -14,18 +14,20 @@ Katana is powerful on its own, but can be seen as a training or development base
 ## Compute
 
 - Heterogenous hardware: Dell, Lenovo, Supermicro, Xenon.
-- More than 150 nodes
+- 180 nodes (145 CPU + 35 GPU)
 
 ## GPU Compute
 
-- 25 GPU nodes
-    - 24 x Nvidia H200 141GB (6 nodes)
+- 35 GPU nodes
+    - 80 x Nvidia H200 141GB (13 nodes)
+    - 1 x Nvidia H100 94GB (1 nodes)
     - 1 x Nvidia GH200 480GB + 96GB (1 node)
     - 32 x Nvidia L40S 48GB (7 nodes)
-    - 20 x Nvidia A100 40GB (3 nodes)
+    - 24 x Nvidia A100 40GB (3 nodes)
     - 32 x Nvidia V100 32GB (8 nodes)
-- 12 GPU nodes have priority access for the school/group that purchased them
-- 13 GPU nodes are for use by all researchers
+    - 16 x Nvidia RTX Pro 6000 96GB (2 nodes)
+- 20 GPU nodes have priority access for the school/group that purchased them
+- 15 GPU nodes are for use by all researchers
 
 !!! info
     Unfortunately, GPU nodes are in incredibly high demand. 
