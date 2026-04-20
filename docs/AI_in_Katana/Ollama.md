@@ -1,11 +1,32 @@
 title: Ollama
 
 <h1>Using Ollama on Katana</h1>
+Ollama is a lightweight tool for running large language models locally on your machine (no cloud required). It lets you download, run, and interact with models like LLaMA-style chat models through a simple CLI or API.
 
 Ollama is available on Katana as an environment module.
 You do not need to install it manually.
 
 This guide shows a simple workflow for running Ollama on Katana.
+
+<h2>Minimal Working Workflow</h2>
+
+```bash
+qsub -I -l select=1:ncpus=4:mem=32gb:ngpus=1 
+
+module load ollama 
+
+export OLLAMA_MODELS=/srv/scratch/$USER/ollama/models 
+
+mkdir -p $OLLAMA_MODELS 
+
+ollama serve &> ollama.$(date +%s).log & 
+
+ollama pull phi3 
+
+ollama run phi3 
+
+To exit type /exit 
+```
 
 ------------------------------------------------------------------------
 
@@ -41,18 +62,26 @@ This means you are now on compute node k001.
 module load ollama
 ```
 
-Check installation:
+Verify the Ollama Installation
+
+After loading the module, check that Ollama is available:
 
 ```bash
+module load ollama
+
 ollama --version
-which ollama
 ```
 
+You may see a warning message similar to:
+```bash
+Warning: could not connect to a running Ollama instance
+Warning: client version is 0.17.7
+```
 ------------------------------------------------------------------------
 
 <h2>3. Set Model Storage Location (Recommended)</h2>
 
-Models are large, so store them in scratch instead of home.
+Models are large, so store them in scratch instead of home. On Katana, home directories are quota-controlled and not intended for storing very large model files; using scratch keeps downloads fast and avoids filling your home directory. Set `OLLAMA_MODELS` to a scratch path and create that directory before pulling models:
 
 ```bash
 export OLLAMA_MODELS=/srv/scratch/$USER/ollama/models
@@ -64,27 +93,24 @@ mkdir -p $OLLAMA_MODELS
 <h2>4. Start the Ollama Service</h2>
 
 ```bash
-ollama serve
+export OLLAMA_MODELS=/srv/scratch/$USER/ollama/models
+module load netsandbox
+safe_ollama
 ```
 
 Expected output:
 
 ```bash
-Listening on 127.0.0.1:11434
+Ollama serve starting, log file at ollama.xxxx
 ```
 
-At this point, the terminal is occupied by the Ollama server.
-
-You now need another terminal to run commands like:
-
 ```bash
-ollama pull
-ollama run
+ollama list
 ```
 
 ------------------------------------------------------------------------
 
-Recommended Method: Open Another Terminal via SSH
+<h2>5. Recommended Method: Open Another Terminal via SSH </h2>
 
 This is the recommended way to run multiple commands while keeping the
 server running.
@@ -144,16 +170,28 @@ Pull a model
 ```bash
 ollama pull phi3
 ```
+The phi3 model is recommended for first-time users because it is small and runs reliably on both CPU and GPU sessions.It is a small language model developed by Microsoft.  
+It is designed to be fast, efficient, and easy to run on standard hardware.
 
 Run the model
 
 ```bash
 ollama run phi3
 ```
+After a couple seconds:
+```bash
+>>>Send a message (/? for help)
+```
+Now you can start chat with the model by typing into terminal.
 
 ------------------------------------------------------------------------
 
 Useful Commands
+Exit current model:
+
+```bash
+/exit
+```
 
 List models:
 
@@ -212,28 +250,3 @@ Large models (require high VRAM)
 
 ------------------------------------------------------------------------
 
-<h2>Minimal Working Workflow</h2>
-
-Terminal 1:
-
-    qsub -I -l select=1:ncpus=4:mem=32gb:ngpus=1
-
-    module load ollama
-
-    export OLLAMA_MODELS=/srv/scratch/$USER/ollama/models
-
-    ollama serve
-
-Terminal 2:
-
-    ssh zID@katana.restech.unsw.edu.au
-
-    ssh k001
-
-    module load ollama
-
-    export OLLAMA_MODELS=/srv/scratch/$USER/ollama/models
-
-    ollama pull phi3
-
-    ollama run phi3
