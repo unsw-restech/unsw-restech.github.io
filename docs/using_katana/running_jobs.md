@@ -288,7 +288,7 @@ Typical job queue limit cut-offs are shown below. **The walltime is what determi
 			<td>44</td>
 		</tr>
 		<tr>
-			<td rowspan="2">Walltime (hrs)</td>
+			<td rowspan="3">Walltime (hrs)</td>
 			<td>12</td>
 			<td>48</td>
 			<td>100</td>
@@ -299,6 +299,27 @@ Typical job queue limit cut-offs are shown below. **The walltime is what determi
 			<td colspan="2">School-owned or general-use nodes</td>
 			<td colspan="3">School-owned nodes only</td>
 		</tr>
+		<tr>
+			<td>2 (GPU)</td>
+			<td colspan="2">12 (GPU)</td>
+			<td colspan="3">200 (GPU)</td>
+		</tr>
+	</tbody>
+</table>
+
+<h3> GPU model resource request limits </h3>
+
+GPU resources vary by node. Run `pstat -g` on Katana to view the currently configured GPU models and the CPU and memory available per GPU.
+
+<table>
+	<tbody>
+		<tr><td>GPU model</td><td>CPUs per GPU</td><td>Memory per GPU (GB)</td></tr>
+		<tr><td>A100</td><td>6</td><td>62</td></tr>
+		<tr><td>L40S</td><td>16</td><td>124</td></tr>
+		<tr><td>H200</td><td>8</td><td>250</td></tr>
+		<tr><td>V100</td><td>8</td><td>45</td></tr>
+		<tr><td>H100</td><td>32</td><td>240</td></tr>
+		<tr><td>RP6000</td><td>12</td><td>180</td></tr>
 	</tbody>
 </table>
 
