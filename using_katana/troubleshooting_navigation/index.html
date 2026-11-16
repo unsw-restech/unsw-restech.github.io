@@ -1,0 +1,1353 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../accessing_katana/">
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Navigation and Quick Start Guide - Katana User Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-W3KS3D0120"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-W3KS3D0120",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-W3KS3D0120",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#finding-information-and-getting-started-on-katana" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Katana User Documentation" class="md-header__button md-logo" aria-label="Katana User Documentation" data-md-component="logo">
+      <!-- Logo -->
+<img id="md_logo" src="" alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Katana User Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Navigation and Quick Start Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden="">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="yellow" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden="">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/unsw-restech/unsw-restech.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    unsw-restech/katana-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Katana User Documentation" class="md-nav__button md-logo" aria-label="Katana User Documentation" data-md-component="logo">
+      <!-- Logo -->
+<img id="md_logo" src="" alt="logo">
+    </a>
+    Katana User Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/unsw-restech/unsw-restech.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    unsw-restech/katana-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Navigation and Quick Start Guide
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Navigation and Quick Start Guide
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#quick-navigation" class="md-nav__link">
+    Quick Navigation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommended-path-for-new-users" class="md-nav__link">
+    Recommended Path for New Users
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix="">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accessing_katana/" class="md-nav__link">
+        Accessing Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../running_jobs/" class="md-nav__link">
+        Running Jobs on Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../monitor_jobs/" class="md-nav__link">
+        Monitor Your Jobs (qstat, qdel, qalter)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tips_katana/" class="md-nav__link">
+        Addtional Tips for Using PBS and Katana Effectively
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about_katana/" class="md-nav__link">
+        About Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ondemand/" class="md-nav__link">
+        Web access to Katana
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Storage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix="">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/storage_locations/" class="md-nav__link">
+        Storage Locations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/kdm/" class="md-nav__link">
+        Katana Data Mover (kdm)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/data_archive/" class="md-nav__link">
+        Data Archive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/onedrive/" class="md-nav__link">
+        OneDrive
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix="">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/environment_modules/" class="md-nav__link">
+        Environment Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/installing_software/" class="md-nav__link">
+        Installing software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/jupyter-notebooks/" class="md-nav__link">
+        Jupyter Notebooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/r/" class="md-nav__link">
+        R and RStudio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/others/" class="md-nav__link">
+        Others
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="false">
+          Machine Learning and AI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Machine Learning and AI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Machine Learning and AI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix="">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI_in_Katana/StableDiffusion/" class="md-nav__link">
+        Stable Diffusion on an HPC Environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI_in_Katana/Ollama/" class="md-nav__link">
+        Ollama
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AI_in_Katana/MultiModalOllama/" class="md-nav__link">
+        Multimodal Models with Ollama
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7" type="checkbox" id="__nav_7">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="false">
+          Imaging
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Imaging" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Imaging
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix="">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../imaging/neurodesk/" class="md-nav__link">
+        Neurodesk
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/user_support/" class="md-nav__link">
+        Help and Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1 id="finding-information-and-getting-started-on-katana">Finding Information and Getting Started on Katana<a class="headerlink" href="#finding-information-and-getting-started-on-katana" title="Permanent link">¶</a></h1>
+<p>Katana documentation is organised into sections covering access, jobs, storage, software, data transfer, and support. If you are unsure where to begin, use the links below to identify the section most relevant to your work.</p>
+<p>This page also provides a short starting path for new users, followed by practical checks that can help confirm that a Katana session and job are working as expected.</p>
+<hr>
+<h2 id="quick-navigation">Quick Navigation<a class="headerlink" href="#quick-navigation" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>I want to...</th>
+<th>Start here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Request an account or connect to Katana</td>
+<td><a href="/using_katana/accessing_katana/">Accessing Katana</a></td>
+</tr>
+<tr>
+<td>Use Katana through a web browser</td>
+<td><a href="/using_katana/ondemand/">Web Access to Katana</a></td>
+</tr>
+<tr>
+<td>Submit an interactive or batch job</td>
+<td><a href="/using_katana/running_jobs/">Running Jobs on Katana</a></td>
+</tr>
+<tr>
+<td>Check, modify, or delete a job</td>
+<td><a href="/using_katana/monitor_jobs/">Monitor Your Jobs</a></td>
+</tr>
+<tr>
+<td>Decide where to store files</td>
+<td><a href="/storage/storage_locations/">Storage Locations</a></td>
+</tr>
+<tr>
+<td>Transfer, move, compress, or extract large files</td>
+<td><a href="/storage/kdm/">Katana Data Mover</a></td>
+</tr>
+<tr>
+<td>Transfer files between OneDrive and Katana</td>
+<td><a href="/storage/onedrive/">OneDrive</a></td>
+</tr>
+<tr>
+<td>Store research data for the long term</td>
+<td><a href="/storage/data_archive/">Data Archive</a></td>
+</tr>
+<tr>
+<td>Find and load installed software</td>
+<td><a href="/software/environment_modules/">Environment Modules</a></td>
+</tr>
+<tr>
+<td>Install my own software</td>
+<td><a href="/software/installing_software/">Installing Software</a></td>
+</tr>
+<tr>
+<td>Use Python environments and packages</td>
+<td><a href="/software/python/">Python</a></td>
+</tr>
+<tr>
+<td>Use JupyterLab or Jupyter Notebooks</td>
+<td><a href="/software/jupyter-notebooks/">Jupyter Notebooks</a></td>
+</tr>
+<tr>
+<td>Find answers to common questions</td>
+<td><a href="/help_support/faq/">FAQ</a></td>
+</tr>
+<tr>
+<td>Understand an unfamiliar HPC term</td>
+<td><a href="/help_support/glossary/">Glossary</a></td>
+</tr>
+<tr>
+<td>Contact the Research Technology Services team</td>
+<td><a href="/help_support/user_support/">Help and Support</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use the documentation search bar when you know the name of a command, error, application, or topic but do not know which section contains it.</p>
+</div>
+<hr>
+<h2 id="recommended-path-for-new-users">Recommended Path for New Users<a class="headerlink" href="#recommended-path-for-new-users" title="Permanent link">¶</a></h2>
+<p>New Katana users will usually need the following pages in this order:</p>
+<ol>
+<li><a href="/using_katana/accessing_katana/">Accessing Katana</a></li>
+<li><a href="/storage/storage_locations/">Storage Locations</a></li>
+<li><a href="/using_katana/running_jobs/">Running Jobs on Katana</a></li>
+<li><a href="/using_katana/monitor_jobs/">Monitor Your Jobs</a></li>
+<li><a href="/software/environment_modules/">Environment Modules</a></li>
+</ol>
+<hr>
+<h1 id="quick-start-guide">Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Permanent link">¶</a></h1>
+<p>This section introduces a basic Katana command-line workflow. It is intended for users who have connected to Katana but are not yet familiar with the commands used to check their session, request compute resources, and confirm that a job is running correctly.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>User IDs, job IDs, node names, filenames, module versions, and paths shown below are examples. Replace them with values from your own session.</p>
+</div>
+<h2 id="1-connect-to-katana">1. Connect to Katana<a class="headerlink" href="#1-connect-to-katana" title="Permanent link">¶</a></h2>
+<p>From a terminal on your computer, connect using your UNSW zID:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>z1234567@katana.restech.unsw.edu.au
+</code></pre></div>
+<p>Replace <code>z1234567</code> with your own zID.</p>
+<p>After logging in, confirm the machine name:</p>
+<div class="highlight"><pre><span></span><code>hostname
+</code></pre></div>
+<p>On a login node, the hostname will normally begin with <code>katana</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Login nodes are intended for preparing files, submitting jobs, transferring small files, and monitoring jobs. Computationally intensive work should be run through PBS on a compute node.</p>
+</div>
+<hr>
+<h2 id="2-check-your-current-location">2. Check Your Current Location<a class="headerlink" href="#2-check-your-current-location" title="Permanent link">¶</a></h2>
+<p>Before running or submitting a job, confirm your current directory and account:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
+whoami
+</code></pre></div>
+<p><code>pwd</code> shows your current directory, for example:</p>
+<div class="highlight"><pre><span></span><code>/home/z1234567
+</code></pre></div>
+<p><code>whoami</code> shows the account currently being used, for example:</p>
+<div class="highlight"><pre><span></span><code>z1234567
+</code></pre></div>
+<p>These checks are useful when a command cannot find a file or when you are unsure which directory you are working in.</p>
+<hr>
+<h2 id="3-start-an-interactive-job">3. Start an Interactive Job<a class="headerlink" href="#3-start-an-interactive-job" title="Permanent link">¶</a></h2>
+<p>An interactive job gives you a shell on a compute node. This is useful for testing commands, checking software, and running short interactive workloads.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>qsub<span class="w"> </span>-I<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">2</span>:mem<span class="o">=</span>8gb<span class="w"> </span>-l<span class="w"> </span><span class="nv">walltime</span><span class="o">=</span><span class="m">02</span>:00:00
+</code></pre></div>
+<p>This requests:</p>
+<ul>
+<li>1 compute node</li>
+<li>2 CPU cores</li>
+<li>8 GB of memory</li>
+<li>a maximum runtime of 2 hours</li>
+</ul>
+<p>The command may wait while resources are allocated.</p>
+<p>When the job starts, confirm the compute node with:</p>
+<div class="highlight"><pre><span></span><code>hostname
+</code></pre></div>
+<p>You should now see a compute-node hostname such as:</p>
+<div class="highlight"><pre><span></span><code>k001
+</code></pre></div>
+<p>At this point, commands in this terminal are running within the resources allocated to your interactive job.</p>
+<hr>
+<h2 id="4-check-your-jobs">4. Check Your Jobs<a class="headerlink" href="#4-check-your-jobs" title="Permanent link">¶</a></h2>
+<p>To see your current PBS jobs:</p>
+<div class="highlight"><pre><span></span><code>qstat<span class="w"> </span>-su<span class="w"> </span><span class="s2">"</span><span class="nv">$USER</span><span class="s2">"</span>
+</code></pre></div>
+<p>Common job states include:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Q</code></td>
+<td>Queued and waiting to start</td>
+</tr>
+<tr>
+<td><code>R</code></td>
+<td>Running</td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td>Held</td>
+</tr>
+<tr>
+<td><code>E</code></td>
+<td>Exiting</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>Finished; check the exit status and output files to determine the result</td>
+</tr>
+</tbody>
+</table>
+<p>To view detailed information about a job:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">JOB_ID</span><span class="o">=</span><span class="m">6900507</span>
+qstat<span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$JOB_ID</span><span class="s2">"</span>
+</code></pre></div>
+<p>Replace <code>6900507</code> with your own job ID.</p>
+<p>For more information, see <a href="/using_katana/monitor_jobs/">Monitor Your Jobs</a>.</p>
+<hr>
+<h2 id="5-find-and-load-software">5. Find and Load Software<a class="headerlink" href="#5-find-and-load-software" title="Permanent link">¶</a></h2>
+<p>List the modules currently loaded:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>list
+</code></pre></div>
+<p>Browse available modules:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail
+</code></pre></div>
+<p>Search for Python:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>avail<span class="w"> </span>python
+</code></pre></div>
+<p>Load a version shown by <code>module avail</code>, for example:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>python/3.10.8
+</code></pre></div>
+<p>Confirm which executable will run:</p>
+<div class="highlight"><pre><span></span><code>which<span class="w"> </span>python3
+python3<span class="w"> </span>--version
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The version shown above is only an example. Use a version currently available on Katana.</p>
+</div>
+<p>Modules apply to the current shell. If you open another SSH session or submit a batch job, load the required modules again in that shell or job script.</p>
+<hr>
+<h2 id="6-work-from-the-correct-directory">6. Work from the Correct Directory<a class="headerlink" href="#6-work-from-the-correct-directory" title="Permanent link">¶</a></h2>
+<p>Check your location:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
+</code></pre></div>
+<p>List files:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lah
+</code></pre></div>
+<p>Your home directory can be referenced with:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">$HOME</span>
+</code></pre></div>
+<p>Your scratch directory can be referenced with:</p>
+<div class="highlight"><pre><span></span><code>/srv/scratch/<span class="nv">$USER</span>
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>/srv/scratch/<span class="nv">$USER</span>
+</code></pre></div>
+<p>Use scratch for working data and large temporary research files.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Scratch storage is not backed up. Keep another copy of important data in an appropriate backed-up or archival location.</p>
+</div>
+<p>See <a href="/storage/storage_locations/">Storage Locations</a> for guidance.</p>
+<hr>
+<h2 id="7-transfer-large-files-using-kdm">7. Transfer Large Files Using KDM<a class="headerlink" href="#7-transfer-large-files-using-kdm" title="Permanent link">¶</a></h2>
+<p>For large data transfers, use the Katana Data Mover rather than the Katana login nodes.</p>
+<p>Connect to KDM:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>z1234567@kdm.restech.unsw.edu.au
+</code></pre></div>
+<p>Replace <code>z1234567</code> with your own zID.</p>
+<p>For a large or restartable transfer, use <code>rsync</code>:</p>
+<div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-avhP<span class="w"> </span>/path/to/source/<span class="w"> </span>/srv/scratch/<span class="nv">$USER</span>/my-project/
+</code></pre></div>
+<p>Replace the example source and destination paths with your own.</p>
+<h3 id="copying-files-from-onedrive-to-scratch">Copying files from OneDrive to scratch<a class="headerlink" href="#copying-files-from-onedrive-to-scratch" title="Permanent link">¶</a></h3>
+<p>After OneDrive has been configured and mounted on KDM, copy files from the mounted OneDrive directory to scratch.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>-p<span class="w"> </span>/srv/scratch/<span class="nv">$USER</span>/my-project
+
+rsync<span class="w"> </span>-avhP<span class="w">     </span>/home/<span class="nv">$USER</span>/OneDrive/path/to/files/<span class="w">     </span>/srv/scratch/<span class="nv">$USER</span>/my-project/
+</code></pre></div>
+<p>For a single file:</p>
+<div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-avhP<span class="w">     </span>/home/<span class="nv">$USER</span>/OneDrive/path/to/file<span class="w">     </span>/srv/scratch/<span class="nv">$USER</span>/
+</code></pre></div>
+<p>The <code>-P</code> option displays transfer progress and keeps partially transferred files if a transfer is interrupted.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The exact OneDrive mount path depends on how OneDrive has been configured. Confirm the mounted directory before starting the transfer.</p>
+</div>
+<p>See <a href="/storage/kdm/">Katana Data Mover</a> and <a href="/storage/onedrive/">OneDrive</a> for the full instructions.</p>
+<hr>
+<h2 id="8-request-a-gpu-when-needed">8. Request a GPU When Needed<a class="headerlink" href="#8-request-a-gpu-when-needed" title="Permanent link">¶</a></h2>
+<p>A normal CPU job does not receive a GPU automatically.</p>
+<p>View the current node overview:</p>
+<div class="highlight"><pre><span></span><code>pstat
+</code></pre></div>
+<p>List GPU models configured on Katana:</p>
+<div class="highlight"><pre><span></span><code>pbsnodes<span class="w"> </span>-av<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>gpu_model
+</code></pre></div>
+<p>To reduce repeated lines:</p>
+<div class="highlight"><pre><span></span><code>pbsnodes<span class="w"> </span>-av<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>gpu_model<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-u
+</code></pre></div>
+<p>Request a GPU:</p>
+<div class="highlight"><pre><span></span><code>qsub<span class="w"> </span>-I<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">4</span>:mem<span class="o">=</span>32gb:ngpus<span class="o">=</span><span class="m">1</span><span class="w"> </span>-l<span class="w"> </span><span class="nv">walltime</span><span class="o">=</span><span class="m">02</span>:00:00
+</code></pre></div>
+<p>To request a specific GPU model, first check the available <code>gpu_model</code> values. For example:</p>
+<div class="highlight"><pre><span></span><code>qsub<span class="w"> </span>-I<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">4</span>:mem<span class="o">=</span>32gb:ngpus<span class="o">=</span><span class="m">1</span>:gpu_model<span class="o">=</span>H200<span class="w"> </span>-l<span class="w"> </span><span class="nv">walltime</span><span class="o">=</span><span class="m">02</span>:00:00
+</code></pre></div>
+<p>After the job starts:</p>
+<div class="highlight"><pre><span></span><code>hostname
+nvidia-smi
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Requesting a specific GPU model can increase queue time because the job can only run on nodes containing that model.</p>
+</div>
+<hr>
+<h2 id="9-finish-an-interactive-job">9. Finish an Interactive Job<a class="headerlink" href="#9-finish-an-interactive-job" title="Permanent link">¶</a></h2>
+<p>When finished:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">exit</span>
+</code></pre></div>
+<p>This ends the interactive job and releases the allocated resources.</p>
+<p>Confirm that the job is no longer running:</p>
+<div class="highlight"><pre><span></span><code>qstat<span class="w"> </span>-su<span class="w"> </span><span class="s2">"</span><span class="nv">$USER</span><span class="s2">"</span>
+</code></pre></div>
+<hr>
+<h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">¶</a></h1>
+<h2 id="my-job-is-waiting-in-the-queue">My Job Is Waiting in the Queue<a class="headerlink" href="#my-job-is-waiting-in-the-queue" title="Permanent link">¶</a></h2>
+<p>Check the job state:</p>
+<div class="highlight"><pre><span></span><code>qstat<span class="w"> </span>-su<span class="w"> </span><span class="s2">"</span><span class="nv">$USER</span><span class="s2">"</span>
+</code></pre></div>
+<p>For more detail:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">JOB_ID</span><span class="o">=</span><span class="m">6900507</span>
+qstat<span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$JOB_ID</span><span class="s2">"</span>
+</code></pre></div>
+<p>A queued job may be waiting because the requested combination of CPU, memory, GPU model, and walltime is not currently available.</p>
+<hr>
+<h2 id="my-job-finished-immediately">My Job Finished Immediately<a class="headerlink" href="#my-job-finished-immediately" title="Permanent link">¶</a></h2>
+<p>Check the completed-job information:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">JOB_ID</span><span class="o">=</span><span class="m">6900507</span>
+qstat<span class="w"> </span>-xf<span class="w"> </span><span class="s2">"</span><span class="nv">$JOB_ID</span><span class="s2">"</span>
+</code></pre></div>
+<p>Then list recently modified files:</p>
+<div class="highlight"><pre><span></span><code>ls<span class="w"> </span>-lht
+</code></pre></div>
+<p>Look for the first meaningful error message, missing files, missing commands or libraries, an incorrect working directory, or a non-zero exit status.</p>
+<p>Read an output file with:</p>
+<div class="highlight"><pre><span></span><code>less<span class="w"> </span>filename
+</code></pre></div>
+<p>Press <code>q</code> to leave <code>less</code>.</p>
+<hr>
+<h2 id="my-batch-job-cannot-find-my-files">My Batch Job Cannot Find My Files<a class="headerlink" href="#my-batch-job-cannot-find-my-files" title="Permanent link">¶</a></h2>
+<p>Inside a PBS batch script, add:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span><span class="s2">"</span><span class="nv">$PBS_O_WORKDIR</span><span class="s2">"</span>
+</code></pre></div>
+<p>You can also add:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">"Job ID: </span><span class="nv">$PBS_JOBID</span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Node: </span><span class="k">$(</span>hostname<span class="k">)</span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Working directory: </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"Start time: </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">"</span>
+</code></pre></div>
+<p>These lines record useful diagnostic information in the job output.</p>
+<hr>
+<h2 id="a-command-works-in-one-terminal-but-not-another">A Command Works in One Terminal but Not Another<a class="headerlink" href="#a-command-works-in-one-terminal-but-not-another" title="Permanent link">¶</a></h2>
+<p>Check loaded modules:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>list
+</code></pre></div>
+<p>If the required module is missing, load it again.</p>
+<p>Environment changes made in one SSH session are not automatically copied to another session. Required modules should also be loaded inside PBS job scripts.</p>
+<hr>
+<h2 id="my-gpu-application-cannot-find-a-gpu">My GPU Application Cannot Find a GPU<a class="headerlink" href="#my-gpu-application-cannot-find-a-gpu" title="Permanent link">¶</a></h2>
+<p>Confirm that the active job requested a GPU:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">JOB_ID</span><span class="o">=</span><span class="m">6900507</span>
+qstat<span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$JOB_ID</span><span class="s2">"</span>
+</code></pre></div>
+<p>On the allocated compute node:</p>
+<div class="highlight"><pre><span></span><code>hostname
+nvidia-smi
+</code></pre></div>
+<p>Check that <code>ngpus=1</code> was included in the resource request and that the required GPU-enabled software environment has been loaded.</p>
+<hr>
+<h2 id="my-ssh-session-disconnected">My SSH Session Disconnected<a class="headerlink" href="#my-ssh-session-disconnected" title="Permanent link">¶</a></h2>
+<p>Log in again and check your jobs:</p>
+<div class="highlight"><pre><span></span><code>qstat<span class="w"> </span>-su<span class="w"> </span><span class="s2">"</span><span class="nv">$USER</span><span class="s2">"</span>
+</code></pre></div>
+<p>A batch job continues independently of the SSH session. For long-running production workloads, use a batch job rather than relying on an interactive terminal connection.</p>
+<hr>
+<h2 id="i-cannot-find-my-output-file">I Cannot Find My Output File<a class="headerlink" href="#i-cannot-find-my-output-file" title="Permanent link">¶</a></h2>
+<p>For a completed job:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">JOB_ID</span><span class="o">=</span><span class="m">6900507</span>
+qstat<span class="w"> </span>-xf<span class="w"> </span><span class="s2">"</span><span class="nv">$JOB_ID</span><span class="s2">"</span>
+</code></pre></div>
+<p>Look for <code>Output_Path</code> and <code>Error_Path</code>.</p>
+<p>Also check:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">pwd</span>
+ls<span class="w"> </span>-lht
+</code></pre></div>
+<hr>
+<h2 id="i-am-running-out-of-storage-space">I Am Running Out of Storage Space<a class="headerlink" href="#i-am-running-out-of-storage-space" title="Permanent link">¶</a></h2>
+<p>Show filesystem space:</p>
+<div class="highlight"><pre><span></span><code>df<span class="w"> </span>-h<span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">"</span><span class="w"> </span><span class="s2">"/srv/scratch/</span><span class="nv">$USER</span><span class="s2">"</span>
+</code></pre></div>
+<p>This reports filesystem space, not your personal allocation.</p>
+<p>Check how much space your directories are using:</p>
+<div class="highlight"><pre><span></span><code>du<span class="w"> </span>-sh<span class="w"> </span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">"</span>
+du<span class="w"> </span>-sh<span class="w"> </span><span class="s2">"/srv/scratch/</span><span class="nv">$USER</span><span class="s2">"</span>
+</code></pre></div>
+<hr>
+<h1 id="information-to-collect-before-requesting-support">Information to Collect Before Requesting Support<a class="headerlink" href="#information-to-collect-before-requesting-support" title="Permanent link">¶</a></h1>
+<p>Before contacting Research Technology Services, collect as much of the following information as possible:</p>
+<div class="highlight"><pre><span></span><code>zID:
+Date and approximate time:
+Job ID:
+Node name:
+Working directory:
+Command or script:
+Software and module versions:
+Expected result:
+Actual result:
+Complete error message:
+Steps needed to reproduce the problem:
+</code></pre></div>
+<p>Useful commands include:</p>
+<div class="highlight"><pre><span></span><code>hostname
+<span class="nb">pwd</span>
+module<span class="w"> </span>list
+qstat<span class="w"> </span>-su<span class="w"> </span><span class="s2">"</span><span class="nv">$USER</span><span class="s2">"</span>
+</code></pre></div>
+<p>For an active job:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">JOB_ID</span><span class="o">=</span><span class="m">6900507</span>
+qstat<span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$JOB_ID</span><span class="s2">"</span>
+</code></pre></div>
+<p>For a completed job:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">JOB_ID</span><span class="o">=</span><span class="m">6900507</span>
+qstat<span class="w"> </span>-xf<span class="w"> </span><span class="s2">"</span><span class="nv">$JOB_ID</span><span class="s2">"</span>
+</code></pre></div>
+<p>See <a href="/help_support/user_support/">Help and Support</a> for current contact methods.</p>
+<hr>
+<h1 id="quick-diagnostic-checklist">Quick Diagnostic Checklist<a class="headerlink" href="#quick-diagnostic-checklist" title="Permanent link">¶</a></h1>
+<p>Before requesting help, confirm the following:</p>
+<ul>
+<li>[ ] I am running computational work inside a PBS job, not on a login node.</li>
+<li>[ ] I checked the job state with <code>qstat</code>.</li>
+<li>[ ] I read the complete output and error information.</li>
+<li>[ ] I confirmed the working directory and input paths.</li>
+<li>[ ] I loaded the required software modules inside the job or shell where the command is running.</li>
+<li>[ ] I checked the requested CPU, memory, walltime, and GPU resources.</li>
+<li>[ ] I recorded the job ID and compute node.</li>
+<li>[ ] I can describe the steps needed to reproduce the problem.</li>
+</ul>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden="">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../accessing_katana/" class="md-footer__link md-footer__link--next" aria-label="Next: Accessing Katana" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                Accessing Katana
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      UNSW Sydney NSW 2052 Australia | Tel: +61 2 93851000 | CRICOS: 00098G | TEQSA: PRV12055 | ABN: 57 195 873 179
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.instant", "navigation.top", "announce.dismiss", "toc.integrate", "navigation.path"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

@@ -1,0 +1,1258 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Ollama/">
+      
+      
+        <link rel="next" href="../../imaging/neurodesk/">
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Multimodal Models with Ollama - Katana User Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-W3KS3D0120"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-W3KS3D0120",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-W3KS3D0120",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Katana User Documentation" class="md-header__button md-logo" aria-label="Katana User Documentation" data-md-component="logo">
+      <!-- Logo -->
+<img id="md_logo" src="" alt="logo">
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Katana User Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Multimodal Models with Ollama
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden="">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="yellow" data-md-color-accent="yellow" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden="">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/unsw-restech/unsw-restech.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    unsw-restech/katana-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Katana User Documentation" class="md-nav__button md-logo" aria-label="Katana User Documentation" data-md-component="logo">
+      <!-- Logo -->
+<img id="md_logo" src="" alt="logo">
+    </a>
+    Katana User Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/unsw-restech/unsw-restech.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    unsw-restech/katana-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/troubleshooting_navigation/" class="md-nav__link">
+        Navigation and Quick Start Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_3" type="checkbox" id="__nav_3">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" tabindex="0" aria-expanded="false">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix="">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/accessing_katana/" class="md-nav__link">
+        Accessing Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/running_jobs/" class="md-nav__link">
+        Running Jobs on Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/monitor_jobs/" class="md-nav__link">
+        Monitor Your Jobs (qstat, qdel, qalter)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/tips_katana/" class="md-nav__link">
+        Addtional Tips for Using PBS and Katana Effectively
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/about_katana/" class="md-nav__link">
+        About Katana
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using_katana/ondemand/" class="md-nav__link">
+        Web access to Katana
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_4" type="checkbox" id="__nav_4">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" tabindex="0" aria-expanded="false">
+          Storage
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Storage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Storage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix="">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/storage_locations/" class="md-nav__link">
+        Storage Locations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/kdm/" class="md-nav__link">
+        Katana Data Mover (kdm)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/data_archive/" class="md-nav__link">
+        Data Archive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/onedrive/" class="md-nav__link">
+        OneDrive
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_5" type="checkbox" id="__nav_5">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="false">
+          Software
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Software" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Software
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix="">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/environment_modules/" class="md-nav__link">
+        Environment Modules
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/installing_software/" class="md-nav__link">
+        Installing software
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/jupyter-notebooks/" class="md-nav__link">
+        Jupyter Notebooks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/python/" class="md-nav__link">
+        Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/r/" class="md-nav__link">
+        R and RStudio
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/others/" class="md-nav__link">
+        Others
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked="">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" tabindex="0" aria-expanded="true">
+          Machine Learning and AI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Machine Learning and AI" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Machine Learning and AI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix="">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../StableDiffusion/" class="md-nav__link">
+        Stable Diffusion on an HPC Environment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ollama/" class="md-nav__link">
+        Ollama
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Multimodal Models with Ollama
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_7" type="checkbox" id="__nav_7">
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" tabindex="0" aria-expanded="false">
+          Imaging
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Imaging" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Imaging
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix="">
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../imaging/neurodesk/" class="md-nav__link">
+        Neurodesk
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/user_support/" class="md-nav__link">
+        Help and Support
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/faq/" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help_support/glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+
+<h1>Using Multimodal Models with Ollama on Katana</h1>
+
+<p>Some Ollama models can work with more than just text.<br>
+These are known as <strong>multimodal models</strong> and can analyse:</p>
+<ul>
+<li>images</li>
+<li>screenshots</li>
+<li>diagrams</li>
+<li>charts</li>
+<li>scientific figures</li>
+<li>photos</li>
+</ul>
+<p>Audio workflows are also possible by combining Ollama with speech-to-text tools such as Whisper.</p>
+<p>This page explains how to use multimodal models on Katana.</p>
+<hr>
+<h2>What is a Multimodal Model?</h2>
+
+<p>A multimodal model can process multiple types of input instead of only text.</p>
+<p>For example:</p>
+<table>
+<thead>
+<tr>
+<th>Input Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Text</td>
+<td>prompts and questions</td>
+</tr>
+<tr>
+<td>Images</td>
+<td>PNG, JPG screenshots or photos</td>
+</tr>
+<tr>
+<td>Audio (indirectly)</td>
+<td>speech converted into text</td>
+</tr>
+</tbody>
+</table>
+<p>Examples of multimodal Ollama models:</p>
+<div class="highlight"><pre><span></span><code>llava
+llama3.2-vision
+bakllava
+moondream
+</code></pre></div>
+<hr>
+<h1>1. Start an Interactive GPU Job</h1>
+
+<p>Vision models are significantly faster on GPUs.</p>
+<p>Start an interactive GPU session:</p>
+<div class="highlight"><pre><span></span><code>qsub<span class="w"> </span>-I<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">4</span>:mem<span class="o">=</span>32gb:ngpus<span class="o">=</span><span class="m">1</span>
+</code></pre></div>
+<p>After the job starts you should see something similar to:</p>
+<div class="highlight"><pre><span></span><code>z1234567@k001:~
+</code></pre></div>
+<p>This means you are now on compute node <code>k001</code>.</p>
+<hr>
+<h2>Choosing a GPU</h2>
+
+<p>Katana provides several different GPU models. Depending on the model you choose, performance can vary significantly, especially for larger language models and multimodal models.</p>
+<h3>View Available GPU Nodes</h3>
+
+<p>To see which GPU nodes are currently available:</p>
+<div class="highlight"><pre><span></span><code>pstat<span class="w"> </span>--gpu
+</code></pre></div>
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code>Node   GPU Model   Status
+k206   H200        Free
+k207   A100        Busy
+k208   V100        Free
+</code></pre></div>
+<h3>View Detailed Information About a Node</h3>
+
+<p>If you want to inspect a particular node, use:</p>
+<div class="highlight"><pre><span></span><code>pbsnodes<span class="w"> </span>k206
+</code></pre></div>
+<p>This displays information such as:</p>
+<ul>
+<li>GPU model</li>
+<li>Number of GPUs</li>
+<li>CPU count</li>
+<li>Memory</li>
+<li>Current jobs running on the node</li>
+</ul>
+<h3>Request a Specific GPU Model</h3>
+
+<p>When starting an interactive job, you can request a specific GPU type.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>qsub<span class="w"> </span>-I<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:gpu_model<span class="o">=</span>H200
+</code></pre></div>
+<p>You can also request additional resources:</p>
+<div class="highlight"><pre><span></span><code>qsub<span class="w"> </span>-I<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">8</span>:mem<span class="o">=</span>64gb:ngpus<span class="o">=</span><span class="m">1</span>:gpu_model<span class="o">=</span>H200
+</code></pre></div>
+<h3>Recommendations for Ollama</h3>
+
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Recommended Hardware</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>phi3</td>
+<td>CPU or any GPU</td>
+</tr>
+<tr>
+<td>gemma:2b</td>
+<td>CPU or any GPU</td>
+</tr>
+<tr>
+<td>llama3:8b</td>
+<td>A100 or better</td>
+</tr>
+<tr>
+<td>mistral:7b</td>
+<td>A100 or better</td>
+</tr>
+<tr>
+<td>llava</td>
+<td>GPU recommended</td>
+</tr>
+<tr>
+<td>llama3.2-vision</td>
+<td>GPU strongly recommended</td>
+</tr>
+<tr>
+<td>llama3:70b</td>
+<td>H100/H200 recommended</td>
+</tr>
+<tr>
+<td>mixtral</td>
+<td>H100/H200 recommended</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you are learning Ollama for the first time, start with <code>phi3</code> or <code>llama3:8b</code>. These models are smaller, download quickly, and are ideal for testing your workflow before moving to larger models.</p>
+</div>
+<h1>2. Load the Ollama Module</h1>
+
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>ollama
+</code></pre></div>
+<p>Verify that Ollama is available:</p>
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>--version
+</code></pre></div>
+<p>You may see:</p>
+<div class="highlight"><pre><span></span><code>Warning: could not connect to a running Ollama instance
+Warning: client version is 0.17.7
+</code></pre></div>
+<p>This is normal before the Ollama server has been started.</p>
+<hr>
+<h1>3. Set the Model Storage Location</h1>
+
+<p>Large models should be stored in scratch instead of home.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">OLLAMA_MODELS</span><span class="o">=</span>/srv/scratch/<span class="nv">$USER</span>/ollama/models
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$OLLAMA_MODELS</span>
+</code></pre></div>
+<hr>
+<h1>4. Start the Ollama Service</h1>
+
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>serve
+</code></pre></div>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code>Listening on 127.0.0.1:11434
+</code></pre></div>
+<p>The terminal is now occupied by the Ollama server.</p>
+<hr>
+<h1>Recommended Method: Open Another Terminal</h1>
+
+<p>Open another terminal window (CMD / PowerShell / Terminal).</p>
+<h2>SSH back into Katana</h2>
+
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>zID@katana.restech.unsw.edu.au
+</code></pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>z1234567@katana.restech.unsw.edu.au
+</code></pre></div>
+<h2>SSH into the same compute node</h2>
+
+<p>If your compute node is:</p>
+<div class="highlight"><pre><span></span><code>z1234567@k001
+</code></pre></div>
+<p>then run:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>k001
+</code></pre></div>
+<p>Now both terminals are connected to the same job.</p>
+<hr>
+<h1>5. Pull a Vision Model</h1>
+
+<p>A good starting model is <code>llava</code>.</p>
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>pull<span class="w"> </span>llava
+</code></pre></div>
+<p>Other vision-capable models:</p>
+<div class="highlight"><pre><span></span><code>llama3.2-vision
+bakllava
+moondream
+</code></pre></div>
+<hr>
+<h1>6. Run the Vision Model</h1>
+
+<p>Start the model:</p>
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>run<span class="w"> </span>llava
+</code></pre></div>
+<p>You can now provide an image path.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>&gt;&gt;&gt; /srv/scratch/z1234567/images/test.png
+&gt;&gt;&gt; Describe this image
+</code></pre></div>
+<p>Or directly from the command line:</p>
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>run<span class="w"> </span>llava<span class="w"> </span><span class="s2">"Describe this image: /srv/scratch/</span><span class="nv">$USER</span><span class="s2">/images/test.png"</span>
+</code></pre></div>
+<hr>
+<h1>Example Use Cases on Katana</h1>
+
+<p>Vision models are useful for:</p>
+<ul>
+<li>microscopy images</li>
+<li>scientific figures</li>
+<li>chart interpretation</li>
+<li>screenshot analysis</li>
+<li>OCR-style tasks</li>
+<li>diagram explanation</li>
+<li>research workflows</li>
+</ul>
+<hr>
+<h1>7. Using Audio with Ollama</h1>
+
+<p>Ollama itself does not directly process audio files.</p>
+<p>The standard workflow is:</p>
+<div class="highlight"><pre><span></span><code>Audio File
+↓
+Speech-to-Text Model
+↓
+Text Transcript
+↓
+Ollama Model
+</code></pre></div>
+<p>Most users use Whisper for transcription.</p>
+<hr>
+<h1>8. Installing Whisper</h1>
+
+<p>Create and activate a Python virtual environment:</p>
+<div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>python
+
+python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>whisper_env
+
+<span class="nb">source</span><span class="w"> </span>whisper_env/bin/activate
+</code></pre></div>
+<p>Install faster-whisper:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>faster-whisper
+</code></pre></div>
+<hr>
+<h1>9. Example Audio Transcription</h1>
+
+<p>Create a Python script called <code>transcribe.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">faster_whisper</span> <span class="kn">import</span> <span class="n">WhisperModel</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">WhisperModel</span><span class="p">(</span><span class="s2">"base"</span><span class="p">)</span>
+
+<span class="n">segments</span><span class="p">,</span> <span class="n">info</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transcribe</span><span class="p">(</span><span class="s2">"audio.mp3"</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">segment</span> <span class="ow">in</span> <span class="n">segments</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">segment</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div>
+<p>Run it:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>transcribe.py
+</code></pre></div>
+<p>This will produce a text transcript from the audio file.</p>
+<hr>
+<h1>10. Using the Transcript with Ollama</h1>
+
+<p>Once the transcript has been generated:</p>
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>run<span class="w"> </span>phi3
+</code></pre></div>
+<p>Example prompt:</p>
+<div class="highlight"><pre><span></span><code>Summarise the following meeting transcript:
+[paste transcript]
+</code></pre></div>
+<hr>
+<h1>GPU vs CPU Recommendations</h1>
+
+<h2>CPU-Friendly Models</h2>
+
+<div class="highlight"><pre><span></span><code>phi3
+gemma:2b
+moondream
+</code></pre></div>
+<h2>Recommended GPU Models</h2>
+
+<div class="highlight"><pre><span></span><code>llava
+llama3
+mistral
+llama3.2-vision
+</code></pre></div>
+<h2>Large Models</h2>
+
+<div class="highlight"><pre><span></span><code>llama3:70b
+mixtral
+</code></pre></div>
+<p>Large models may require very large GPU memory allocations.</p>
+<hr>
+<h1>Useful Commands</h1>
+
+<p>List downloaded models:</p>
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>list
+</code></pre></div>
+<p>Show running models:</p>
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>ps
+</code></pre></div>
+<p>Remove a model:</p>
+<div class="highlight"><pre><span></span><code>ollama<span class="w"> </span>rm<span class="w"> </span>llava
+</code></pre></div>
+<p>Stop Ollama:</p>
+<div class="highlight"><pre><span></span><code>pkill<span class="w"> </span>ollama
+</code></pre></div>
+<p>Check GPU usage:</p>
+<div class="highlight"><pre><span></span><code>nvidia-smi
+</code></pre></div>
+<hr>
+<h1>Storage Recommendations</h1>
+
+<p>Image and audio datasets can become very large.</p>
+<p>Recommended storage location:</p>
+<div class="highlight"><pre><span></span><code>/srv/scratch/<span class="nv">$USER</span>/
+</code></pre></div>
+<p>rather than:</p>
+<div class="highlight"><pre><span></span><code>/home/<span class="nv">$USER</span>/
+</code></pre></div>
+<hr>
+<h1>Ending the Session</h1>
+
+<p>When finished:</p>
+<div class="highlight"><pre><span></span><code>pkill<span class="w"> </span>ollama
+<span class="nb">exit</span>
+</code></pre></div>
+<p>This releases the compute resources.</p>
+<hr>
+<h1>Minimal Working Workflow</h1>
+
+<p>Terminal 1:</p>
+<div class="highlight"><pre><span></span><code>qsub<span class="w"> </span>-I<span class="w"> </span>-l<span class="w"> </span><span class="k">select</span><span class="o">=</span><span class="m">1</span>:ncpus<span class="o">=</span><span class="m">4</span>:mem<span class="o">=</span>32gb:ngpus<span class="o">=</span><span class="m">1</span>
+
+module<span class="w"> </span>load<span class="w"> </span>ollama
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">OLLAMA_MODELS</span><span class="o">=</span>/srv/scratch/<span class="nv">$USER</span>/ollama/models
+
+ollama<span class="w"> </span>serve
+</code></pre></div>
+<p>Terminal 2:</p>
+<div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>zID@katana.restech.unsw.edu.au
+
+ssh<span class="w"> </span>k001
+
+module<span class="w"> </span>load<span class="w"> </span>ollama
+
+<span class="nb">export</span><span class="w"> </span><span class="nv">OLLAMA_MODELS</span><span class="o">=</span>/srv/scratch/<span class="nv">$USER</span>/ollama/models
+
+ollama<span class="w"> </span>pull<span class="w"> </span>llava
+
+ollama<span class="w"> </span>run<span class="w"> </span>llava
+</code></pre></div>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden="">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../Ollama/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ollama" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+                Ollama
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../imaging/neurodesk/" class="md-footer__link md-footer__link--next" aria-label="Next: Neurodesk" rel="next">
+            <div class="md-footer__title">
+              <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+                Neurodesk
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      UNSW Sydney NSW 2052 Australia | Tel: +61 2 93851000 | CRICOS: 00098G | TEQSA: PRV12055 | ABN: 57 195 873 179
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "navigation.instant", "navigation.top", "announce.dismiss", "toc.integrate", "navigation.path"], "search": "../../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
