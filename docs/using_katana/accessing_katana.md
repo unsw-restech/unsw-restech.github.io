@@ -40,6 +40,15 @@ Users in this situation should speak to their supervisor.
 
 <h2> Connecting to Katana via Terminal </h2>
 
+!!! warning "SSH access changes"
+    To follow UNSW Cyber Security best practices, we tightened the firewall rules for the Katana login nodes (`katana1`, `katana2` and `katana3`) and the data mover node (`kdm`).
+
+    SSH connections to the login nodes are only be accepted from within UNSW networks. SSH connections to `kdm` will also be allowed from several important sites.
+
+    If you are off campus, you can still connect to the login nodes by connecting to the UNSW VPN first.
+
+    This affect tools that use SSH, including `scp`, `sftp` and `rsync`.
+
 !!! note "Operating System"
     === "Linux and Mac"
         From a Linux or Mac OS machine you can connect via ssh in a terminal:
@@ -82,4 +91,3 @@ Users in this situation should speak to their supervisor.
         2. Manually enable [WSL in PowerShell](https://docs.microsoft.com/en-us/windows/wsl/install-win10) and then install a Linux distribution through the Microsoft Store. 
 
         Using WSL will not only let you connect to katana with SSH, but also provides many GNU/Linux tools that are useful when working with HPC and research data.
-
