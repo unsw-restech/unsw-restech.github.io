@@ -1,6 +1,11 @@
 title: Installing software
 
+Installing Software on Katana 
 
+ Katana provides software through system packages, environment modules, and pre-installed Python and R libraries. Before installing anything yourself, you should first check whether the software is already available. 
+
+ If it is not available, you can install it in your own home or scratch directory, either as a precompiled binary or by compiling from source. This guide outlines how to check for existing software, install packages safely without administrative privileges, work with GitHub releases or repositories, compile using appropriate compilers, and manage your own software with personal environment modules. 
+ 
 <h2> Checking if a package is installed </h2>
 
 !!! note
